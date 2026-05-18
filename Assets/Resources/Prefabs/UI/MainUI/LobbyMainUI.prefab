@@ -414,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -356.5, y: -244}
+  m_AnchoredPosition: {x: -423, y: -173}
   m_SizeDelta: {x: 185, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1676639887542106668
@@ -771,7 +771,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 519fbc51e82f92945a064930448d755c, type: 3}
   - {fileID: 21300000, guid: 5a9f7a9c9c58a7f4fa56d688ec23d81b, type: 3}
   - {fileID: 21300000, guid: 9aa3197119e2877459062ae39b69bfdf, type: 3}
-  _sequenceInterval: 0.3
+  _sequenceInterval: 0.35
   _isLoop: 1
 --- !u!1 &4754842576202876302
 GameObject:
