@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: 39cd6216ebbb07641847da3e8e89a590
+  m_SerializeEntries:
+  - m_GUID: 4cfc25eea92831744a99a972be010656
+    m_Address: Sound/GameIn_BGM_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55c9baf40d25fd449833cdec6bb3e7b9
+    m_Address: Icon/Icon_Item_Potato
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55d00ba520c035f4ab6e03f81d70eb6e
+    m_Address: Icon/Icon_Item_Sword_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63dbae4b37e852e429fac61daa442f2d
+    m_Address: 2DPrefab/Harvest_Corn
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ad0e5b5cace1364a9a95bde0b63f22b
+    m_Address: Icon/Icon_Item_Coin_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5e72fa6821462548a6d5653a40574ba
+    m_Address: Sound/MianUI_BGM_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7c09252a8c8ccb45af2fdf04ed794f1
+    m_Address: Prefabs/2D/Enemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afc7eb39b7193434aa3b80aada40a7b1
+    m_Address: Texture2D/Texture2D_Loading_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2f2ba003b1edb74b95ce27f933bbf7e
+    m_Address: Texture2D/Texture2D_Loading_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e788976707f2a4048910dd957b17d95f
+    m_Address: 2DPrefab/Harvest_Potato
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fde8fc7bc4bb28a45a1f8fc064807248
+    m_Address: Icon/Icon_Item_Corn
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff1754fe6551f064ebe638458885ccd6
+    m_Address: Icon/Icon_Item_Potion_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 17b8022ae0364034195194a0e3b1e1bf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b8ef692b9a8099649bb02222ef95b87a, type: 2}
+    - {fileID: 11400000, guid: eb71a6f892807f04ebfdb0168570617f, type: 2}

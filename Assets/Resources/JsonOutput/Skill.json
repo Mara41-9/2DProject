@@ -1,0 +1,17 @@
+[
+  {
+    "Id": "skill_fireball_01",
+    "Name": "파이어볼",
+    "Description": "불로 된 구체를 만들어 날린다."
+  },
+  {
+    "Id": "skill_sword_01",
+    "Name": "검 휘두르기",
+    "Description": "검을 크게 휘둘러 동물을 베어낸다"
+  },
+  {
+    "Id": "skill_rest_coffee_01",
+    "Name": "커피 마시기",
+    "Description": "커피를 볶아 마신다. 모든 상태이상이 해제된다."
+  }
+]

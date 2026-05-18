@@ -1,0 +1,156 @@
+﻿using UnityEngine;
+
+// "UI를 어떤 Canvas Root에 생성할 것인가"를 구분!
+public enum UIRootType
+{
+    None = 0,
+    BackgroundUI,
+    MainUI,
+    ContentUI,
+    PopupUI,
+    VeryFrontUI,
+}
+
+public enum UIType
+{
+    LobbyMainUI,
+    MyProfilePopup,
+    SkillPopup,
+    QuestPopup,
+    InventoryPopup,
+    LoadingUI,
+    DialogueUI,
+    SuccessPopup,
+    GameOverPopup,
+}
+
+public static partial class UIManagerExtension
+{
+    // this UIManager uiManager -> 이 함수는 UIManager 전용 확장 함수다!
+    // UIType → Resources 경로(string)로 변환하는 함수
+    public static string GetUIPath(this UIManager uiManager, UIRootType uiRootType, UIType uiType)
+    {
+        string path = string.Empty; // "" == string.Empty
+
+        // Resources.Load를 할 경로를 직접 명시
+        path = $"Prefabs/UI/{uiRootType}/{uiType}";
+        return path;
+    }
+
+    public static void ShowStartupUIOnGameStart(this UIManager uiManager)
+    {
+        uiManager.OpenLoadingUI();
+        uiManager.OpenLobbyMainUI();
+    }
+
+    public static void OpenLobbyMainUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenMainUI(UIType.LobbyMainUI);
+        if(uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseLobbyMainUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.MainUI, UIType.LobbyMainUI);
+    }
+
+    public static void OpenPropilePopup(this UIManager uiManager)
+    {
+        // 팝업 UI 가져오기 (없으면 생성까지 자동)
+        var uiBase = uiManager.OpenPopupUI(UIType.MyProfilePopup);
+
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void OpenSkillPopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.SkillPopup);
+
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void OpenQuestPopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.QuestPopup);
+
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void OpenInventoryPopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.InventoryPopup);
+
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+
+    public static void OpenLoadingUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.VeryFrontUI, UIType.LoadingUI);
+        if(uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseLoadingUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.VeryFrontUI, UIType.LoadingUI);
+    }
+
+    public static void OpenDialogueUI(this UIManager uiManager, string startDialogueId)
+    {
+        var uiBase = uiManager.OpenContentUI(UIType.DialogueUI);
+        if( uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+
+        if(uiBase is DialogueUI dialogueUI)
+        {
+            dialogueUI.StartDialogue(startDialogueId);
+        }
+    }
+
+    public static void OpenSuccessPopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.SuccessPopup);
+        if(uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void OpenGameOverPopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.GameOverPopup);
+        if(uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+}

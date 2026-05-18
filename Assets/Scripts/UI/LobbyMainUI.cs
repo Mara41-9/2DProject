@@ -1,0 +1,71 @@
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class LobbyMainUI : UIBase
+{
+    // Layout_Top - 맨 윗 부분
+    [Header("Layout_Top")]
+    [SerializeField] private GameUIButton Btn_Profile;
+    [SerializeField] private Text Text_Exp;
+
+    // Layout_Top - 왼쪽 부분
+    [Header("Layout_Top")]
+    [SerializeField] private GameUIButton Btn_Start;
+
+    // Layout_Right - 오른쪽 부분
+    [Header("Layout_Right")]
+    [SerializeField] private GameUIButton Btn_Skill;
+    [SerializeField] private GameUIButton Btn_Inventory;
+    [SerializeField] private GameUIButton Btn_Quest;
+
+    private int _currentExp;
+
+    private void Start()
+    {
+        var playerExp = GameManager.Instance.GetPlayerExp();
+        _currentExp = playerExp;
+        Text_Exp.text = $"플레이어 Exp : {_currentExp}";
+    }
+
+
+    private void OnEnable()
+    {
+        Btn_Profile.BindOnClickButtonEvent(OnClick_OpenProfile);
+        Btn_Start.BindOnClickButtonEvent(OnClick_Open2dScene);
+        Btn_Skill.BindOnClickButtonEvent(OnClick_OpenSKillPopup);
+        Btn_Inventory.BindOnClickButtonEvent(OnClick_OpenInventory);
+        Btn_Quest.BindOnClickButtonEvent(OnClick_OpenQuest);
+    }
+
+    public void OnClick_OpenProfile()
+    {
+        UIManager.Instance.OpenPropilePopup();
+        Debug.LogWarning("프로필 창이 열렸습니다.");
+    }
+
+    public void OnClick_Open2dScene()
+    {
+        Debug.LogWarning("게임 씬으로 이동합니다.");
+        SceneManager.LoadScene("2D_Basic");
+    }
+
+    public void OnClick_OpenSKillPopup()
+    {
+        UIManager.Instance.OpenSkillPopup();
+        Debug.LogWarning("스킬 창이 열렸습니다.");
+    }
+
+    public void OnClick_OpenInventory()
+    {
+        UIManager.Instance.OpenInventoryPopup();
+        Debug.LogWarning("인벤토리 창이 열렸습니다.");
+    }
+
+    public void OnClick_OpenQuest()
+    {
+        UIManager.Instance.OpenQuestPopup();
+        Debug.LogWarning("퀘스트 창이 열렸습니다.");
+    }
+
+}

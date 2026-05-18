@@ -1,0 +1,52 @@
+[
+  {
+    "Id": "Item_Potion_1",
+    "Name": "물약",
+    "Description": "상자다. 딱히 의미가 있진 않다.",
+    "ItemType": "Normal",
+    "Grade": "Normal",
+    "MaxStackCount": 20,
+    "SellingPrice": 2000,
+    "IconPath": "Icon/Icon_Item_Potion_1"
+  },
+  {
+    "Id": "Item_Coin_1",
+    "Name": "화폐",
+    "Description": "지역에 나타나는 금화",
+    "ItemType": "Normal",
+    "Grade": "Legend",
+    "MaxStackCount": 1000,
+    "SellingPrice": 1000,
+    "IconPath": "Icon/Icon_Item_Coin_1"
+  },
+  {
+    "Id": "Item_Sword_1",
+    "Name": "검",
+    "Description": "착용하면 공격력이 강해진다.",
+    "ItemType": "Equipment",
+    "Grade": "Epic",
+    "MaxStackCount": 1,
+    "SellingPrice": 4000,
+    "IconPath": "Icon/Icon_Item_Sword_1"
+  },
+  {
+    "Id": "Item_Corn_1",
+    "Name": "옥수수",
+    "Description": null,
+    "ItemType": null,
+    "Grade": "Normal",
+    "MaxStackCount": 100,
+    "SellingPrice": 20,
+    "IconPath": "Icon/Icon_Item_Corn"
+  },
+  {
+    "Id": "Item_Potato_1",
+    "Name": "감자",
+    "Description": null,
+    "ItemType": null,
+    "Grade": "Normal",
+    "MaxStackCount": 100,
+    "SellingPrice": 20,
+    "IconPath": "Icon/Icon_Item_Potato"
+  }
+]
