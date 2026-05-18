@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MyProfilePopup_Nara : UIBase
+public class ProfilePopup : UIBase
 {
     [SerializeField] private Text Text_CharacterName;
     [SerializeField] private Text Text_CharacterDesc;
@@ -29,7 +29,7 @@ public class MyProfilePopup_Nara : UIBase
 
     public void OnClick_CloseProfilePopup()
     {
-        UIManager.Instance.ClosePopupUI(UIType.MyProfilePopup);
+        UIManager.Instance.ClosePopupUI(UIType.ProfilePopup);
         Debug.LogWarning("프로필 창이 닫혔습니다.");
     }
 

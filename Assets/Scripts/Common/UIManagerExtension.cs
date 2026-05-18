@@ -14,7 +14,7 @@ public enum UIRootType
 public enum UIType
 {
     LobbyMainUI,
-    MyProfilePopup,
+    ProfilePopup,
     SkillPopup,
     QuestPopup,
     InventoryPopup,
@@ -61,7 +61,7 @@ public static partial class UIManagerExtension
     public static void OpenPropilePopup(this UIManager uiManager)
     {
         // 팝업 UI 가져오기 (없으면 생성까지 자동)
-        var uiBase = uiManager.OpenPopupUI(UIType.MyProfilePopup);
+        var uiBase = uiManager.OpenPopupUI(UIType.ProfilePopup);
 
         if (uiBase == null)
         {
