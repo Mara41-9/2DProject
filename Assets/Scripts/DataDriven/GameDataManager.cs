@@ -30,7 +30,6 @@ public class GameDataManager : MonoBehaviour
     public Dictionary<string, SkillData> SkillDataList { get; private set; } = new Dictionary<string, SkillData>();
     public Dictionary<string, WeaponData> WeaponDataList { get; private set; } = new Dictionary<string, WeaponData>();
     public Dictionary<string, CostumeData> CostumeDataList { get; private set; } = new Dictionary<string, CostumeData>();
-    public Dictionary<string, DNItemData> DNItemDataList { get; private set; } = new Dictionary<string, DNItemData>();
     public Dictionary<string, ItemData> ItemDataList { get; private set; } = new Dictionary<string, ItemData>();
     public Dictionary<string, DialogueGroupData> DialogueGroupDataList { get; private set; } = new Dictionary<string, DialogueGroupData>();
     public Dictionary<string, DialogueData> DialogueDataList { get; private set; } = new Dictionary<string, DialogueData>();
@@ -95,11 +94,6 @@ public class GameDataManager : MonoBehaviour
         CostumeDataList = LoadData<CostumeData>(jsonPath);
     }
 
-    public void LoadDNItemData(string jsonPath)
-    {
-        DNItemDataList = LoadData<DNItemData>(jsonPath);
-    }
-
     public void LoadItemData(string jsonPath)
     {
         ItemDataList = LoadData<ItemData>(jsonPath);
@@ -147,13 +141,6 @@ public class GameDataManager : MonoBehaviour
         if (CostumeDataList == null || string.IsNullOrEmpty(id)) return null;
 
         return CostumeDataList.TryGetValue(id, out var data) ? data : null;
-    }
-
-    public DNItemData GetDNItemData(string id)
-    {
-        if (DNItemDataList == null || string.IsNullOrEmpty(id)) return null;
-
-        return DNItemDataList.TryGetValue(id, out var data) ? data : null;
     }
 
     public ItemData GetItemData(string id)

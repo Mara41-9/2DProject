@@ -57,14 +57,15 @@ MonoBehaviour:
   _checkRadius: 0.5
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   AnimatorController_Entity: {fileID: 4234773777856712952}
   _attackPoint: {fileID: 5933322072838351115}
   _attackRadius: 1
   _monsterLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   _scoreUI: {fileID: 0}
+  _gameTestUI: {fileID: 0}
 --- !u!114 &4234773777856712952
 MonoBehaviour:
   m_ObjectHideFlags: 0

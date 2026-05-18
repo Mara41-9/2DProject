@@ -45,18 +45,6 @@ public class CostumeData : GameDataBase
 }
 
 [System.Serializable]
-public class DNItemData : GameDataBase
-{
-    public string Name;
-    public string Description;
-    public string ItemType;
-    public string Grade;
-    public string MaxStackCount;
-    public string SellingPrice;
-    public string IconPath;
-}
-
-[System.Serializable]
 public class ItemData : GameDataBase
 {
     public string Name;

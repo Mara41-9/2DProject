@@ -9,10 +9,6 @@ public enum EntityAnimState
     JumpStart,
     JumpLoop,
     JumpEnd,
-    TargetDetected,
-    TargetInteracted,
-    InteractSuccess,
-    InteractFailed,
 }
 
 public class EntityAnimController : MonoBehaviour
@@ -55,18 +51,18 @@ public class EntityAnimController : MonoBehaviour
             case EntityAnimState.JumpEnd:
                 Animator_Entity.SetBool("IsJump", false);
                 break;
-            case EntityAnimState.TargetDetected:   // 시야 범위 안에 플레이어가 들어왔을때
-                Animator_Entity.SetBool("IsTargetDetected", true);
-                break;
-            case EntityAnimState.TargetInteracted: // 플레이어와 상호작용 일어날때
-                Animator_Entity.SetBool("IsTargetInteracted", true);
-                break;
-            case EntityAnimState.InteractSuccess:  // 성공인 경우 (와~! 그걸 구매하시다니 대단하시군)
-                Animator_Entity.SetBool("IsInteractSuccess", true);
-                break;
-            case EntityAnimState.InteractFailed:   // 실패, 부정일 경우 (할인은 안되네!)
-                Animator_Entity.SetBool("IsInteractFailed", true);
-                break;
+            //case EntityAnimState.TargetDetected:   // 시야 범위 안에 플레이어가 들어왔을때
+            //    Animator_Entity.SetBool("IsTargetDetected", true);
+            //    break;
+            //case EntityAnimState.TargetInteracted: // 플레이어와 상호작용 일어날때
+            //    Animator_Entity.SetBool("IsTargetInteracted", true);
+            //    break;
+            //case EntityAnimState.InteractSuccess:  // 성공인 경우 (와~! 그걸 구매하시다니 대단하시군)
+            //    Animator_Entity.SetBool("IsInteractSuccess", true);
+            //    break;
+            //case EntityAnimState.InteractFailed:   // 실패, 부정일 경우 (할인은 안되네!)
+            //    Animator_Entity.SetBool("IsInteractFailed", true);
+            //    break;
             default:
                 ResetAllParameters();
                 break;
@@ -79,10 +75,6 @@ public class EntityAnimController : MonoBehaviour
         Animator_Entity.SetBool("IsWalk", false);
         Animator_Entity.SetBool("IsAtk", false);
         // Animator_Entity.SetBool("IsJump", false); -> 
-        Animator_Entity.SetBool("IsTargetDetected", false);
-        Animator_Entity.SetBool("IsTargetInteracted", false);
-        Animator_Entity.SetBool("IsInteractSuccess", false);
-        Animator_Entity.SetBool("IsInteractFailed", false);
     }
 
 }
