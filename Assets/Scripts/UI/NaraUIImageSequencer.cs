@@ -9,7 +9,7 @@ public class NaraUIImageSequencer : MonoBehaviour
 {
     [Header("설정")]
     [SerializeField] private Sprite[] SpriteArray_Sprite; // 순회할 스프라이트 배열
-    [SerializeField] private float _sequenceInterval = 0.1f; // 프레임 간격 (초)
+    [SerializeField] private float _sequenceInterval = 0.25f; // 프레임 간격 (초)
     [SerializeField] private bool _isLoop = true;    // 반복 여부
 
     private Image _image;
