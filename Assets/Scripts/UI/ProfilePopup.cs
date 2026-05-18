@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ProfilePopup : UIBase
 {
+    [Header("Text")]
     [SerializeField] private Text Text_CharacterName;
     [SerializeField] private Text Text_CharacterDesc;
     [SerializeField] private Text Text_Level;
@@ -12,13 +13,16 @@ public class ProfilePopup : UIBase
     [SerializeField] private Text Text_WeaponName;
     [SerializeField] private Text Text_WeaponDesc;
 
+    [Header("Button")]
     [SerializeField] private GameUIButton Btn_ClosePopup;
+    [SerializeField] private GameUIButton Btn_BackClose;
 
     private int _level = 0;
 
     private void OnEnable()
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseProfilePopup);
+        Btn_BackClose.BindOnClickButtonEvent(OnClick_CloseProfilePopup);
 
         _level++;
         Text_Level.text = $"{_level}";
@@ -29,6 +33,7 @@ public class ProfilePopup : UIBase
 
     public void OnClick_CloseProfilePopup()
     {
+        UIManager.Instance.ClosePopupUI(UIType.ProfilePopup);
         UIManager.Instance.ClosePopupUI(UIType.ProfilePopup);
         Debug.LogWarning("프로필 창이 닫혔습니다.");
     }
