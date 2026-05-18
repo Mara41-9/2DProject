@@ -6,8 +6,8 @@
   },
   {
     "Id": "skill_sword_01",
-    "Name": "검 휘두르기",
-    "Description": "검을 크게 휘둘러 동물을 베어낸다"
+    "Name": "기사의 검격",
+    "Description": "강력한 검격으로 주변의 적을 베어낸다."
   },
   {
     "Id": "skill_rest_coffee_01",
