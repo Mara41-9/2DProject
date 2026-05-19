@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviour
 
         if(_playerModel.WeaponList.Count == 0)
         {
-            AddWeapon(WeaponData.Id, 1);
-            SaveData();
+            AddWeapon(WeaponData.Id);
         }
         
     }
@@ -88,7 +87,7 @@ public class GameManager : MonoBehaviour
         _playerModel.ItemList.Add(newItem);
     }
 
-    public void AddWeapon(string weaponDataId, int addItemCount)
+    public void AddWeapon(string weaponDataId)
     {
         // 저장할 때 고유값 ID를 부여하기 위해 사용 (고유 번호 생성)
         long uniqueId = GameUtil.GenerateUniqueId();
@@ -98,7 +97,7 @@ public class GameManager : MonoBehaviour
         var newItem = new WeaponModel();
         newItem.WeaponUniqueId = uniqueId;
         newItem.WeaponDataId = weaponDataId;
-        newItem.WeaponStackCount = addItemCount;
+        newItem.WeaponStackCount = 1;
 
         _playerModel.WeaponList.Add(newItem);
     }

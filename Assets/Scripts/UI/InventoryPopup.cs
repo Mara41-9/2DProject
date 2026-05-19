@@ -17,7 +17,7 @@ public class InventoryPopup : UIBase
     [SerializeField] private GameUIButton Btn_ClosePopup;
     [SerializeField] private GameUIButton Btn_BackClose;
 
-    [Header("선택된 아이템")]
+    [Header("선택된 슬롯 정보")]
     [SerializeField] private Image Img_SelectedSlot;
     [SerializeField] private TMP_Text Text_Name;
     [SerializeField] private TMP_Text Text_Description;
