@@ -12,12 +12,15 @@ public class ProfilePopup : UIBase
     [SerializeField] private Text Text_SkillDesc;
     [SerializeField] private Text Text_WeaponName;
     [SerializeField] private Text Text_WeaponDesc;
+    [SerializeField] private Text Text_Exp;
 
     [Header("Button")]
     [SerializeField] private GameUIButton Btn_ClosePopup;
     [SerializeField] private GameUIButton Btn_BackClose;
 
     private int _level = 0;
+
+    private int _currentExp;
 
     private void OnEnable()
     {
@@ -26,6 +29,10 @@ public class ProfilePopup : UIBase
 
         _level++;
         Text_Level.text = $"{_level}";
+
+        var playerExp = GameManager.Instance.GetPlayerExp();
+        _currentExp = playerExp;
+        Text_Exp.text = $"플레이어 Exp : {_currentExp}";
 
         // IEnumerator를 매 프레임 체크해줘!
         // StartCoroutine(CoCloseSelf());

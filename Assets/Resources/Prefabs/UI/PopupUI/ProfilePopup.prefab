@@ -493,6 +493,7 @@ MonoBehaviour:
   Text_SkillDesc: {fileID: 4612460508520791541}
   Text_WeaponName: {fileID: 429151174995775108}
   Text_WeaponDesc: {fileID: 5402435789837712923}
+  Text_Exp: {fileID: 5070109196590170560}
   Btn_ClosePopup: {fileID: 3747752795461753833}
   Btn_BackClose: {fileID: 1328634847009855591}
 --- !u!1 &581587190803994933
