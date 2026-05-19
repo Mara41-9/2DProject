@@ -789,6 +789,9 @@ MonoBehaviour:
   Transform_UISlotRoot: {fileID: 3940284483160009188}
   Btn_ClosePopup: {fileID: 8317223318694034016}
   Btn_BackClose: {fileID: 1014728529659728109}
+  Img_SelectedSlot: {fileID: 5505914875554258847}
+  Text_Name: {fileID: 1456598723373689369}
+  Text_Description: {fileID: 1386103248085040097}
 --- !u!1 &6165973355440132022
 GameObject:
   m_ObjectHideFlags: 0

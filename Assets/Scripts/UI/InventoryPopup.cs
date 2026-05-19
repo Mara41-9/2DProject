@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryPopup : UIBase
 {
@@ -13,6 +16,12 @@ public class InventoryPopup : UIBase
     // 팝업창을 닫을 버튼 오브젝트
     [SerializeField] private GameUIButton Btn_ClosePopup;
     [SerializeField] private GameUIButton Btn_BackClose;
+
+    [Header("선택된 아이템")]
+    [SerializeField] private Image Img_SelectedSlot;
+    [SerializeField] private TMP_Text Text_Name;
+    [SerializeField] private TMP_Text Text_Description;
+    
 
     // 딕셔너리 - 생성된 슬롯들을 ID 번호와 SlotUI 컴포넌트로 저장
     private Dictionary<int, InventorySlotUI> _slotList = new Dictionary<int, InventorySlotUI>();
@@ -112,5 +121,23 @@ public class InventoryPopup : UIBase
     private void OnChildSlotSelected(int selectedSlotInstanceId)
     {
         Debug.LogWarning($"자식 슬롯 {selectedSlotInstanceId} 선택됨!");
+
+        var slot = _slotList[selectedSlotInstanceId];
+
+        var itemData = GameDataManager.Instance.GetItemData(slot.SlotDataId);
+        if (itemData != null)
+        {
+            Text_Name.text = itemData.Name;
+        }
+
+        var weaponData = GameDataManager.Instance.GetWeaponData(slot.SlotDataId);
+        if(weaponData != null)
+        {
+            GameUtil.LoadAndSetSpriteImage(Img_SelectedSlot, weaponData.IconPath).Forget();
+
+            Text_Name.text = weaponData.Name;
+            Text_Description.text = weaponData.Description;
+        }
+        
     }
 }

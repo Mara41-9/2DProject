@@ -14,15 +14,16 @@ public class InventorySlotUI : MonoBehaviour
     private event Action<int> OnSelectEvent;
 
     public int SlotInstanceId { get; private set; }
+    public string SlotDataId { get; private set; }
 
     private void OnEnable()
     {
-        Btn_Slot.BindOnClickButtonEvent(OnClick_SelectItem);
+        Btn_Slot.BindOnClickButtonEvent(OnClick_SelectSlot);
     }
 
 
 
-    // 아이템 ID 받아서 해당 아이템의 아이콘 스프라이트를 찾아 슬롯 이미지에 넣어주는 함수
+    // 아이템/무기 ID 받아서 해당 그 아이템/무기의 아이콘 스프라이트를 찾아 슬롯 이미지에 넣어주는 함수
     private void SetIcon(string DataId, int Count)
     {
         // GameDataManager에서 해당 아이템 정보 받아옴
@@ -91,14 +92,15 @@ public class InventorySlotUI : MonoBehaviour
     }
 
 
-    // 슬롯이 생성된 후, 슬롯의 슬롯의 기본 정보(고유 번호)를 세팅하는 초기화 함수
-    public void InitSlot(int slotInstanceId, string DataId, int StackCount)
+    // 슬롯이 생성된 후, 슬롯의 기본 정보(고유 번호)를 세팅하는 초기화 함수
+    public void InitSlot(int slotInstanceId, string dataId, int StackCount)
     {
         SlotInstanceId = slotInstanceId;
-        SetIcon(DataId, StackCount);
+        SlotDataId = dataId;
+        SetIcon(dataId, StackCount);
     }
 
-    public void OnClick_SelectItem()
+    public void OnClick_SelectSlot()
     {
         OnSelectEvent?.Invoke(SlotInstanceId);
         Debug.Log($"{SlotInstanceId}눌러졌다");
