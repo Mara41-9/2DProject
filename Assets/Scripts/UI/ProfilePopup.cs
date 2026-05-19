@@ -32,7 +32,7 @@ public class ProfilePopup : UIBase
 
         var playerExp = GameManager.Instance.GetPlayerExp();
         _currentExp = playerExp;
-        Text_Exp.text = $"플레이어 Exp : {_currentExp}";
+        Text_Exp.text = $"{_currentExp}";
 
         // IEnumerator를 매 프레임 체크해줘!
         // StartCoroutine(CoCloseSelf());
