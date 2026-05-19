@@ -23,48 +23,65 @@ public class InventorySlotUI : MonoBehaviour
 
 
     // 아이템 ID 받아서 해당 아이템의 아이콘 스프라이트를 찾아 슬롯 이미지에 넣어주는 함수
-    private void SetIcon(string itemDataId, int itemCount)
+    private void SetIcon(string DataId, int Count)
     {
         // GameDataManager에서 해당 아이템 정보 받아옴
-        var itemData = GameDataManager.Instance.GetItemData(itemDataId);
-        if (itemData == null)
+        var itemData = GameDataManager.Instance.GetItemData(DataId);
+        if (itemData != null)
         {
-            Debug.LogWarning($"Item 데이터를 불러올 수 없습니다! 경로:{itemDataId}");
-            return;
-        }
+            // 아이템의 아이콘 경로 받아옴
+            string itemIconPath = itemData.IconPath;
+            if (itemIconPath != null)
+            {
+                // iconPath에 있는 Sprite 로드하고 로드 완료되면 Img_Icon 이미지에 넣자
+                //ResourceManager.Instance.LoadSprite(iconPath, (sprite) =>
+                //{
+                //    Img_Icon.sprite = sprite;
+                //});
 
-        // 아이템의 경로 받아옴
-        string iconPath = itemData.IconPath;
-        if(iconPath == null)
-        {
+
+                // 어드레서블 적용 -> 비동기로 바뀜
+                GameUtil.LoadAndSetSpriteImage(Img_Icon, itemIconPath).Forget();
+                Text_StackCount.text = $"{Count}";
+
+
+                //// 실제 이미지 파일 불러옴
+                //var sprite = GameUtil.LoadSpriteCanBeNull(iconPath);
+                //if (sprite == null)
+                //{
+                //    Debug.LogWarning($"Sprite를 불러올 수 없습니다! 경로:{iconPath}");
+                //    return;
+                //}
+
+                //Img_Icon.sprite = sprite;
+
+                return;
+
+            }
+
             Debug.LogWarning($"Item 데이터에 아이콘 경로가 존재하지 않습니다.");
-            return;
+
+        }
+        
+
+        var weaponData = GameDataManager.Instance.GetWeaponData(DataId);
+        if (weaponData != null)
+        {
+            string weaponiconPath = weaponData.IconPath;
+            if (weaponiconPath != null)
+            {
+                GameUtil.LoadAndSetSpriteImage(Img_Icon, weaponiconPath).Forget();
+                Text_StackCount.text = $"{Count}";
+
+                return;
+            }
+
+            Debug.LogWarning($"Weapon 데이터에 아이콘 경로가 존재하지 않습니다.");
         }
 
-        // iconPath에 있는 Sprite 로드하고 로드 완료되면 Img_Icon 이미지에 넣자
-        //ResourceManager.Instance.LoadSprite(iconPath, (sprite) =>
-        //{
-        //    Img_Icon.sprite = sprite;
-        //});
+        Debug.LogWarning($"Item/Weapon 데이터를 모두 찾을 수 없습니다! 경로:{DataId}");
 
-
-        // 어드레서블 적용 -> 비동기로 바뀜
-        GameUtil.LoadAndSetSpriteImage(Img_Icon, iconPath).Forget();
-
-
-        //// 실제 이미지 파일 불러옴
-        //var sprite = GameUtil.LoadSpriteCanBeNull(iconPath);
-        //if (sprite == null)
-        //{
-        //    Debug.LogWarning($"Sprite를 불러올 수 없습니다! 경로:{iconPath}");
-        //    return;
-        //}
-
-        //Img_Icon.sprite = sprite;
-
-        Text_StackCount.text = $"{itemCount}";
     }
-
 
     // 이 오브젝트가 비활성될 때
     private void OnDisable()
@@ -75,10 +92,10 @@ public class InventorySlotUI : MonoBehaviour
 
 
     // 슬롯이 생성된 후, 슬롯의 슬롯의 기본 정보(고유 번호)를 세팅하는 초기화 함수
-    public void InitSlot(int slotInstanceId, string itemDataId, int itemStackCount)
+    public void InitSlot(int slotInstanceId, string DataId, int StackCount)
     {
         SlotInstanceId = slotInstanceId;
-        SetIcon(itemDataId, itemStackCount);
+        SetIcon(DataId, StackCount);
     }
 
     public void OnClick_SelectItem()

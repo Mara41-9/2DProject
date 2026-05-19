@@ -2,16 +2,19 @@
   {
     "Id": "Weapon_Sword_1",
     "Name": "웰빙리아 기사검",
-    "Description": "웰빙리아 왕국의 기사단이 사용하는 특별한 검."
+    "Description": "웰빙리아 왕국의 기사단이 사용하는 특별한 검.",
+    "IconPath": "Icon/Icon_Weapon_Sword_1"
   },
   {
     "Id": "Weapon_Braclet_1",
     "Name": "마법팔찌",
-    "Description": "마법을 사용할 수 있는 팔찌"
+    "Description": "마법을 사용할 수 있는 팔찌",
+    "IconPath": null
   },
   {
     "Id": "Weapon_CoffeeCup_1",
     "Name": "커피",
-    "Description": "일순간 잉여가 될 수 있는 마법의 커피. 시공간을 분리시킨다."
+    "Description": "일순간 잉여가 될 수 있는 마법의 커피. 시공간을 분리시킨다.",
+    "IconPath": null
   }
 ]

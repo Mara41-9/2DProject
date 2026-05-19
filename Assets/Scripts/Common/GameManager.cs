@@ -18,6 +18,20 @@ public class GameManager : MonoBehaviour
     {
         // 게임 시작하자마자 자동으로 세이브 데이터 불러옴
         LoadSaveData();
+
+        var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
+        if(WeaponData == null)
+        {
+            Debug.LogWarning("기본 무기 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        if(_playerModel.WeaponList.Count == 0)
+        {
+            AddWeapon(WeaponData.Id, 1);
+            SaveData();
+        }
+        
     }
 
     // 현재 플레이 데이터를 저장하는 함수
@@ -74,9 +88,30 @@ public class GameManager : MonoBehaviour
         _playerModel.ItemList.Add(newItem);
     }
 
+    public void AddWeapon(string weaponDataId, int addItemCount)
+    {
+        // 저장할 때 고유값 ID를 부여하기 위해 사용 (고유 번호 생성)
+        long uniqueId = GameUtil.GenerateUniqueId();
+
+        // TODO : 우선 쉽게 사용할 수 있도록 중복 처리는 빼두었다. 습득할때마다 아이템이 하나씩 추가되도록 해두고
+        // 추후에 중복값은 StackCount가 다 찰때까지 누적해줄 수 있도록 로직을 추가하자
+        var newItem = new WeaponModel();
+        newItem.WeaponUniqueId = uniqueId;
+        newItem.WeaponDataId = weaponDataId;
+        newItem.WeaponStackCount = addItemCount;
+
+        _playerModel.WeaponList.Add(newItem);
+    }
+
     public List<ItemModel> GetPlayerItemList()
     {
         // _playerModel이 Private이므로 외부에서 ItemList를 받아올 수 있게 Get함수 사용
         return _playerModel.ItemList;
+    }
+
+    public List<WeaponModel> GetPlayerWeaponList()
+    {
+        // _playerModel이 Private이므로 외부에서 WeaponList를 받아올 수 있게 Get함수 사용
+        return _playerModel.WeaponList;
     }
 }

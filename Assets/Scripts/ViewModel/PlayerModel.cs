@@ -15,7 +15,7 @@ public class PlayerModel
     public Vector3 LastMapPosition;       // 마지막으로 있던 위치
 
     public List<ItemModel> ItemList = new List<ItemModel>();  // 플레이어가 가지고 있는 아이템 목록
-    public List<StageProgressModel> StagePogressList;   // 플레이어의 스테이지 진행 목록
+    public List<WeaponModel> WeaponList = new List<WeaponModel>();   // 플레이어가 가지고 있는 무기 목록
 
 }
 
@@ -28,13 +28,11 @@ public class ItemModel
     public int ItemStackCount;  // 아이템 개수
 }
 
-
-// 스테이지 진행 데이터를 담는 클래스
 [Serializable]
-public class StageProgressModel
+public class WeaponModel
 {
-    public string StageId;             // 스테이지 ID
-    public bool IsCleared;             // 클리어했는지, 안 했는지
-    public int BestScore;              // 최고점수
-    public int CollectedCoinCount;     // 수집한 코인 개수
+    public long WeaponUniqueId;
+    public string WeaponDataId;
+    public int WeaponStackCount;
 }
+
