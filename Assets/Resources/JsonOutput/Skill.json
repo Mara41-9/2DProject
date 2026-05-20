@@ -2,11 +2,13 @@
   {
     "Id": "skill_tomato_flare_01",
     "Name": "토마토플레어",
-    "Description": "뜨겁게 달아오른 화염 토마토를 던져 폭발을 일으킨다."
+    "Description": "뜨겁게 달아오른 화염 토마토를 던져 폭발을 일으킨다.",
+    "IconPath": "Icon/Icon_Skill_TomatoFlare_1"
   },
   {
     "Id": "skill_rotten_tomato_01",
     "Name": "썩은 토마토",
-    "Description": "썩은 토마토를 바닥에 던져 적에게 지속 피해를 입힌다."
+    "Description": "썩은 토마토를 바닥에 던져 적에게 지속 피해를 입힌다.",
+    "IconPath": "Icon/Icon_Skill_RottenTomato_1"
   }
 ]
