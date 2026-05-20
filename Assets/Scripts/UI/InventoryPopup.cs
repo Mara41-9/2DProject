@@ -141,6 +141,13 @@ public class InventoryPopup : UIBase
 
             Text_Name.text = weaponData.Name;
             Text_Description.text = weaponData.Description;
+
+            foreach(var selectedSlotKv in _slotList)
+            {
+                var selectedSlot = selectedSlotKv.Value;
+                var dataId = selectedSlot.GetSlotDataId();
+                selectedSlot.SetSelectedUI(slot.SlotDataId == dataId);
+            }
         }
         
     }

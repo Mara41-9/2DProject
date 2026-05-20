@@ -23,7 +23,10 @@ public class InventorySlotUI : MonoBehaviour
         Btn_Slot.BindOnClickButtonEvent(OnClick_SelectSlot);
     }
 
-
+    public string GetSlotDataId()
+    {
+        return SlotDataId;
+    }
 
     // 아이템/무기 ID 받아서 해당 그 아이템/무기의 아이콘 스프라이트를 찾아 슬롯 이미지에 넣어주는 함수
     private void SetIcon(string DataId, int Count)
@@ -110,8 +113,12 @@ public class InventorySlotUI : MonoBehaviour
 
     public void BindSlotSelectEvent(Action<int> onSelectEvent)
     {
-        OnSelectEvent = onSelectEvent;
+        OnSelectEvent = onSelectEvent;   // 이벤트 등록
     }
 
+    public void SetSelectedUI(bool isSelect)
+    {
+        Gobj_Selected.SetActive(isSelect);
+    }
     
 }
