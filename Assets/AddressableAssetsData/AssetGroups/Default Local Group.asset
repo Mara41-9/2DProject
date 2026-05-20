@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 39cd6216ebbb07641847da3e8e89a590
   m_SerializeEntries:
+  - m_GUID: 2b0909fa55159ca44b34528c9059b17d
+    m_Address: Icon/Icon_Skill_TomatoFlare_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4cfc25eea92831744a99a972be010656
     m_Address: Sound/GameIn_BGM_01
     m_ReadOnly: 0
@@ -62,6 +67,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e788976707f2a4048910dd957b17d95f
     m_Address: 2DPrefab/Harvest_Potato
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb1fa23f705bfbe429a6b52c7eb0e0eb
+    m_Address: Icon/Icon_Skill_RottenTomato_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
