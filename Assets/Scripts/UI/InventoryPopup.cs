@@ -51,7 +51,7 @@ public class InventoryPopup : UIBase
         Btn_WeaponCategory.BindOnClickButtonEvent(OnClick_WeaponCategory);
         Btn_ItemCategory.BindOnClickButtonEvent(OnClick_ItemCategory);
 
-        SetInventorySlotOnEnable();
+        SetInventorySlotOnEnable(EInventoryCategory.WeaponCategory);
 
     }
 
@@ -91,8 +91,10 @@ public class InventoryPopup : UIBase
         switch(category)
         {
             case EInventoryCategory.WeaponCategory:
+                SetInventorySlotOnEnable(category);
                 break;
             case EInventoryCategory.ItemCategory:
+                SetInventorySlotOnEnable(category);
                 break;
             default:
                 break;
@@ -100,7 +102,7 @@ public class InventoryPopup : UIBase
     }
 
     // 인벤토리 UI가 열릴 때 현재 플레이어 아이템을 기준으로 슬롯 생성
-    private void SetInventorySlotOnEnable()
+    private void SetInventorySlotOnEnable(EInventoryCategory curCategory)
     {
         // 기존 슬롯 초기화 -> 슬롯 중복 생성, UI 꼬임, 데이터 꼬임 방지
         if(_slotList.Count > 0)
@@ -114,39 +116,44 @@ public class InventoryPopup : UIBase
             _slotList.Clear();
         }
 
-        // 현재 플레이어가 가진 아이템 전체 가져오기
-        var itemList = GameManager.Instance.GetPlayerItemList();
-        if (itemList != null)
+        if (curCategory == EInventoryCategory.ItemCategory)
         {
-            // 아이템 하나당 슬롯 하나 생성
-            foreach (var itemModel in itemList)
+            // 현재 플레이어가 가진 아이템 전체 가져오기
+            var itemList = GameManager.Instance.GetPlayerItemList();
+            if (itemList != null)
             {
-                CreateSlot(itemModel.ItemDataId, itemModel.ItemStackCount);
+                // 아이템 하나당 슬롯 하나 생성
+                foreach (var itemModel in itemList)
+                {
+                    CreateSlot(itemModel.ItemDataId, itemModel.ItemStackCount, EInventoryCategory.ItemCategory);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("보유한 아이템이 없습니다!");
             }
         }
-        else
+        else if(curCategory == EInventoryCategory.WeaponCategory)
         {
-            Debug.LogWarning("보유한 아이템이 없습니다!");
-        }
-
-        var weaponList = GameManager.Instance.GetPlayerWeaponList();
-        if(weaponList != null)
-        {
-            // 무기 하나당 슬롯 하나 생성
-            foreach (var weaponModel in weaponList)
+            var weaponList = GameManager.Instance.GetPlayerWeaponList();
+            if (weaponList != null)
             {
-                CreateSlot(weaponModel.WeaponDataId, weaponModel.WeaponStackCount);
-            }
+                // 무기 하나당 슬롯 하나 생성
+                foreach (var weaponModel in weaponList)
+                {
+                    CreateSlot(weaponModel.WeaponDataId, weaponModel.WeaponStackCount, EInventoryCategory.WeaponCategory);
+                }
 
-        }
-        else
-        {
-            Debug.LogWarning("보유한 무기가 없습니다!");
+            }
+            else
+            {
+                Debug.LogWarning("보유한 무기가 없습니다!");
+            }
         }
             
     }
 
-    private void CreateSlot(string DataId, int StackCount)
+    private void CreateSlot(string DataId, int StackCount, EInventoryCategory curCategory)
     {
         // Prefab_Slot을 Transform_UISlotRoot 자식으로 생성
         var gObj = Instantiate(Prefab_Slot, Transform_UISlotRoot);
@@ -160,7 +167,7 @@ public class InventoryPopup : UIBase
         _generatedKey++;
 
         // 생성된 슬롯에 고유번호 넣어줌
-        slotComponent.InitSlot(_generatedKey, DataId, StackCount);
+        slotComponent.InitSlot(_generatedKey, DataId, StackCount, curCategory);
         // 슬롯 오브젝트 이름 바꿈 -> 하이어라키에서 보기 쉽게
         slotComponent.gameObject.name = $"InventorySlot : {slotComponent.SlotInstanceId}";
 
