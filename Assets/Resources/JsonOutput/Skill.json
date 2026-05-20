@@ -1,17 +1,12 @@
 [
   {
-    "Id": "skill_fireball_01",
-    "Name": "파이어볼",
-    "Description": "불로 된 구체를 만들어 날린다."
+    "Id": "skill_tomato_flare_01",
+    "Name": "토마토플레어",
+    "Description": "뜨겁게 달아오른 화염 토마토를 던져 폭발을 일으킨다."
   },
   {
-    "Id": "skill_sword_01",
-    "Name": "기사의 검격",
-    "Description": "강력한 검격으로 주변의 적을 베어낸다."
-  },
-  {
-    "Id": "skill_rest_coffee_01",
-    "Name": "커피 마시기",
-    "Description": "커피를 볶아 마신다. 모든 상태이상이 해제된다."
+    "Id": "skill_rotten_tomato_01",
+    "Name": "썩은 토마토",
+    "Description": "썩은 토마토를 바닥에 던져 적에게 지속 피해를 입힌다."
   }
 ]
