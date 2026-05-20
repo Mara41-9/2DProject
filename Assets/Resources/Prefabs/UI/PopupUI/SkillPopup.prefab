@@ -802,8 +802,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillPopup
   Prefab_Slot: {fileID: 5603668366840058126, guid: 3ac72b28f35f83842a049abf9a9a32d9, type: 3}
   Transform_UISlotRoot: {fileID: 3940284483160009188}
-  Button_CreateSlot: {fileID: 0}
-  Btn_ClosePopup: {fileID: 0}
+  Btn_ClosePopup: {fileID: 8317223318694034016}
+  Btn_BackClosePopup: {fileID: 1014728529659728109}
 --- !u!1 &6165973355440132022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2211,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971f5e0880af72a438e040d803d1a128, type: 3}
+--- !u!114 &1014728529659728109 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8767363604293352725, guid: 971f5e0880af72a438e040d803d1a128, type: 3}
+  m_PrefabInstance: {fileID: 8628585207030967800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c216c9870a64f4e8820543993666e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameUIButton
 --- !u!224 &8510367882902735220 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 118222756457931916, guid: 971f5e0880af72a438e040d803d1a128, type: 3}

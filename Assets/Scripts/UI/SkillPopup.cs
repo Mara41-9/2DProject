@@ -43,7 +43,7 @@ public class SkillPopup : UIBase
         if(gObj == null) return;
 
         // 자식 슬롯의 컴포넌트 가져오기 -> 위에 게임 오브젝트는 스크립트가 아직 아니기 때문에
-        var slotComponent = gObj.GetComponent<SlotUI>();
+        var slotComponent = gObj.GetComponent<SkillSlotUI>();
         if (slotComponent == null) return;
 
         _generatedKey++;
