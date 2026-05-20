@@ -5,6 +5,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum EInventoryCategory
+{
+    None = 0,
+    WeaponCategory,
+    ItemCategory
+}
+
 public class InventoryPopup : UIBase
 {
     [Header("동적 생성할 프리팹")]
@@ -22,10 +29,14 @@ public class InventoryPopup : UIBase
     [SerializeField] private TMP_Text Text_Name;
     [SerializeField] private TMP_Text Text_Description;
 
+    [Header("상단 카테고리")]
+    [SerializeField] private GameUIButton Btn_WeaponCategory;
+    [SerializeField] private GameUIButton Btn_ItemCategory;
+
     // 그 안에 있는 UI요소를 직접 하나하나 껐다 켰다 하는게 아니라, 그 레이아웃의 대표 오브젝트만 껐다 켰다 하는게 압도적으로 편함
     //[Header("부가 정보")]
     //[SerializeField] private GameObject Layout_SubInfoWeapon;
-    
+
 
     // 딕셔너리 - 생성된 슬롯들을 ID 번호와 SlotUI 컴포넌트로 저장
     private Dictionary<int, InventorySlotUI> _slotList = new Dictionary<int, InventorySlotUI>();
@@ -37,6 +48,8 @@ public class InventoryPopup : UIBase
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseUI);
         Btn_BackClose.BindOnClickButtonEvent(OnClick_CloseUI);
+        Btn_WeaponCategory.BindOnClickButtonEvent(OnClick_WeaponCategory);
+        Btn_ItemCategory.BindOnClickButtonEvent(OnClick_ItemCategory);
 
         SetInventorySlotOnEnable();
 
@@ -54,6 +67,35 @@ public class InventoryPopup : UIBase
             }
 
             _slotList.Clear();
+        }
+    }
+
+    private void OnClick_CloseUI()
+    {
+        UIManager.Instance.ClosePopupUI(UIType.InventoryPopup);
+        Debug.LogWarning("인벤토리 창이 닫혔습니다.");
+    }
+
+    public void OnClick_WeaponCategory()
+    {
+        SetInventoryLayoutByCategory(EInventoryCategory.WeaponCategory);
+    }
+
+    public void OnClick_ItemCategory()
+    {
+        SetInventoryLayoutByCategory(EInventoryCategory.ItemCategory);
+    }
+
+    private void SetInventoryLayoutByCategory(EInventoryCategory category)
+    {
+        switch(category)
+        {
+            case EInventoryCategory.WeaponCategory:
+                break;
+            case EInventoryCategory.ItemCategory:
+                break;
+            default:
+                break;
         }
     }
 
@@ -103,13 +145,6 @@ public class InventoryPopup : UIBase
         }
             
     }
-
-    private void OnClick_CloseUI()
-    {
-        UIManager.Instance.ClosePopupUI(UIType.InventoryPopup);
-        Debug.LogWarning("인벤토리 창이 닫혔습니다.");
-    }
-
 
     private void CreateSlot(string DataId, int StackCount)
     {

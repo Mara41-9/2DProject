@@ -937,8 +937,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4639593411642262383}
+  - component: {fileID: 3950090821210349029}
   m_Layer: 5
-  m_Name: Btn_Item
+  m_Name: Btn_ItemCategory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -964,6 +965,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 166.59998, y: 74.100006}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &3950090821210349029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762405633894481727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c216c9870a64f4e8820543993666e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameUIButton
+  Button_Base: {fileID: 7874708818269602514}
+  Image_Base: {fileID: 4490045109201860830}
+  Image_Text: {fileID: 0}
 --- !u!1 &4798202095091178082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1211,8 @@ MonoBehaviour:
   Img_SelectedSlot: {fileID: 5505914875554258847}
   Text_Name: {fileID: 1456598723373689369}
   Text_Description: {fileID: 1386103248085040097}
+  Btn_WeaponCategory: {fileID: 6211215133921618871}
+  Btn_ItemCategory: {fileID: 3950090821210349029}
 --- !u!1 &6165973355440132022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,8 +2186,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390621513114079639}
+  - component: {fileID: 6211215133921618871}
   m_Layer: 5
-  m_Name: Btn_Weapon
+  m_Name: Btn_WeaponCategory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2195,6 +2214,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 166.59998, y: 74.100006}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &6211215133921618871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824744820788027368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c216c9870a64f4e8820543993666e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameUIButton
+  Button_Base: {fileID: 2376900418781708673}
+  Image_Base: {fileID: 7822470979164075511}
+  Image_Text: {fileID: 0}
 --- !u!1 &8015876179444863465
 GameObject:
   m_ObjectHideFlags: 0
