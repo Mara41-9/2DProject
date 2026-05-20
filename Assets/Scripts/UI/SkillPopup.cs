@@ -31,11 +31,6 @@ public class SkillPopup : UIBase
         Debug.LogWarning("스킬 창이 닫혔습니다.");
     }
 
-    private void OnClick_CreateSlot()
-    {
-        CreateSlot();
-    }
-
     private void CreateSlot()
     {
         // Prefab_Slot을 Transform_UISlotRoot에 실체화 - 동적생성

@@ -4,16 +4,13 @@ using UnityEngine.UI;
 
 public class SkillSlotUI : MonoBehaviour
 {
-    // 슬롯에 표시할 숫자 텍스트
+    [Header("슬롯 기본 정보")]
     [SerializeField] private Text Text_StackCount;
+    [SerializeField] private Image Img_Icon;
+    [SerializeField] private Image Img_Frame;
+    [SerializeField] private GameUIButton Btn_Slot;
+    [SerializeField] private GameObject Gobj_Selected;
 
-    // 슬롯 버튼 (클릭 이벤트용)
-    [SerializeField] private GameUIButton Button_Slot;
-
-    // 클릭됐을 때 표시할 이미지
-    [SerializeField] private GameObject Click_Image;
-
-    // 슬롯 클릭 시 외부에 알려주는 이벤트 (int 값 전달)
     private event Action<int> OnSelectEvent;
 
     // 각 슬롯의 고유 번호(ID)
@@ -22,8 +19,9 @@ public class SkillSlotUI : MonoBehaviour
     private void OnEnable()
     {
         // 등록된 이벤트 함수가 있다면, 현재 슬롯의 번호(SlotInstanceId)를 전달하면서 호출
-        Button_Slot.BindOnClickButtonEvent(OnClick_SelectItem);
+        Btn_Slot.BindOnClickButtonEvent(OnClick_SelectItem);
     }
+
 
 
     private void OnClick_SelectItem()
