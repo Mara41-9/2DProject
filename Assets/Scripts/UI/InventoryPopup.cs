@@ -188,6 +188,8 @@ public class InventoryPopup : UIBase
         var itemData = GameDataManager.Instance.GetItemData(slot.SlotDataId);
         if (itemData != null)
         {
+            GameUtil.LoadAndSetSpriteImage(Img_SelectedSlot, itemData.IconPath).Forget();
+
             Text_Name.text = itemData.Name;
             Text_Description.text = itemData.Description;
 

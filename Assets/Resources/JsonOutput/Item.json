@@ -2,7 +2,7 @@
   {
     "Id": "Item_Potion_1",
     "Name": "물약",
-    "Description": "상자다. 딱히 의미가 있진 않다.",
+    "Description": "체력을 회복시켜주는 신비한 물약.",
     "ItemType": "Normal",
     "Grade": "Normal",
     "MaxStackCount": 20,
