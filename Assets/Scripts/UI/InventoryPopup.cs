@@ -55,6 +55,7 @@ public class InventoryPopup : UIBase
 
     }
 
+    // 인벤토리창을 닫을 때, 생성됐던 슬롯들 제거하고 딕셔너리 초기화
     private void OnDisable()
     {
         if(_slotList.Count > 0)
@@ -78,11 +79,13 @@ public class InventoryPopup : UIBase
 
     public void OnClick_WeaponCategory()
     {
+        ClearSelectedInfo();
         SetInventoryLayoutByCategory(EInventoryCategory.WeaponCategory);
     }
 
     public void OnClick_ItemCategory()
     {
+        ClearSelectedInfo();
         SetInventoryLayoutByCategory(EInventoryCategory.ItemCategory);
     }
 
@@ -101,7 +104,7 @@ public class InventoryPopup : UIBase
         }
     }
 
-    // 인벤토리 UI가 열릴 때 현재 플레이어 아이템을 기준으로 슬롯 생성
+    // 인벤토리 UI가 열릴 때 현재 플레이어 무기/아이템을 기준으로 슬롯 생성
     private void SetInventorySlotOnEnable(EInventoryCategory curCategory)
     {
         // 기존 슬롯 초기화 -> 슬롯 중복 생성, UI 꼬임, 데이터 꼬임 방지
@@ -178,9 +181,17 @@ public class InventoryPopup : UIBase
 
     }
 
+    private void ClearSelectedInfo()
+    {
+        Img_SelectedSlot.gameObject.SetActive(false);
+        Text_Name.text = "";
+        Text_Description.text = "";
+    }
+
     // 자식 슬롯이 클릭됐을 때 실행되는 함수
     private void OnChildSlotSelected(int selectedSlotInstanceId)
     {
+        Img_SelectedSlot.gameObject.SetActive(true);
         Debug.LogWarning($"자식 슬롯 {selectedSlotInstanceId} 선택됨!");
 
         var slot = _slotList[selectedSlotInstanceId];
