@@ -194,13 +194,14 @@ public class InventoryPopup : UIBase
     private void OnChildSlotSelected(int selectedSlotInstanceId)
     {
         Img_SelectedSlot.gameObject.SetActive(true);
-        Debug.LogWarning($"자식 슬롯 {selectedSlotInstanceId} 선택됨!");
 
         var slot = _slotList[selectedSlotInstanceId];
 
         var itemData = GameDataManager.Instance.GetItemData(slot.SlotDataId);
         if (itemData != null)
         {
+            Debug.LogWarning($"'{itemData.Name}'이(가) 선택됐다. 슬롯 고유 번호 : {selectedSlotInstanceId}");
+
             GameUtil.LoadAndSetSpriteImage(Img_SelectedSlot, itemData.IconPath).Forget();
 
             Text_Name.text = itemData.Name;
@@ -218,6 +219,8 @@ public class InventoryPopup : UIBase
         var weaponData = GameDataManager.Instance.GetWeaponData(slot.SlotDataId);
         if(weaponData != null)
         {
+            Debug.LogWarning($"'{weaponData.Name}'이(가) 선택됐다. 슬롯 고유 번호 : {selectedSlotInstanceId}");
+
             GameUtil.LoadAndSetSpriteImage(Img_SelectedSlot, weaponData.IconPath).Forget();
 
             Text_Name.text = weaponData.Name;

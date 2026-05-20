@@ -108,7 +108,6 @@ public class InventorySlotUI : MonoBehaviour
     public void OnClick_SelectSlot()
     {
         OnSelectEvent?.Invoke(SlotInstanceId);
-        Debug.Log($"{SlotInstanceId}눌러졌다");
     }
 
     public void BindSlotSelectEvent(Action<int> onSelectEvent)
