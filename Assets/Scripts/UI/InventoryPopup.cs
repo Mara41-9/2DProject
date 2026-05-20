@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class InventoryPopup : UIBase
 {
-    // 생성할 슬롯 오브젝트
-    [SerializeField] private GameObject Prefab_Slot;
+    [Header("동적 생성할 프리팹")]
+    [SerializeField] private GameObject Prefab_Slot;    // 생성할 슬롯 오브젝트
 
-    // 슬롯을 어디에 생성할 것인가
-    [SerializeField] private Transform Transform_UISlotRoot;
+    [Header("슬롯 리스트 영역")]
+    [SerializeField] private Transform Transform_UISlotRoot;   // 슬롯이 생성되는 곳
 
-    // 팝업창을 닫을 버튼 오브젝트
+    [Header("팝업창 닫기 버튼")]
     [SerializeField] private GameUIButton Btn_ClosePopup;
     [SerializeField] private GameUIButton Btn_BackClose;
 
@@ -21,6 +21,10 @@ public class InventoryPopup : UIBase
     [SerializeField] private Image Img_SelectedSlot;
     [SerializeField] private TMP_Text Text_Name;
     [SerializeField] private TMP_Text Text_Description;
+
+    // 그 안에 있는 UI요소를 직접 하나하나 껐다 켰다 하는게 아니라, 그 레이아웃의 대표 오브젝트만 껐다 켰다 하는게 압도적으로 편함
+    //[Header("부가 정보")]
+    //[SerializeField] private GameObject Layout_SubInfoWeapon;
     
 
     // 딕셔너리 - 생성된 슬롯들을 ID 번호와 SlotUI 컴포넌트로 저장

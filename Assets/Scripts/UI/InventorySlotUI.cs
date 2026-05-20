@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class InventorySlotUI : MonoBehaviour
 {
+    [Header("슬롯 기본 정보")]
     [SerializeField] private Text Text_StackCount;
-    [SerializeField] private GameUIButton Btn_Slot;
     [SerializeField] private Image Img_Icon;
     [SerializeField] private Image Img_Frame;
+    [SerializeField] private GameObject Gobj_Selected;   // 이미지가 아니라 게임오브젝트 -> 활성/비활성화 기능으로만 사용할거라서
+    [SerializeField] private GameUIButton Btn_Slot;
 
     // 슬롯 클릭 시 외부에 알려주는 이벤트 (int 값 전달)
     private event Action<int> OnSelectEvent;
