@@ -28,6 +28,7 @@ public class SkillData : GameDataBase
 {
     public string Name;
     public string Description;
+    public string IconPath;
 }
 
 [System.Serializable]

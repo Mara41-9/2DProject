@@ -18,7 +18,7 @@ public class PlayerModel
 
     public List<ItemModel> ItemList = new List<ItemModel>();  // 플레이어가 가지고 있는 아이템 목록
     public List<WeaponModel> WeaponList = new List<WeaponModel>();   // 플레이어가 가지고 있는 무기 목록
-    public List<SkillModel> SkillModelList = new List<SkillModel>();  // 플레이어가 가지고 있는 스킬 목록
+    public List<SkillModel> SkillList = new List<SkillModel>();  // 플레이어가 가지고 있는 스킬 목록
 
 }
 

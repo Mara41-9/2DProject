@@ -23,6 +23,8 @@ public class SkillPopup : UIBase
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseSkillPopup);
         Btn_BackClosePopup.BindOnClickButtonEvent(OnClick_CloseSkillPopup);
+
+        SetSkillSlotOnEnable();
     }
 
     public void OnClick_CloseSkillPopup()
@@ -31,7 +33,24 @@ public class SkillPopup : UIBase
         Debug.LogWarning("스킬 창이 닫혔습니다.");
     }
 
-    private void CreateSlot()
+    // 스킬팝업이 열릴 때 현재 플레이어가 가지고있는 스킬을 기준으로 슬롯 생성
+    private void SetSkillSlotOnEnable()
+    {
+        var skillList = GameManager.Instance.GetPlayerSkillList();
+        if(skillList != null)
+        {
+            foreach(var skillModel in skillList)
+            {
+                CreateSlot(skillModel.SkillDataId, skillModel.SkillStackCount);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("보유한 스킬이 없습니다!");
+        }
+    }
+
+    private void CreateSlot(string DataId, int StackCount)
     {
         // Prefab_Slot을 Transform_UISlotRoot에 실체화 - 동적생성
         var gObj = Instantiate(Prefab_Slot, Transform_UISlotRoot);
@@ -43,7 +62,7 @@ public class SkillPopup : UIBase
 
         _generatedKey++;
 
-        slotComponent.SlotInstanceId = _generatedKey;
+        slotComponent.InitSlot(_generatedKey, DataId, StackCount);
         slotComponent.gameObject.name = $"SkillSlot : {slotComponent.SlotInstanceId}";
 
         // 생성된 슬롯의 고유 번호(SlotInstanceId)를 Key로, 그 슬롯의 SlotSkillUI 컴포넌트를 Value로 해서 딕셔너리에 저장

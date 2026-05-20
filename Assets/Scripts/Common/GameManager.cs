@@ -42,6 +42,15 @@ public class GameManager : MonoBehaviour
         {
             AddItem(ItemData.Id, 1);
         }
+
+        var SkillDataList = GameDataManager.Instance.SkillDataList;
+        if(SkillDataList != null)
+        {
+            foreach(var skillData in SkillDataList)
+            {
+                AddSkill(skillData.Key);
+            }
+        }
         
     }
 
@@ -114,6 +123,21 @@ public class GameManager : MonoBehaviour
         _playerModel.WeaponList.Add(newItem);
     }
 
+    public void AddSkill(string skillDataId)
+    {
+        // 저장할 때 고유값 ID를 부여하기 위해 사용 (고유 번호 생성)
+        long uniqueId = GameUtil.GenerateUniqueId();
+
+        // TODO : 우선 쉽게 사용할 수 있도록 중복 처리는 빼두었다. 습득할때마다 아이템이 하나씩 추가되도록 해두고
+        // 추후에 중복값은 StackCount가 다 찰때까지 누적해줄 수 있도록 로직을 추가하자
+        var newItem = new SkillModel();
+        newItem.SkillUniqueId = uniqueId;
+        newItem.SkillDataId = skillDataId;
+        newItem.SkillStackCount = 1;
+
+        _playerModel.SkillList.Add(newItem);
+    }
+
     // 현재 장착 무기를 설정하자 -> 가져올땐 Get
     public void SetEquippedWeapon(string weaponDataId)
     {
@@ -149,5 +173,10 @@ public class GameManager : MonoBehaviour
     {
         // _playerModel이 Private이므로 외부에서 WeaponList를 받아올 수 있게 Get함수 사용
         return _playerModel.WeaponList;
+    }
+
+    public List<SkillModel> GetPlayerSkillList()
+    {
+        return _playerModel.SkillList;
     }
 }

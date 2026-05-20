@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,8 @@ public class SkillSlotUI : MonoBehaviour
     private event Action<int> OnSelectEvent;
 
     // 각 슬롯의 고유 번호(ID)
-    public int SlotInstanceId { get; set; }
+    public int SlotInstanceId { get; private set; }
+    public string SlotDataId { get; private set; }
 
     private void OnEnable()
     {
@@ -22,6 +24,38 @@ public class SkillSlotUI : MonoBehaviour
         Btn_Slot.BindOnClickButtonEvent(OnClick_SelectItem);
     }
 
+    // 스킬 ID 받아서 해당 그 스킬의 아이콘 스프라이트를 찾아 슬롯 이미지에 넣어주는 함수
+    private void SetIcon(string DataId, int Count)
+    {
+        var skillData = GameDataManager.Instance.GetSkill(DataId);
+        if(skillData != null)
+        {
+            string skillIconPath = skillData.IconPath;
+            if(skillIconPath != null)
+            {
+                GameUtil.LoadAndSetSpriteImage(Img_Icon, skillIconPath).Forget();
+                Text_StackCount.text = $"{Count}";
+
+                return;
+            }
+            else
+            {
+                Debug.LogWarning($"스킬 데이터의 IconPath가 존재하지 않습니다.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"스킬 데이터가 존재하지 않습니다.");
+        }
+
+    }
+
+    public void InitSlot(int slotInstanceId, string dataId, int StackCount)
+    {
+        SlotInstanceId = slotInstanceId;
+        SlotDataId = dataId;
+        SetIcon(dataId, StackCount);
+    }
 
 
     private void OnClick_SelectItem()
