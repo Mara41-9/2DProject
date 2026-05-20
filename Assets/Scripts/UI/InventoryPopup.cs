@@ -42,6 +42,21 @@ public class InventoryPopup : UIBase
 
     }
 
+    private void OnDisable()
+    {
+        if(_slotList.Count > 0)
+        {
+            foreach(var slotKv in _slotList)
+            {
+                var slot = slotKv.Value;
+                // 
+                DestroyImmediate(slot.gameObject);
+            }
+
+            _slotList.Clear();
+        }
+    }
+
     // 인벤토리 UI가 열릴 때 현재 플레이어 아이템을 기준으로 슬롯 생성
     private void SetInventorySlotOnEnable()
     {
