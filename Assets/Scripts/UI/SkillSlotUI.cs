@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SlotUI : MonoBehaviour
+public class SkillSlotUI : MonoBehaviour
 {
     // 슬롯에 표시할 숫자 텍스트
     [SerializeField] private Text Text_StackCount;

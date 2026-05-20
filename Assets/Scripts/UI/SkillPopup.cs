@@ -3,27 +3,26 @@ using UnityEngine;
 
 public class SkillPopup : UIBase
 {
-    // 생성할 슬롯 오브젝트
+    [Header("동적 생성할 프리팹")]
     [SerializeField] private GameObject Prefab_Slot;
 
-    // 슬롯을 어디에 생성할 것인가 - 위치
+    [Header("슬롯 리스트 영역")]
     [SerializeField] private Transform Transform_UISlotRoot;
 
-    // GameUIButton 타입의 Button_CreateSlot 변수를 인스펙터에서 직접 연결할 수 있도록
-    [SerializeField] private GameUIButton Button_CreateSlot;
-
+    [Header("팝업창 닫기 버튼")]
     [SerializeField] private GameUIButton Btn_ClosePopup;
+    [SerializeField] private GameUIButton Btn_BackClosePopup;
 
     // Key: int , Value: SlotSkillUI 컴포넌트 인 딕셔너리 선언
-    private Dictionary<int, SlotUI> _itemSlotList = new Dictionary<int, SlotUI>();
+    private Dictionary<int, SkillSlotUI> _itemSlotList = new Dictionary<int, SkillSlotUI>();
 
     private int _generatedKey = 0;
 
 
     private void OnEnable()
     {
-        Button_CreateSlot.BindOnClickButtonEvent(OnClick_CreateSlot);
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseSkillPopup);
+        Btn_BackClosePopup.BindOnClickButtonEvent(OnClick_CloseSkillPopup);
     }
 
     public void OnClick_CloseSkillPopup()

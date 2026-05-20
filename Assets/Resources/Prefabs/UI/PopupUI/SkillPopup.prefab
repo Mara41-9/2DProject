@@ -800,8 +800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e15fbe253b8464bb17e9f16b284dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillPopup
-  Prefab_Slot: {fileID: 0}
-  Transform_UISlotRoot: {fileID: 0}
+  Prefab_Slot: {fileID: 5603668366840058126, guid: 3ac72b28f35f83842a049abf9a9a32d9, type: 3}
+  Transform_UISlotRoot: {fileID: 3940284483160009188}
   Button_CreateSlot: {fileID: 0}
   Btn_ClosePopup: {fileID: 0}
 --- !u!1 &6165973355440132022
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\uC7A5\uCC29"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 83e2eab61b72067488d3634d3801ede2, type: 2}
   m_sharedMaterial: {fileID: -6659698661657601838, guid: 83e2eab61b72067488d3634d3801ede2, type: 2}
@@ -1480,8 +1480,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

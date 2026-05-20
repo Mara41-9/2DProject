@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 // 플레이어 전체 저장 데이터를 담는 클래스
@@ -17,6 +18,7 @@ public class PlayerModel
 
     public List<ItemModel> ItemList = new List<ItemModel>();  // 플레이어가 가지고 있는 아이템 목록
     public List<WeaponModel> WeaponList = new List<WeaponModel>();   // 플레이어가 가지고 있는 무기 목록
+    public List<SkillModel> SkillModelList = new List<SkillModel>();  // 플레이어가 가지고 있는 스킬 목록
 
 }
 
@@ -35,5 +37,13 @@ public class WeaponModel
     public long WeaponUniqueId;
     public string WeaponDataId;
     public int WeaponStackCount;
+}
+
+[Serializable]
+public class SkillModel
+{
+    public long SkillUniqueId;
+    public string SkillDataId;
+    public int SkillStackCount;
 }
 
