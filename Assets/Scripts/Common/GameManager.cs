@@ -30,6 +30,18 @@ public class GameManager : MonoBehaviour
         {
             AddWeapon(WeaponData.Id);
         }
+
+        var ItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
+        if(ItemData == null)
+        {
+            Debug.LogWarning("기본 아이템 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        if(_playerModel.ItemList.Count == 0)
+        {
+            AddItem(ItemData.Id, 1);
+        }
         
     }
 
