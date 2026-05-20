@@ -100,15 +100,6 @@ public class InventorySlotUI : MonoBehaviour
     // 슬롯이 생성된 후, 슬롯의 기본 정보(고유 번호)를 세팅하는 초기화 함수
     public void InitSlot(int slotInstanceId, string dataId, int StackCount, EInventoryCategory curCategory)
     {
-        if(curCategory == EInventoryCategory.WeaponCategory)
-        {
-
-        }
-        else if(curCategory == EInventoryCategory.ItemCategory)
-        {
-
-        }
-
         SlotInstanceId = slotInstanceId;
         SlotDataId = dataId;
         SetIcon(dataId, StackCount);

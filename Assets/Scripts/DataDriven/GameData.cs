@@ -49,6 +49,7 @@ public class CostumeData : GameDataBase
 public class ItemData : GameDataBase
 {
     public string Name;
+    public string Description;
     public string Grade;
     public int MaxStackCount;
     public int SellingPrice;
