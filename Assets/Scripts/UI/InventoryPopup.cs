@@ -189,6 +189,15 @@ public class InventoryPopup : UIBase
         if (itemData != null)
         {
             Text_Name.text = itemData.Name;
+            Text_Description.text = itemData.Description;
+
+            // 현재 클릭된 슬롯만 선택 상태로 만들고, 나머지 슬롯은 선택 해제
+            foreach (var selectedSlotKv in _slotList)
+            {
+                var selectedSlot = selectedSlotKv.Value;
+                var dataId = selectedSlot.GetSlotDataId();
+                selectedSlot.SetSelectedUI(slot.SlotDataId == dataId);
+            }
         }
 
         var weaponData = GameDataManager.Instance.GetWeaponData(slot.SlotDataId);
