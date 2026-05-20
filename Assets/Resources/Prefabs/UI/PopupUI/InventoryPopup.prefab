@@ -34,7 +34,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0.000030517578, y: 42}
-  m_SizeDelta: {x: 170, y: 65}
+  m_SizeDelta: {x: 120, y: 65}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &345269495241917652
 GameObject:
@@ -1213,6 +1213,7 @@ MonoBehaviour:
   Text_Description: {fileID: 1386103248085040097}
   Btn_WeaponCategory: {fileID: 6211215133921618871}
   Btn_ItemCategory: {fileID: 3950090821210349029}
+  Text_ActionButton: {fileID: 2134310255534761141}
 --- !u!1 &6165973355440132022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,7 +2295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC7A5\uCC29 / \uC0AC\uC6A9"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 83e2eab61b72067488d3634d3801ede2, type: 2}
   m_sharedMaterial: {fileID: -6659698661657601838, guid: 83e2eab61b72067488d3634d3801ede2, type: 2}

@@ -33,6 +33,9 @@ public class InventoryPopup : UIBase
     [SerializeField] private GameUIButton Btn_WeaponCategory;
     [SerializeField] private GameUIButton Btn_ItemCategory;
 
+    [Header("사용/장착 버튼")]
+    [SerializeField] private TMP_Text Text_ActionButton;
+
     // 그 안에 있는 UI요소를 직접 하나하나 껐다 켰다 하는게 아니라, 그 레이아웃의 대표 오브젝트만 껐다 켰다 하는게 압도적으로 편함
     //[Header("부가 정보")]
     //[SerializeField] private GameObject Layout_SubInfoWeapon;
@@ -52,7 +55,7 @@ public class InventoryPopup : UIBase
         Btn_ItemCategory.BindOnClickButtonEvent(OnClick_ItemCategory);
 
         SetInventorySlotOnEnable(EInventoryCategory.WeaponCategory);
-
+        Text_ActionButton.text = "장착";
     }
 
     // 인벤토리창을 닫을 때, 생성됐던 슬롯들 제거하고 딕셔너리 초기화
@@ -81,12 +84,14 @@ public class InventoryPopup : UIBase
     {
         ClearSelectedInfo();
         SetInventoryLayoutByCategory(EInventoryCategory.WeaponCategory);
+        Text_ActionButton.text = "장착";
     }
 
     public void OnClick_ItemCategory()
     {
         ClearSelectedInfo();
         SetInventoryLayoutByCategory(EInventoryCategory.ItemCategory);
+        Text_ActionButton.text = "사용";
     }
 
     private void SetInventoryLayoutByCategory(EInventoryCategory category)
