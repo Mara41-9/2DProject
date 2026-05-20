@@ -61,17 +61,7 @@ public class InventoryPopup : UIBase
     // 인벤토리창을 닫을 때, 생성됐던 슬롯들 제거하고 딕셔너리 초기화
     private void OnDisable()
     {
-        if(_slotList.Count > 0)
-        {
-            foreach(var slotKv in _slotList)
-            {
-                var slot = slotKv.Value;
-                // 
-                DestroyImmediate(slot.gameObject);
-            }
-
-            _slotList.Clear();
-        }
+        ClearSlotList();
     }
 
     private void OnClick_CloseUI()
@@ -113,16 +103,7 @@ public class InventoryPopup : UIBase
     private void SetInventorySlotOnEnable(EInventoryCategory curCategory)
     {
         // 기존 슬롯 초기화 -> 슬롯 중복 생성, UI 꼬임, 데이터 꼬임 방지
-        if(_slotList.Count > 0)
-        {
-            foreach(var slot in _slotList)
-            {
-                // DestroyImmediate: 즉시 삭제
-                DestroyImmediate(slot.Value.gameObject);
-            }
-
-            _slotList.Clear();
-        }
+        ClearSlotList();
 
         if (curCategory == EInventoryCategory.ItemCategory)
         {
@@ -191,6 +172,22 @@ public class InventoryPopup : UIBase
         Img_SelectedSlot.gameObject.SetActive(false);
         Text_Name.text = "";
         Text_Description.text = "";
+    }
+
+    private void ClearSlotList()
+    {
+        if (_slotList.Count > 0)
+        {
+            foreach (var slotKv in _slotList)
+            {
+                var slot = slotKv.Value;
+                DestroyImmediate(slot.gameObject);
+            }
+
+            _slotList.Clear();
+        }
+
+        _generatedKey = 0;
     }
 
     // 자식 슬롯이 클릭됐을 때 실행되는 함수
