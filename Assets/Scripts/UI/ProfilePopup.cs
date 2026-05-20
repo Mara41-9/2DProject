@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cysharp.Threading.Tasks;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,9 @@ public class ProfilePopup : UIBase
     [SerializeField] private GameUIButton Btn_ClosePopup;
     [SerializeField] private GameUIButton Btn_BackClose;
 
+    [Header("Image")]
+    [SerializeField] private Image Image_Weapon;
+
     private int _level = 0;
 
     private int _currentExp;
@@ -33,6 +37,8 @@ public class ProfilePopup : UIBase
         var playerExp = GameManager.Instance.GetPlayerExp();
         _currentExp = playerExp;
         Text_Exp.text = $"{_currentExp}";
+
+        RefreshEquippedWeapon();
 
         // IEnumerator를 매 프레임 체크해줘!
         // StartCoroutine(CoCloseSelf());
@@ -111,20 +117,20 @@ public class ProfilePopup : UIBase
 
 
         // 가지고 있는 무기 데이터 가져오기
-        if(myHero.UseWeaponId != string.Empty)
-        {
-            var weaponData = GameDataManager.Instance.GetWeaponData(myHero.UseWeaponId);
+        //if(myHero.UseWeaponId != string.Empty)
+        //{
+        //    var weaponData = GameDataManager.Instance.GetWeaponData(myHero.UseWeaponId);
 
-            if(weaponData != null)
-            {
-                dummyWeaponName = weaponData.Name;
-                dummyWeaponDesc = weaponData.Description;
-                Debug.Log($"로드된 캐릭터 무기: {dummyWeaponName} {dummyWeaponDesc}");
-                Text_WeaponName.text = dummyWeaponName;
-                Text_WeaponDesc.text = dummyWeaponDesc;
-            }
+        //    if(weaponData != null)
+        //    {
+        //        dummyWeaponName = weaponData.Name;
+        //        dummyWeaponDesc = weaponData.Description;
+        //        Debug.Log($"로드된 캐릭터 무기: {dummyWeaponName} {dummyWeaponDesc}");
+        //        Text_WeaponName.text = dummyWeaponName;
+        //        Text_WeaponDesc.text = dummyWeaponDesc;
+        //    }
             
-        }
+        //}
         
 
         //if (string.IsNullOrEmpty(myHero.UseWeaponId) == false)
@@ -135,6 +141,21 @@ public class ProfilePopup : UIBase
         //        Debug.Log($"로드된 캐릭터: {myHero.Name}는 사용무기로 {weaponData.Name}을 갖고 있다!");
         //    }
         //}
+    }
+
+    private void RefreshEquippedWeapon()
+    {
+        var equippedWeaponId = GameManager.Instance.GetEquippedWeapon();
+        if (equippedWeaponId == null) return;
+
+        var weaponData = GameDataManager.Instance.GetWeaponData(equippedWeaponId);
+        if (weaponData == null) return;
+
+        Text_WeaponName.text = weaponData.Name;
+        Text_WeaponDesc.text = weaponData.Description;
+
+        GameUtil.LoadAndSetSpriteImage(Image_Weapon, weaponData.IconPath).Forget();
+
     }
 
 

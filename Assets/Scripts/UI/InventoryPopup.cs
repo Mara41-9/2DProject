@@ -34,7 +34,8 @@ public class InventoryPopup : UIBase
     [SerializeField] private GameUIButton Btn_ItemCategory;
 
     [Header("사용/장착 버튼")]
-    [SerializeField] private TMP_Text Text_ActionButton;
+    [SerializeField] private TMP_Text Text_UseButton;
+    [SerializeField] private GameUIButton Btn_UseButton;
 
     // 그 안에 있는 UI요소를 직접 하나하나 껐다 켰다 하는게 아니라, 그 레이아웃의 대표 오브젝트만 껐다 켰다 하는게 압도적으로 편함
     //[Header("부가 정보")]
@@ -47,15 +48,18 @@ public class InventoryPopup : UIBase
     // 슬롯마다 고유 번호를 붙이기 위한 변수
     private int _generatedKey = 0;
 
+    private InventorySlotUI _selectedSlot;
+
     private void OnEnable()
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseUI);
         Btn_BackClose.BindOnClickButtonEvent(OnClick_CloseUI);
         Btn_WeaponCategory.BindOnClickButtonEvent(OnClick_WeaponCategory);
         Btn_ItemCategory.BindOnClickButtonEvent(OnClick_ItemCategory);
+        Btn_UseButton.BindOnClickButtonEvent(OnClick_UseButton);
 
         SetInventorySlotOnEnable(EInventoryCategory.WeaponCategory);
-        Text_ActionButton.text = "장착";
+        Text_UseButton.text = "장착";
     }
 
     // 인벤토리창을 닫을 때, 생성됐던 슬롯들 제거하고 딕셔너리 초기화
@@ -74,14 +78,19 @@ public class InventoryPopup : UIBase
     {
         ClearSelectedInfo();
         SetInventoryLayoutByCategory(EInventoryCategory.WeaponCategory);
-        Text_ActionButton.text = "장착";
+        Text_UseButton.text = "장착";
     }
 
     public void OnClick_ItemCategory()
     {
         ClearSelectedInfo();
         SetInventoryLayoutByCategory(EInventoryCategory.ItemCategory);
-        Text_ActionButton.text = "사용";
+        Text_UseButton.text = "사용";
+    }
+
+    public void OnClick_UseButton()
+    {
+        GameManager.Instance.SetEquippedWeapon(_selectedSlot.SlotDataId);
     }
 
     private void SetInventoryLayoutByCategory(EInventoryCategory category)
@@ -196,8 +205,9 @@ public class InventoryPopup : UIBase
         Img_SelectedSlot.gameObject.SetActive(true);
 
         var slot = _slotList[selectedSlotInstanceId];
+        _selectedSlot = slot;
 
-        var itemData = GameDataManager.Instance.GetItemData(slot.SlotDataId);
+        var itemData = GameDataManager.Instance.GetItemData(_selectedSlot.SlotDataId);
         if (itemData != null)
         {
             Debug.LogWarning($"'{itemData.Name}'이(가) 선택됐다. 슬롯 고유 번호 : {selectedSlotInstanceId}");
@@ -216,7 +226,7 @@ public class InventoryPopup : UIBase
             }
         }
 
-        var weaponData = GameDataManager.Instance.GetWeaponData(slot.SlotDataId);
+        var weaponData = GameDataManager.Instance.GetWeaponData(_selectedSlot.SlotDataId);
         if(weaponData != null)
         {
             Debug.LogWarning($"'{weaponData.Name}'이(가) 선택됐다. 슬롯 고유 번호 : {selectedSlotInstanceId}");

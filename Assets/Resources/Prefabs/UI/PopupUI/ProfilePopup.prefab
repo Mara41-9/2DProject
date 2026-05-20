@@ -496,6 +496,7 @@ MonoBehaviour:
   Text_Exp: {fileID: 5070109196590170560}
   Btn_ClosePopup: {fileID: 3747752795461753833}
   Btn_BackClose: {fileID: 1328634847009855591}
+  Image_Weapon: {fileID: 2995923538545290136}
 --- !u!1 &581587190803994933
 GameObject:
   m_ObjectHideFlags: 0

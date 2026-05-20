@@ -114,6 +114,31 @@ public class GameManager : MonoBehaviour
         _playerModel.WeaponList.Add(newItem);
     }
 
+    // 현재 장착 무기를 설정하자 -> 가져올땐 Get
+    public void SetEquippedWeapon(string weaponDataId)
+    {
+        if(string.IsNullOrEmpty(weaponDataId))
+        {
+            Debug.LogWarning("장착할 무기 ID가 없습니다.");
+            return;
+        }
+
+        var weaponData = GameDataManager.Instance.GetWeaponData(weaponDataId);
+        if(weaponData == null)
+        {
+            Debug.LogWarning("무기 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        _playerModel.EquippedWeaponDataId = weaponDataId;
+        Debug.LogWarning($"'{weaponData.Name}'무기가 장착되었습니다.");
+    }
+
+    public string GetEquippedWeapon()
+    {
+        return _playerModel.EquippedWeaponDataId;
+    }
+
     public List<ItemModel> GetPlayerItemList()
     {
         // _playerModel이 Private이므로 외부에서 ItemList를 받아올 수 있게 Get함수 사용
