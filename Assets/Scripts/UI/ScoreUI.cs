@@ -9,7 +9,7 @@ public class ScoreUI : MonoBehaviour
     {
         Text_CurrentScore.text = $"잡은 돼지 수 : {currentScore}";
 
-        GameManager.Instance.IncreasePlayerExp(10);
+        GameManager.Instance.IncreasePlayerExp(1);
         
 
         if(currentScore == 20)

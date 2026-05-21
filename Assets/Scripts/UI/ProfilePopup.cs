@@ -5,27 +5,34 @@ using UnityEngine.UI;
 
 public class ProfilePopup : UIBase
 {
-    [Header("Text")]
+    [Header("캐릭터")]
     [SerializeField] private Text Text_CharacterName;
     [SerializeField] private Text Text_CharacterDesc;
     [SerializeField] private Text Text_Level;
+
+    [Header("경험치")]
+    [SerializeField] private Text Text_Exp;
+    [SerializeField] private Image Image_ExpBarFill;
+
+    [Header("기술")]
+    [SerializeField] private Image Image_Skill;
     [SerializeField] private Text Text_SkillName;
     [SerializeField] private Text Text_SkillDesc;
+
+    [Header("무기")]
+    [SerializeField] private Image Image_Weapon;
     [SerializeField] private Text Text_WeaponName;
     [SerializeField] private Text Text_WeaponDesc;
-    [SerializeField] private Text Text_Exp;
 
-    [Header("Button")]
+    [Header("프로필창 닫기")]
     [SerializeField] private GameUIButton Btn_ClosePopup;
     [SerializeField] private GameUIButton Btn_BackClose;
 
-    [Header("Image")]
-    [SerializeField] private Image Image_Weapon;
-    [SerializeField] private Image Image_Skill;
 
     private int _level = 0;
 
     private int _currentExp;
+    private int _maxExp = 100;
 
     private void OnEnable()
     {
@@ -35,10 +42,7 @@ public class ProfilePopup : UIBase
         _level++;
         Text_Level.text = $"{_level}";
 
-        var playerExp = GameManager.Instance.GetPlayerExp();
-        _currentExp = playerExp;
-        Text_Exp.text = $"{_currentExp}";
-
+        RefreshExpBar();
         RefreshEquippedSkill();
         RefreshEquippedWeapon();
 
@@ -175,6 +179,16 @@ public class ProfilePopup : UIBase
         Text_SkillDesc.text = skillData.Description;
 
         GameUtil.LoadAndSetSpriteImage(Image_Skill, skillDataIconPath).Forget();
+    }
+
+    private void RefreshExpBar()
+    {
+        var playerExp = GameManager.Instance.GetPlayerExp();
+        _currentExp = playerExp;
+        Text_Exp.text = $"{_currentExp}";
+
+        float fillAmount = (float)_currentExp / _maxExp;
+        Image_ExpBarFill.fillAmount = fillAmount;
     }
 
 

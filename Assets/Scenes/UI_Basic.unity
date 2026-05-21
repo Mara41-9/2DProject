@@ -11646,7 +11646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eddcafa95b8364a9b02090b5418bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTestUI
-  SpawnSpot_Monster: {fileID: 0}
+  SpawnSpot_Monster: {fileID: 5589026067519837382}
   Btn_Exit: {fileID: 8033281831269961798}
   Btn_Inventory: {fileID: 4259944377108785050}
   Text_CurrentHp: {fileID: 7645562308874307531}

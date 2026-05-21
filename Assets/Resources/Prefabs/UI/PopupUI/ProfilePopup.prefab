@@ -489,15 +489,16 @@ MonoBehaviour:
   Text_CharacterName: {fileID: 458761878577094514}
   Text_CharacterDesc: {fileID: 6466319895778171365}
   Text_Level: {fileID: 4612906115753586937}
+  Text_Exp: {fileID: 5070109196590170560}
+  Image_ExpBarFill: {fileID: 2032761885054195997}
+  Image_Skill: {fileID: 273260757129875052}
   Text_SkillName: {fileID: 1334158131032587615}
   Text_SkillDesc: {fileID: 4612460508520791541}
+  Image_Weapon: {fileID: 2995923538545290136}
   Text_WeaponName: {fileID: 429151174995775108}
   Text_WeaponDesc: {fileID: 5402435789837712923}
-  Text_Exp: {fileID: 5070109196590170560}
   Btn_ClosePopup: {fileID: 3747752795461753833}
   Btn_BackClose: {fileID: 1328634847009855591}
-  Image_Weapon: {fileID: 2995923538545290136}
-  Image_Skill: {fileID: 273260757129875052}
 --- !u!1 &581587190803994933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,11 +3423,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 4f8e653bf1c0b054680c13a05741c202, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
