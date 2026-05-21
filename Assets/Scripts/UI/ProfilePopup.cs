@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +30,7 @@ public class ProfilePopup : UIBase
     [SerializeField] private GameUIButton Btn_BackClose;
 
 
-    private int _level = 0;
+    private int _level = 1;
 
     private int _currentExp;
     private int _maxExp = 100;
@@ -38,9 +39,6 @@ public class ProfilePopup : UIBase
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseProfilePopup);
         Btn_BackClose.BindOnClickButtonEvent(OnClick_CloseProfilePopup);
-
-        _level++;
-        Text_Level.text = $"{_level}";
 
         RefreshExpBar();
         RefreshEquippedSkill();
@@ -185,10 +183,22 @@ public class ProfilePopup : UIBase
     {
         var playerExp = GameManager.Instance.GetPlayerExp();
         _currentExp = playerExp;
+
+        if(_currentExp >= _maxExp)
+        {
+            _level++;
+            _currentExp = _currentExp - _maxExp;
+        }
+
+        Text_Level.text = $"{_level}";
         Text_Exp.text = $"{_currentExp}";
 
+        // 형변환을 하지 않으면 정수끼리의 나눗셈이라 소수점 버림
+        // 한쪽만 형변환해도 오케이
         float fillAmount = (float)_currentExp / _maxExp;
-        Image_ExpBarFill.fillAmount = fillAmount;
+        // 값을 0 ~ 1 사이로 강제로 제한
+        Image_ExpBarFill.fillAmount = Mathf.Clamp01(fillAmount);
+            
     }
 
 
