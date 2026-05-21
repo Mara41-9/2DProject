@@ -497,6 +497,7 @@ MonoBehaviour:
   Btn_ClosePopup: {fileID: 3747752795461753833}
   Btn_BackClose: {fileID: 1328634847009855591}
   Image_Weapon: {fileID: 2995923538545290136}
+  Image_Skill: {fileID: 273260757129875052}
 --- !u!1 &581587190803994933
 GameObject:
   m_ObjectHideFlags: 0

@@ -807,6 +807,7 @@ MonoBehaviour:
   Img_SelectedSlot: {fileID: 5505914875554258847}
   Text_SelectedSlotName: {fileID: 1456598723373689369}
   Text_SelectedSlotDesc: {fileID: 1386103248085040097}
+  Btn_EquipSkill: {fileID: 3634746915978532315}
 --- !u!1 &6165973355440132022
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class PlayerModel
     public string LastMapDataId;          // 마지막으로 있었던 맵의 ID
     public Vector3 LastMapPosition;       // 마지막으로 있던 위치
     public string EquippedWeaponDataId;   // 장착된 무기 데이터 ID
+    public string EquippedSkillDataId;    // 장착된 스킬 데이터 ID
 
     public List<ItemModel> ItemList = new List<ItemModel>();  // 플레이어가 가지고 있는 아이템 목록
     public List<WeaponModel> WeaponList = new List<WeaponModel>();   // 플레이어가 가지고 있는 무기 목록

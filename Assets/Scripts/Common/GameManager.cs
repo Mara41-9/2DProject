@@ -158,9 +158,33 @@ public class GameManager : MonoBehaviour
         Debug.LogWarning($"'{weaponData.Name}'무기가 장착되었습니다.");
     }
 
+    public void SetEquippedSkill(string skillDataId)
+    {
+        if(string.IsNullOrEmpty(skillDataId))
+        {
+            Debug.LogWarning("장착할 스킬 ID가 없습니다.");
+            return;
+        }
+
+        var skillData = GameDataManager.Instance.GetSkill(skillDataId);
+        if(skillData == null)
+        {
+            Debug.LogWarning("스킬 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        _playerModel.EquippedSkillDataId = skillDataId;
+        Debug.LogWarning($"'{skillData.Name}'스킬이 장착되었습니다.");
+    }
+
     public string GetEquippedWeapon()
     {
         return _playerModel.EquippedWeaponDataId;
+    }
+
+    public string GetEquippedSkill()
+    {
+        return _playerModel.EquippedSkillDataId;
     }
 
     public List<ItemModel> GetPlayerItemList()

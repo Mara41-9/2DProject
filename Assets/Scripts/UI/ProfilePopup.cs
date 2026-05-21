@@ -21,6 +21,7 @@ public class ProfilePopup : UIBase
 
     [Header("Image")]
     [SerializeField] private Image Image_Weapon;
+    [SerializeField] private Image Image_Skill;
 
     private int _level = 0;
 
@@ -38,6 +39,7 @@ public class ProfilePopup : UIBase
         _currentExp = playerExp;
         Text_Exp.text = $"{_currentExp}";
 
+        RefreshEquippedSkill();
         RefreshEquippedWeapon();
 
         // IEnumerator를 매 프레임 체크해줘!
@@ -89,31 +91,31 @@ public class ProfilePopup : UIBase
 
 
         // 가지고 있는 기술(스킬) 데이터 가져오기
-        if (myHero.SkillList != string.Empty)
-        {
-            string[] skillNameList = myHero.SkillList.Split(',');
-            foreach (string skillName in skillNameList)
-            {
-                var skillData = GameDataManager.Instance.GetSkill(skillName);
-                if (skillData != null)
-                {
-                    if (dummySkillName != string.Empty)
-                    {
-                        dummySkillName += ", ";
-                    }
+        //if (myHero.SkillList != string.Empty)
+        //{
+        //    string[] skillNameList = myHero.SkillList.Split(',');
+        //    foreach (string skillName in skillNameList)
+        //    {
+        //        var skillData = GameDataManager.Instance.GetSkill(skillName);
+        //        if (skillData != null)
+        //        {
+        //            if (dummySkillName != string.Empty)
+        //            {
+        //                dummySkillName += ", ";
+        //            }
 
-                    dummySkillName += skillData.Name;
-                    dummySkillDesc = skillData.Description;
+        //            dummySkillName += skillData.Name;
+        //            dummySkillDesc = skillData.Description;
 
 
-                }
+        //        }
 
-            }
+        //    }
 
-            Debug.Log($"로드된 캐릭터 스킬: {dummySkillName} {dummySkillDesc}");
-            Text_SkillName.text = dummySkillName;
-            Text_SkillDesc.text = dummySkillDesc;
-        }
+        //    Debug.Log($"로드된 캐릭터 스킬: {dummySkillName} {dummySkillDesc}");
+        //    Text_SkillName.text = dummySkillName;
+        //    Text_SkillDesc.text = dummySkillDesc;
+        //}
 
 
         // 가지고 있는 무기 데이터 가져오기
@@ -156,6 +158,23 @@ public class ProfilePopup : UIBase
 
         GameUtil.LoadAndSetSpriteImage(Image_Weapon, weaponData.IconPath).Forget();
 
+    }
+
+    private void RefreshEquippedSkill()
+    {
+        var equippedSkillId = GameManager.Instance.GetEquippedSkill();
+        if(equippedSkillId == null) return;
+
+        var skillData = GameDataManager.Instance.GetSkill(equippedSkillId);
+        if(skillData == null) return;
+
+        string skillDataIconPath = skillData.IconPath;
+        if(skillDataIconPath == null) return;
+
+        Text_SkillName.text = skillData.Name;
+        Text_SkillDesc.text = skillData.Description;
+
+        GameUtil.LoadAndSetSpriteImage(Image_Skill, skillDataIconPath).Forget();
     }
 
 

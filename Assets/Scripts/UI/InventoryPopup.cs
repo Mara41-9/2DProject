@@ -90,6 +90,12 @@ public class InventoryPopup : UIBase
 
     public void OnClick_UseButton()
     {
+        if(_selectedSlot == null)
+        {
+            Debug.LogWarning("선택된 슬롯이 존재하지 않습니다.");
+            return;
+        }
+
         GameManager.Instance.SetEquippedWeapon(_selectedSlot.SlotDataId);
     }
 

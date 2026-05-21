@@ -22,16 +22,22 @@ public class SkillPopup : UIBase
     [SerializeField] private TMP_Text Text_SelectedSlotName;
     [SerializeField] private TMP_Text Text_SelectedSlotDesc;
 
+    [Header("장착 버튼")]
+    [SerializeField] private GameUIButton Btn_EquipSkill;
+
     // Key: int , Value: SlotSkillUI 컴포넌트 인 딕셔너리 선언
     private Dictionary<int, SkillSlotUI> _skillSlotList = new Dictionary<int, SkillSlotUI>();
 
     private int _generatedKey = 0;
+
+    private SkillSlotUI _selectedSlot;
 
 
     private void OnEnable()
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseSkillPopup);
         Btn_BackClosePopup.BindOnClickButtonEvent(OnClick_CloseSkillPopup);
+        Btn_EquipSkill.BindOnClickButtonEvent(OnClick_UseSkillButton);
 
         SetSkillSlotOnEnable();
     }
@@ -46,6 +52,17 @@ public class SkillPopup : UIBase
     {
         UIManager.Instance.ClosePopupUI(UIType.SkillPopup);
         Debug.LogWarning("스킬 창이 닫혔습니다.");
+    }
+
+    public void OnClick_UseSkillButton()
+    {
+        if (_selectedSlot == null)
+        {
+            Debug.LogWarning("선택된 슬롯이 존재하지 않습니다.");
+            return;
+        }
+
+        GameManager.Instance.SetEquippedSkill(_selectedSlot.SlotDataId);
     }
 
     // 스킬팝업이 열릴 때 현재 플레이어가 가지고있는 스킬을 기준으로 슬롯 생성
@@ -110,10 +127,10 @@ public class SkillPopup : UIBase
 
     private void OnChildSlotSelected(int selectedSlotInstanceId)
     {
-        var slot = _skillSlotList[selectedSlotInstanceId];
-        if (slot == null) return;
+        _selectedSlot = _skillSlotList[selectedSlotInstanceId];
+        if (_selectedSlot == null) return;
 
-        var skillData = GameDataManager.Instance.GetSkill(slot.SlotDataId);
+        var skillData = GameDataManager.Instance.GetSkill(_selectedSlot.SlotDataId);
         if (skillData != null)
         {
             string skillDataIconPath = skillData.IconPath;
@@ -130,7 +147,7 @@ public class SkillPopup : UIBase
                 {
                     var selectedSlot = selectedSlotKv.Value;
                     var selectedSlotDataId = selectedSlot.GetSlotDataId();
-                    selectedSlot.SetSelectedUI(slot.SlotDataId == selectedSlotDataId);
+                    selectedSlot.SetSelectedUI(_selectedSlot.SlotDataId == selectedSlotDataId);
                 }
             }
             
