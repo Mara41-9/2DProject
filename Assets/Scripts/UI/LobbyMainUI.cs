@@ -16,7 +16,6 @@ public class LobbyMainUI : UIBase
     [Header("Layout_Right")]
     [SerializeField] private GameUIButton Btn_Skill;
     [SerializeField] private GameUIButton Btn_Inventory;
-    [SerializeField] private GameUIButton Btn_Quest;
 
     private void OnEnable()
     {
@@ -24,7 +23,6 @@ public class LobbyMainUI : UIBase
         Btn_Start.BindOnClickButtonEvent(OnClick_OpenGameView);
         Btn_Skill.BindOnClickButtonEvent(OnClick_OpenSKillPopup);
         Btn_Inventory.BindOnClickButtonEvent(OnClick_OpenInventory);
-        Btn_Quest.BindOnClickButtonEvent(OnClick_OpenQuest);
     }
 
     public void OnClick_OpenProfile()
@@ -51,11 +49,5 @@ public class LobbyMainUI : UIBase
         UIManager.Instance.OpenInventoryPopup();
         Debug.LogWarning("인벤토리 창이 열렸습니다.");
     }
-
-    public void OnClick_OpenQuest()
-    {
-        UIManager.Instance.OpenQuestPopup();
-        Debug.LogWarning("퀘스트 창이 열렸습니다.");
-    }
-
+   
 }
