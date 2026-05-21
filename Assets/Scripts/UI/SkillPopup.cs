@@ -35,6 +35,12 @@ public class SkillPopup : UIBase
         SetSkillSlotOnEnable();
     }
 
+    // 스킬팝업창이 닫힐때, 딕셔너리에 저장된 슬롯들 다 제거
+    private void OnDisable()
+    {
+        ClearSlotList();
+    }
+
     public void OnClick_CloseSkillPopup()
     {
         UIManager.Instance.ClosePopupUI(UIType.SkillPopup);
@@ -44,6 +50,8 @@ public class SkillPopup : UIBase
     // 스킬팝업이 열릴 때 현재 플레이어가 가지고있는 스킬을 기준으로 슬롯 생성
     private void SetSkillSlotOnEnable()
     {
+        ClearSlotList();
+
         var skillList = GameManager.Instance.GetPlayerSkillList();
         if(skillList != null)
         {
@@ -56,6 +64,26 @@ public class SkillPopup : UIBase
         {
             Debug.LogWarning("보유한 스킬이 없습니다!");
         }
+    }
+
+    private void ClearSlotList()
+    {
+        if(_skillSlotList.Count > 0)
+        {
+            foreach(var slotKv in _skillSlotList)
+            {
+                var slot = slotKv.Value;
+
+                // slot만 삭제하면 컴포넌트만 삭제됨. 아예 오브젝트 자체를 삭제해야함
+                // DestroyImmediate: 즉시 삭제 / Destroy: 프레임이 끝나면 삭제
+                DestroyImmediate(slot.gameObject); 
+            }
+
+            // 딕셔너리 안의 데이터를 비우자
+            _skillSlotList.Clear();
+        }
+
+        _generatedKey = 0;
     }
 
     private void CreateSlot(string DataId, int StackCount)
