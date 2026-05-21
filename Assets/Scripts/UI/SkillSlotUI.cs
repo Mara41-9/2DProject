@@ -19,6 +19,11 @@ public class SkillSlotUI : MonoBehaviour
     public int SlotInstanceId { get; private set; }
     public string SlotDataId { get; private set; }
 
+    public string GetSlotDataId()
+    {
+        return SlotDataId;
+    }
+
     private void OnEnable()
     {
         // 등록된 이벤트 함수가 있다면, 현재 슬롯의 번호(SlotInstanceId)를 전달하면서 호출
@@ -64,8 +69,6 @@ public class SkillSlotUI : MonoBehaviour
         // 부모(스킬팝업)한테 알려주자
         // OnSelectEvent에 연결된 함수가 null이 아니면, SlotInstanceId 값을 넘겨서 실행
         OnSelectEvent?.Invoke(SlotInstanceId);
-
-        Debug.Log($"{SlotInstanceId}이 눌러졌다");
     }
 
 
@@ -77,5 +80,10 @@ public class SkillSlotUI : MonoBehaviour
         // 외부(부모 객체)에서 전달받은 함수를 OnSelectEvent에 등록
         // 슬롯이 클릭될 때 그 함수가 실행
         OnSelectEvent = onSelectEvent;
+    }
+
+    public void SetSelectedUI(bool isSelect)
+    {
+        Gobj_Selected.SetActive(isSelect);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -109,8 +110,6 @@ public class SkillPopup : UIBase
 
     private void OnChildSlotSelected(int selectedSlotInstanceId)
     {
-        Debug.LogWarning($"자식 슬롯 {selectedSlotInstanceId} 선택됨!");
-
         var slot = _skillSlotList[selectedSlotInstanceId];
         if (slot == null) return;
 
@@ -120,10 +119,19 @@ public class SkillPopup : UIBase
             string skillDataIconPath = skillData.IconPath;
             if(skillDataIconPath != null)
             {
+                Debug.LogWarning($"'{skillData.Name}'이(가) 선택됐다. 슬롯 고유 번호 : {selectedSlotInstanceId}");
+
                 GameUtil.LoadAndSetSpriteImage(Img_SelectedSlot, skillDataIconPath).Forget();
 
                 Text_SelectedSlotName.text = skillData.Name;
                 Text_SelectedSlotDesc.text = skillData.Description;
+
+                foreach(var selectedSlotKv in _skillSlotList)
+                {
+                    var selectedSlot = selectedSlotKv.Value;
+                    var selectedSlotDataId = selectedSlot.GetSlotDataId();
+                    selectedSlot.SetSelectedUI(slot.SlotDataId == selectedSlotDataId);
+                }
             }
             
         }
