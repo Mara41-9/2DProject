@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 526af08d75c51174694f4d86a3c59515
+    m_Address: Icon/Icon_Skill_CrimsonShield_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55c9baf40d25fd449833cdec6bb3e7b9
     m_Address: Icon/Icon_Item_Potato
     m_ReadOnly: 0
@@ -52,6 +57,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7c09252a8c8ccb45af2fdf04ed794f1
     m_Address: Prefabs/2D/Enemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aae7e69b2a291954da423206905e90f4
+    m_Address: Icon/Icon_Skill_RedHeat_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
