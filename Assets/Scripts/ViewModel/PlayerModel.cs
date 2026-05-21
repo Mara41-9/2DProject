@@ -12,6 +12,7 @@ public class PlayerModel
 {
     public string PlayerName;             // 플레이어 이름
     public int PlayerTotalExp;            // 플레이어 총 경험치 -> 레벨 계산에 사용
+    public int PlayerLevel;               // 플레이어 레벨
     public string LastMapDataId;          // 마지막으로 있었던 맵의 ID
     public Vector3 LastMapPosition;       // 마지막으로 있던 위치
     public string EquippedWeaponDataId;   // 장착된 무기 데이터 ID

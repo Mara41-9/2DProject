@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
                 AddSkill(skillData.Key);
             }
         }
+
+        _playerModel.PlayerLevel = 1;
         
     }
 
@@ -89,6 +91,16 @@ public class GameManager : MonoBehaviour
         // 추후에 한곳에서 관리할 수 있게 익스텐션(확장메서드)으로 빼도 된다
         _playerModel.PlayerTotalExp += exp;
         Debug.LogWarning($"현재 누적 Exp: {_playerModel.PlayerTotalExp}");
+    }
+
+    public void IncreasePlayerLevel(int level)
+    {
+        _playerModel.PlayerLevel += level;
+    }
+
+    public int GetPlayerLevel()
+    {
+        return _playerModel.PlayerLevel;    
     }
 
     // 플레이어 인벤토리에 아이템 추가

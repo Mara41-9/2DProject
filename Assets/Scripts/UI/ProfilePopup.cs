@@ -186,7 +186,8 @@ public class ProfilePopup : UIBase
 
         if(_currentExp >= _maxExp)
         {
-            _level++;
+            GameManager.Instance.IncreasePlayerLevel(1);
+            _level = GameManager.Instance.GetPlayerLevel();
             _currentExp = _currentExp - _maxExp;
         }
 
