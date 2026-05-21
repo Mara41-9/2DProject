@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +61,7 @@ public class SkillSlotUI : MonoBehaviour
 
     private void OnClick_SelectItem()
     {
-        // 부모한테 알려주자
+        // 부모(스킬팝업)한테 알려주자
         // OnSelectEvent에 연결된 함수가 null이 아니면, SlotInstanceId 값을 넘겨서 실행
         OnSelectEvent?.Invoke(SlotInstanceId);
 
