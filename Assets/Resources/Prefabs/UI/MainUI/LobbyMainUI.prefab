@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.87169814, g: 0.87169814, b: 0.87169814, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -746,14 +746,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.827451, g: 0.7411765, b: 0.8037735, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b63a8545f5d2b9c41a682c4ef0a84d16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: beeacc65606db9e40983531e2ec5b5dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -776,18 +776,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NaraUIImageSequencer
   SpriteArray_Sprite:
-  - {fileID: 21300000, guid: b63a8545f5d2b9c41a682c4ef0a84d16, type: 3}
-  - {fileID: 21300000, guid: 289e8ba16dc143742b14cb54de62833c, type: 3}
-  - {fileID: 21300000, guid: 58e021fb0ab34c54ca3c552b2a05ec60, type: 3}
-  - {fileID: 21300000, guid: 4db0299aaed8a3c46aca6fe0beb9dcce, type: 3}
-  - {fileID: 21300000, guid: c849293f1f33ba949b7d776f36a5b535, type: 3}
-  - {fileID: 21300000, guid: 98ae24ceff6cfd741a7a0e44b1e46944, type: 3}
-  - {fileID: 21300000, guid: 72f8b0bee7272d14598429efdc432b35, type: 3}
-  - {fileID: 21300000, guid: 1ba734d4d28480845b9704866852ca72, type: 3}
-  - {fileID: 21300000, guid: e63c31ba1ec92344095af28e273d0266, type: 3}
-  - {fileID: 21300000, guid: 519fbc51e82f92945a064930448d755c, type: 3}
-  - {fileID: 21300000, guid: 5a9f7a9c9c58a7f4fa56d688ec23d81b, type: 3}
-  - {fileID: 21300000, guid: 9aa3197119e2877459062ae39b69bfdf, type: 3}
+  - {fileID: 21300000, guid: beeacc65606db9e40983531e2ec5b5dc, type: 3}
+  - {fileID: 21300000, guid: 0dcda48956ff3744e9e9cf88a62b8f6c, type: 3}
+  - {fileID: 21300000, guid: ab374ee77a633f84d84765c2ebf3639e, type: 3}
+  - {fileID: 21300000, guid: 84a88d648c560ed45b6a99265563b08a, type: 3}
+  - {fileID: 21300000, guid: c315862f69ef5ec4a98f71b9c96287c1, type: 3}
+  - {fileID: 21300000, guid: 68cac393004a8d643be7abfe6f9e5eef, type: 3}
+  - {fileID: 21300000, guid: 5a05f0fb827767a41aee9440a8372d3c, type: 3}
+  - {fileID: 21300000, guid: f166a0403d62a1d4ebeb9364195e3b55, type: 3}
+  - {fileID: 21300000, guid: 1b6fa0b93598d3d48a4ecb3d5387179b, type: 3}
+  - {fileID: 21300000, guid: 75e0bc2cccc31a146b7ca41e3d415625, type: 3}
+  - {fileID: 21300000, guid: e252fda8680227d419669e13918976b4, type: 3}
+  - {fileID: 21300000, guid: 1e84c78570f69f9499bef53db1e44e05, type: 3}
   _sequenceInterval: 0.35
   _isLoop: 1
 --- !u!1 &4345170260765125720
