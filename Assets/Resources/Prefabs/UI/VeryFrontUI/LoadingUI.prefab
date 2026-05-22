@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8378313776601772849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: -0.875}
-  m_SizeDelta: {x: 0, y: 31.429998}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.9, y: -0.875}
+  m_SizeDelta: {x: 848.7, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2852327242986931596
 CanvasRenderer:
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.3283019, g: 0.3283019, b: 0.3283019, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6170431623075755222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -179,10 +179,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8378313776601772849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.875}
-  m_SizeDelta: {x: 0, y: 31.429998}
+  m_SizeDelta: {x: 900, y: 91.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3670182686406089591
 CanvasRenderer:
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1770975853, guid: 7364a4590b0bc38428e39dd6dc8e7a65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf57c5fba440db1409b7699c5dc4167f, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -255,8 +255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 2.5500183, y: 0}
+  m_SizeDelta: {x: -25.499977, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2308808360541735560
 GameObject:
@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10.700012, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3099290501491369256
@@ -391,15 +391,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1dd241302be27814692dd37ecf568a22, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -463,10 +463,10 @@ MonoBehaviour:
   Slider_LoadingBar: {fileID: 1795652583531792784}
   Image_SliderColor: {fileID: 6029157235471433205}
   ColorArray_LoadingBar:
-  - {r: 0.71372557, g: 1, b: 0, a: 1}
-  - {r: 0, g: 0.9764706, b: 1, a: 1}
-  - {r: 0.6745098, g: 0, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0.3882353, a: 1}
+  - {r: 0.48651478, g: 0.6377357, b: 0.10949801, a: 1}
+  - {r: 0.040120948, g: 0.59419584, b: 0.6075471, a: 1}
+  - {r: 0.4837735, g: 0.070879236, b: 0.6830188, a: 1}
+  - {r: 0.6679245, g: 0.11972225, b: 0.33255386, a: 1}
 --- !u!1 &6950736071878889703
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,10 +502,10 @@ RectTransform:
   - {fileID: 2469569698450670246}
   m_Father: {fileID: 4732972826642444858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: -200, y: 60}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -412}
+  m_SizeDelta: {x: 900, y: 70}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1795652583531792784
 MonoBehaviour:
@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 6979279964302663977}
   - component: {fileID: 424804979380295300}
   - component: {fileID: 9022423267729664782}
-  - component: {fileID: 8292437674807111039}
+  - component: {fileID: 9188468107227066255}
   m_Layer: 5
   m_Name: ImgSeq_Handle
   m_TagString: Untagged
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8292437674807111039
+--- !u!114 &9188468107227066255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -679,9 +679,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8860093847879127706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ee6699ff570c743a82dd7bc06758ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f8e8e2b4e522644f8cb7936f9074b88, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIImageSequencer
+  m_EditorClassIdentifier: Assembly-CSharp::NaraUIImageSequencer
   SpriteArray_Sprite:
   - {fileID: 21300000, guid: daf25aa3eabd215408ca938fb4121353, type: 3}
   - {fileID: 21300000, guid: 49c4c87345eff2a4e86285f70bb659bf, type: 3}
