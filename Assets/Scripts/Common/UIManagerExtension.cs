@@ -160,6 +160,11 @@ public static partial class UIManagerExtension
         }
     }
 
+    public static void CloseSuccessPopup(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.SuccessPopup);
+    }
+
     public static void OpenGameOverPopup(this UIManager uiManager)
     {
         var uiBase = uiManager.OpenPopupUI(UIType.GameOverPopup);
@@ -168,5 +173,10 @@ public static partial class UIManagerExtension
             Debug.LogWarning($"UI가 생성되지 않았습니다");
             return;
         }
+    }
+
+    public static void CloseGameOverPopup(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.GameOverPopup);
     }
 }

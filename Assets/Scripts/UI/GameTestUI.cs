@@ -33,8 +33,9 @@ public class GameTestUI : MonoBehaviour
 
     private void OnClick_ExitButton()
     {
-        Debug.LogWarning("UI씬 메인UI로 이동합니다.");
-        SceneManager.LoadScene("UI_Basic");
+        Debug.LogWarning("로비메인UI로 이동합니다.");
+        UIManager.Instance.OpenLoadingUI();
+        UIManager.Instance.OpenLobbyMainUI();
     }
 
     public void PlayerHp(int currentHp)
