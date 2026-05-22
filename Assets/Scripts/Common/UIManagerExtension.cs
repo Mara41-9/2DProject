@@ -13,6 +13,7 @@ public enum UIRootType
 
 public enum UIType
 {
+    GameStartUI,
     LobbyMainUI,
     ProfilePopup,
     SkillPopup,
@@ -40,7 +41,17 @@ public static partial class UIManagerExtension
     public static void ShowStartupUIOnGameStart(this UIManager uiManager)
     {
         uiManager.OpenLoadingUI();
-        uiManager.OpenLobbyMainUI();
+        uiManager.OpenGameStartUI();
+    }
+
+    public static void OpenGameStartUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenMainUI(UIType.GameStartUI);
+        if(uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
     }
 
     public static void OpenLobbyMainUI(this UIManager uiManager)
