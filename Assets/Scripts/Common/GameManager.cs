@@ -89,6 +89,12 @@ public class GameManager : MonoBehaviour
 
         // 생성된 몬스터들 제거하기
         GameObjectManager.Instance.DestroyMonsterAll();
+
+        // 플레이어 HP 초기화하기
+        var player = GameDataManager.Instance.GetCharacterData("character_selly_01");
+        if (player == null) return;
+
+        _playerMovement.SetPlayerHp(player.Hp);
         
     }
 

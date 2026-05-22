@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _lookRight = true;
 
     private int _currentScore;
-    private int _currentHp;
+    public int _currentHp; //{ get; private set; }
 
     public Vector2 PlayerPosition { get; private set; }
 
@@ -123,6 +123,16 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerPosition = _playerPosition;
         return PlayerPosition;
+    }
+
+    public void SetPlayerHp(int playerHp)
+    {
+        _currentHp = playerHp;
+
+        if(_gameTestUI != null)
+        {
+            _gameTestUI.PlayerHp(_currentHp);
+        }
     }
 
     private void ChangePlayerState(EntityAnimState newState)
