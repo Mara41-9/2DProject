@@ -33,6 +33,7 @@ public class LobbyMainUI : UIBase
 
     public void OnClick_OpenGameView()
     {
+        UIManager.Instance.CloseGameStartUI();
         UIManager.Instance.CloseLobbyMainUI();
         UIManager.Instance.OpenLoadingUI();
         Debug.LogWarning("게임 화면으로 이동합니다.");

@@ -53,6 +53,11 @@ public static partial class UIManagerExtension
             return;
         }
     }
+    
+    public static void CloseGameStartUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.MainUI, UIType.GameStartUI);
+    }
 
     public static void OpenLobbyMainUI(this UIManager uiManager)
     {
