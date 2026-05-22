@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     // 현재 플레이 중인 데이터를 메모리에 들고 있는 변수
     private PlayerModel _playerModel = new PlayerModel();
+    [SerializeField] private PlayerMovement _playerMovement;
 
     private void Awake()
     {
@@ -76,6 +77,15 @@ public class GameManager : MonoBehaviour
     {
         // 저장 파일에서 읽어온 데이터를 현재 메모리 데이터로 넣기
         _playerModel = NetworkManager.Instance.RequestLoadSaveData();
+    }
+
+    public void RefreshGame()
+    {
+        var playerPosition = _playerMovement.GetPlayerPosition();
+        if (playerPosition == null) return;
+        
+        _playerMovement.transform.position = playerPosition;
+        
     }
 
     // 플레이어의 현재 총 Exp 가져오기

@@ -2837,7 +2837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &859656980
 Transform:
   m_ObjectHideFlags: 0
@@ -16458,11 +16458,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971359446500545805, guid: 9cce81978f7837a4e97b82b55786583e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.86
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 4971359446500545805, guid: 9cce81978f7837a4e97b82b55786583e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.48
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4971359446500545805, guid: 9cce81978f7837a4e97b82b55786583e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16522,6 +16522,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4971359446500545805, guid: 9cce81978f7837a4e97b82b55786583e, type: 3}
   m_PrefabInstance: {fileID: 3337308657818092428}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3337308657818092435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7699424164844391961, guid: 9cce81978f7837a4e97b82b55786583e, type: 3}
+  m_PrefabInstance: {fileID: 3337308657818092428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67797e57f3e8a4547a9f8d3a800b4cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!222 &3337987524759898168
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17723,7 +17734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &6798757182846863376
 GameObject:
   m_ObjectHideFlags: 0
@@ -18143,6 +18154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManagerContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 2842985844527250833, guid: 4be1f4fa4482081418e525e688380cef, type: 3}
+      propertyPath: _playerMovement
+      value: 
+      objectReference: {fileID: 3337308657818092435}
     - target: {fileID: 8727666721651082055, guid: 4be1f4fa4482081418e525e688380cef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.89141

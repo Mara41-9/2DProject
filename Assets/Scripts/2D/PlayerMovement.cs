@@ -7,6 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("플레이어의 위치")]
+    [SerializeField] private Vector2 _playerPosition = new Vector2(-17f, -1f);
+
     [Header("이동 설정")]
     [SerializeField] private float _moveSpeed = 8f;   // 움직임 속도
     [SerializeField] private float _jumpForce = 8f;  // 점프 힘
@@ -37,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
     private int _currentScore;
     private int _currentHp;
 
+    public Vector2 PlayerPosition { get; private set; }
+
     private HashSet<int> _hitMonsters = new HashSet<int>();   // 중복을 허용하지 않기 위해 HashSet 사용
 
     private void Awake()
@@ -50,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        this.transform.position = _playerPosition;
+
         var player = GameDataManager.Instance.GetCharacterData("character_selly_01");
         if (player == null)
         {
@@ -110,6 +117,12 @@ public class PlayerMovement : MonoBehaviour
         // Rigidbody 이동은 FixedUpdate 함수에서!
         Move();
         
+    }
+
+    public Vector2 GetPlayerPosition()
+    {
+        PlayerPosition = _playerPosition;
+        return PlayerPosition;
     }
 
     private void ChangePlayerState(EntityAnimState newState)
