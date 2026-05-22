@@ -171,4 +171,18 @@ public class GameObjectManager : MonoBehaviour
         }
 
     }
+
+    // 생성된 모든 몬스터를 제거하는 함수
+    public void DestroyMonsterAll()
+    {
+        foreach(var monsterKv in _monsterContainer)
+        {
+            var monster = monsterKv.Value;
+            if (monster == null) return;
+
+            Destroy(monster.gameObject);
+        }
+
+        _monsterContainer.Clear();
+    }
 }

@@ -81,10 +81,14 @@ public class GameManager : MonoBehaviour
 
     public void RefreshGame()
     {
+        // 플레이어 위치 초기화
         var playerPosition = _playerMovement.GetPlayerPosition();
         if (playerPosition == null) return;
         
         _playerMovement.transform.position = playerPosition;
+
+        // 생성된 몬스터들 제거하기
+        GameObjectManager.Instance.DestroyMonsterAll();
         
     }
 
