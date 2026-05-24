@@ -2,51 +2,28 @@
   {
     "Id": "Item_Potion_1",
     "Name": "물약",
-    "Description": "체력을 회복시켜주는 신비한 물약.",
-    "ItemType": "Normal",
+    "Description": "체력을 회복시켜주는 기본 물약 (HP +30)",
+    "ItemType": "Heal",
     "Grade": "Normal",
-    "MaxStackCount": 20,
-    "SellingPrice": 2000,
+    "MaxStackCount": 10,
     "IconPath": "Icon/Icon_Item_Potion_1"
   },
   {
-    "Id": "Item_Coin_1",
-    "Name": "화폐",
-    "Description": "지역에 나타나는 금화",
-    "ItemType": "Normal",
-    "Grade": "Legend",
-    "MaxStackCount": 1000,
-    "SellingPrice": 1000,
-    "IconPath": "Icon/Icon_Item_Coin_1"
+    "Id": "Item_CarrotSmoothy_1",
+    "Name": "당근 스무디",
+    "Description": "신선한 당근을 갈아 만든 건강 스무디 (HP + 50)",
+    "ItemType": "Heal",
+    "Grade": "Rare",
+    "MaxStackCount": 7,
+    "IconPath": "Icon/Icon_Item_CarrotSmoothy_1"
   },
   {
-    "Id": "Item_Sword_1",
-    "Name": "검",
-    "Description": "착용하면 공격력이 강해진다.",
-    "ItemType": "Equipment",
+    "Id": "Item_TomatoJuice_1",
+    "Name": "토마토 주스",
+    "Description": "잘 익은 토마토를 담은 새콤한 주스 (HP +70)",
+    "ItemType": "Heal",
     "Grade": "Epic",
-    "MaxStackCount": 1,
-    "SellingPrice": 4000,
-    "IconPath": "Icon/Icon_Item_Sword_1"
-  },
-  {
-    "Id": "Item_Corn_1",
-    "Name": "옥수수",
-    "Description": null,
-    "ItemType": null,
-    "Grade": "Normal",
-    "MaxStackCount": 100,
-    "SellingPrice": 20,
-    "IconPath": "Icon/Icon_Item_Corn"
-  },
-  {
-    "Id": "Item_Potato_1",
-    "Name": "감자",
-    "Description": null,
-    "ItemType": null,
-    "Grade": "Normal",
-    "MaxStackCount": 100,
-    "SellingPrice": 20,
-    "IconPath": "Icon/Icon_Item_Potato"
+    "MaxStackCount": 3,
+    "IconPath": "Icon/Icon_Item_TomatoJuice_1"
   }
 ]
