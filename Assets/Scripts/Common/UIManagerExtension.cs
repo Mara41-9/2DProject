@@ -19,6 +19,7 @@ public enum UIType
     SkillPopup,
     QuestPopup,
     InventoryPopup,
+    GameViewUI,
     LoadingUI,
     DialogueUI,
     SuccessPopup,
@@ -133,6 +134,21 @@ public static partial class UIManagerExtension
     public static void CloseLoadingUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.VeryFrontUI, UIType.LoadingUI);
+    }
+
+    public static void OpenGameViewUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenContentUI(UIType.GameViewUI);
+        if( uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseGameViewUI(this UIManager uiManager)
+    {
+        uiManager.CloseContentUI(UIType.GameViewUI);
     }
 
     public static void OpenDialogueUI(this UIManager uiManager, string startDialogueId)

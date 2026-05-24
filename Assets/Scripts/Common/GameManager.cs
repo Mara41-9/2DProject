@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        // 게임 시작하자마자 자동으로 세이브 데이터 불러옴
+        LoadSaveData();
+
         var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
         if(WeaponData == null)
         {
@@ -49,9 +52,6 @@ public class GameManager : MonoBehaviour
                 AddSkill(skillData.Key);
             }
         }
-
-        // 게임 시작하자마자 자동으로 세이브 데이터 불러옴
-        LoadSaveData();
 
     }
 

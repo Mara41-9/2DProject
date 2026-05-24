@@ -32,7 +32,6 @@ public class SkillPopup : UIBase
 
     private SkillSlotUI _selectedSlot;
 
-
     private void OnEnable()
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseSkillPopup);
@@ -82,6 +81,8 @@ public class SkillPopup : UIBase
         {
             Debug.LogWarning("보유한 스킬이 없습니다!");
         }
+
+        
     }
 
     private void ClearSlotList()
