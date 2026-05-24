@@ -7,6 +7,7 @@ public class GameViewUI : MonoBehaviour
     [SerializeField] private TMP_Text Text_PlayerName;
     [SerializeField] private TMP_Text Text_PlayerLevel;
 
+
     public void Start()
     {
         PlayerInfo();

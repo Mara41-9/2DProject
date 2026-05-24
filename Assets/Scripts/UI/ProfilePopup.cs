@@ -27,9 +27,6 @@ public class ProfilePopup : UIBase
     [SerializeField] private GameUIButton Btn_ClosePopup;
     [SerializeField] private GameUIButton Btn_BackClose;
 
-
-    private int _level = 1;
-
     private int _currentExp;
     private int _maxExp = 100;
 
@@ -182,14 +179,15 @@ public class ProfilePopup : UIBase
         var playerExp = GameManager.Instance.GetPlayerExp();
         _currentExp = playerExp;
 
+        var level = GameManager.Instance.GetPlayerLevel();
+        
         if(_currentExp >= _maxExp)
         {
             GameManager.Instance.IncreasePlayerLevel(1);
-            _level = GameManager.Instance.GetPlayerLevel();
             _currentExp = _currentExp - _maxExp;
         }
 
-        Text_Level.text = $"{_level}";
+        Text_Level.text = $"{level}";
         Text_Exp.text = $"{_currentExp}";
 
         // 형변환을 하지 않으면 정수끼리의 나눗셈이라 소수점 버림
