@@ -12,14 +12,24 @@ public class GameViewUI : UIBase
     [Header("스킬")]
     [SerializeField] private Image Img_Skill;
 
+    [Header("일시정지")]
+    [SerializeField] private GameUIButton Btn_Pause;
+
     private void OnEnable()
     {
         RefreshEquippedSkill();
+
+        Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
     }
 
     private void Start()
     {
         PlayerInfo();
+    }
+
+    private void OnClick_PauseButton()
+    {
+        UIManager.Instance.OpenPausePopup();
     }
 
     private void PlayerInfo()

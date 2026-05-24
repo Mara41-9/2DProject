@@ -20,6 +20,7 @@ public enum UIType
     QuestPopup,
     InventoryPopup,
     GameViewUI,
+    PausePopup,
     LoadingUI,
     DialogueUI,
     SuccessPopup,
@@ -149,6 +150,21 @@ public static partial class UIManagerExtension
     public static void CloseGameViewUI(this UIManager uiManager)
     {
         uiManager.CloseContentUI(UIType.GameViewUI);
+    }
+
+    public static void OpenPausePopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.PausePopup);
+        if(uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void ClosePausePopup(this UIManager uiManager)
+    {
+        uiManager.ClosePopupUI(UIType.PausePopup);
     }
 
     public static void OpenDialogueUI(this UIManager uiManager, string startDialogueId)
