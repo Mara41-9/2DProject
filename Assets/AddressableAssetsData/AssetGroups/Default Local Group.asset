@@ -35,11 +35,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 55d00ba520c035f4ab6e03f81d70eb6e
-    m_Address: Icon/Icon_Weapon_Sword_1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5aca81014245379489e3eb252a4a68d8
     m_Address: Icon/Icon_Skill_RottenTomato_1
     m_ReadOnly: 0
@@ -47,6 +42,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 63dbae4b37e852e429fac61daa442f2d
     m_Address: 2DPrefab/Harvest_Corn
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6547fe831fd72b54c8907ea4568c7899
+    m_Address: Icon/Icon_Weapon_Sword_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
