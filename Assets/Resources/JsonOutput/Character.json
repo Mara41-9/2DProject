@@ -1,9 +1,8 @@
 [
   {
-    "Id": "character_selly_01",
+    "Id": "Character_Toto_01",
     "Name": "토토",
     "Description": "웰빙리아국의 왕자 루이를 구하기 위해<nl>위험한 모험에 나선 여전사.",
-    "BasicCostumeId": "Costume_03",
     "Hp": 100
   }
 ]
