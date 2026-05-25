@@ -20,17 +20,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2b0909fa55159ca44b34528c9059b17d
-    m_Address: Icon/Icon_Skill_TomatoFlare_1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4cfc25eea92831744a99a972be010656
     m_Address: Sound/GameIn_BGM_01
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 526af08d75c51174694f4d86a3c59515
+  - m_GUID: 5282d567daabff44db4f140263824742
     m_Address: Icon/Icon_Skill_CrimsonShield_1
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -42,6 +37,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55d00ba520c035f4ab6e03f81d70eb6e
     m_Address: Icon/Icon_Weapon_Sword_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5aca81014245379489e3eb252a4a68d8
+    m_Address: Icon/Icon_Skill_RottenTomato_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: aae7e69b2a291954da423206905e90f4
+  - m_GUID: b35c263764b591246afb0096c070779d
     m_Address: Icon/Icon_Skill_RedHeat_1
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -80,8 +80,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fb1fa23f705bfbe429a6b52c7eb0e0eb
-    m_Address: Icon/Icon_Skill_RottenTomato_1
+  - m_GUID: e7c951672f8845846be6fb10129b563c
+    m_Address: Icon/Icon_Skill_TomatoFlare_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
