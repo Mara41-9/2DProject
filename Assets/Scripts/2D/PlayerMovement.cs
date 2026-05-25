@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("이동 설정")]
     [SerializeField] private float _moveSpeed = 8f;   // 움직임 속도
-    [SerializeField] private float _jumpForce = 8f;  // 점프 힘
+    [SerializeField] private float _jumpForce = 7f;  // 점프 힘
 
     // 지면 체크를 안 하면 적, 아이템 등도 바닥으로 인식할 수 있음!
     [Header("지면 체크 설정")]
