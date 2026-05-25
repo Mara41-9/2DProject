@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 99f0c4e2499d0284983ab22669c8614b
+guid: 26297bce18989694193e48a5ba570262
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Toto_Run_4_0
+      name: Toto_Run_2_removed_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 595
-        width: 231
-        height: 262
+        x: 54
+        y: 605
+        width: 226
+        height: 234
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,130 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39ab61dbb7a6c0f4392db651396a1964
-      internalID: -169015984
+      spriteID: 786e26d84489aab41aa95af3ad02a1fd
+      internalID: 1054536144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Toto_Run_4_1
-      rect:
-        serializedVersion: 2
-        x: 373
-        y: 596
-        width: 227
-        height: 261
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea675f428f85ef34eafc767aa0849326
-      internalID: 1976579474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Toto_Run_4_2
-      rect:
-        serializedVersion: 2
-        x: 664
-        y: 595
-        width: 225
-        height: 262
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c29673ebbeb92f49a11e65e505fd885
-      internalID: 1988889924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Toto_Run_4_3
-      rect:
-        serializedVersion: 2
-        x: 967
-        y: 591
-        width: 225
-        height: 266
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e75a046ea8cc7c9408090474c11115d6
-      internalID: -1660800944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Toto_Run_4_4
-      rect:
-        serializedVersion: 2
-        x: 1252
-        y: 596
-        width: 225
-        height: 261
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a89ab96502ddfe945b4c6ed3678c3d54
-      internalID: -1623646923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Toto_Run_4_5
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 186
-        width: 228
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f89ea083d209b294bb63cc216a1f4d37
-      internalID: -842566417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Toto_Run_4_6
+      name: Toto_Run_2_removed_1
       rect:
         serializedVersion: 2
         x: 374
-        y: 178
+        y: 607
         width: 226
-        height: 263
+        height: 234
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8c114c11bc376a4f8e82942bcd7dad2
-      internalID: 1758050831
+      spriteID: aed471b3e3b03f944aa98661140f314e
+      internalID: 254135721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Toto_Run_4_7
+      name: Toto_Run_2_removed_2
       rect:
         serializedVersion: 2
-        x: 665
-        y: 178
+        x: 700
+        y: 605
         width: 223
-        height: 264
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 312d249b91980e741b41d826f7d043fc
-      internalID: 1395682564
+      spriteID: 9cf45d82e37ffe548995bf85dd2e700a
+      internalID: -291698058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Toto_Run_4_8
+      name: Toto_Run_2_removed_3
       rect:
         serializedVersion: 2
-        x: 967
-        y: 184
-        width: 225
-        height: 259
+        x: 1026
+        y: 607
+        width: 224
+        height: 233
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fcedf556e792fc45bfb51b1d0b5f9dd
-      internalID: -1273650267
+      spriteID: 6b0c63730f58e6e4788b32b0dbc0abf9
+      internalID: -1934255360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Toto_Run_4_9
+      name: Toto_Run_2_removed_4
       rect:
         serializedVersion: 2
-        x: 1252
-        y: 180
-        width: 225
-        height: 262
+        x: 1354
+        y: 607
+        width: 224
+        height: 233
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,8 +213,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc88a4785f1b2247ac456db83f1cbf5
-      internalID: 2141179669
+      spriteID: f417f59b9ac6c0c4aa83c8a32f91513b
+      internalID: 713413402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Toto_Run_2_removed_5
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 155
+        width: 226
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd552b28778ad24295e1da095359e07
+      internalID: 767251819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Toto_Run_2_removed_6
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 155
+        width: 226
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e763b3707ef1ba418fc3aa04c06b23b
+      internalID: -3332765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Toto_Run_2_removed_7
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 153
+        width: 224
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0305c87eda7399643b876550aa4aa061
+      internalID: 1034104360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Toto_Run_2_removed_8
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 155
+        width: 224
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f49fb71a3dc84041879937037224094
+      internalID: 2102967948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Toto_Run_2_removed_9
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 155
+        width: 224
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba6324e27b54404e843a46dde90eed7
+      internalID: 1928550525
       vertices: []
       indices: 
       edges: []
@@ -333,7 +333,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 82a7e42c037e44f44ba6b31077d8554a
+    spriteID: 58ead28fbfe051144b54021ad82a5158
     internalID: 0
     vertices: []
     indices: 
@@ -345,16 +345,16 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Toto_Run_4_0: -169015984
-      Toto_Run_4_1: 1976579474
-      Toto_Run_4_2: 1988889924
-      Toto_Run_4_3: -1660800944
-      Toto_Run_4_4: -1623646923
-      Toto_Run_4_5: -842566417
-      Toto_Run_4_6: 1758050831
-      Toto_Run_4_7: 1395682564
-      Toto_Run_4_8: -1273650267
-      Toto_Run_4_9: 2141179669
+      Toto_Run_2_removed_0: 1054536144
+      Toto_Run_2_removed_1: 254135721
+      Toto_Run_2_removed_2: -291698058
+      Toto_Run_2_removed_3: -1934255360
+      Toto_Run_2_removed_4: 713413402
+      Toto_Run_2_removed_5: 767251819
+      Toto_Run_2_removed_6: -3332765
+      Toto_Run_2_removed_7: 1034104360
+      Toto_Run_2_removed_8: 2102967948
+      Toto_Run_2_removed_9: 1928550525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
