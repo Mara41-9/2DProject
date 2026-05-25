@@ -55,7 +55,7 @@ public class ProfilePopup : UIBase
     {
         GameUtil.LoadFullData();
 
-        var myHero = GameDataManager.Instance.GetCharacterData("character_selly_01");
+        var myHero = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
 
         // 캐릭터 이름 출력하기
         if (myHero != null)

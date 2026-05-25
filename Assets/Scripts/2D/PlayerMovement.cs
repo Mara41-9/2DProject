@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     {
         this.transform.position = _playerPosition;
 
-        var player = GameDataManager.Instance.GetCharacterData("character_selly_01");
+        var player = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
         if (player == null)
         {
             return;

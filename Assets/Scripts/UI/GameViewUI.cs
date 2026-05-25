@@ -34,7 +34,7 @@ public class GameViewUI : UIBase
 
     private void PlayerInfo()
     {
-        var player = GameDataManager.Instance.GetCharacterData("character_selly_01");
+        var player = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
         if (player == null) return;
 
         Text_PlayerName.text = player.Name;
