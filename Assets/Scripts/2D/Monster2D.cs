@@ -2,9 +2,10 @@
 
 public class Monster2D : MonoBehaviour
 {
-    [SerializeField] public int _monsterInstanceId;
-    [SerializeField] private string _monsterDataId;
     [SerializeField] private string _monsterName;
+
+    private int _monsterInstanceId;
+    private string _monsterDataId;
 
     [SerializeField] private SpriteRenderer SpriteRenderer_Monster;
 
