@@ -1165,7 +1165,7 @@ MonoBehaviour:
   Image_UseSkill: {fileID: 2843089463759631528}
   Btn_Pause: {fileID: 2061922378132277879}
   Prefab_ItemSlot: {fileID: 5603668366840058126, guid: c7a176e1de37f084ca96d2d0db0c4265, type: 3}
-  Transform_UIItemSlotRoot: {fileID: 0}
+  Transform_UIItemSlotRoot: {fileID: 4876347792065798669}
   Prefab_MonsterSlot: {fileID: 5603668366840058126, guid: de4d1291f3f86514487830a64fde4f40, type: 3}
   Transform_UIMonsterSlotRoot: {fileID: 8843378759325974356}
 --- !u!1 &4798354292812639614
