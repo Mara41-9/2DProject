@@ -15,10 +15,30 @@ public class GameObjectManager : MonoBehaviour
     private Dictionary<int, FieldObject2D> _fieldObjectContainer = new Dictionary<int, FieldObject2D>();
     private Dictionary<int, Monster2D> _monsterContainer = new Dictionary<int, Monster2D>();
 
+    private PlayerMovement _localPlayer;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    // 등록
+    public void RegisterLocalPlayer(PlayerMovement localplayer)
+    {
+        _localPlayer = localplayer;
+    }
+
+    // 가져오기
+    // 프로퍼티 기능이 있긴 하지만, 그래도 그 프로퍼티를 직접 참조하는 것보다는 Get 함수를 한정적으로 사용하는 것이 좋음
+    public PlayerMovement GetLocalPlayer()
+    {
+        if(_localPlayer == null)
+        {
+            Debug.LogError("등록된 플레이어가 없는데, 참조하려고 시도하고 있습니다!!");
+            return null;
+        }
+
+        return _localPlayer;
     }
 
 

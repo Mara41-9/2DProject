@@ -55,6 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        // 나 스스로를 등록한다. -> 씬에 있는 그 2D 플레이어가 등록됨
+        GameObjectManager.Instance.RegisterLocalPlayer(this);
+
         this.transform.position = _playerPosition;
 
         var player = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
