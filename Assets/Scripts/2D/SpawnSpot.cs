@@ -27,6 +27,9 @@ public class SpawnSpot : MonoBehaviour
     [SerializeField] private string _spawnObjectDataId;          // 생성할 데이터 ID
     [SerializeField] private Collider2D Collider_OnSpawnStart;   // 플레이어 감지용 트리거 콜라이더 - OnRange일때만!
 
+    [SerializeField] private Transform _leftPoint;
+    [SerializeField] private Transform _rightPoint;
+
     private void Awake()
     {
         // OnAwake 타입이면 게임 시작하자마자 스폰
@@ -72,7 +75,7 @@ public class SpawnSpot : MonoBehaviour
                 this.gameObject.SetActive(false);   // 생성 후 비활성화 -> 중복 생성 방지 
                 break;
             case SpawnSpotType.Monster:
-                GameObjectManager.Instance.CreateMonster(_spawnObjectDataId, this.transform).Forget();
+                GameObjectManager.Instance.CreateMonster(_spawnObjectDataId, this.transform, _leftPoint, _rightPoint).Forget();
                 this.gameObject.SetActive(false);
                 break;
             case SpawnSpotType.Dialogue:

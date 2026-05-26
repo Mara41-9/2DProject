@@ -93,9 +93,9 @@ public class GameObjectManager : MonoBehaviour
     //[몬스터] ====================================================================================================
 
     // 몬스터를 생성하는 비동기 함수
-    public async UniTaskVoid CreateMonster(string monsterDataId, Transform spawnSpot)
+    public async UniTaskVoid CreateMonster(string monsterDataId, Transform spawnSpot, Transform leftPoint, Transform rightPoint)
     {
-        // GameDataManager에서 FieldObject 데이터 가져오기
+        // GameDataManager에서 Monster 데이터 가져오기
         var monster = GameDataManager.Instance.GetMonsterData(monsterDataId);
         if (monster == null)
         {
@@ -120,6 +120,14 @@ public class GameObjectManager : MonoBehaviour
         createdObj.transform.position = spawnSpot.position;
         // 생성된 오브젝트를 관리 시스템에 등록
         AddMonsterOnCreate(createdObj, monsterDataId);
+
+        var monsterComponent = createdObj.GetComponent<Monster2D>();
+        if (monsterComponent == null)
+        {
+            return;
+        }
+
+        monsterComponent.SetMoveRange(leftPoint, rightPoint);
 
     }
 

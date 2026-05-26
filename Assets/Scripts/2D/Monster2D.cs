@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Monster2D : MonoBehaviour
@@ -22,6 +24,9 @@ public class Monster2D : MonoBehaviour
     public bool _isAlive = true;
     //private bool _lookRight = true;
 
+    private Transform _leftPoint;
+    private Transform _rightPoint;
+
     private void OnDisable()
     {
         _isAlive = false;
@@ -35,6 +40,12 @@ public class Monster2D : MonoBehaviour
     private void Update()
     {
         SimpleEnemyMoveOnUpdate();
+    }
+
+    public void SetMoveRange(Transform leftPoint, Transform rightPoint)
+    {
+        _leftPoint = leftPoint;
+        _rightPoint = rightPoint;
     }
 
 
@@ -90,8 +101,31 @@ public class Monster2D : MonoBehaviour
 
     void SimpleEnemyMoveOnUpdate()
     {
+        if(_leftPoint == null || _rightPoint == null)
+        {
+            return;
+        }
+
         // 결정된 방향으로 매 프레임 이동
-        transform.position += _moveDirection * 5.0f * Time.deltaTime;
+        this.transform.position += _moveDirection * 2.0f * Time.deltaTime;
+
+        // 몬스터가 왼쪽 경계보다 왼쪽까지 갔다면
+        if(this.transform.position.x <= _leftPoint.position.x)
+        {
+            // 오른쪽으로 이동
+            _moveDirection = Vector3.right;
+            // 캐릭터 안 뒤집음 -> 오른쪽 보게 함
+            SetMeshDirectionByMoveDirection(1);
+        }
+        // 몬스터가 오른쪽 경계보다 오른쪽까지 갔다면
+        else if(this.transform.position.x >= _rightPoint.position.x)
+        {
+            // 왼쪽으로 이동
+            _moveDirection = Vector3.left;
+            // 캐릭터 뒤집음 -> 왼쪽 보게 함
+            SetMeshDirectionByMoveDirection(-1);
+        }
+
     }
 
     // 코루틴이 등장한단는건 -> 유니태스크로 호환이 가능하다

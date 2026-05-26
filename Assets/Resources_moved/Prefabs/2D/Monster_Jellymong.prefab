@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1123173901625061276}
   - component: {fileID: 1354716326202651478}
   - component: {fileID: 1086992962909175078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Monster_Jellymong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,10 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Monster2D
   _monsterInstanceId: 0
-  _monsterDataId: 
-  _monsterName: 
   SpriteRenderer_Monster: {fileID: 7381514200322326058}
   _moveDirection: {x: 0, y: 0, z: 0}
+  _baseHp: 0
+  _baseAtk: 0
+  _isAlive: 1
 --- !u!50 &1354716326202651478
 Rigidbody2D:
   serializedVersion: 5
@@ -136,7 +137,7 @@ GameObject:
   - component: {fileID: 910836514119895428}
   - component: {fileID: 7381514200322326058}
   - component: {fileID: 8431229089701238626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite_Jellymong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
