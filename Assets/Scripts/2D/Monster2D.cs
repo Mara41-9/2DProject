@@ -123,7 +123,22 @@ public class Monster2D : MonoBehaviour
             // 캐릭터 뒤집음 -> 왼쪽 보게 함
             SetMeshDirectionByMoveDirection(-1);
         }
+    }
 
+    public void TakeDamage(int damage)
+    {
+        _baseHp -= damage;
+
+        if (_baseHp < 0)
+        {
+            // 죽음 처리를 여기서 해두자
+            MonsterDie();
+        }
+    }
+
+    public void MonsterDie()
+    {
+        _isAlive = false;
     }
 
     // 코루틴이 등장한단는건 -> 유니태스크로 호환이 가능하다

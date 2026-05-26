@@ -3087,7 +3087,7 @@ MonoBehaviour:
   _attackRadius: 1
   _monsterLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   _scoreUI: {fileID: 0}
   _gameTestUI: {fileID: 0}
   _currentHp: 0

@@ -42,8 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 PlayerPosition { get; private set; }
 
-    private HashSet<int> _hitMonsters = new HashSet<int>();   // 중복을 허용하지 않기 위해 HashSet 사용
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -85,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         bool isMoving = (_horizontalInput != 0);
 
         // 컨트롤 키를 누르면
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             // 공격해라
             ChangePlayerState(EntityAnimState.Atk);
@@ -174,23 +172,23 @@ public class PlayerMovement : MonoBehaviour
         {
             // Collider가 붙어있는 오브젝트에서 Monster2D 스크립트 가져오자
             Monster2D monster = enemy.GetComponent<Monster2D>();
+            if (monster == null) return;
 
             // 각 몬스터의 고유 ID 저장
             int id = monster._monsterInstanceId;
 
-            // 이미 맞은 몬스터면 스킵 (반복문 나가라)
-            if(_hitMonsters.Contains(id))
-            {
-                continue;
-            }
+            var equippedWeaponDataId = GameManager.Instance.GetEquippedWeapon();
+            if (equippedWeaponDataId == null) return;
 
-            // 맞은 몬스터는 리스트에 등록
-            _hitMonsters.Add(id);
+            var equippedWeaponData = GameDataManager.Instance.GetWeaponData(equippedWeaponDataId);
+            if( equippedWeaponData == null) return;
 
-            if (monster != null)
-            {
-                DelayDestroy(id);
-            }
+            int BaseAtk = equippedWeaponData.BaseAtk;
+
+            monster.TakeDamage(BaseAtk);
+            Debug.LogWarning($"토토가 젤리몽에게 {BaseAtk}만큼 데미지를 입혔다!    젤리몽 Hp : {monster._baseHp}");
+
+            //DelayDestroy(id);
         }
     }
 
@@ -203,8 +201,6 @@ public class PlayerMovement : MonoBehaviour
 
         GameObjectManager.Instance.DestroyMonster(monsterId);
         AddGameScore();
-
-        _hitMonsters.Remove(monsterId);
     }
 
 
@@ -226,26 +222,31 @@ public class PlayerMovement : MonoBehaviour
     // 적 충돌 시 처리하는 함수
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") == false)
+        CheckCollision(collision.collider);
+    }
+
+    private void CheckCollision(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster") == false)
         {
             return;
         }
 
         var monsterComponent = collision.gameObject.GetComponent<Monster2D>();
 
-        if(monsterComponent != null)
+        if (monsterComponent != null)
         {
-            if((monsterComponent._moveDirection.x * this.transform.localScale.x) < 0)
+            if ((monsterComponent._moveDirection.x * this.transform.localScale.x) < 0)
             {
                 _currentHp -= 5;
 
                 Debug.LogWarning($"셀리 공주의 남은 Hp: {_currentHp}");
-                if(_gameTestUI != null)
+                if (_gameTestUI != null)
                 {
                     _gameTestUI.PlayerHp(_currentHp);
                 }
 
-                if(_currentHp <= 0)
+                if (_currentHp <= 0)
                 {
                     UIManager.Instance.OpenGameOverPopup();
                 }
@@ -257,38 +258,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log($"충돌한 적 객체에서 컴포넌트를 찾을 수 없습니다 : {gameObject.name}");
             return;
         }
-
-
-        //// 플레이어의 콜리전에 충돌한 객체가 Enemy 태그가 아니라면
-        //if(collision.gameObject.CompareTag("Enemy") == false)
-        //{
-        //    return;
-        //}
-
-        //// 충돌한 몬스터의 정보를 받아오자
-        //var enemyComponent = collision.gameObject.GetComponent<Monster2D>();
-
-        //if(enemyComponent == null)
-        //{
-        //    Debug.Log($"충돌한 적 객체에서 컴포넌트를 찾을 수 없습니다 : {gameObject.name}");
-        //    return;
-        //}
-
-        //if(_isAttacking)
-        //{
-        //    // 충돌된 오브젝트를 플레이어가 직접 제거하는게 아니라, Id로 게임오브젝트 매니저한테 삭제 요청
-        //    GameObjectManager.Instance.DestroyMonster(enemyComponent._monsterInstanceId);
-        //    // 피그마를 잡으면 스코어를 올려주자!
-        //    AddGameScore();
-        //}
-
     }
 
     private void AddGameScore()
     {
         _currentScore++;
         _scoreUI.AddGameScore(_currentScore);
-        
-        
     }
 }
