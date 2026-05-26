@@ -20,9 +20,14 @@ public class GameViewUI : UIBase
 
     [Header("아이템")]
     [SerializeField] private GameObject Prefab_ItemSlot;
-    [SerializeField] private Transform Transform_UISlotRoot;
+    [SerializeField] private Transform Transform_UIItemSlotRoot;
+
+    [Header("몬스터")]
+    [SerializeField] private GameObject Prefab_MonsterSlot;
+    [SerializeField] private Transform Transform_UIMonsterSlotRoot;
 
     private Dictionary<int, GameViewItemSlotUI> _itemSlotList = new Dictionary<int, GameViewItemSlotUI>();
+    private Dictionary<int, GameViewMonsterSlotUI> _monsterSlotList = new Dictionary<int, GameViewMonsterSlotUI>();
 
     private int _generatedKey;
 
@@ -32,6 +37,7 @@ public class GameViewUI : UIBase
         RefreshEquippedWeapon();
 
         SetItemSlotOnEnable();
+        SetMonsterSlotOnEnable();
 
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
     }
@@ -88,13 +94,13 @@ public class GameViewUI : UIBase
 
         foreach(var itemModel in ItemList)
         {
-            CreateSlot(itemModel.ItemDataId, itemModel.ItemStackCount);
+            CreateItemSlot(itemModel.ItemDataId, itemModel.ItemStackCount);
         }
     }
 
-    private void CreateSlot(string itemDataId, int stackCount)
+    private void CreateItemSlot(string itemDataId, int stackCount)
     {
-        var gObj = Instantiate(Prefab_ItemSlot, Transform_UISlotRoot);
+        var gObj = Instantiate(Prefab_ItemSlot, Transform_UIItemSlotRoot);
         if( gObj == null ) return;
 
         var slotComponent = gObj.GetComponent<GameViewItemSlotUI>();
@@ -105,4 +111,30 @@ public class GameViewUI : UIBase
         slotComponent.InitSlot(_generatedKey, itemDataId, stackCount);
         _itemSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
     }
+
+    private void SetMonsterSlotOnEnable()
+    {
+        var monsterList = GameDataManager.Instance.MonsterDataList;
+        if( monsterList == null ) return;
+
+        foreach(var monster in monsterList)
+        {
+            CreateMonsterSlot(monster.Key);
+        }
+    }
+
+    private void CreateMonsterSlot(string monsterDataId)
+    {
+        var gObj = Instantiate(Prefab_MonsterSlot, Transform_UIMonsterSlotRoot);
+        if( gObj == null ) return;
+
+        var slotComponent = gObj.GetComponent<GameViewMonsterSlotUI>();
+        if( slotComponent == null ) return;
+
+        _generatedKey++;
+
+        slotComponent.InitSlot(_generatedKey, monsterDataId);
+        _monsterSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
+    }
+
 }

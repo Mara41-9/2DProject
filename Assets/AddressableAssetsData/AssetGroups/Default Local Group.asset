@@ -75,6 +75,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a16f7ec7656c9254c9d0c781bc778865
+    m_Address: Icon/Icon_Jellymong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a5e72fa6821462548a6d5653a40574ba
     m_Address: Sound/MianUI_BGM_01
     m_ReadOnly: 0

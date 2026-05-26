@@ -287,7 +287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2767240136532030859}
-  - component: {fileID: 3027798264434790160}
+  - component: {fileID: 2987147171589231973}
   m_Layer: 5
   m_Name: Slot_GameViewMonster
   m_TagString: Untagged
@@ -316,7 +316,7 @@ RectTransform:
   m_AnchoredPosition: {x: -236, y: 436}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3027798264434790160
+--- !u!114 &2987147171589231973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,12 +325,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5603668366840058126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea8a84d9fc42ab240ac67180104e89bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 167a0b838a008ca4d88fa9155927b524, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameViewItemSlotUI
-  Image_Icon: {fileID: 5753585162693158175}
+  m_EditorClassIdentifier: Assembly-CSharp::GameViewMonsterSlotUI
   Image_Frame: {fileID: 7621276951714437197}
-  Text_StackCount: {fileID: 0}
+  Image_Monster: {fileID: 5753585162693158175}
+  Image_Grade: {fileID: 3279705296612421782}
 --- !u!1 &5678013043648393777
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 2687487276488030020}
   - component: {fileID: 5753585162693158175}
   m_Layer: 5
-  m_Name: Img_Item
+  m_Name: Img_Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a16f7ec7656c9254c9d0c781bc778865, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3d7afa17c7665e45bbd2845a19a3e85, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
