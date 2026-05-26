@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 512bc2e9a58bc1744ad375ef53198168
+    m_Address: 2DObject/Monster_Jelltmong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5282d567daabff44db4f140263824742
     m_Address: Icon/Icon_Skill_CrimsonShield_1
     m_ReadOnly: 0
