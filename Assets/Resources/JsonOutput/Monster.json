@@ -3,6 +3,12 @@
     "Id": "mob_jellymong_1",
     "Name": "젤리몽",
     "Description": "말랑한 몸을 이용해 적에게 바디박치기를 하는 몬스터",
+    "BaseHp": 50,
+    "BaseAtk": 10,
+    "NormalAtkDamage": 1,
+    "SkillAtkMultipleList": [
+      2
+    ],
     "IconPath": "Icon/Icon_Jellymong",
     "PrefabPath": "2DObject/Monster_Jelltmong"
   }
