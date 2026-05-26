@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 7381514200322326058}
   - component: {fileID: 8431229089701238626}
   m_Layer: 0
-  m_Name: Sprite_Monster
+  m_Name: Sprite_Jellymong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
