@@ -188,21 +188,8 @@ public class PlayerMovement : MonoBehaviour
             monster.TakeDamage(BaseAtk);
             Debug.LogWarning($"토토가 젤리몽에게 {BaseAtk}만큼 데미지를 입혔다!    젤리몽 Hp : {monster._baseHp}");
 
-            //DelayDestroy(id);
         }
     }
-
-    // 몬스터 제거할 때 딜레이 걸 수 있도록
-    // async -> 비동기 작업! (기다리는 작업)
-    private async void DelayDestroy(int monsterId)
-    {
-        // 0.5초동안 기다려
-        await System.Threading.Tasks.Task.Delay(500);
-
-        GameObjectManager.Instance.DestroyMonster(monsterId);
-        AddGameScore();
-    }
-
 
     private void OnDrawGizmos()
     {
@@ -260,9 +247,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void AddGameScore()
-    {
-        _currentScore++;
-        _scoreUI.AddGameScore(_currentScore);
-    }
 }

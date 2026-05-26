@@ -129,8 +129,9 @@ public class Monster2D : MonoBehaviour
     {
         _baseHp -= damage;
 
-        if (_baseHp < 0)
+        if (_baseHp <= 0)
         {
+            _baseHp = 0;
             // 죽음 처리를 여기서 해두자
             MonsterDie();
         }
@@ -139,7 +140,19 @@ public class Monster2D : MonoBehaviour
     public void MonsterDie()
     {
         _isAlive = false;
+        DelayDestroy(_monsterInstanceId);
     }
+
+    // 몬스터 제거할 때 딜레이 걸 수 있도록
+    // async -> 비동기 작업! (기다리는 작업)
+    private async void DelayDestroy(int monsterId)
+    {
+        // 0.5초동안 기다려
+        await System.Threading.Tasks.Task.Delay(500);
+
+        GameObjectManager.Instance.DestroyMonster(monsterId);
+    }
+
 
     // 코루틴이 등장한단는건 -> 유니태스크로 호환이 가능하다
     // 일정 시간마다 스킬을 사용할 예정

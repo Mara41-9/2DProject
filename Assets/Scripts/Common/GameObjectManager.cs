@@ -9,7 +9,7 @@ public class GameObjectManager : MonoBehaviour
     public static GameObjectManager Instance { get; set; }
 
     // 생성된 오브젝트의 키
-    private int _objectInstanceKeyGenerator = 1;
+    private int _objectInstanceKeyGenerator;
 
     // 생성된 오브젝트의 생명을 보관
     private Dictionary<int, FieldObject2D> _fieldObjectContainer = new Dictionary<int, FieldObject2D>();
@@ -191,11 +191,11 @@ public class GameObjectManager : MonoBehaviour
 
             Destroy(monster.gameObject);
 
-            Debug.Log($"돼지 제거 완료 : {monsterInstanceId}");
+            Debug.Log($"몬스터 제거 완료 : {monsterInstanceId}");
         }
         else
         {
-            Debug.LogError($"돼지를 찾을 수 없음 : {monsterInstanceId}");
+            Debug.LogError($"몬스터를 찾을 수 없음 : {monsterInstanceId}");
         }
 
     }
