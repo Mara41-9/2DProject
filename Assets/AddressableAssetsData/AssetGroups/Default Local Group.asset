@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43c6a55dcc4c34144ac6ecde741c1e1f
+    m_Address: Icon/Icon_Item_Potion_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4cfc25eea92831744a99a972be010656
     m_Address: Sound/GameIn_BGM_01
     m_ReadOnly: 0
@@ -55,6 +60,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a0ad1af65007e149b4ecc1431233adb
+    m_Address: Icon/Icon_Item_CarrotSmoothy_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c0e8f493a9c6e24a922e9aa051e84fb
     m_Address: Texture2D/Texture2D_Loading_2
     m_ReadOnly: 0
@@ -85,13 +95,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fde8fc7bc4bb28a45a1f8fc064807248
-    m_Address: Icon/Icon_Item_Corn
+  - m_GUID: eea87e75723c00b45a54ae2a8aafb513
+    m_Address: Icon/Icon_Item_TomatoJuice_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ff1754fe6551f064ebe638458885ccd6
-    m_Address: Icon/Icon_Item_Potion_1
+  - m_GUID: fde8fc7bc4bb28a45a1f8fc064807248
+    m_Address: Icon/Icon_Item_Corn
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
