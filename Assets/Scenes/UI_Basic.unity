@@ -1737,6 +1737,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_corn_1
   Collider_OnSpawnStart: {fileID: 199786378}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!1 &207831424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,6 +1915,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_potato_1
   Collider_OnSpawnStart: {fileID: 209058237}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!1 &213006386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,6 +2002,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: mob_jellymong_1
   Collider_OnSpawnStart: {fileID: 213006388}
+  _leftPoint: {fileID: 423192457}
+  _rightPoint: {fileID: 1066635151}
 --- !u!1 &290240530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +2749,8 @@ MonoBehaviour:
   _startSpawnType: 3
   _spawnObjectDataId: dialogue_mainstream_1_1_100
   Collider_OnSpawnStart: {fileID: 587617503}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!1 &665183281
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,6 +3189,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_corn_1
   Collider_OnSpawnStart: {fileID: 791258191}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!1 &795813244
 GameObject:
   m_ObjectHideFlags: 0
@@ -14898,6 +14908,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_potato_1
   Collider_OnSpawnStart: {fileID: 1408208529}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!1 &1572767139
 GameObject:
   m_ObjectHideFlags: 0
@@ -16670,6 +16682,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_potato_1
   Collider_OnSpawnStart: {fileID: 9213240302516306002}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!4 &1082091435886713250
 Transform:
   m_ObjectHideFlags: 0
@@ -18103,6 +18117,8 @@ MonoBehaviour:
   _startSpawnType: 0
   _spawnObjectDataId: mob_pigme_1
   Collider_OnSpawnStart: {fileID: 4356159787203181998}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!224 &5590559449564967144
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18192,6 +18208,8 @@ MonoBehaviour:
   _startSpawnType: 3
   _spawnObjectDataId: dialogue_mainstream_1_1_100
   Collider_OnSpawnStart: {fileID: 5622140507488536415}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!4 &6179165541975641290
 Transform:
   m_ObjectHideFlags: 0
@@ -18458,6 +18476,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_potato_1
   Collider_OnSpawnStart: {fileID: 460084572956068443}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!1 &6862948963693465649
 GameObject:
   m_ObjectHideFlags: 0
@@ -21860,6 +21880,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_corn_1
   Collider_OnSpawnStart: {fileID: 984340082779301984}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!4 &8794294073483546831
 Transform:
   m_ObjectHideFlags: 0
@@ -21932,6 +21954,8 @@ MonoBehaviour:
   _startSpawnType: 2
   _spawnObjectDataId: harv_corn_1
   Collider_OnSpawnStart: {fileID: 6593093293904876390}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!58 &9213240302516306002
 CircleCollider2D:
   m_ObjectHideFlags: 0
