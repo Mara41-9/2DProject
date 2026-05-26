@@ -103,8 +103,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
-
-        
     }
 
     private void FixedUpdate()
@@ -171,15 +169,19 @@ public class PlayerMovement : MonoBehaviour
 
         foreach(Collider2D enemy in hitMonsters)
         {
+            // Collider가 붙어있는 오브젝트에서 Monster2D 스크립트 가져오자
             Monster2D monster = enemy.GetComponent<Monster2D>();
 
+            // 각 몬스터의 고유 ID 저장
             int id = monster._monsterInstanceId;
 
+            // 이미 맞은 몬스터면 스킵 (반복문 나가라)
             if(_hitMonsters.Contains(id))
             {
                 continue;
             }
 
+            // 맞은 몬스터는 리스트에 등록
             _hitMonsters.Add(id);
 
             if (monster != null)
