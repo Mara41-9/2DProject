@@ -2,14 +2,18 @@
 
 public class Monster2D : MonoBehaviour
 {
-    [SerializeField] private string _monsterName;
-
+    [Header("데이터를 확인할 수 있도록 임시로 열어줌")]
     public int _monsterInstanceId;
     private string _monsterDataId;
 
     [SerializeField] private SpriteRenderer SpriteRenderer_Monster;
 
     public Vector3 _moveDirection;   // 적이 이동할 방향 저장 변수
+
+    [Header("받아왔는데 전투에서 필요한 데이터")]
+    private MonsterData _monsterData;
+    public int _baseHp;
+    public int _baseAtk;
 
     private void Start()
     {
@@ -30,6 +34,10 @@ public class Monster2D : MonoBehaviour
             Debug.LogWarning($"유효하지 않은 몬스터 데이터 입니다! {monsterDataId}");
             return;
         }
+
+        _monsterData = monsterData;
+        _baseHp = _monsterData.BaseHp;
+        _baseAtk = _monsterData.BaseAtk;
 
         _monsterInstanceId = instanceId;
         _monsterDataId = monsterDataId;
