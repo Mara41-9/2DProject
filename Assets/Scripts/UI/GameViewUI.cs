@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,10 +18,20 @@ public class GameViewUI : UIBase
     [Header("일시정지")]
     [SerializeField] private GameUIButton Btn_Pause;
 
+    [Header("아이템")]
+    [SerializeField] private GameObject Prefab_ItemSlot;
+    [SerializeField] private Transform Transform_UISlotRoot;
+
+    private Dictionary<int, GameViewItemSlotUI> _itemSlotList = new Dictionary<int, GameViewItemSlotUI>();
+
+    private int _generatedKey;
+
     private void OnEnable()
     {
         RefreshEquippedSkill();
         RefreshEquippedWeapon();
+
+        SetItemSlotOnEnable();
 
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
     }
@@ -68,5 +79,30 @@ public class GameViewUI : UIBase
         if(equippedWeapon == null ) return;
 
         GameUtil.LoadAndSetSpriteImage(Image_SelectedWeapon, equippedWeapon.IconPath).Forget();
+    }
+
+    private void SetItemSlotOnEnable()
+    {
+        var ItemList = GameManager.Instance.GetPlayerItemList();
+        if( ItemList == null ) return;
+
+        foreach(var itemModel in ItemList)
+        {
+            CreateSlot(itemModel.ItemDataId, itemModel.ItemStackCount);
+        }
+    }
+
+    private void CreateSlot(string itemDataId, int stackCount)
+    {
+        var gObj = Instantiate(Prefab_ItemSlot, Transform_UISlotRoot);
+        if( gObj == null ) return;
+
+        var slotComponent = gObj.GetComponent<GameViewItemSlotUI>();
+        if( slotComponent == null ) return;
+
+        _generatedKey++;
+
+        slotComponent.InitSlot(_generatedKey, itemDataId, stackCount);
+        _itemSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
     }
 }
