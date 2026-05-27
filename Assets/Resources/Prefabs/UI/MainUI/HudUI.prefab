@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HudUI
   Prefab_HudSlot: {fileID: 1914560104623612757, guid: 8d69c6841e6d70c4bb1c6359559cba08, type: 3}
+  Transform_SlotRoot: {fileID: 5986799794697294872}
 --- !u!1 &1215784146941773984
 GameObject:
   m_ObjectHideFlags: 0
