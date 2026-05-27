@@ -34,6 +34,8 @@ public class Monster2D : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
+    private Coroutine _damageCoroutine;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -120,6 +122,11 @@ public class Monster2D : MonoBehaviour
             return;
         }
 
+        if(_isAlive ==  false)
+        {
+            return;
+        }
+
         // 결정된 방향으로 매 프레임 이동
         this.transform.position += _moveDirection * 2.0f * Time.deltaTime;
 
@@ -148,28 +155,28 @@ public class Monster2D : MonoBehaviour
         if (_baseHp <= 0)
         {
             _baseHp = 0;
-            // 죽음 처리를 여기서 해두자
+
+            // 데미지 코루틴 중단
+            StopCoroutine(_damageCoroutine);
+            
             MonsterDie();
             return;
         }
 
-        StartCoroutine(DamageRoutine());
+        _damageCoroutine = StartCoroutine(DamageRoutine());
     }
 
     public void MonsterDie()
     {
         _isAlive = false;
-        DelayDestroy(_monsterInstanceId);
-    }
 
-    // 몬스터 제거할 때 딜레이 걸 수 있도록
-    // async -> 비동기 작업! (기다리는 작업)
-    private async void DelayDestroy(int monsterId)
-    {
-        // 0.5초동안 기다려
-        await System.Threading.Tasks.Task.Delay(500);
-        
-        GameObjectManager.Instance.DestroyMonster(monsterId);
+        if(_damageCoroutine != null)
+        {
+            StopCoroutine(_damageCoroutine);
+            _damageCoroutine = null;
+        }
+
+        StartCoroutine(DieRoutine());
     }
 
     private void ChangeMonsterState(EntityAnimState newState)
@@ -192,6 +199,19 @@ public class Monster2D : MonoBehaviour
             // 살아있으면 다시 Walk 상태로 변경
             ChangeMonsterState(EntityAnimState.Walk);
         }
+    }
+
+    private IEnumerator DieRoutine()
+    {
+        // 이동 멈추기
+        _moveDirection = Vector3.zero;
+
+        ChangeMonsterState(EntityAnimState.Die);
+
+        yield return new WaitForSeconds(1.0f);
+
+        GameObjectManager.Instance.DestroyMonster(_monsterInstanceId);
+
     }
 
 

@@ -8,6 +8,7 @@ public enum EntityAnimState
     Walk,
     Atk,
     Damaged,
+    Die,
     JumpStart,
     JumpLoop,
     JumpEnd,
@@ -58,6 +59,10 @@ public class EntityAnimController : MonoBehaviour
                 ResetAllParameters();
                 Animator_Entity.SetBool("IsDamaged", true);
                 break;
+            case EntityAnimState.Die:
+                ResetAllParameters();
+                Animator_Entity.SetBool("IsDie", true);
+                break;
             //case EntityAnimState.TargetDetected:   // 시야 범위 안에 플레이어가 들어왔을때
             //    Animator_Entity.SetBool("IsTargetDetected", true);
             //    break;
@@ -82,6 +87,7 @@ public class EntityAnimController : MonoBehaviour
         Animator_Entity.SetBool("IsWalk", false);
         Animator_Entity.SetBool("IsAtk", false);
         Animator_Entity.SetBool("IsDamaged", false);
+        Animator_Entity.SetBool("IsDie", false);
         // Animator_Entity.SetBool("IsJump", false); -> 
     }
 
