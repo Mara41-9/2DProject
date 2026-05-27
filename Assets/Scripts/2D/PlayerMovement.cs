@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
@@ -40,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
     private int _currentScore;
     public int _currentHp; //{ get; private set; }
 
+    private bool _isAttack;
+
     public Vector2 PlayerPosition { get; private set; }
 
     private void Awake()
@@ -73,27 +76,27 @@ public class PlayerMovement : MonoBehaviour
         // A키 / <- 방향키 = -1 , 입력 없음 = 0 , D 키 / → 방향키 = 1
         _horizontalInput = Input.GetAxisRaw("Horizontal");
 
+        // _horizontalInput가 0이 아니면 움직이는 중!
+        bool isMoving = (_horizontalInput != 0);
+
         // 점프 입력
-        if(Input.GetButtonDown("Jump") && _isGrounded)
+        if (Input.GetButtonDown("Jump") && _isGrounded)
         {
             Jump();
         }
 
-        // _horizontalInput가 0이 아니면 움직이는 중!
-        bool isMoving = (_horizontalInput != 0);
-
-        // 컨트롤 키를 누르면
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if(_isAttack == false)
         {
-            // 공격해라
-            ChangePlayerState(EntityAnimState.Atk);
-            Attack();
+            if (isMoving)
+            {
+                ChangePlayerState(EntityAnimState.Walk);
+            }
+            else
+            {
+                ChangePlayerState(EntityAnimState.Idle);
+            }
         }
-        else  // 그게 아니라면
-        {
-            // 걷거나 가만히 있어라
-            ChangePlayerState(isMoving ? EntityAnimState.Walk : EntityAnimState.Idle);
-        }
+        
 
         // 캐릭터 방향 전환 
         if (_horizontalInput > 0 && !_lookRight)
@@ -162,11 +165,13 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = scaler;           // 마지막으로 바뀐 값을 실제 오브젝트에 적용
     }
 
+
     // 공격 범위 안에 있는 몬스터들을 찾아서 제거하는 함수
-    private void Attack()
+    public void Attack()
     {
         // 원 범위 안에 들어온 Collider들을 전부 찾아라
         Collider2D[] hitMonsters = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRadius, _monsterLayer);
+        StartCoroutine(AttackRoutine());
 
         foreach(Collider2D enemy in hitMonsters)
         {
@@ -191,6 +196,22 @@ public class PlayerMovement : MonoBehaviour
             monster.TakeDamage(BaseAtk);
             Debug.LogWarning($"토토가 {monsterData.Name}에게 {BaseAtk}만큼 데미지를 입혔다!    {monsterData.Name}의 Hp : {monster._baseHp}");
 
+        }
+    }
+
+    private IEnumerator AttackRoutine()
+    {
+        _isAttack = true;
+
+        ChangePlayerState(EntityAnimState.Atk);
+
+        yield return new WaitForSeconds(1.1f);
+
+        _isAttack = false;
+
+        if (_isAttack == false)
+        {
+            ChangePlayerState(EntityAnimState.Idle);
         }
     }
 

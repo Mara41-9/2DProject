@@ -12,8 +12,8 @@ public class GameViewUI : UIBase
     [SerializeField] private Image Image_SelectedWeapon;
     [SerializeField] private Image Image_SelectedSkill;
 
-    [Header("스킬")]
-    [SerializeField] private Image Image_UseSkill;
+    [Header("기본 공격")]
+    [SerializeField] private GameUIButton Btn_BasicAttack;
 
     [Header("일시정지")]
     [SerializeField] private GameUIButton Btn_Pause;
@@ -40,6 +40,7 @@ public class GameViewUI : UIBase
         SetMonsterSlotOnEnable();
 
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
+        Btn_BasicAttack.BindOnClickButtonEvent(OnClick_BasicAttackButton);
     }
 
     private void Start()
@@ -50,6 +51,14 @@ public class GameViewUI : UIBase
     private void OnClick_PauseButton()
     {
         UIManager.Instance.OpenPausePopup();
+    }
+
+    private void OnClick_BasicAttackButton()
+    {
+        var player = GameObjectManager.Instance.GetLocalPlayer();
+        if (player == null) return;
+
+        player.Attack();
     }
 
     private void PlayerInfo()
@@ -72,7 +81,6 @@ public class GameViewUI : UIBase
         var equippedSkill = GameDataManager.Instance.GetSkill(equippedSkillId);
         if( equippedSkill == null ) return;
 
-        GameUtil.LoadAndSetSpriteImage(Image_UseSkill, equippedSkill.IconPath).Forget();
         GameUtil.LoadAndSetSpriteImage(Image_SelectedSkill, equippedSkill.IconPath).Forget();
     }
 
