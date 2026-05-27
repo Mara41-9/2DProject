@@ -178,14 +178,20 @@ public class Monster2D : MonoBehaviour
     // -> 피격 애니메이션을 잠깐만 보여주기 위해
     private IEnumerator DamageRoutine()
     {
+        // 원래 방향대로 다시 이동시켜야 하므로 변수 선언
+        Vector3 originDirection = _moveDirection;
+        // 이동 멈추기
+        _moveDirection = Vector3.zero;
+
         // 몬스터 애니메이션 상태 : Damaged
         ChangeMonsterState(EntityAnimState.Damaged);
 
         // 0.2초 기다려라
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.7f);
 
         if(_isAlive)
         {
+            _moveDirection = originDirection;
             // 살아있으면 다시 Walk 상태로 변경
             ChangeMonsterState(EntityAnimState.Walk);
         }
