@@ -30,7 +30,8 @@ public class GameViewUI : UIBase
     private Dictionary<int, GameViewItemSlotUI> _itemSlotList = new Dictionary<int, GameViewItemSlotUI>();
     private Dictionary<int, GameViewMonsterSlotUI> _monsterSlotList = new Dictionary<int, GameViewMonsterSlotUI>();
 
-    private int _generatedKey;
+    private int _generatedItemKey;
+    private int _generatedMonsterKey;
 
     private void OnEnable()
     {
@@ -99,6 +100,8 @@ public class GameViewUI : UIBase
 
     private void SetItemSlotOnEnable()
     {
+        ClearItemList();
+
         var ItemList = GameManager.Instance.GetPlayerItemList();
         if( ItemList == null ) return;
 
@@ -116,14 +119,16 @@ public class GameViewUI : UIBase
         var slotComponent = gObj.GetComponent<GameViewItemSlotUI>();
         if( slotComponent == null ) return;
 
-        _generatedKey++;
+        _generatedItemKey++;
 
-        slotComponent.InitSlot(_generatedKey, itemDataId, stackCount);
+        slotComponent.InitSlot(_generatedItemKey, itemDataId, stackCount);
         _itemSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
     }
 
     private void SetMonsterSlotOnEnable()
     {
+        ClearMonsterList();
+
         var monsterList = GameDataManager.Instance.MonsterDataList;
         if( monsterList == null ) return;
 
@@ -141,10 +146,42 @@ public class GameViewUI : UIBase
         var slotComponent = gObj.GetComponent<GameViewMonsterSlotUI>();
         if( slotComponent == null ) return;
 
-        _generatedKey++;
+        _generatedMonsterKey++;
 
-        slotComponent.InitSlot(_generatedKey, monsterDataId);
+        slotComponent.InitSlot(_generatedMonsterKey, monsterDataId);
         _monsterSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
+    }
+
+    private void ClearMonsterList()
+    {
+        if(_monsterSlotList.Count > 0)
+        {
+            foreach(var monsterKv in _monsterSlotList)
+            {
+                var monster = monsterKv.Value;
+                DestroyImmediate(monster.gameObject);
+            }
+
+            _monsterSlotList.Clear();
+        }
+
+        _generatedMonsterKey = 0;
+    }
+
+    private void ClearItemList()
+    {
+        if(_itemSlotList.Count > 0)
+        {
+            foreach(var itemKv in _itemSlotList)
+            {
+                var item = itemKv.Value;
+                DestroyImmediate(item.gameObject);
+            }
+
+            _itemSlotList.Clear();
+        }
+
+        _generatedItemKey = 0;
     }
 
 }
