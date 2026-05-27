@@ -185,8 +185,11 @@ public class PlayerMovement : MonoBehaviour
 
             int BaseAtk = equippedWeaponData.BaseAtk;
 
+            var monsterData = GameDataManager.Instance.GetMonsterData(monster.GetMonsterDataId());
+            if(monsterData == null) return;
+
             monster.TakeDamage(BaseAtk);
-            Debug.LogWarning($"토토가 젤리몽에게 {BaseAtk}만큼 데미지를 입혔다!    젤리몽 Hp : {monster._baseHp}");
+            Debug.LogWarning($"토토가 {monsterData.Name}에게 {BaseAtk}만큼 데미지를 입혔다!    {monsterData.Name}의 Hp : {monster._baseHp}");
 
         }
     }
