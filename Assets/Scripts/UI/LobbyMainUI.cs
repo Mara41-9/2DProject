@@ -33,11 +33,20 @@ public class LobbyMainUI : UIBase
 
     public void OnClick_OpenGameView()
     {
-        UIManager.Instance.OpenLoadingUI();
-        UIManager.Instance.CloseGameStartUI();
-        UIManager.Instance.CloseLobbyMainUI();
-        UIManager.Instance.OpenGameViewUI();
-        Debug.LogWarning("게임 화면으로 이동합니다.");
+        var equippedWeapon = GameManager.Instance.GetEquippedWeapon();
+        if(equippedWeapon != null)
+        {
+            UIManager.Instance.OpenLoadingUI();
+            UIManager.Instance.CloseGameStartUI();
+            UIManager.Instance.CloseLobbyMainUI();
+            UIManager.Instance.OpenGameViewUI();
+            Debug.LogWarning("게임 화면으로 이동합니다.");
+        }
+        else
+        {
+            Debug.LogWarning("무기를 먼저 선택해주세요.");
+        }
+            
     }
 
     public void OnClick_OpenSKillPopup()
