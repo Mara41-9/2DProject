@@ -45,7 +45,13 @@ public class LobbyMainUI : UIBase
         else
         {
             UIManager.Instance.OpenCommonToastUI();
-            Debug.LogWarning("무기를 먼저 선택해주세요.");
+            var commonToastUI = UIManager.Instance.GetCreatedUI(UIRootType.ToastUI, UIType.CommonToastUI);
+            if (commonToastUI == null) return;
+
+            var component = commonToastUI.GetComponent<CommonToastUI>();
+            if (component == null) return;
+
+            component.SetMessage("전투를 시작하려면 먼저 무기를 장착해주세요!");
         }
             
     }

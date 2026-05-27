@@ -9,9 +9,9 @@ public class CommonToastUI : UIBase
     [SerializeField] private Image Image_Frame;
     [SerializeField] private TMP_Text Text_Message;
 
-
-    private void OnEnable()
+    public void SetMessage(string message)
     {
+        Text_Message.text = message;
         StartCoroutine(CloseAfterDelay());
     }
 

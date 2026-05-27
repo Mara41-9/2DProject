@@ -111,8 +111,14 @@ public class InventoryPopup : UIBase
 
             if(itemData.ItemType == "Heal")
             {
-                Debug.LogWarning("회복 아이템은 게임 진행 중에만 사용할 수 있습니다.");
-                return;
+                UIManager.Instance.OpenCommonToastUI();
+                var commonToastUI = UIManager.Instance.GetCreatedUI(UIRootType.ToastUI, UIType.CommonToastUI);
+                if (commonToastUI == null) { return; }
+
+                var component = commonToastUI.GetComponent<CommonToastUI>();
+                if(component == null) { return; }
+
+                component.SetMessage("회복 아이템은 전투 중에만 사용할 수 있습니다.");
             }
         }
     }
