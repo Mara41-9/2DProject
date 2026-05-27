@@ -1595,6 +1595,7 @@ MonoBehaviour:
   Image_SelectedWeapon: {fileID: 7397436296230695220}
   Image_SelectedSkill: {fileID: 8095041040227586735}
   Btn_BasicAttack: {fileID: 8150163242694980968}
+  Image_Weapon: {fileID: 8463288765134605470}
   Btn_Pause: {fileID: 2061922378132277879}
   Prefab_ItemSlot: {fileID: 5603668366840058126, guid: c7a176e1de37f084ca96d2d0db0c4265, type: 3}
   Transform_UIItemSlotRoot: {fileID: 4876347792065798669}

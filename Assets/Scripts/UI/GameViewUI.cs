@@ -14,6 +14,7 @@ public class GameViewUI : UIBase
 
     [Header("기본 공격")]
     [SerializeField] private GameUIButton Btn_BasicAttack;
+    [SerializeField] private Image Image_Weapon;
 
     [Header("일시정지")]
     [SerializeField] private GameUIButton Btn_Pause;
@@ -92,6 +93,7 @@ public class GameViewUI : UIBase
         var equippedWeapon = GameDataManager.Instance.GetWeaponData(equippedWeaponId);
         if(equippedWeapon == null ) return;
 
+        GameUtil.LoadAndSetSpriteImage(Image_Weapon, equippedWeapon.IconPath).Forget();
         GameUtil.LoadAndSetSpriteImage(Image_SelectedWeapon, equippedWeapon.IconPath).Forget();
     }
 
