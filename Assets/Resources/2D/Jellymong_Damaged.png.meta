@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6fb7d2bc6dd58344ab7744325c5994e5
+guid: 716440dfb00815e438c62f86180c616e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,10 +113,10 @@ TextureImporter:
       name: Jellymong_Damaged_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 293
-        width: 286
-        height: 292
+        x: 29
+        y: 310
+        width: 306
+        height: 263
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fd5fe76da56a2841933dee65ac37bcd
-      internalID: -1216258683
+      spriteID: e689466751c0a2746ba612a27855b8a4
+      internalID: -1266238886
       vertices: []
       indices: 
       edges: []
@@ -135,10 +135,10 @@ TextureImporter:
       name: Jellymong_Damaged_1
       rect:
         serializedVersion: 2
-        x: 382
-        y: 294
-        width: 315
-        height: 293
+        x: 409
+        y: 310
+        width: 292
+        height: 276
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,8 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4adb1066cfc2d5458ade4ec583e8da5
-      internalID: 1414219957
+      spriteID: f65bb81d06c79e748af1135a3f853b07
+      internalID: -26848912
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       name: Jellymong_Damaged_4
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 293
-        width: 290
-        height: 300
+        x: 1082
+        y: 310
+        width: 295
+        height: 263
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,8 +169,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d28230ac341cf1419c3725686175e5e
-      internalID: -1093122359
+      spriteID: c1d1c2ccc640f3341832b0c992f6ba76
+      internalID: -86736860
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       name: Jellymong_Damaged_5
       rect:
         serializedVersion: 2
-        x: 1447
-        y: 293
-        width: 287
-        height: 292
+        x: 1393
+        y: 310
+        width: 310
+        height: 263
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53448ede3ed076d458fd2d07707ac694
-      internalID: 596619492
+      spriteID: 359383013efa7a54193e51a167c10cd8
+      internalID: 861100327
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
       name: Jellymong_Damaged_6
       rect:
         serializedVersion: 2
-        x: 743
-        y: 294
-        width: 340
-        height: 264
+        x: 748
+        y: 310
+        width: 320
+        height: 246
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fcd7d96918c21d4fa8bc3611d3d4e34
-      internalID: 2067906582
+      spriteID: c92089ba8c75a514cbe73f371bd215b3
+      internalID: 2007382009
       vertices: []
       indices: 
       edges: []
@@ -223,7 +223,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3e1c7e44b8ee5834395277fb1b7ebbf3
+    spriteID: 86f4a4f1147800147a898ac6fa19683f
     internalID: 0
     vertices: []
     indices: 
@@ -235,13 +235,13 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Jellymong_Damaged_0: -1216258683
-      Jellymong_Damaged_1: 1414219957
-      Jellymong_Damaged_2: 1810323072
-      Jellymong_Damaged_3: 1745428834
-      Jellymong_Damaged_4: -1093122359
-      Jellymong_Damaged_5: 596619492
-      Jellymong_Damaged_6: 2067906582
+      Jellymong_Damaged_0: -1266238886
+      Jellymong_Damaged_1: -26848912
+      Jellymong_Damaged_2: 947525681
+      Jellymong_Damaged_3: -3533464
+      Jellymong_Damaged_4: -86736860
+      Jellymong_Damaged_5: 861100327
+      Jellymong_Damaged_6: 2007382009
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
