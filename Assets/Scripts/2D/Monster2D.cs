@@ -25,6 +25,14 @@ public class Monster2D : MonoBehaviour
     private Transform _leftPoint;
     private Transform _rightPoint;
 
+    private Rigidbody2D _rigidbody;
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
     private void OnDisable()
     {
         _isAlive = false;
