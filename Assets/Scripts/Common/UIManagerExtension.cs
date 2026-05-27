@@ -232,7 +232,7 @@ public static partial class UIManagerExtension
     }
 
     // 그 대상이 생성됐을 때 호출
-    public static void AddHudSlot(this UIManager uiManager)
+    public static void AddHudSlot(this UIManager uiManager, int instanceId)
     {
         var uiBase = uiManager.GetOpenedUI(UIRootType.MainUI, UIType.HudUI);
         if (uiBase == null) return;
@@ -241,7 +241,7 @@ public static partial class UIManagerExtension
         if(uiBase is HudUI hudUi)    // var hudUi = uiBase.GetComponent<HudUI>(); 와 같음
         {
             // HudUI에게 "슬롯 하나 추가해!" 요청
-            hudUi.AddHudSlot();
+            hudUi.AddHudSlot(instanceId);
         }
 
     }
