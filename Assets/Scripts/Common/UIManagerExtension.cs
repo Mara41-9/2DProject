@@ -194,6 +194,7 @@ public static partial class UIManagerExtension
             return;
         }
 
+        // UIBase를 상속받고 있으니까 GetComponent<>를 안 해도 형변환으로 받아올 수 있음
         if(uiBase is DialogueUI dialogueUI)
         {
             dialogueUI.StartDialogue(startDialogueId);
@@ -231,14 +232,30 @@ public static partial class UIManagerExtension
     }
 
     // 그 대상이 생성됐을 때 호출
-    public static void AddHudSlot()
+    public static void AddHudSlot(this UIManager uiManager)
     {
+        var uiBase = uiManager.GetOpenedUI(UIRootType.MainUI, UIType.HudUI);
+        if (uiBase == null) return;
+
+        // 기존에 GetComponent를 하던 부분이 클래스 형변환을 해도 되도록 개선됨 (UIBase를 상속받기 때문)
+        if(uiBase is HudUI hudUi)    // var hudUi = uiBase.GetComponent<HudUI>(); 와 같음
+        {
+            // HudUI에게 "슬롯 하나 추가해!" 요청
+            hudUi.AddHudSlot();
+        }
 
     }
 
     // 그 대상이 죽었을 때 호출
-    public static void RemoveHudSlot()
+    public static void RemoveHudSlot(this UIManager uiManager)
     {
+        var uiBase = uiManager.GetOpenedUI(UIRootType.MainUI, UIType.HudUI);
+        if (uiBase == null) return;
 
+        if (uiBase is HudUI hudUi)
+        {
+            // HudUI에게 "슬롯 하나 제거해!" 요청
+            hudUi.RemoveHudSlot();
+        }
     }
 }
