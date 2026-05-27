@@ -27,6 +27,7 @@ public enum UIType
     DialogueUI,
     SuccessPopup,
     GameOverPopup,
+    HudUI
 }
 
 public static partial class UIManagerExtension
@@ -46,6 +47,7 @@ public static partial class UIManagerExtension
     {
         uiManager.OpenLoadingUI();
         uiManager.OpenGameStartUI();
+        uiManager.OpenUI(UIRootType.MainUI, UIType.HudUI);
     }
 
     public static void OpenGameStartUI(this UIManager uiManager)
@@ -227,5 +229,17 @@ public static partial class UIManagerExtension
     public static void CloseGameOverPopup(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.PopupUI, UIType.GameOverPopup);
+    }
+
+    // 그 대상이 생성됐을 때 호출
+    public static void AddHudSlot()
+    {
+
+    }
+
+    // 그 대상이 죽었을 때 호출
+    public static void RemoveHudSlot()
+    {
+
     }
 }
