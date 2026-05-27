@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public enum EntityAnimState
 {
@@ -6,6 +7,7 @@ public enum EntityAnimState
     Idle,
     Walk,
     Atk,
+    Damaged,
     JumpStart,
     JumpLoop,
     JumpEnd,
@@ -40,6 +42,7 @@ public class EntityAnimController : MonoBehaviour
                 ResetAllParameters();
                 break;
             case EntityAnimState.Walk:
+                ResetAllParameters();
                 Animator_Entity.SetBool("IsWalk", true);
                 break;
             case EntityAnimState.Atk:
@@ -50,6 +53,10 @@ public class EntityAnimController : MonoBehaviour
                 break;
             case EntityAnimState.JumpEnd:
                 Animator_Entity.SetBool("IsJump", false);
+                break;
+            case EntityAnimState.Damaged:
+                ResetAllParameters();
+                Animator_Entity.SetBool("IsDamaged", true);
                 break;
             //case EntityAnimState.TargetDetected:   // 시야 범위 안에 플레이어가 들어왔을때
             //    Animator_Entity.SetBool("IsTargetDetected", true);
@@ -74,6 +81,7 @@ public class EntityAnimController : MonoBehaviour
     {
         Animator_Entity.SetBool("IsWalk", false);
         Animator_Entity.SetBool("IsAtk", false);
+        Animator_Entity.SetBool("IsDamaged", false);
         // Animator_Entity.SetBool("IsJump", false); -> 
     }
 

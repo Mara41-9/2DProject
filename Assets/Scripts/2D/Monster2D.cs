@@ -22,6 +22,9 @@ public class Monster2D : MonoBehaviour
     public int _baseAtk;
     public bool _isAlive = true;
 
+    [Header("애니메이터")]
+    [SerializeField] private EntityAnimController AnimatorController_Entity;
+
     private MonsterData _monsterData;
     
     //private bool _lookRight = true;
@@ -45,6 +48,7 @@ public class Monster2D : MonoBehaviour
     private void Start()
     {
         RandomPickDirection();
+        ChangeMonsterState(EntityAnimState.Walk);
     }
 
     private void Update()
@@ -146,7 +150,10 @@ public class Monster2D : MonoBehaviour
             _baseHp = 0;
             // 죽음 처리를 여기서 해두자
             MonsterDie();
+            return;
         }
+
+        StartCoroutine(DamageRoutine());
     }
 
     public void MonsterDie()
@@ -161,8 +168,30 @@ public class Monster2D : MonoBehaviour
     {
         // 0.5초동안 기다려
         await System.Threading.Tasks.Task.Delay(500);
-
+        
         GameObjectManager.Instance.DestroyMonster(monsterId);
+    }
+
+    private void ChangeMonsterState(EntityAnimState newState)
+    {
+        AnimatorController_Entity.SetState(newState);
+    }
+
+    // 잠깐 피격 상태로 됐다가 다시 걷기 상태로 돌아가는 작업 (실행했다가 잠깐 멈췄다가 다시 이어서 실행 가능)
+    // -> 피격 애니메이션을 잠깐만 보여주기 위해
+    private IEnumerator DamageRoutine()
+    {
+        // 몬스터 애니메이션 상태 : Damaged
+        ChangeMonsterState(EntityAnimState.Damaged);
+
+        // 0.2초 기다려라
+        yield return new WaitForSeconds(0.2f);
+
+        if(_isAlive)
+        {
+            // 살아있으면 다시 Walk 상태로 변경
+            ChangeMonsterState(EntityAnimState.Walk);
+        }
     }
 
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5820381744602877392}
   - component: {fileID: 1123173901625061276}
+  - component: {fileID: 8650976590887322310}
   - component: {fileID: 1354716326202651478}
   - component: {fileID: 1086992962909175078}
   m_Layer: 7
@@ -53,6 +54,20 @@ MonoBehaviour:
   _baseHp: 0
   _baseAtk: 0
   _isAlive: 1
+  AnimatorController_Entity: {fileID: 8650976590887322310}
+--- !u!114 &8650976590887322310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416694681725674965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccaa733cd33af034899b71df0a619558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityAnimController
+  Animator_Entity: {fileID: 8431229089701238626}
 --- !u!50 &1354716326202651478
 Rigidbody2D:
   serializedVersion: 5
