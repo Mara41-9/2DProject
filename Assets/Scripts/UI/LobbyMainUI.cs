@@ -40,6 +40,7 @@ public class LobbyMainUI : UIBase
             UIManager.Instance.CloseGameStartUI();
             UIManager.Instance.CloseLobbyMainUI();
             UIManager.Instance.OpenGameViewUI();
+            UIManager.Instance.OpenUI(UIRootType.MainUI, UIType.HudUI);
             Debug.LogWarning("게임 화면으로 이동합니다.");
         }
         else

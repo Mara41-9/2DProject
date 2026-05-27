@@ -47,7 +47,6 @@ public static partial class UIManagerExtension
     {
         uiManager.OpenLoadingUI();
         uiManager.OpenGameStartUI();
-        uiManager.OpenUI(UIRootType.MainUI, UIType.HudUI);
     }
 
     public static void OpenGameStartUI(this UIManager uiManager)
