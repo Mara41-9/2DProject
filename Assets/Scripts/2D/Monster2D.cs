@@ -9,17 +9,21 @@ public class Monster2D : MonoBehaviour
     //public float SkillCoolTime;
     //public GameObject Prefab_MonsterSkillObject;
 
+    [Header("몬스터 Id")]
     public int _monsterInstanceId;
     private string _monsterDataId;
 
+    [Header("SpriteRenderer")]
     [SerializeField] private SpriteRenderer SpriteRenderer_Monster;
 
+    [Header("몬스터 기본 정보")]
     public Vector3 _moveDirection;   // 적이 이동할 방향 저장 변수
-
-    private MonsterData _monsterData;
     public int _baseHp;
     public int _baseAtk;
     public bool _isAlive = true;
+
+    private MonsterData _monsterData;
+    
     //private bool _lookRight = true;
 
     private Transform _leftPoint;
