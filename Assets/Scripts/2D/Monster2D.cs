@@ -34,8 +34,6 @@ public class Monster2D : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
-    private Coroutine _damageCoroutine;
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -155,26 +153,18 @@ public class Monster2D : MonoBehaviour
         if (_baseHp <= 0)
         {
             _baseHp = 0;
-
-            // 데미지 코루틴 중단
-            StopCoroutine(_damageCoroutine);
             
             MonsterDie();
             return;
         }
 
-        _damageCoroutine = StartCoroutine(DamageRoutine());
+        StartCoroutine(DamageRoutine());
+
     }
 
     public void MonsterDie()
     {
         _isAlive = false;
-
-        if(_damageCoroutine != null)
-        {
-            StopCoroutine(_damageCoroutine);
-            _damageCoroutine = null;
-        }
 
         StartCoroutine(DieRoutine());
     }
@@ -208,7 +198,7 @@ public class Monster2D : MonoBehaviour
 
         ChangeMonsterState(EntityAnimState.Die);
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.6f);
 
         GameObjectManager.Instance.DestroyMonster(_monsterInstanceId);
 
