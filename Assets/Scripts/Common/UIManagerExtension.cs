@@ -157,7 +157,7 @@ public static partial class UIManagerExtension
 
     public static void OpenGameViewUI(this UIManager uiManager)
     {
-        var uiBase = uiManager.OpenContentUI(UIType.GameViewUI);
+        var uiBase = uiManager.OpenMainUI(UIType.GameViewUI);
         if( uiBase == null)
         {
             Debug.LogWarning($"UI가 생성되지 않았습니다");
@@ -167,7 +167,7 @@ public static partial class UIManagerExtension
 
     public static void CloseGameViewUI(this UIManager uiManager)
     {
-        uiManager.CloseContentUI(UIType.GameViewUI);
+        uiManager.CloseMainUI(UIType.GameViewUI);
     }
 
     public static void OpenPausePopup(this UIManager uiManager)

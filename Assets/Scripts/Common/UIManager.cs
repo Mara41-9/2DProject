@@ -163,6 +163,11 @@ public class UIManager : UIBase
         return OpenUI(UIRootType.MainUI, uiType);
     }
 
+    public void CloseMainUI(UIType uiType)
+    {
+        CloseUI(UIRootType.MainUI, uiType);
+    }
+
     // ContentUI 전용 Open 함수
     public UIBase OpenContentUI(UIType uiType)
     {
