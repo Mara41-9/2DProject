@@ -60,7 +60,9 @@ public class InventoryPopup : UIBase
         Btn_ItemCategory.BindOnClickButtonEvent(OnClick_ItemCategory);
         Btn_UseButton.BindOnClickButtonEvent(OnClick_UseButton);
 
-        SetInventorySlotOnEnable(EInventoryCategory.WeaponCategory);
+        // 인벤토리 창이 "열릴 때마다" 초기 상태를 다시 세팅
+        _curCategory = EInventoryCategory.WeaponCategory;
+        SetInventorySlotOnEnable(_curCategory);
         Text_UseButton.text = "장착";
     }
 
