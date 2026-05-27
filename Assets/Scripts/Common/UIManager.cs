@@ -143,8 +143,14 @@ public class UIManager : UIBase
         }
     }
 
-    // 생성된 UI를 가져오는 함수
-    public UIBase GetCreatedUI(UIRootType uiRootType, UIType uiType)
+    // 열려있는 애를 밖에서 사용하기 위해서 함수 구현 -> public
+    public UIBase GetOpenedUI(UIRootType uiRootType, UIType uiType)
+    {
+        return GetCreatedUI(uiRootType, uiType);
+    }
+
+    // 생성된 UI를 가져오는 함수 - 이 함수 안에서만 사용하기 위해 private
+    private UIBase GetCreatedUI(UIRootType uiRootType, UIType uiType)
     {
         // 이 UI가 아직 만들어져 있지 않다면
         if( _createdUIDic.ContainsKey(uiType) == false)

@@ -112,7 +112,7 @@ public class InventoryPopup : UIBase
             if(itemData.ItemType == "Heal")
             {
                 UIManager.Instance.OpenCommonToastUI();
-                var commonToastUI = UIManager.Instance.GetCreatedUI(UIRootType.ToastUI, UIType.CommonToastUI);
+                var commonToastUI = UIManager.Instance.GetOpenedUI(UIRootType.ToastUI, UIType.CommonToastUI);
                 if (commonToastUI == null) { return; }
 
                 var component = commonToastUI.GetComponent<CommonToastUI>();
