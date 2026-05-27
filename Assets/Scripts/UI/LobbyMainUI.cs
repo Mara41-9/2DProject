@@ -44,6 +44,7 @@ public class LobbyMainUI : UIBase
         }
         else
         {
+            UIManager.Instance.OpenCommonToastUI();
             Debug.LogWarning("무기를 먼저 선택해주세요.");
         }
             

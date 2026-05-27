@@ -8,6 +8,7 @@ public enum UIRootType
     MainUI,
     ContentUI,
     PopupUI,
+    ToastUI,
     VeryFrontUI,
 }
 
@@ -19,6 +20,7 @@ public enum UIType
     SkillPopup,
     QuestPopup,
     InventoryPopup,
+    CommonToastUI,
     GameViewUI,
     PausePopup,
     LoadingUI,
@@ -74,6 +76,21 @@ public static partial class UIManagerExtension
     public static void CloseLobbyMainUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.MainUI, UIType.LobbyMainUI);
+    }
+
+    public static void OpenCommonToastUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.ToastUI, UIType.CommonToastUI);
+        if( uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseCommonToastUI( this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.ToastUI, UIType.CommonToastUI);
     }
 
     public static void OpenPropilePopup(this UIManager uiManager)

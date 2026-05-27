@@ -11,6 +11,7 @@ public class UIManager : UIBase
     [SerializeField] Canvas Canvas_MainRoot;       // 메인 UI 전용 - 핵심 UI
     [SerializeField] Canvas Canvas_ContentRoot;    // 콘텐츠 전용 - 메인 UI 위에 크게 열리는 창들
     [SerializeField] Canvas Canvas_PopupRoot;      // 팝업 전용 - 일시적으로 뜨는 작은 창
+    [SerializeField] Canvas Canvas_ToastRoot;      // 메시지 띄울 UI
     [SerializeField] Canvas Canvas_VeryFrontRoot;  // 가장 앞에 떠야 하는 UI - 로딩 화면
 
     public static UIManager Instance { get; set; }
@@ -103,6 +104,9 @@ public class UIManager : UIBase
                 break;
             case UIRootType.VeryFrontUI:
                 root = Canvas_VeryFrontRoot.transform;
+                break;
+            case UIRootType.ToastUI:
+                root = Canvas_ToastRoot.transform;
                 break;
         }
 

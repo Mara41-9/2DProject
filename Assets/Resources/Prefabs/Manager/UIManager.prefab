@@ -362,7 +362,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 250
+  m_SortingOrder: 260
   m_TargetDisplay: 0
 --- !u!114 &1778470210629608826
 MonoBehaviour:
@@ -660,4 +660,5 @@ MonoBehaviour:
   Canvas_MainRoot: {fileID: 346865966302714545}
   Canvas_ContentRoot: {fileID: 5839450996431726069}
   Canvas_PopupRoot: {fileID: 3651040403157906395}
+  Canvas_ToastRoot: {fileID: 5951157397913647594}
   Canvas_VeryFrontRoot: {fileID: 915374325009690294}

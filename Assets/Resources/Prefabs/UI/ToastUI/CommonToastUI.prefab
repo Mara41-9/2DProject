@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6348553694665511238}
   - component: {fileID: 7260298708801253019}
   m_Layer: 5
-  m_Name: Img_Bg
+  m_Name: Img_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,8 +86,9 @@ GameObject:
   - component: {fileID: 9089675997642894383}
   - component: {fileID: 8698401731950608454}
   - component: {fileID: 6115123524698476946}
+  - component: {fileID: 8534467343411753532}
   m_Layer: 5
-  m_Name: Img_BackBg
+  m_Name: Img_Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,6 +151,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8534467343411753532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561029938789904936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7dab55bc4cb7f4ba5ed6fc52416a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CommonToastUI
+  Image_Bg: {fileID: 0}
+  Image_Frame: {fileID: 0}
+  Text_Message: {fileID: 0}
 --- !u!1 &6376609095803001707
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6609484561822541946}
+  - component: {fileID: 7191010144253593178}
   m_Layer: 5
   m_Name: CommonToastUI
   m_TagString: Untagged
@@ -189,6 +206,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7191010144253593178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376609095803001707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7dab55bc4cb7f4ba5ed6fc52416a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CommonToastUI
+  Image_Bg: {fileID: 6115123524698476946}
+  Image_Frame: {fileID: 7260298708801253019}
+  Text_Message: {fileID: 7326832315702702304}
 --- !u!1 &6527002559360359608
 GameObject:
   m_ObjectHideFlags: 0
