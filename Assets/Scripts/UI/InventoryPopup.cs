@@ -50,6 +50,8 @@ public class InventoryPopup : UIBase
 
     private InventorySlotUI _selectedSlot;
 
+    private EInventoryCategory _curCategory = EInventoryCategory.None;
+
     private void OnEnable()
     {
         Btn_ClosePopup.BindOnClickButtonEvent(OnClick_CloseUI);
@@ -77,14 +79,16 @@ public class InventoryPopup : UIBase
     public void OnClick_WeaponCategory()
     {
         ClearSelectedInfo();
-        SetInventoryLayoutByCategory(EInventoryCategory.WeaponCategory);
+        _curCategory = EInventoryCategory.WeaponCategory;
+        SetInventoryLayoutByCategory(_curCategory);
         Text_UseButton.text = "장착";
     }
 
     public void OnClick_ItemCategory()
     {
         ClearSelectedInfo();
-        SetInventoryLayoutByCategory(EInventoryCategory.ItemCategory);
+        _curCategory = EInventoryCategory.ItemCategory;
+        SetInventoryLayoutByCategory(_curCategory);
         Text_UseButton.text = "사용";
     }
 
@@ -96,7 +100,21 @@ public class InventoryPopup : UIBase
             return;
         }
 
-        GameManager.Instance.SetEquippedWeapon(_selectedSlot.SlotDataId);
+        if(_curCategory == EInventoryCategory.WeaponCategory)
+        {
+            GameManager.Instance.SetEquippedWeapon(_selectedSlot.SlotDataId);
+        }
+        else if(_curCategory == EInventoryCategory.ItemCategory)
+        {
+            var itemData = GameDataManager.Instance.GetItemData(_selectedSlot.SlotDataId);
+            if (itemData == null) return;
+
+            if(itemData.ItemType == "Heal")
+            {
+                Debug.LogWarning("회복 아이템은 게임 진행 중에만 사용할 수 있습니다.");
+                return;
+            }
+        }
     }
 
     private void SetInventoryLayoutByCategory(EInventoryCategory category)
