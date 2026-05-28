@@ -13,10 +13,10 @@ public class GameViewItemSlotUI : MonoBehaviour
     [SerializeField] private GameObject Gobj_Selected;
     [SerializeField] private GameUIButton Btn_Slot;
 
-    public int SlotInstanceId { get; private set; }
+    public long SlotUniqueId { get; private set; }
     public bool IsUseableItem { get; private set; }
 
-    private event Action<int> _onSlotSelected;
+    private event Action<long> _onSlotSelected;
 
     private void OnEnable()
     {
@@ -38,20 +38,20 @@ public class GameViewItemSlotUI : MonoBehaviour
         IsUseableItem = (string.IsNullOrEmpty(itemData.UseItemType) == false);
     }
 
-    public void InitSlot(int slotInstanceId, string itemDataId, int stackCount)
+    public void InitSlot(long slotuniqueId, string itemDataId, int stackCount)
     {
-        SlotInstanceId = slotInstanceId;
+        SlotUniqueId = slotuniqueId;
         SetIcon(itemDataId, stackCount);
     }
 
     // 등록된 이벤트 함수들 실행
     public void InvokeOnClickSelectSlot()
     {
-        _onSlotSelected?.Invoke(SlotInstanceId);
+        _onSlotSelected?.Invoke(SlotUniqueId);
     }
 
     // 이벤트 등록
-    public void BindSlotSelectEvent(Action<int> onSelectEvent)
+    public void BindSlotSelectEvent(Action<long> onSelectEvent)
     {
         _onSlotSelected += onSelectEvent;
     }

@@ -31,10 +31,9 @@ public class GameViewUI : UIBase
     [SerializeField] private GameObject Prefab_MonsterSlot;
     [SerializeField] private Transform Transform_UIMonsterSlotRoot;
 
-    private Dictionary<int, GameViewItemSlotUI> _itemSlotList = new Dictionary<int, GameViewItemSlotUI>();
+    private Dictionary<long, GameViewItemSlotUI> _itemSlotList = new Dictionary<long, GameViewItemSlotUI>();
     private Dictionary<int, GameViewMonsterSlotUI> _monsterSlotList = new Dictionary<int, GameViewMonsterSlotUI>();
 
-    private int _generatedItemKey;
     private int _generatedMonsterKey;
 
     private void OnEnable()
@@ -133,12 +132,12 @@ public class GameViewUI : UIBase
 
         foreach(var itemModel in ItemList)
         {
-            CreateItemSlot(itemModel.ItemDataId, itemModel.ItemStackCount);
+            CreateItemSlot(itemModel.ItemUniqueId, itemModel.ItemDataId, itemModel.ItemStackCount);
         }
     }
 
     // 아이템 슬롯 생성
-    private void CreateItemSlot(string itemDataId, int stackCount)
+    private void CreateItemSlot(long UniqueId, string itemDataId, int stackCount)
     {
         var gObj = Instantiate(Prefab_ItemSlot, Transform_UIItemSlotRoot);
         if( gObj == null ) return;
@@ -146,21 +145,19 @@ public class GameViewUI : UIBase
         var slotComponent = gObj.GetComponent<GameViewItemSlotUI>();
         if( slotComponent == null ) return;
 
-        _generatedItemKey++;
-
-        slotComponent.InitSlot(_generatedItemKey, itemDataId, stackCount);
-        _itemSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
+        slotComponent.InitSlot(UniqueId, itemDataId, stackCount);
+        _itemSlotList.Add(slotComponent.SlotUniqueId, slotComponent);
 
         // 이벤트 등록
         slotComponent.BindSlotSelectEvent(OnChildSlotSelected);
     }
 
-    private void OnChildSlotSelected(int selectedSlotInstanceId)
+    private void OnChildSlotSelected(long selectedSlotUniqueId)
     {
         foreach(var selectedItemSlotKv in _itemSlotList)
         {
             var selectedItemSlot = selectedItemSlotKv.Value;
-            bool isSlotSelected = (selectedSlotInstanceId == selectedItemSlot.SlotInstanceId);
+            bool isSlotSelected = (selectedSlotUniqueId == selectedItemSlot.SlotUniqueId);
             selectedItemSlot.SetSelectedUI(isSlotSelected);
 
             if(isSlotSelected == true)
@@ -227,8 +224,6 @@ public class GameViewUI : UIBase
 
             _itemSlotList.Clear();
         }
-
-        _generatedItemKey = 0;
     }
 
     // 이 오브젝트가 플레이어라면 이벤트를 구독하자
