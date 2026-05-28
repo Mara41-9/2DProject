@@ -260,8 +260,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if ((monsterComponent._moveDirection.x * this.transform.localScale.x) < 0)
             {
-                InvokeStatChangedEvent();
+                // Hp를 먼저 깎고 이벤트를 실행하자
                 _currentHp -= 5;
+                InvokeStatChangedEvent();
 
                 Debug.LogWarning($"셀리 공주의 남은 Hp: {_currentHp}");
                 if (_gameTestUI != null)

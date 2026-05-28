@@ -190,6 +190,7 @@ public class GameViewUI : UIBase
         _generatedItemKey = 0;
     }
 
+    // 이 오브젝트가 플레이어라면 이벤트를 구독하자
     private void TryBindSetChangedEvent(GameObject gObj)
     {
         var player = gObj.GetComponent<PlayerMovement>();

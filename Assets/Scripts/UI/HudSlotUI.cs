@@ -46,7 +46,7 @@ public class HudSlotUI : MonoBehaviour
 
     private void OnTargetEntityMpChanged(int curMp, int maxMp)
     {
-        Slider_Hp.value = (curMp / (float)maxMp);
+        Slider_Mp.value = (curMp / (float)maxMp);
     }
 
     private void Update()
