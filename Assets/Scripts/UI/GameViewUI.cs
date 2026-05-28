@@ -11,6 +11,7 @@ public class GameViewUI : UIBase
     [SerializeField] private TMP_Text Text_PlayerLevel;
     [SerializeField] private Image Image_SelectedWeapon;
     [SerializeField] private Image Image_SelectedSkill;
+    [SerializeField] private Slider Slider_Hp;
 
     [Header("기본 공격")]
     [SerializeField] private GameUIButton Btn_BasicAttack;
