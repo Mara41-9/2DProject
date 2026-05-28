@@ -126,6 +126,33 @@ public class GameManager : MonoBehaviour
         _playerModel.ItemList.Add(newItem);
     }
 
+    public bool RequestRemoveItem(long requestRemoveTargetitemUniqueId)
+    {
+        int removeTargetIdx = 0;
+        bool isRemoveItemExist = false;
+
+        foreach(var itemModel in _playerModel.ItemList)
+        {
+            if(itemModel.ItemUniqueId == requestRemoveTargetitemUniqueId)
+            {
+                isRemoveItemExist = true;
+                break;
+            }
+
+            removeTargetIdx++;
+        }
+
+        if(isRemoveItemExist == true)
+        {
+            _playerModel.ItemList.RemoveAt(removeTargetIdx);
+            SaveData();
+            return true;
+        }
+
+        return false;
+        
+    }
+
     public void AddWeapon(string weaponDataId)
     {
         // 저장할 때 고유값 ID를 부여하기 위해 사용 (고유 번호 생성)

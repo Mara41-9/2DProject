@@ -35,6 +35,7 @@ public class GameViewUI : UIBase
     private Dictionary<int, GameViewMonsterSlotUI> _monsterSlotList = new Dictionary<int, GameViewMonsterSlotUI>();
 
     private int _generatedMonsterKey;
+    private long _currentSelectedItemUniqueId;
 
     private void OnEnable()
     {
@@ -77,7 +78,37 @@ public class GameViewUI : UIBase
 
     private void OnClick_UseItemButton()
     {
+        RequestSelectUseItem();
+    }
 
+    // 저장된 아이템 List에서 제거 요청
+    private void RequestSelectUseItem()
+    {
+        // 게임 매니저에 아이템 제거를 요청
+        bool isItemRemoved = GameManager.Instance.RequestRemoveItem(_currentSelectedItemUniqueId);
+        if(isItemRemoved == true)
+        {
+            RemoveItemSlot(_currentSelectedItemUniqueId);
+            _currentSelectedItemUniqueId = 0;
+            Btn_UseItem.gameObject.SetActive(false);
+        }
+
+    }
+
+    // 아이템 슬롯 제거
+    private void RemoveItemSlot(long removedItemUniqueId)
+    {
+        // 저장 정보에서 먼저! 아이템이 제거된 후에!!!
+        // 그 다음에 슬롯을 제거해야 한다
+        if(_itemSlotList.ContainsKey(removedItemUniqueId) == false)
+        {
+            Debug.LogError("이상합니다! 제거가 된 아이템의 슬롯을 찾을 수가 없네요!");
+            return;
+        }
+
+        var slotComponent = _itemSlotList[removedItemUniqueId];
+        _itemSlotList.Remove(removedItemUniqueId);
+        Destroy(slotComponent.gameObject);
     }
 
     private void PlayerInfo()
@@ -146,7 +177,7 @@ public class GameViewUI : UIBase
         if( slotComponent == null ) return;
 
         slotComponent.InitSlot(UniqueId, itemDataId, stackCount);
-        _itemSlotList.Add(slotComponent.SlotUniqueId, slotComponent);
+        _itemSlotList.Add(slotComponent.SlotItemUniqueId, slotComponent);
 
         // 이벤트 등록
         slotComponent.BindSlotSelectEvent(OnChildSlotSelected);
@@ -157,11 +188,12 @@ public class GameViewUI : UIBase
         foreach(var selectedItemSlotKv in _itemSlotList)
         {
             var selectedItemSlot = selectedItemSlotKv.Value;
-            bool isSlotSelected = (selectedSlotUniqueId == selectedItemSlot.SlotUniqueId);
+            bool isSlotSelected = (selectedSlotUniqueId == selectedItemSlot.SlotItemUniqueId);
             selectedItemSlot.SetSelectedUI(isSlotSelected);
 
             if(isSlotSelected == true)
             {
+                _currentSelectedItemUniqueId = selectedItemSlot.SlotItemUniqueId;
                 // 실제로 사용이 가능한 Item인지 (UseItemType != null) -> 사용 가능하면 True
                 Btn_UseItem.gameObject.SetActive(selectedItemSlot.IsUseableItem);
             }
