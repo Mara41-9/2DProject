@@ -8,9 +8,9 @@ public class HudUI : UIBase
 
     private Dictionary<int, HudSlotUI> _hudSlotList = new Dictionary<int, HudSlotUI>();
 
-    public void AddHudSlot(int instanceId)
+    public void AddHudSlot(int instanceId, Transform targetTransform)
     {
-        CreateHudSlot(instanceId);
+        CreateHudSlot(instanceId, targetTransform);
     }
 
     public void RemoveHudSlot()
@@ -18,13 +18,16 @@ public class HudUI : UIBase
 
     }
 
-    private void CreateHudSlot(int instanceId)
+    private void CreateHudSlot(int instanceId, Transform targetTransform)
     {
         var gObj = Instantiate(Prefab_HudSlot, Transform_SlotRoot);
         if (gObj == null) return;
 
         var slotComponent = gObj.GetComponent<HudSlotUI>();
         if(slotComponent == null) return;
+
+        // 동적 생성된 자식 슬롯(게임오브젝트) 안에 있는 컴포넌트도 잘 가져왔다
+        slotComponent.InitSlot(instanceId, targetTransform);
 
         _hudSlotList.Add(instanceId, slotComponent);
 

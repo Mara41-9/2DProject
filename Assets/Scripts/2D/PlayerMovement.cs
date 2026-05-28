@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // 나 스스로를 등록한다. -> 씬에 있는 그 2D 플레이어가 등록됨
         GameObjectManager.Instance.RegisterLocalPlayer(this);
-        UIManager.Instance.AddHudSlot(0); // 일단 쉽게 0번 등록
+        UIManager.Instance.AddHudSlot(0, this.gameObject.transform); // 일단 쉽게 0번 등록
 
         this.transform.position = _playerPosition;
 
