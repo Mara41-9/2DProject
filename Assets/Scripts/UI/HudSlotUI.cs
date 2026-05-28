@@ -2,6 +2,8 @@
 
 public class HudSlotUI : MonoBehaviour
 {
+    [SerializeField] private int SlotOffestY;
+
     private int _instanceId;
 
     // 참조형을 기록(캐싱)
@@ -11,6 +13,7 @@ public class HudSlotUI : MonoBehaviour
     {
         _instanceId = instanceId;
         _targetTransform = targetTransform;
+        SlotOffestY = 120;
     }
 
     private void Update()
@@ -27,7 +30,8 @@ public class HudSlotUI : MonoBehaviour
             var rectTransform = this.GetComponent<RectTransform>();
             if(rectTransform != null)
             {
-                rectTransform.anchoredPosition = screenPos;
+                Vector2 finalScreenPos = new Vector2(screenPos.x, screenPos.y - SlotOffestY);
+                rectTransform.anchoredPosition = finalScreenPos;
             }
         }
     }
