@@ -20,6 +20,6 @@ public class PausePopup : UIBase
         UIManager.Instance.OpenLoadingUI();
         UIManager.Instance.CloseGameViewUI();
         UIManager.Instance.ClosePausePopup();
-        UIManager.Instance.OpenLobbyMainUI();
+        UIManager.Instance.OpenLobbyUI();
     }
 }

@@ -36,7 +36,7 @@ public class GameTestUI : MonoBehaviour
         GameManager.Instance.RefreshGame();
         Debug.LogWarning("로비메인UI로 이동합니다.");
         UIManager.Instance.OpenLoadingUI();
-        UIManager.Instance.OpenLobbyMainUI();
+        UIManager.Instance.OpenLobbyUI();
     }
 
     public void PlayerHp(int currentHp)

@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 5364387769223623671}
   - component: {fileID: 6273250805865288706}
   m_Layer: 5
-  m_Name: LobbyMainUI
+  m_Name: LobbyUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

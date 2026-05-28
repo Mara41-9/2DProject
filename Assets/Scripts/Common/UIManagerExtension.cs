@@ -15,7 +15,7 @@ public enum UIRootType
 public enum UIType
 {
     GameStartUI,
-    LobbyMainUI,
+    LobbyUI,
     ProfilePopup,
     SkillPopup,
     QuestPopup,
@@ -64,9 +64,9 @@ public static partial class UIManagerExtension
         uiManager.CloseUI(UIRootType.ContentUI, UIType.GameStartUI);
     }
 
-    public static void OpenLobbyMainUI(this UIManager uiManager)
+    public static void OpenLobbyUI(this UIManager uiManager)
     {
-        var uiBase = uiManager.OpenContentUI(UIType.LobbyMainUI);
+        var uiBase = uiManager.OpenContentUI(UIType.LobbyUI);
         if(uiBase == null)
         {
             Debug.LogWarning($"UI가 생성되지 않았습니다");
@@ -76,7 +76,7 @@ public static partial class UIManagerExtension
 
     public static void CloseLobbyMainUI(this UIManager uiManager)
     {
-        uiManager.CloseUI(UIRootType.ContentUI, UIType.LobbyMainUI);
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.LobbyUI);
     }
 
     public static void OpenCommonToastUI(this UIManager uiManager)

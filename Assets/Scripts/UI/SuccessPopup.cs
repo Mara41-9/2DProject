@@ -16,6 +16,6 @@ public class SuccessPopup : UIBase
         Debug.LogWarning("로비메인UI로 이동합니다.");
         UIManager.Instance.OpenLoadingUI();
         UIManager.Instance.CloseSuccessPopup();
-        UIManager.Instance.OpenLobbyMainUI();
+        UIManager.Instance.OpenLobbyUI();
     }
 }

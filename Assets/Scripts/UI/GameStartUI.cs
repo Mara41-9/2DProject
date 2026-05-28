@@ -13,7 +13,7 @@ public class GameStartUI : UIBase
     private void OnClick_GameStartButton()
     {
         UIManager.Instance.OpenLoadingUI();
-        UIManager.Instance.OpenLobbyMainUI();
+        UIManager.Instance.OpenLobbyUI();
         Debug.LogWarning("로비 창이 열렸습니다.");
     }
 }
