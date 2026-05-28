@@ -42,6 +42,11 @@ public class GameViewUI : UIBase
         SetItemSlotOnEnable();
         SetMonsterSlotOnEnable();
 
+        var player = GameObjectManager.Instance.GetLocalPlayer();
+        if (player == null) return;
+
+        TryBindSetChangedEvent(player.gameObject);
+
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
         Btn_BasicAttack.BindOnClickButtonEvent(OnClick_BasicAttackButton);
     }
@@ -183,6 +188,25 @@ public class GameViewUI : UIBase
         }
 
         _generatedItemKey = 0;
+    }
+
+    private void TryBindSetChangedEvent(GameObject gObj)
+    {
+        var player = gObj.GetComponent<PlayerMovement>();
+        if(player != null)
+        {
+            player.BindOnStatChangedEvent(OnTargetEntityHpChanged, OnTargetEntityMpChanged);
+        }
+    }
+
+    private void OnTargetEntityHpChanged(int curHp, int maxHp)
+    {
+        Slider_Hp.value = (curHp / (float)maxHp);
+    }
+
+    private void OnTargetEntityMpChanged(int curMp, int maxMp)
+    {
+        Slider_Hp.value = (curMp / (float)maxMp);
     }
 
 }
