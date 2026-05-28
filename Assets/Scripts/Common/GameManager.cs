@@ -18,37 +18,38 @@ public class GameManager : MonoBehaviour
         // 게임 시작하자마자 자동으로 세이브 데이터 불러옴
         LoadSaveData();
 
-        var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
-        if(WeaponData == null)
+        // 만약 게임이 처음 시작한거라면
+        if(_playerModel.IsFirstStart == true)
         {
-            Debug.LogWarning("기본 무기 데이터를 찾을 수 없습니다.");
-            return;
-        }
-
-        if(_playerModel.WeaponList.Count == 0)
-        {
-            AddWeapon(WeaponData.Id);
-        }
-
-        var ItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
-        if(ItemData == null)
-        {
-            Debug.LogWarning("기본 아이템 데이터를 찾을 수 없습니다.");
-            return;
-        }
-
-        if(_playerModel.ItemList.Count == 0)
-        {
-            AddItem(ItemData.Id, 1);
-        }
-
-        var SkillDataList = GameDataManager.Instance.SkillDataList;
-        if(SkillDataList != null)
-        {
-            foreach(var skillData in SkillDataList)
+            var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
+            if (WeaponData == null)
             {
-                AddSkill(skillData.Key);
+                Debug.LogWarning("기본 무기 데이터를 찾을 수 없습니다.");
+                return;
             }
+
+            AddWeapon(WeaponData.Id);
+
+            var ItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
+            if (ItemData == null)
+            {
+                Debug.LogWarning("기본 아이템 데이터를 찾을 수 없습니다.");
+                return;
+            }
+
+            AddItem(ItemData.Id, 1);
+
+            var SkillDataList = GameDataManager.Instance.SkillDataList;
+            if (SkillDataList != null)
+            {
+                foreach (var skillData in SkillDataList)
+                {
+                    AddSkill(skillData.Key);
+                }
+            }
+
+            _playerModel.IsFirstStart = false;
+            SaveData();
         }
 
     }

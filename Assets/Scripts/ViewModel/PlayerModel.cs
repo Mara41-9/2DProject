@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 [Serializable]
 public class PlayerModel
 {
+    public bool IsFirstStart = true;      // 게임의 처음 시작 여부
     public string PlayerName;             // 플레이어 이름
     public int PlayerTotalExp;            // 플레이어 총 경험치 -> 레벨 계산에 사용
     public int PlayerLevel = 1;               // 플레이어 레벨
