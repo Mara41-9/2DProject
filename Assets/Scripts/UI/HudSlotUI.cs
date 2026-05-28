@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HudSlotUI : MonoBehaviour
 {
-    [SerializeField] private int SlotOffestY;
+    [SerializeField] private int SlotOffestY;     // HUD 슬롯을 대상보다 얼마나 위에 띄울지
     [SerializeField] private Slider Slider_Hp;
     [SerializeField] private Slider Slider_Mp;
 
@@ -16,7 +16,7 @@ public class HudSlotUI : MonoBehaviour
     {
         _instanceId = instanceId;
         _targetTransform = targetTransform;
-        SlotOffestY = 120;
+        SlotOffestY = 50;
 
         TryBindSetChangedEvent(targetTransform.gameObject);
     }
