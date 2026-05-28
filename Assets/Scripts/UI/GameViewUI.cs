@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class GameViewUI : UIBase
     [Header("아이템")]
     [SerializeField] private GameObject Prefab_ItemSlot;
     [SerializeField] private Transform Transform_UIItemSlotRoot;
+    [SerializeField] private GameUIButton Btn_UseItem;
 
     [Header("몬스터")]
     [SerializeField] private GameObject Prefab_MonsterSlot;
@@ -50,6 +52,10 @@ public class GameViewUI : UIBase
 
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
         Btn_BasicAttack.BindOnClickButtonEvent(OnClick_BasicAttackButton);
+        Btn_UseItem.BindOnClickButtonEvent(OnClick_UseItemButton);
+
+        Btn_UseItem.gameObject.SetActive(false);
+
     }
 
     private void Start()
@@ -68,6 +74,11 @@ public class GameViewUI : UIBase
         if (player == null) return;
 
         player.Attack();
+    }
+
+    private void OnClick_UseItemButton()
+    {
+
     }
 
     private void PlayerInfo()
@@ -112,6 +123,7 @@ public class GameViewUI : UIBase
         GameUtil.LoadAndSetSpriteImage(Image_SelectedWeapon, equippedWeapon.IconPath).Forget();
     }
 
+    // 플레이어가 가지고 있는 아이템 불러와서 CreateItemSlot 함수 호출 
     private void SetItemSlotOnEnable()
     {
         ClearItemList();
@@ -125,6 +137,7 @@ public class GameViewUI : UIBase
         }
     }
 
+    // 아이템 슬롯 생성
     private void CreateItemSlot(string itemDataId, int stackCount)
     {
         var gObj = Instantiate(Prefab_ItemSlot, Transform_UIItemSlotRoot);
@@ -137,6 +150,26 @@ public class GameViewUI : UIBase
 
         slotComponent.InitSlot(_generatedItemKey, itemDataId, stackCount);
         _itemSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
+
+        // 이벤트 등록
+        slotComponent.BindSlotSelectEvent(OnChildSlotSelected);
+    }
+
+    private void OnChildSlotSelected(int selectedSlotInstanceId)
+    {
+        foreach(var selectedItemSlotKv in _itemSlotList)
+        {
+            var selectedItemSlot = selectedItemSlotKv.Value;
+            bool isSlotSelected = (selectedSlotInstanceId == selectedItemSlot.SlotInstanceId);
+            selectedItemSlot.SetSelectedUI(isSlotSelected);
+
+            if(isSlotSelected == true)
+            {
+                // 실제로 사용이 가능한 Item인지.. 사용 가능하면 True
+                Btn_UseItem.gameObject.SetActive(selectedItemSlot.IsUseableItem);
+            }
+        }
+
     }
 
     private void SetMonsterSlotOnEnable()
