@@ -34,6 +34,7 @@ public class GameViewItemSlotUI : MonoBehaviour
         GameUtil.LoadAndSetSpriteImage(Image_Icon, itemDataIconPath).Forget();
         Text_StackCount.text = $"{stackCount}";
 
+        // 아이템의 UseItemType이 Null이 아니라면 사용 가능한 아이템으로 처리
         IsUseableItem = (string.IsNullOrEmpty(itemData.UseItemType) == false);
     }
 

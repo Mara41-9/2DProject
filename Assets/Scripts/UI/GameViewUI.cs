@@ -165,7 +165,7 @@ public class GameViewUI : UIBase
 
             if(isSlotSelected == true)
             {
-                // 실제로 사용이 가능한 Item인지.. 사용 가능하면 True
+                // 실제로 사용이 가능한 Item인지 (UseItemType != null) -> 사용 가능하면 True
                 Btn_UseItem.gameObject.SetActive(selectedItemSlot.IsUseableItem);
             }
         }
