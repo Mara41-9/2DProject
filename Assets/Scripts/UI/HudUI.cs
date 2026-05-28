@@ -13,9 +13,18 @@ public class HudUI : UIBase
         CreateHudSlot(instanceId, targetTransform);
     }
 
-    public void RemoveHudSlot()
+    public void RemoveHudSlot(int instanceId)
     {
+        // 생성이 된게 맞다면
+        if(_hudSlotList.ContainsKey(instanceId) == true)
+        {
+            var slot = _hudSlotList[instanceId];
 
+            // Destroy는 컴포넌트인 slot이 아니라 slot.gameObject
+            Destroy(slot.gameObject);
+
+            _hudSlotList.Remove(instanceId);
+        }
     }
 
     private void CreateHudSlot(int instanceId, Transform targetTransform)

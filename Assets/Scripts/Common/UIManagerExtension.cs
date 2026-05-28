@@ -247,7 +247,7 @@ public static partial class UIManagerExtension
     }
 
     // 그 대상이 죽었을 때 호출
-    public static void RemoveHudSlot(this UIManager uiManager)
+    public static void RemoveHudSlot(this UIManager uiManager, int instanceId)
     {
         var uiBase = uiManager.GetOpenedUI(UIRootType.MainUI, UIType.HudUI);
         if (uiBase == null) return;
@@ -255,7 +255,7 @@ public static partial class UIManagerExtension
         if (uiBase is HudUI hudUi)
         {
             // HudUI에게 "슬롯 하나 제거해!" 요청
-            hudUi.RemoveHudSlot();
+            hudUi.RemoveHudSlot(instanceId);
         }
     }
 }

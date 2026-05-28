@@ -51,6 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HudSlotUI
   SlotOffestY: 0
+  Text_Name: 
+  Slider_Hp: {fileID: 7574835111380089965}
+  Slider_Mp: {fileID: 4945294791261911428}
 --- !u!1 &3424047998127604821
 GameObject:
   m_ObjectHideFlags: 0

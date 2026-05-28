@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -39,11 +40,15 @@ public class PlayerMovement : MonoBehaviour
     private bool _lookRight = true;
 
     private int _currentScore;
-    public int _currentHp; //{ get; private set; }
+    private int _maxHp;     // 최대 Hp
+    public int _currentHp;  // 현재 Hp 
 
     private bool _isAttack;
 
     public Vector2 PlayerPosition { get; private set; }
+
+    private event Action<int, int> _onHpChanged;
+    private event Action<int, int> _onMpChanged;
 
     private void Awake()
     {
@@ -52,6 +57,16 @@ public class PlayerMovement : MonoBehaviour
         // 2D 캐릭터가 물리 충돌 시, 회전해서 넘어지는 것 방지
         // constraints : 움직임 제한 설정
         _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        var player = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
+        if (player == null)
+        {
+            return;
+        }
+
+        _maxHp = player.Hp;
+        _currentHp = _maxHp;
+
     }
 
     private void Start()
@@ -61,14 +76,6 @@ public class PlayerMovement : MonoBehaviour
         UIManager.Instance.AddHudSlot(0, this.gameObject.transform); // 일단 쉽게 0번 등록
 
         this.transform.position = _playerPosition;
-
-        var player = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
-        if (player == null)
-        {
-            return;
-        }
-
-        _currentHp = player.Hp;
     }
 
     private void Update()
@@ -250,6 +257,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if ((monsterComponent._moveDirection.x * this.transform.localScale.x) < 0)
             {
+                InvokeStatChangedEvent();
                 _currentHp -= 5;
 
                 Debug.LogWarning($"셀리 공주의 남은 Hp: {_currentHp}");
@@ -270,6 +278,26 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log($"충돌한 적 객체에서 컴포넌트를 찾을 수 없습니다 : {gameObject.name}");
             return;
         }
+    }
+
+
+    public void BindOnStatChangedEvent(Action<int, int> hpChangeCallback, Action<int, int> mpChangeCallback)
+    {
+        _onHpChanged += hpChangeCallback;
+        _onHpChanged += mpChangeCallback;
+    }
+
+    public void ResetBindStatChangedEvent()
+    {
+        _onHpChanged = null;
+        _onMpChanged = null;
+    }
+
+    private void InvokeStatChangedEvent()
+    {
+        // 우선 HP든 MP든 하나라도 바뀌면 다 호출해준다
+        _onHpChanged?.Invoke(_currentHp, _maxHp);
+       // _onMpChanged?.Invoke(_currentMp);
     }
 
 }

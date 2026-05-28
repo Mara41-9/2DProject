@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class Monster2D : MonoBehaviour
     public int _baseHp;
     public int _baseAtk;
     public bool _isAlive = true;
+    private int _maxHp;     // 최대 Hp
 
     [Header("애니메이터")]
     [SerializeField] private EntityAnimController AnimatorController_Entity;
@@ -33,6 +35,9 @@ public class Monster2D : MonoBehaviour
     private Transform _rightPoint;
 
     private Rigidbody2D _rigidbody;
+
+    private event Action<int, int> _onHpChanged;
+    private event Action<int, int> _onMpChanged;
 
     private void Awake()
     {
@@ -74,10 +79,12 @@ public class Monster2D : MonoBehaviour
 
         _monsterData = monsterData;
         _baseHp = _monsterData.BaseHp;
+        _maxHp = _baseHp;
         _baseAtk = _monsterData.BaseAtk;
-
         _monsterInstanceId = instanceId;
         _monsterDataId = monsterDataId;
+
+        UIManager.Instance.AddHudSlot(instanceId, this.gameObject.transform);
 
         //StartCoroutine(CheckAndUseSkill());
     }
@@ -100,7 +107,7 @@ public class Monster2D : MonoBehaviour
     void RandomPickDirection()
     {
         // 랜덤값이 0이면 -1, 0이 아니면 1
-        float randomX = Random.Range(0, 2) == 0 ? -1f : 1f;
+        float randomX = UnityEngine.Random.Range(0, 2) == 0 ? -1f : 1f;
         // 왼쪽 또는 오른쪽 방향 벡터 생성
         _moveDirection = new Vector3(randomX, 0, 0);
         SetMeshDirectionByMoveDirection((int)_moveDirection.x);
@@ -149,6 +156,7 @@ public class Monster2D : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _baseHp -= damage;
+        InvokeStatChangedEvent();
 
         if (_baseHp <= 0)
         {
@@ -207,7 +215,27 @@ public class Monster2D : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
 
         GameObjectManager.Instance.DestroyMonster(_monsterInstanceId);
+        UIManager.Instance.RemoveHudSlot(_monsterInstanceId);
 
+    }
+
+    public void BindOnStatChangedEvent(Action<int, int> hpChangeCallback, Action<int, int> mpChangeCallback)
+    {
+        _onHpChanged += hpChangeCallback;
+        _onHpChanged += mpChangeCallback;
+    }
+
+    public void ResetBindStatChangedEvent()
+    {
+        _onHpChanged = null;
+        _onMpChanged = null;
+    }
+
+    private void InvokeStatChangedEvent()
+    {
+        // 우선 HP든 MP든 하나라도 바뀌면 다 호출해준다
+        _onHpChanged?.Invoke(_baseHp, _maxHp);
+        // _onMpChanged?.Invoke(_currentMp);
     }
 
 
