@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _lookRight = true;
 
     private int _currentScore;
-    private int _maxHp;     // 최대 Hp
+    public int _maxHp;     // 최대 Hp
     public int _currentHp;  // 현재 Hp 
 
     private bool _isAttack;

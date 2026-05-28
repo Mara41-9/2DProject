@@ -12,6 +12,7 @@ public class GameViewUI : UIBase
     [SerializeField] private Image Image_SelectedWeapon;
     [SerializeField] private Image Image_SelectedSkill;
     [SerializeField] private Slider Slider_Hp;
+    [SerializeField] private TMP_Text Text_Hp;
 
     [Header("기본 공격")]
     [SerializeField] private GameUIButton Btn_BasicAttack;
@@ -71,13 +72,20 @@ public class GameViewUI : UIBase
 
     private void PlayerInfo()
     {
-        var player = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
-        if (player == null) return;
+        // 캐릭터 원본 데이터 가져오기
+        var playerData = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
+        if (playerData == null) return;
 
-        Text_PlayerName.text = player.Name;
+        Text_PlayerName.text = playerData.Name;
 
         var playerLevel = GameManager.Instance.GetPlayerLevel();
         Text_PlayerLevel.text = $"Lv.{playerLevel}";
+
+        // 실제 플레이중인 캐릭터 객체 가져오기
+        var player = GameObjectManager.Instance.GetLocalPlayer();
+        if (player == null) return;
+
+        Text_Hp.text = $"{player._currentHp} / {player._maxHp}";
 
     }
 
@@ -203,6 +211,13 @@ public class GameViewUI : UIBase
     private void OnTargetEntityHpChanged(int curHp, int maxHp)
     {
         Slider_Hp.value = (curHp / (float)maxHp);
+
+        var player = GameObjectManager.Instance.GetLocalPlayer();
+        if(player != null)
+        {
+            Text_Hp.text = $"{curHp} / {maxHp}";
+        }
+
     }
 
     private void OnTargetEntityMpChanged(int curMp, int maxMp)
