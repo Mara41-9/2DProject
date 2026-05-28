@@ -17,6 +17,7 @@ public class PausePopup : UIBase
 
     private void OnClick_GoToLobbyMain()
     {
+        GameManager.Instance.RefreshGame();
         UIManager.Instance.OpenLoadingUI();
         UIManager.Instance.CloseGameViewUI();
         UIManager.Instance.ClosePausePopup();

@@ -9,8 +9,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("플레이어의 위치")]
-    [SerializeField] private Vector2 _playerPosition = new Vector2(-17f, -1f);
+    [Header("플레이어의 초기 위치")]
+    [SerializeField] private Vector2 _playerPosition;
 
     [Header("이동 설정")]
     [SerializeField] private float _moveSpeed = 8f;   // 움직임 속도
@@ -45,8 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isAttack;
 
-    public Vector2 PlayerPosition { get; private set; }
-
     // 이벤트 선언 - HP/MP 변경 알림 함수를 저장해둘 공간
     private event Action<int, int> _onHpChanged;
     private event Action<int, int> _onMpChanged;
@@ -78,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
         // 플레이어가 생성되면 AddHudSlot 함수 호출 - 일단 쉽게 0번 등록
         UIManager.Instance.AddHudSlot(0, this.gameObject.transform);
 
-        this.transform.position = _playerPosition;
+        // 플레이어의 시작 위치를 초기 위치로 저장
+        _playerPosition = this.gameObject.transform.position;
     }
 
     private void Update()
@@ -132,10 +131,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    // 플레이어 위치 초기 위치 반환
     public Vector2 GetPlayerPosition()
     {
-        PlayerPosition = _playerPosition;
-        return PlayerPosition;
+        return _playerPosition;
     }
 
     public void SetPlayerHp(int playerHp)
