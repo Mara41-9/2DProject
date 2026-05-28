@@ -308,8 +308,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void AddHp(int hp)
     {
-        _currentHp += hp;
+        if((_maxHp - _currentHp) < hp)
+        {
+            _currentHp = _maxHp;
+            InvokeStatChangedEvent();
+            return;
+        }
 
+        _currentHp += hp;
         // 기존의 스탯 변경이 됐으므로 함수 호출해주자
         InvokeStatChangedEvent();
     }
