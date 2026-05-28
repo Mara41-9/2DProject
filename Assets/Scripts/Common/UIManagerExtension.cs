@@ -51,7 +51,7 @@ public static partial class UIManagerExtension
 
     public static void OpenGameStartUI(this UIManager uiManager)
     {
-        var uiBase = uiManager.OpenMainUI(UIType.GameStartUI);
+        var uiBase = uiManager.OpenContentUI(UIType.GameStartUI);
         if(uiBase == null)
         {
             Debug.LogWarning($"UI가 생성되지 않았습니다");
@@ -61,12 +61,12 @@ public static partial class UIManagerExtension
     
     public static void CloseGameStartUI(this UIManager uiManager)
     {
-        uiManager.CloseUI(UIRootType.MainUI, UIType.GameStartUI);
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.GameStartUI);
     }
 
     public static void OpenLobbyMainUI(this UIManager uiManager)
     {
-        var uiBase = uiManager.OpenMainUI(UIType.LobbyMainUI);
+        var uiBase = uiManager.OpenContentUI(UIType.LobbyMainUI);
         if(uiBase == null)
         {
             Debug.LogWarning($"UI가 생성되지 않았습니다");
@@ -76,7 +76,7 @@ public static partial class UIManagerExtension
 
     public static void CloseLobbyMainUI(this UIManager uiManager)
     {
-        uiManager.CloseUI(UIRootType.MainUI, UIType.LobbyMainUI);
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.LobbyMainUI);
     }
 
     public static void OpenCommonToastUI(this UIManager uiManager)

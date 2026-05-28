@@ -59,7 +59,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 200
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &1807721301205167860
 MonoBehaviour:
@@ -160,7 +160,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 300
+  m_SortingOrder: 400
   m_TargetDisplay: 0
 --- !u!114 &5499485217009956409
 MonoBehaviour:
@@ -261,7 +261,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!114 &1007078519600768320
 MonoBehaviour:
@@ -362,7 +362,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 260
+  m_SortingOrder: 350
   m_TargetDisplay: 0
 --- !u!114 &1778470210629608826
 MonoBehaviour:
@@ -463,7 +463,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 250
+  m_SortingOrder: 300
   m_TargetDisplay: 0
 --- !u!114 &4067632992537412935
 MonoBehaviour:
