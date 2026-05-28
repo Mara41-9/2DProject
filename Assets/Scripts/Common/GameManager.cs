@@ -126,29 +126,43 @@ public class GameManager : MonoBehaviour
         _playerModel.ItemList.Add(newItem);
     }
 
+    // 플레이어 아이템 목록에서 특정 UniqueId 아이템을 찾아서 제거하고 저장
     public bool RequestRemoveItem(long requestRemoveTargetitemUniqueId)
     {
+        // 삭제할 아이템의 인덱스를 저장하는 변수
         int removeTargetIdx = 0;
+
+        // 삭제할 아이템을 찾았는지 체크하는 변수
+        // 처음엔 못 찾았으니 false
         bool isRemoveItemExist = false;
 
+        // 플레이어가 가진 아이템 리스트를 하나씩 검사
         foreach(var itemModel in _playerModel.ItemList)
         {
-            if(itemModel.ItemUniqueId == requestRemoveTargetitemUniqueId)
+            // 현재 검사중인 아이템의 UniqueId가 삭제 요청한 UniqueId와 같으면
+            if (itemModel.ItemUniqueId == requestRemoveTargetitemUniqueId)
             {
+                // 삭제할 아이템 찾음 -> true
                 isRemoveItemExist = true;
                 break;
             }
 
+            // 아직 못 찾았다면 다음 아이템 인덱스로 넘어감
             removeTargetIdx++;
         }
 
+        // 만약 삭제할 아이템 찾았다면
         if(isRemoveItemExist == true)
         {
+            // 찾은 인덱스 위치의 아이템을 리스트에서 제거
             _playerModel.ItemList.RemoveAt(removeTargetIdx);
+            // 아이템이 제거된 현재 데이터 저장
             SaveData();
+            // 삭제 성공했다고 알려줌
             return true;
         }
 
+        // 삭제 실패했다고 알려줌
         return false;
         
     }

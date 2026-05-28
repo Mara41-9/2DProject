@@ -52,10 +52,15 @@ public class GameViewUI : UIBase
 
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
         Btn_BasicAttack.BindOnClickButtonEvent(OnClick_BasicAttackButton);
-        Btn_UseItem.BindOnClickButtonEvent(OnClick_UseItemButton);
+        Btn_UseItem.BindOnClickButtonEvent(OnClick_UseItemButton, true);
 
-        Btn_UseItem.gameObject.SetActive(false);
+        ActiveUseSelectItemButton(false);
 
+    }
+
+    private void OnDisable()
+    {
+        Btn_UseItem.UnBindOnClickButtonEvent(OnClick_UseItemButton);
     }
 
     private void Start()
@@ -81,21 +86,32 @@ public class GameViewUI : UIBase
         RequestSelectUseItem();
     }
 
-    // 저장된 아이템 List에서 제거 요청
+    // 아이템 사용 요청 + 전체 처리 흐름 담당
     private void RequestSelectUseItem()
     {
-        // 게임 매니저에 아이템 제거를 요청
+        // 실제 저장 데이터에서 아이템 제거했다면 true, 제거 못했다면 false 반환
         bool isItemRemoved = GameManager.Instance.RequestRemoveItem(_currentSelectedItemUniqueId);
+
+        // 만약 제거했다면
         if(isItemRemoved == true)
         {
+            // 아이템 슬롯 삭제 함수 요청
             RemoveItemSlot(_currentSelectedItemUniqueId);
+
+            // 현재 선택된 아이템 UniqueId는 0으로 초기화
             _currentSelectedItemUniqueId = 0;
-            Btn_UseItem.gameObject.SetActive(false);
+            ActiveUseSelectItemButton(false);
         }
 
     }
 
-    // 아이템 슬롯 제거
+    // 아이템 사용 버튼을 보이게 할지 숨길지 관리하는 함수
+    private void ActiveUseSelectItemButton(bool isActive)
+    {
+        Btn_UseItem.gameObject.SetActive(isActive);
+    }
+
+    // 아이템 슬롯 제거 함수
     private void RemoveItemSlot(long removedItemUniqueId)
     {
         // 저장 정보에서 먼저! 아이템이 제거된 후에!!!
@@ -195,7 +211,7 @@ public class GameViewUI : UIBase
             {
                 _currentSelectedItemUniqueId = selectedItemSlot.SlotItemUniqueId;
                 // 실제로 사용이 가능한 Item인지 (UseItemType != null) -> 사용 가능하면 True
-                Btn_UseItem.gameObject.SetActive(selectedItemSlot.IsUseableItem);
+                ActiveUseSelectItemButton(selectedItemSlot.IsUseableItem);
             }
         }
 
