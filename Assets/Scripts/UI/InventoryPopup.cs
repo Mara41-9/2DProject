@@ -111,7 +111,7 @@ public class InventoryPopup : UIBase
             var itemData = GameDataManager.Instance.GetItemData(_selectedSlot.SlotDataId);
             if (itemData == null) return;
 
-            if(itemData.ItemType == "Heal")
+            if(itemData.UseItemType == "StatChangeHp")
             {
                 UIManager.Instance.OpenCommonToastUI();
                 var commonToastUI = UIManager.Instance.GetOpenedUI(UIRootType.ToastUI, UIType.CommonToastUI);
