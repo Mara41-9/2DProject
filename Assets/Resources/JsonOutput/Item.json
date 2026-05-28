@@ -7,7 +7,7 @@
     "MaxStackCount": 10,
     "IconPath": "Icon/Icon_Item_Potion_1",
     "UseItemType": "StatChangeHp",
-    "UseItemparameter": [
+    "UseItemParameterList": [
       "30"
     ]
   },
@@ -19,7 +19,7 @@
     "MaxStackCount": 7,
     "IconPath": "Icon/Icon_Item_CarrotSmoothy_1",
     "UseItemType": "StatChangeHp",
-    "UseItemparameter": [
+    "UseItemParameterList": [
       "50"
     ]
   },
@@ -31,7 +31,7 @@
     "MaxStackCount": 3,
     "IconPath": "Icon/Icon_Item_TomatoJuice_1",
     "UseItemType": "StatChangeHp",
-    "UseItemparameter": [
+    "UseItemParameterList": [
       "70"
     ]
   },
@@ -43,7 +43,7 @@
     "MaxStackCount": 3,
     "IconPath": "Icon/Icon_Item_DummyBox_1",
     "UseItemType": "RandomItemBox",
-    "UseItemparameter": [
+    "UseItemParameterList": [
       "Item_Potion_1:2",
       "Item_CarrotSmoothy_1:1",
       "Item_TomatoJuice_1:1"
