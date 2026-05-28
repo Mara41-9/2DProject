@@ -13,9 +13,9 @@ public class InventorySlotUI : MonoBehaviour
     [SerializeField] private GameUIButton Btn_Slot;
 
     // 슬롯 클릭 시 외부에 알려주는 이벤트 (int 값 전달)
-    private event Action<int> OnSelectEvent;
+    private event Action<long> OnSelectEvent;
 
-    public int SlotInstanceId { get; private set; }
+    public long SlotUniqueId { get; private set; }
     public string SlotDataId { get; private set; }
 
     private void OnEnable()
@@ -98,19 +98,19 @@ public class InventorySlotUI : MonoBehaviour
 
 
     // 슬롯이 생성된 후, 슬롯의 기본 정보(고유 번호)를 세팅하는 초기화 함수
-    public void InitSlot(int slotInstanceId, string dataId, int StackCount, EInventoryCategory curCategory)
+    public void InitSlot(long slotUniqueId, string dataId, int StackCount, EInventoryCategory curCategory)
     {
-        SlotInstanceId = slotInstanceId;
+        SlotUniqueId = slotUniqueId;
         SlotDataId = dataId;
         SetIcon(dataId, StackCount);
     }
 
     public void OnClick_SelectSlot()
     {
-        OnSelectEvent?.Invoke(SlotInstanceId);
+        OnSelectEvent?.Invoke(SlotUniqueId);
     }
 
-    public void BindSlotSelectEvent(Action<int> onSelectEvent)
+    public void BindSlotSelectEvent(Action<long> onSelectEvent)
     {
         OnSelectEvent = onSelectEvent;   // 이벤트 등록
     }
