@@ -3,27 +3,50 @@
     "Id": "Item_Potion_1",
     "Name": "물약",
     "Description": "체력을 회복시켜주는 기본 물약 (HP +30)",
-    "ItemType": "Heal",
     "Grade": "Normal",
     "MaxStackCount": 10,
-    "IconPath": "Icon/Icon_Item_Potion_1"
+    "IconPath": "Icon/Icon_Item_Potion_1",
+    "UseItemType": "StatChangeHp",
+    "UseItemparameter": [
+      "30"
+    ]
   },
   {
     "Id": "Item_CarrotSmoothy_1",
     "Name": "당근 스무디",
     "Description": "신선한 당근을 갈아 만든 건강 스무디 (HP + 50)",
-    "ItemType": "Heal",
     "Grade": "Rare",
     "MaxStackCount": 7,
-    "IconPath": "Icon/Icon_Item_CarrotSmoothy_1"
+    "IconPath": "Icon/Icon_Item_CarrotSmoothy_1",
+    "UseItemType": "StatChangeHp",
+    "UseItemparameter": [
+      "50"
+    ]
   },
   {
     "Id": "Item_TomatoJuice_1",
     "Name": "토마토 주스",
     "Description": "잘 익은 토마토를 담은 새콤한 주스 (HP +70)",
-    "ItemType": "Heal",
     "Grade": "Epic",
     "MaxStackCount": 3,
-    "IconPath": "Icon/Icon_Item_TomatoJuice_1"
+    "IconPath": "Icon/Icon_Item_TomatoJuice_1",
+    "UseItemType": "StatChangeHp",
+    "UseItemparameter": [
+      "70"
+    ]
+  },
+  {
+    "Id": "Item_DummyBox_1",
+    "Name": "랜덤 상자",
+    "Description": null,
+    "Grade": "Normal",
+    "MaxStackCount": 3,
+    "IconPath": "Icon/Icon_Item_DummyBox_1",
+    "UseItemType": "RandomItemBox",
+    "UseItemparameter": [
+      "Item_Potion_1:2",
+      "Item_CarrotSmoothy_1:1",
+      "Item_TomatoJuice_1:1"
+    ]
   }
 ]
