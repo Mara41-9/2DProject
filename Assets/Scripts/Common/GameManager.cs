@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         LoadSaveData();
 
         // 만약 게임이 처음 시작한거라면
-        if(_playerModel.IsFirstStart == true)
+        if (_playerModel.IsFirstStart == true)
         {
             var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
             if (WeaponData == null)
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     public int GetPlayerLevel()
     {
-        return _playerModel.PlayerLevel;    
+        return _playerModel.PlayerLevel;
     }
 
     // 플레이어 인벤토리에 아이템 추가
@@ -127,8 +127,8 @@ public class GameManager : MonoBehaviour
         _playerModel.ItemList.Add(newItem);
     }
 
-    // 플레이어 아이템 목록에서 특정 UniqueId 아이템을 찾아서 제거하고 저장
-    public bool RequestRemoveItem(long requestRemoveTargetitemUniqueId)
+    // 아이템의 실제적인 사용 함수
+    public bool RequestUseItem(long requestRemoveTargetitemUniqueId)
     {
         // 삭제할 아이템의 인덱스를 저장하는 변수
         int removeTargetIdx = 0;
@@ -138,13 +138,21 @@ public class GameManager : MonoBehaviour
         bool isRemoveItemExist = false;
 
         // 플레이어가 가진 아이템 리스트를 하나씩 검사
-        foreach(var itemModel in _playerModel.ItemList)
+        foreach (var itemModel in _playerModel.ItemList)
         {
             // 현재 검사중인 아이템의 UniqueId가 삭제 요청한 UniqueId와 같으면
             if (itemModel.ItemUniqueId == requestRemoveTargetitemUniqueId)
             {
                 // 삭제할 아이템 찾음 -> true
                 isRemoveItemExist = true;
+
+                string itemDataId = itemModel.ItemDataId;
+                var itemData = GameDataManager.Instance.GetItemData(itemDataId);
+                if (string.IsNullOrEmpty(itemData.UseItemType) == false)
+                {
+                    UseItemFunction(itemData.UseItemType, itemData.UseItemParameterList);
+                }
+
                 break;
             }
 
@@ -152,6 +160,38 @@ public class GameManager : MonoBehaviour
             removeTargetIdx++;
         }
 
+
+        RequestRemoveItem(isRemoveItemExist, removeTargetIdx);
+
+        return true;
+    }
+
+    private void UseItemFunction(string itemUseType, List<string> useItemParamList)
+    {
+        if (useItemParamList == null || useItemParamList.Count == 0)
+        {
+            return;
+        }
+
+        if(itemUseType == "RandomItemBox")
+        {
+
+        }
+        else if(itemUseType == "StatChangeHp")
+        {
+            if(useItemParamList.Count > 0)
+            {
+                string str = useItemParamList[0];
+                int statChangeVal =  int.Parse(str);
+                var playerComponent = GameObjectManager.Instance.GetLocalPlayer();
+                playerComponent.AddHp(statChangeVal);
+            }
+        }
+    }
+
+    // 플레이어 아이템 목록에서 특정 UniqueId 아이템을 찾아서 제거하고 저장
+    private bool RequestRemoveItem(bool isRemoveItemExist, int removeTargetIdx)
+    {
         // 만약 삭제할 아이템 찾았다면
         if(isRemoveItemExist == true)
         {

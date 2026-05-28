@@ -306,4 +306,12 @@ public class PlayerMovement : MonoBehaviour
        // _onMpChanged?.Invoke(_currentMp);
     }
 
+    public void AddHp(int hp)
+    {
+        _currentHp += hp;
+
+        // 기존의 스탯 변경이 됐으므로 함수 호출해주자
+        InvokeStatChangedEvent();
+    }
+
 }

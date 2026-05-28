@@ -90,7 +90,7 @@ public class GameViewUI : UIBase
     private void RequestSelectUseItem()
     {
         // 실제 저장 데이터에서 아이템 제거했다면 true, 제거 못했다면 false 반환
-        bool isItemRemoved = GameManager.Instance.RequestRemoveItem(_currentSelectedItemUniqueId);
+        bool isItemRemoved = GameManager.Instance.RequestUseItem(_currentSelectedItemUniqueId);
 
         // 만약 제거했다면
         if(isItemRemoved == true)
