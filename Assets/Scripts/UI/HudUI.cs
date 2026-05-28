@@ -27,6 +27,7 @@ public class HudUI : UIBase
         }
     }
 
+    // HudSlot 생성
     private void CreateHudSlot(int instanceId, Transform targetTransform)
     {
         var gObj = Instantiate(Prefab_HudSlot, Transform_SlotRoot);

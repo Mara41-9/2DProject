@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 PlayerPosition { get; private set; }
 
+    // 이벤트 선언 - HP/MP 변경 알림 함수를 저장해둘 공간
     private event Action<int, int> _onHpChanged;
     private event Action<int, int> _onMpChanged;
 
@@ -73,7 +74,9 @@ public class PlayerMovement : MonoBehaviour
     {
         // 나 스스로를 등록한다. -> 씬에 있는 그 2D 플레이어가 등록됨
         GameObjectManager.Instance.RegisterLocalPlayer(this);
-        UIManager.Instance.AddHudSlot(0, this.gameObject.transform); // 일단 쉽게 0번 등록
+
+        // 플레이어가 생성되면 AddHudSlot 함수 호출 - 일단 쉽게 0번 등록
+        UIManager.Instance.AddHudSlot(0, this.gameObject.transform);
 
         this.transform.position = _playerPosition;
     }
@@ -280,11 +283,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    // 스탯이 바꼈을 때 실행할 함수를 등록하는 함수 - 이벤트 등록
     public void BindOnStatChangedEvent(Action<int, int> hpChangeCallback, Action<int, int> mpChangeCallback)
     {
+        // _onHpChanged 이벤트에 함수 추가
         _onHpChanged += hpChangeCallback;
-        _onHpChanged += mpChangeCallback;
+        // _onMpChanged 이벤트에 함수 추가
+        _onMpChanged += mpChangeCallback;
     }
 
     public void ResetBindStatChangedEvent()
@@ -293,6 +298,7 @@ public class PlayerMovement : MonoBehaviour
         _onMpChanged = null;
     }
 
+    // 등록된 이벤트 함수들을 실행시키는 함수
     private void InvokeStatChangedEvent()
     {
         // 우선 HP든 MP든 하나라도 바뀌면 다 호출해준다
