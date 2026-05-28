@@ -48,6 +48,7 @@ public class Monster2D : MonoBehaviour
     private void OnDisable()
     {
         _isAlive = false;
+        ResetBindStatChangedEvent();
     }
 
     private void Start()
@@ -216,7 +217,6 @@ public class Monster2D : MonoBehaviour
 
         GameObjectManager.Instance.DestroyMonster(_monsterInstanceId);
         UIManager.Instance.RemoveHudSlot(_monsterInstanceId);
-
     }
 
     public void BindOnStatChangedEvent(Action<int, int> hpChangeCallback, Action<int, int> mpChangeCallback)
