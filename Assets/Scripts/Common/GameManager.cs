@@ -30,14 +30,16 @@ public class GameManager : MonoBehaviour
 
             AddWeapon(WeaponData.Id);
 
-            var ItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
-            if (ItemData == null)
+            var PotionItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
+            var CarrotSmoothyItemData = GameDataManager.Instance.GetItemData("Item_CarrotSmoothy_1");
+            if (PotionItemData == null || CarrotSmoothyItemData == null)
             {
                 Debug.LogWarning("기본 아이템 데이터를 찾을 수 없습니다.");
                 return;
             }
 
-            AddItem(ItemData.Id, 2);
+            AddItem(PotionItemData.Id, 1);
+            AddItem(CarrotSmoothyItemData.Id, 1);
 
             var SkillDataList = GameDataManager.Instance.SkillDataList;
             if (SkillDataList != null)
@@ -137,7 +139,7 @@ public class GameManager : MonoBehaviour
         // 처음엔 못 찾았으니 false
         bool isRemoveItemExist = false;
         
-        // 플레이어가 가진 아이템 리스트를 하나씩 검사
+        // 플레이어가 가진 아이템 리스트를 하나씩 검사 (순차적으로)
         foreach (var itemModel in _playerModel.ItemList)
         {
             // 현재 검사중인 아이템의 UniqueId가 사용 요청한 UniqueId와 같으면
