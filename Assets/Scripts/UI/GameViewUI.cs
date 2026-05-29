@@ -36,7 +36,6 @@ public class GameViewUI : UIBase
     private Dictionary<int, GameViewMonsterSlotUI> _monsterSlotList = new Dictionary<int, GameViewMonsterSlotUI>();
 
     private int _generatedMonsterKey;
-    private long _currentSelectedItemUniqueId;
 
     private void OnEnable()
     {
@@ -54,10 +53,6 @@ public class GameViewUI : UIBase
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
         Btn_BasicAttack.BindOnClickButtonEvent(OnClick_BasicAttackButton);
 
-    }
-
-    private void OnDisable()
-    {
     }
 
     private void Start()
@@ -162,26 +157,8 @@ public class GameViewUI : UIBase
         slotComponent.InitSlot(UniqueId, itemDataId, stackCount);
         _itemSlotList.Add(slotComponent.SlotItemUniqueId, slotComponent);
 
-        // 이벤트 등록
-        //slotComponent.BindSlotSelectEvent(OnChildSlotSelected);
+        
     }
-
-    //private void OnChildSlotSelected(long selectedSlotUniqueId)
-    //{
-    //    foreach(var selectedItemSlotKv in _itemSlotList)
-    //    {
-    //        var selectedItemSlot = selectedItemSlotKv.Value;
-    //        bool isSlotSelected = (selectedSlotUniqueId == selectedItemSlot.SlotItemUniqueId);
-    //        selectedItemSlot.SetSelectedUI(isSlotSelected);
-
-    //        if(isSlotSelected == true)
-    //        {
-    //            _currentSelectedItemUniqueId = selectedItemSlot.SlotItemUniqueId;
-    //            // 실제로 사용이 가능한 Item인지 (UseItemType != null) -> 사용 가능하면 True
-    //        }
-    //    }
-
-    //}
 
     private void SetMonsterSlotOnEnable()
     {

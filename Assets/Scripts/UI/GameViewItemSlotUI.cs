@@ -10,15 +10,18 @@ public class GameViewItemSlotUI : MonoBehaviour
     [SerializeField] private Image Image_Icon;
     [SerializeField] private Image Image_Frame;
     [SerializeField] private Text Text_StackCount;
-    [SerializeField] private GameObject Gobj_SelectedUI;
     [SerializeField] private GameUIButton Btn_Slot;
+    [SerializeField] private GameObject Gobj_SelectedUI;
+    [SerializeField] private GameUIButton Btn_UseItem;
 
     public long SlotItemUniqueId { get; private set; }
     public bool IsUseableItem { get; private set; }
 
     private void OnEnable()
     {
-        Btn_Slot.BindOnClickButtonEvent(OnClickSelectSlot);
+        ActiveUseSelectItemObject(false);
+        Btn_Slot.BindOnClickButtonEvent(OnClick_SelectSlot);
+        Btn_UseItem.BindOnClickButtonEvent(OnClick_UseItem, true);
     }
 
     private void SetIcon(string itemDataId, int stackCount)
@@ -42,29 +45,14 @@ public class GameViewItemSlotUI : MonoBehaviour
         SetIcon(itemDataId, stackCount);
     }
 
-    // 등록된 이벤트 함수들 실행
-    public void OnClickSelectSlot()
+    private void OnClick_SelectSlot()
     {
         ActiveUseSelectItemObject(true);
-        //RequestSelectUseItem();
-        //_onSlotSelected?.Invoke(SlotItemUniqueId);
     }
 
-    // 이벤트 등록
-    //public void BindSlotSelectEvent(Action<long> onSelectEvent)
-    //{
-    //    _onSlotSelected += onSelectEvent;
-    //}
-
-    // 선택 표시 구현하는 함수
-    //public void SetSelectedUI(bool isSelect)
-    //{
-    //    Gobj_Selected.SetActive(isSelect);
-    //}
-
-    public void RefreshItemStackCount(int stackCount)
+    private void OnClick_UseItem()
     {
-        Text_StackCount.text = $"{stackCount}";
+        RequestSelectUseItem();
     }
 
     // 아이템 사용 요청 + 전체 처리 흐름 담당
@@ -85,6 +73,7 @@ public class GameViewItemSlotUI : MonoBehaviour
                 {
                     isExist = true;
                     RefreshItemStackCount(itemModel.ItemStackCount);
+                    ActiveUseSelectItemObject(false);
 
                     break;
                 }
@@ -92,9 +81,9 @@ public class GameViewItemSlotUI : MonoBehaviour
 
             if (isExist == false)
             {
-                // 아이템 슬롯 삭제 함수 요청
-                var component = this.GetComponent<GameViewUI>();
+                var component = this.GetComponentInParent<GameViewUI>();
 
+                // 아이템 슬롯 삭제 함수 요청
                 component.RemoveItemSlot(SlotItemUniqueId);
 
                 // 현재 선택된 아이템 UniqueId는 0으로 초기화
@@ -103,6 +92,11 @@ public class GameViewItemSlotUI : MonoBehaviour
 
         }
 
+    }
+
+    public void RefreshItemStackCount(int stackCount)
+    {
+        Text_StackCount.text = $"{stackCount}";
     }
 
     // 아이템 사용 오브젝트를 보이게 할지 숨길지 관리하는 함수

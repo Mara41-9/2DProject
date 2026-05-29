@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        AddItem(PotionItemData.Id, 1);
+        AddItem(PotionItemData.Id, 2);
         AddItem(CarrotSmoothyItemData.Id, 1);
     }
 
