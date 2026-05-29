@@ -22,13 +22,14 @@ public class GameUIButton : MonoBehaviour
     {
     }
 
+    // 해당 컴포넌트 또는 GameObject가 비활성화될 때 자동으로 호출되는 함수
     // UI가 꺼질 때 버튼에 등록된 클릭 이벤트 전부 제거
     private void OnDisable()
     {
-        //if(_isSlotMenualUnbindEvent == false)
-        //{
-        //    Button_Base.onClick.RemoveAllListeners();
-        //}
+        if (_isSlotMenualUnbindEvent == false)
+        {
+            Button_Base.onClick.RemoveAllListeners();
+        }
     }
 
     private void InitUIButton()
