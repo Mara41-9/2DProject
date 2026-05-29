@@ -12,14 +12,15 @@ public class GameViewUI : UIBase
     [Header("플레이어 정보")]
     [SerializeField] private TMP_Text Text_PlayerName;
     [SerializeField] private TMP_Text Text_PlayerLevel;
-    [SerializeField] private Image Image_SelectedWeapon;
-    [SerializeField] private Image Image_SelectedSkill;
     [SerializeField] private Slider Slider_Hp;
     [SerializeField] private TMP_Text Text_Hp;
 
     [Header("기본 공격")]
     [SerializeField] private GameUIButton Btn_BasicAttack;
     [SerializeField] private Image Image_Weapon;
+
+    [Header("스킬")]
+    [SerializeField] private Image Image_Skill;
 
     [Header("일시정지")]
     [SerializeField] private GameUIButton Btn_Pause;
@@ -116,7 +117,8 @@ public class GameViewUI : UIBase
         var equippedSkill = GameDataManager.Instance.GetSkill(equippedSkillId);
         if( equippedSkill == null ) return;
 
-        GameUtil.LoadAndSetSpriteImage(Image_SelectedSkill, equippedSkill.IconPath).Forget();
+        GameUtil.LoadAndSetSpriteImage(Image_Skill, equippedSkill.IconPath).Forget();
+
     }
 
     public void RefreshEquippedWeapon()
@@ -128,7 +130,6 @@ public class GameViewUI : UIBase
         if(equippedWeapon == null ) return;
 
         GameUtil.LoadAndSetSpriteImage(Image_Weapon, equippedWeapon.IconPath).Forget();
-        GameUtil.LoadAndSetSpriteImage(Image_SelectedWeapon, equippedWeapon.IconPath).Forget();
     }
 
     // 플레이어가 가지고 있는 아이템 불러와서 CreateItemSlot 함수 호출 
