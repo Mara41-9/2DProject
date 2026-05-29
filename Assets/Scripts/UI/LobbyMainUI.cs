@@ -34,7 +34,7 @@ public class LobbyMainUI : UIBase
     public void OnClick_OpenGameView()
     {
         var equippedWeapon = GameManager.Instance.GetEquippedWeapon();
-        if(equippedWeapon != null)
+        if(string.IsNullOrEmpty(equippedWeapon) == false)
         {
             UIManager.Instance.OpenLoadingUI();
             UIManager.Instance.CloseGameStartUI();
