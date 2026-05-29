@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ public class ProfilePopup : UIBase
 {
     [Header("캐릭터")]
     [SerializeField] private Text Text_CharacterName;
-    [SerializeField] private Text Text_CharacterDesc;
+    [SerializeField] private TMP_Text Text_CharacterDesc;
     [SerializeField] private Text Text_Level;
 
     [Header("경험치")]
@@ -15,13 +16,13 @@ public class ProfilePopup : UIBase
 
     [Header("기술")]
     [SerializeField] private Image Image_Skill;
-    [SerializeField] private Text Text_SkillName;
-    [SerializeField] private Text Text_SkillDesc;
+    [SerializeField] private TMP_Text Text_SkillName;
+    [SerializeField] private TMP_Text Text_SkillDesc;
 
     [Header("무기")]
     [SerializeField] private Image Image_Weapon;
-    [SerializeField] private Text Text_WeaponName;
-    [SerializeField] private Text Text_WeaponDesc;
+    [SerializeField] private TMP_Text Text_WeaponName;
+    [SerializeField] private TMP_Text Text_WeaponDesc;
 
     [Header("프로필창 닫기")]
     [SerializeField] private GameUIButton Btn_ClosePopup;
