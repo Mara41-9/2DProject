@@ -8,11 +8,12 @@ public class PausePopup : UIBase
     private void OnEnable()
     {
         Btn_GoToLobbyMain.BindOnClickButtonEvent(OnClick_GoToLobbyMain);
+        Btn_ContinueGame.BindOnClickButtonEvent(OnClick_ContinueGame);
     }
 
     private void OnClick_ContinueGame()
     {
-        
+        UIManager.Instance.ClosePausePopup();
     }
 
     private void OnClick_GoToLobbyMain()
