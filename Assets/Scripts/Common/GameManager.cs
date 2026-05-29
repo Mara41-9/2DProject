@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -21,34 +22,9 @@ public class GameManager : MonoBehaviour
         // 만약 게임이 처음 시작한거라면
         if (_playerModel.IsFirstStart == true)
         {
-            var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
-            if (WeaponData == null)
-            {
-                Debug.LogWarning("기본 무기 데이터를 찾을 수 없습니다.");
-                return;
-            }
-
-            AddWeapon(WeaponData.Id);
-
-            var PotionItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
-            var CarrotSmoothyItemData = GameDataManager.Instance.GetItemData("Item_CarrotSmoothy_1");
-            if (PotionItemData == null || CarrotSmoothyItemData == null)
-            {
-                Debug.LogWarning("기본 아이템 데이터를 찾을 수 없습니다.");
-                return;
-            }
-
-            AddItem(PotionItemData.Id, 1);
-            AddItem(CarrotSmoothyItemData.Id, 1);
-
-            var SkillDataList = GameDataManager.Instance.SkillDataList;
-            if (SkillDataList != null)
-            {
-                foreach (var skillData in SkillDataList)
-                {
-                    AddSkill(skillData.Key);
-                }
-            }
+            AddStarterWeapons();
+            AddStarterItems();
+            AddStarterSkills();
 
             _playerModel.IsFirstStart = false;
             SaveData();
@@ -110,6 +86,44 @@ public class GameManager : MonoBehaviour
     public int GetPlayerLevel()
     {
         return _playerModel.PlayerLevel;
+    }
+
+    private void AddStarterWeapons()
+    {
+        var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
+        if (WeaponData == null)
+        {
+            Debug.LogWarning("기본 무기 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        AddWeapon(WeaponData.Id);
+    }
+
+    private void AddStarterItems()
+    {
+        var PotionItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
+        var CarrotSmoothyItemData = GameDataManager.Instance.GetItemData("Item_CarrotSmoothy_1");
+        if (PotionItemData == null || CarrotSmoothyItemData == null)
+        {
+            Debug.LogWarning("기본 아이템 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        AddItem(PotionItemData.Id, 1);
+        AddItem(CarrotSmoothyItemData.Id, 1);
+    }
+
+    private void AddStarterSkills()
+    {
+        var SkillDataList = GameDataManager.Instance.SkillDataList;
+        if (SkillDataList != null)
+        {
+            foreach (var skillData in SkillDataList)
+            {
+                AddSkill(skillData.Key);
+            }
+        }
     }
 
     // 플레이어 인벤토리에 아이템 추가
