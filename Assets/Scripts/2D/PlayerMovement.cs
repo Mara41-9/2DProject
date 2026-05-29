@@ -204,7 +204,7 @@ public class PlayerMovement : MonoBehaviour
             if(monsterData == null) return;
 
             monster.TakeDamage(BaseAtk);
-            Debug.LogWarning($"토토가 {monsterData.Name}에게 {BaseAtk}만큼 데미지를 입혔다!    {monsterData.Name}의 Hp : {monster._baseHp}");
+            Debug.LogWarning($"토토가 {monsterData.Name}에게 {BaseAtk}만큼 데미지를 입혔다!    {monsterData.Name}의 Hp : {monster._currentHp}");
 
         }
     }

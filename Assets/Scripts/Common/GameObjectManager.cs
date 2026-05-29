@@ -183,6 +183,11 @@ public class GameObjectManager : MonoBehaviour
         return _monsterContainer[monsterInstanceId];
     }
 
+    public Dictionary<int, Monster2D> GetMonsterByList()
+    {
+        return _monsterContainer;
+    }
+
     public void DestroyMonster(int monsterInstanceId)
     {
         if(_monsterContainer.TryGetValue(monsterInstanceId, out Monster2D monster))

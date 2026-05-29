@@ -19,10 +19,10 @@ public class Monster2D : MonoBehaviour
 
     [Header("몬스터 기본 정보")]
     public Vector3 _moveDirection;   // 적이 이동할 방향 저장 변수
-    public int _baseHp;
+    public int _currentHp;
+    public int _maxHp;     // 최대 Hp
     public int _baseAtk;
     public bool _isAlive = true;
-    private int _maxHp;     // 최대 Hp
 
     [Header("애니메이터")]
     [SerializeField] private EntityAnimController AnimatorController_Entity;
@@ -79,8 +79,8 @@ public class Monster2D : MonoBehaviour
         }
 
         _monsterData = monsterData;
-        _baseHp = _monsterData.BaseHp;
-        _maxHp = _baseHp;
+        _maxHp = _monsterData.BaseHp;
+        _currentHp = _maxHp;
         _baseAtk = _monsterData.BaseAtk;
         _monsterInstanceId = instanceId;
         _monsterDataId = monsterDataId;
@@ -88,6 +88,14 @@ public class Monster2D : MonoBehaviour
         UIManager.Instance.AddHudSlot(instanceId, this.gameObject.transform);
 
         //StartCoroutine(CheckAndUseSkill());
+    }
+
+    public void ResetMonster()
+    {
+        _currentHp = _maxHp;
+        _isAlive = true;
+        ChangeMonsterState(EntityAnimState.Walk);
+        InvokeStatChangedEvent();
     }
 
     public string GetMonsterDataId()
@@ -156,12 +164,12 @@ public class Monster2D : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _baseHp -= damage;
+         _currentHp -= damage;
         InvokeStatChangedEvent();
 
-        if (_baseHp <= 0)
+        if (_currentHp <= 0)
         {
-            _baseHp = 0;
+            _currentHp = 0;
             
             MonsterDie();
             return;
@@ -231,10 +239,10 @@ public class Monster2D : MonoBehaviour
         _onMpChanged = null;
     }
 
-    private void InvokeStatChangedEvent()
+    public void InvokeStatChangedEvent()
     {
         // 우선 HP든 MP든 하나라도 바뀌면 다 호출해준다
-        _onHpChanged?.Invoke(_baseHp, _maxHp);
+        _onHpChanged?.Invoke(_currentHp, _maxHp);
         // _onMpChanged?.Invoke(_currentMp);
     }
 
