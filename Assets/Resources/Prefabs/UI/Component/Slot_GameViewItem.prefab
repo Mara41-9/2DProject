@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -461,7 +461,7 @@ MonoBehaviour:
   Image_Icon: {fileID: 5753585162693158175}
   Image_Frame: {fileID: 7621276951714437197}
   Text_StackCount: {fileID: 6763484288037924160}
-  Gobj_Selected: {fileID: 1056221784063361262}
+  Gobj_Selected: {fileID: 8521386964650882636}
   Btn_Slot: {fileID: 5342890991370763591}
 --- !u!1 &5678013043648393777
 GameObject:
@@ -975,12 +975,12 @@ GameObject:
   m_Component:
   - component: {fileID: 737225602961906596}
   m_Layer: 5
-  m_Name: Selected
+  m_Name: Gobj_SelectedUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &737225602961906596
 RectTransform:
   m_ObjectHideFlags: 0

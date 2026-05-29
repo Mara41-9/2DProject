@@ -10,17 +10,15 @@ public class GameViewItemSlotUI : MonoBehaviour
     [SerializeField] private Image Image_Icon;
     [SerializeField] private Image Image_Frame;
     [SerializeField] private Text Text_StackCount;
-    [SerializeField] private GameObject Gobj_Selected;
+    [SerializeField] private GameObject Gobj_SelectedUI;
     [SerializeField] private GameUIButton Btn_Slot;
 
     public long SlotItemUniqueId { get; private set; }
     public bool IsUseableItem { get; private set; }
 
-    private event Action<long> _onSlotSelected;
-
     private void OnEnable()
     {
-        Btn_Slot.BindOnClickButtonEvent(InvokeOnClickSelectSlot);
+        Btn_Slot.BindOnClickButtonEvent(OnClickSelectSlot);
     }
 
     private void SetIcon(string itemDataId, int stackCount)
@@ -45,25 +43,71 @@ public class GameViewItemSlotUI : MonoBehaviour
     }
 
     // 등록된 이벤트 함수들 실행
-    public void InvokeOnClickSelectSlot()
+    public void OnClickSelectSlot()
     {
-        _onSlotSelected?.Invoke(SlotItemUniqueId);
+        ActiveUseSelectItemObject(true);
+        //RequestSelectUseItem();
+        //_onSlotSelected?.Invoke(SlotItemUniqueId);
     }
 
     // 이벤트 등록
-    public void BindSlotSelectEvent(Action<long> onSelectEvent)
-    {
-        _onSlotSelected += onSelectEvent;
-    }
+    //public void BindSlotSelectEvent(Action<long> onSelectEvent)
+    //{
+    //    _onSlotSelected += onSelectEvent;
+    //}
 
     // 선택 표시 구현하는 함수
-    public void SetSelectedUI(bool isSelect)
-    {
-        Gobj_Selected.SetActive(isSelect);
-    }
+    //public void SetSelectedUI(bool isSelect)
+    //{
+    //    Gobj_Selected.SetActive(isSelect);
+    //}
 
     public void RefreshItemStackCount(int stackCount)
     {
         Text_StackCount.text = $"{stackCount}";
+    }
+
+    // 아이템 사용 요청 + 전체 처리 흐름 담당
+    private void RequestSelectUseItem()
+    {
+        // 실제 저장 데이터에서 아이템 사용했다면 true, 사용 못했다면 false 반환
+        bool isItemUsed = GameManager.Instance.RequestUseItem(SlotItemUniqueId);
+
+        bool isExist = false;
+
+        // 만약 사용했다면
+        if (isItemUsed == true)
+        {
+            var itemList = GameManager.Instance.GetPlayerItemList();
+            foreach (var itemModel in itemList)
+            {
+                if (itemModel.ItemUniqueId == SlotItemUniqueId)
+                {
+                    isExist = true;
+                    RefreshItemStackCount(itemModel.ItemStackCount);
+
+                    break;
+                }
+            }
+
+            if (isExist == false)
+            {
+                // 아이템 슬롯 삭제 함수 요청
+                var component = this.GetComponent<GameViewUI>();
+
+                component.RemoveItemSlot(SlotItemUniqueId);
+
+                // 현재 선택된 아이템 UniqueId는 0으로 초기화
+                SlotItemUniqueId = 0;
+            }
+
+        }
+
+    }
+
+    // 아이템 사용 오브젝트를 보이게 할지 숨길지 관리하는 함수
+    private void ActiveUseSelectItemObject(bool isActive)
+    {
+        Gobj_SelectedUI.gameObject.SetActive(isActive);
     }
 }
