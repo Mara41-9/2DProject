@@ -61,4 +61,9 @@ public class GameViewItemSlotUI : MonoBehaviour
     {
         Gobj_Selected.SetActive(isSelect);
     }
+
+    public void RefreshItemStackCount(int stackCount)
+    {
+        Text_StackCount.text = $"{stackCount}";
+    }
 }

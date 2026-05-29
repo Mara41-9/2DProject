@@ -1,5 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
@@ -89,18 +91,41 @@ public class GameViewUI : UIBase
     // 아이템 사용 요청 + 전체 처리 흐름 담당
     private void RequestSelectUseItem()
     {
-        // 실제 저장 데이터에서 아이템 제거했다면 true, 제거 못했다면 false 반환
-        bool isItemRemoved = GameManager.Instance.RequestUseItem(_currentSelectedItemUniqueId);
+        // 실제 저장 데이터에서 아이템 사용했다면 true, 사용 못했다면 false 반환
+        bool isItemUsed = GameManager.Instance.RequestUseItem(_currentSelectedItemUniqueId);
 
-        // 만약 제거했다면
-        if(isItemRemoved == true)
+        bool isExist = false;
+
+        // 만약 사용했다면
+        if(isItemUsed == true)
         {
-            // 아이템 슬롯 삭제 함수 요청
-            RemoveItemSlot(_currentSelectedItemUniqueId);
+            var itemList = GameManager.Instance.GetPlayerItemList();
+            foreach(var itemModel in itemList)
+            {
+                if(itemModel.ItemUniqueId == _currentSelectedItemUniqueId)
+                {
+                    isExist = true;
 
-            // 현재 선택된 아이템 UniqueId는 0으로 초기화
-            _currentSelectedItemUniqueId = 0;
-            ActiveUseSelectItemButton(false);
+                    if(_itemSlotList.ContainsKey(_currentSelectedItemUniqueId))
+                    {
+                        _itemSlotList[_currentSelectedItemUniqueId].RefreshItemStackCount(itemModel.ItemStackCount);
+                        _itemSlotList[_currentSelectedItemUniqueId].SetSelectedUI(false);
+                    }
+
+                    break;
+                }
+            }
+
+            if (isExist == false)
+            {
+                // 아이템 슬롯 삭제 함수 요청
+                RemoveItemSlot(_currentSelectedItemUniqueId);
+
+                // 현재 선택된 아이템 UniqueId는 0으로 초기화
+                _currentSelectedItemUniqueId = 0;
+                ActiveUseSelectItemButton(false);
+            }
+            
         }
 
     }
