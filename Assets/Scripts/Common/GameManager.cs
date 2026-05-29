@@ -61,6 +61,13 @@ public class GameManager : MonoBehaviour
         if (player == null) return;
 
         player.transform.position = player.GetPlayerPosition();
+
+        // 플레이어 Hp 초기화 시키기
+        player._currentHp = player._maxHp;
+        var playerComponent = player.GetComponent<PlayerMovement>();
+        if(playerComponent == null) return;
+
+        playerComponent.InvokeStatChangedEvent();
     }
 
     // 플레이어의 현재 총 Exp 가져오기

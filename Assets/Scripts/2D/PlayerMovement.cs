@@ -299,7 +299,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // 등록된 이벤트 함수들을 실행시키는 함수
-    private void InvokeStatChangedEvent()
+    public void InvokeStatChangedEvent()
     {
         // 우선 HP든 MP든 하나라도 바뀌면 다 호출해준다
         _onHpChanged?.Invoke(_currentHp, _maxHp);
