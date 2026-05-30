@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Unity.Cinemachine;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HudSlotUI : MonoBehaviour
@@ -11,6 +13,16 @@ public class HudSlotUI : MonoBehaviour
 
     // 참조형을 기록(캐싱)
     private Transform _targetTransform;
+
+    private void OnEnable()
+    {
+        CameraManager.Instance.BindMainCameraUpdatedEvent(OnCinemachineCameraUpdated);
+    }
+
+    private void OnDisable()
+    {
+        CameraManager.Instance.UnBindMainCameraUpdatedEvent(OnCinemachineCameraUpdated);
+    }
 
     public void InitSlot(int instanceId, Transform targetTransform)
     {
@@ -49,11 +61,15 @@ public class HudSlotUI : MonoBehaviour
         Slider_Mp.value = (curMp / (float)maxMp);
     }
 
-    private void Update()
+    private void OnCinemachineCameraUpdated(CinemachineBrain brain)
     {
         // 참조형을 캐싱할때는 꼭! 널체크를 사용부에서 신경써주자
-        if(_targetTransform != null)
+        if (_targetTransform != null)
         {
+            var aaa = CameraManager.Instance.GetMainCamera();
+            var bbb = CameraManager.Instance.GetMainCinemachineBrain();
+
+            // 위치를 동기화하고 싶다면 이렇게 Transform을 대입하지 않도록 주의하자 - 애초에 컴파일 에러남
             //this.gameObject.transform.position = _targetTransform.position;
 
             // world 좌표 -> Screen 좌표 변환
@@ -61,7 +77,7 @@ public class HudSlotUI : MonoBehaviour
 
             // UGUI에서 사용하려고
             var rectTransform = this.GetComponent<RectTransform>();
-            if(rectTransform != null)
+            if (rectTransform != null)
             {
                 Vector2 finalScreenPos = new Vector2(screenPos.x, screenPos.y - SlotOffestY);
                 rectTransform.anchoredPosition = finalScreenPos;
