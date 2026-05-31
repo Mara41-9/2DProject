@@ -57,7 +57,7 @@ MonoBehaviour:
   _baseAtk: 0
   _isAlive: 1
   _attackRange: {fileID: 7354435056643824609}
-  _attackRadius: 1
+  _attackRadius: 1.5
   _PlayerLayer:
     serializedVersion: 2
     m_Bits: 256

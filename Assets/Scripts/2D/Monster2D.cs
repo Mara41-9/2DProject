@@ -25,7 +25,7 @@ public class Monster2D : MonoBehaviour
 
     [Header("공격 설정")]
     [SerializeField] private Transform _attackRange;
-    [SerializeField] private float _attackRadius = 1f;
+    [SerializeField] private float _attackRadius = 1.5f;
     [SerializeField] private LayerMask _PlayerLayer;
 
     [Header("애니메이터")]
@@ -142,6 +142,7 @@ public class Monster2D : MonoBehaviour
     {
         // + 디테일을 살리기 위해 방향에 따라 캐릭터 리소스를 뒤집는다
         // 역시 중요한 로직은 아니다!
+        // flipX = true -> 스프라이트 좌우반전
         SpriteRenderer_Monster.flipX = (x < 0);
     }
 
@@ -184,7 +185,16 @@ public class Monster2D : MonoBehaviour
         if (hitPlayer == null) { return; }
 
         if (hitPlayer.CompareTag("Player") == false) { return; }
-        
+
+        var player = GameObjectManager.Instance.GetLocalPlayer();
+        if(player == null) { return; }
+
+        float directionCheckValue = player.transform.localScale.x * this.transform.position.x;
+        if(directionCheckValue < 0)
+        {
+            SetMeshDirectionByMoveDirection(-1);
+        }
+
         StartCoroutine(AttackRoutine());
     }
 
@@ -206,6 +216,8 @@ public class Monster2D : MonoBehaviour
             if(_isAttack == false)
             {
                 _moveDirection = originDirection;
+                // 공격 전 원래 바라보던 방향으로!
+                SetMeshDirectionByMoveDirection((int)_moveDirection.x);
                 ChangeMonsterState(EntityAnimState.Walk);
             }
         }
