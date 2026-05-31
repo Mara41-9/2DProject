@@ -184,6 +184,9 @@ public class Monster2D : MonoBehaviour
 
     private IEnumerator AttackRoutine()
     {
+        Vector3 originDirection = _moveDirection;
+        _moveDirection = Vector3.zero;
+
         var player = GameObjectManager.Instance.GetLocalPlayer();
         if (player != null)
         {
@@ -196,6 +199,7 @@ public class Monster2D : MonoBehaviour
 
             if(_isAttack == false)
             {
+                _moveDirection = originDirection;
                 ChangeMonsterState(EntityAnimState.Walk);
             }
         }
