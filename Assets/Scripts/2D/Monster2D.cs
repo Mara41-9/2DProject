@@ -17,6 +17,7 @@ public class Monster2D : MonoBehaviour
 
     [Header("몬스터 기본 정보")]
     public Vector3 _moveDirection;   // 적이 이동할 방향 저장 변수
+    private Vector2 _monsterPosition;
     public int _currentHp;
     public int _maxHp;     // 최대 Hp
     public int _baseAtk;
@@ -60,6 +61,7 @@ public class Monster2D : MonoBehaviour
     {
         RandomPickDirection();
         ChangeMonsterState(EntityAnimState.Walk);
+        _monsterPosition = this.gameObject.transform.position;
     }
 
     private void Update()
@@ -102,10 +104,14 @@ public class Monster2D : MonoBehaviour
 
     public void ResetMonster()
     {
+        // 몬스터 Hp 초기화 시키기
         _currentHp = _maxHp;
         _isAlive = true;
         ChangeMonsterState(EntityAnimState.Walk);
         InvokeStatChangedEvent();
+
+        // 몬스터 위치 초기화 시키기
+        this.gameObject.transform.position = _monsterPosition;
     }
 
     public string GetMonsterDataId()

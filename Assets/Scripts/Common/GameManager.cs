@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         playerComponent.InvokeStatChangedEvent();
 
-        // 몬스터 Hp 초기화 시키기
+        // 몬스터 초기화 시키기
         var monsterList = GameObjectManager.Instance.GetMonsterByList();
         if(monsterList == null) return;
 
@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
             var monster = monsterKv.Value;
             monster.ResetMonster();
         }
+
     }
 
     // 플레이어의 현재 총 Exp 가져오기
