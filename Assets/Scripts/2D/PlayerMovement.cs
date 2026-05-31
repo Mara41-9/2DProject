@@ -56,7 +56,10 @@ public class PlayerMovement : MonoBehaviour
         // 2D 캐릭터가 물리 충돌 시, 회전해서 넘어지는 것 방지
         // constraints : 움직임 제한 설정
         _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
 
+    private void Start()
+    {
         var player = GameDataManager.Instance.GetCharacterData("Character_Toto_01");
         if (player == null)
         {
@@ -66,10 +69,6 @@ public class PlayerMovement : MonoBehaviour
         _maxHp = player.Hp;
         _currentHp = _maxHp;
 
-    }
-
-    private void Start()
-    {
         // 나 스스로를 등록한다. -> 씬에 있는 그 2D 플레이어가 등록됨
         GameObjectManager.Instance.RegisterLocalPlayer(this);
 
