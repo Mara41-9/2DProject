@@ -6138,14 +6138,14 @@ PrefabInstance:
       propertyPath: CinemachineBrain_Main
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5425347399592015066, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 3706080333609344394, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8411169043500175889, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
-      propertyPath: m_Name
-      value: ManagerContainer
-      objectReference: {fileID: 0}
+    - target: {fileID: 3989221041139871082, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a5e72fa6821462548a6d5653a40574ba, type: 3}
     - target: {fileID: 4547984820372134201, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
       propertyPath: _playerMovement
       value: 
@@ -6190,14 +6190,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3706080333609344394, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 5425347399592015066, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3989221041139871082, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: a5e72fa6821462548a6d5653a40574ba, type: 3}
+    - target: {fileID: 8411169043500175889, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+      propertyPath: m_Name
+      value: ManagerContainer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
