@@ -22,6 +22,11 @@ public class Monster2D : MonoBehaviour
     public int _baseAtk;
     public bool _isAlive = true;
 
+    [Header("공격 설정")]
+    [SerializeField] private Transform _attackRange;
+    [SerializeField] private float _attackRadius = 1f;
+    [SerializeField] private LayerMask _PlayerLayer;
+
     [Header("애니메이터")]
     [SerializeField] private EntityAnimController AnimatorController_Entity;
 
@@ -33,6 +38,8 @@ public class Monster2D : MonoBehaviour
     private Transform _rightPoint;
 
     private Rigidbody2D _rigidbody;
+
+    private bool _isAttack = false;
 
     private event Action<int, int> _onHpChanged;
     private event Action<int, int> _onMpChanged;
@@ -58,6 +65,11 @@ public class Monster2D : MonoBehaviour
     private void Update()
     {
         SimpleEnemyMoveOnUpdate();
+
+        if(_isAttack == false)
+        {
+            CheckInAttackRange();
+        }
     }
 
     public void SetMoveRange(Transform leftPoint, Transform rightPoint)
@@ -160,6 +172,29 @@ public class Monster2D : MonoBehaviour
         }
     }
 
+    private void CheckInAttackRange()
+    {
+        Collider2D hitPlayer = Physics2D.OverlapCircle(_attackRange.position, _attackRadius, _PlayerLayer);
+        if (hitPlayer == null) { return; }
+
+        if (hitPlayer.CompareTag("Player") == false) { return; }
+
+        _isAttack = true;
+        Attack();
+
+    }
+
+    private void Attack()
+    {
+        var player = GameObjectManager.Instance.GetLocalPlayer();
+        if (player != null)
+        {
+            ChangeMonsterState(EntityAnimState.Atk);
+            player.TakeDamage(_baseAtk);
+        }
+
+    }
+
     public void TakeDamage(int damage)
     {
          _currentHp -= damage;
@@ -242,6 +277,15 @@ public class Monster2D : MonoBehaviour
         // 우선 HP든 MP든 하나라도 바뀌면 다 호출해준다
         _onHpChanged?.Invoke(_currentHp, _maxHp);
         // _onMpChanged?.Invoke(_currentMp);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if(_attackRange != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_attackRange.position, _attackRadius);
+        }
     }
 
 

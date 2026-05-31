@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 910836514119895428}
+  - {fileID: 7354435056643824609}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1123173901625061276
@@ -51,9 +52,15 @@ MonoBehaviour:
   _monsterInstanceId: 0
   SpriteRenderer_Monster: {fileID: 7381514200322326058}
   _moveDirection: {x: 0, y: 0, z: 0}
-  _baseHp: 0
+  _currentHp: 0
+  _maxHp: 0
   _baseAtk: 0
   _isAlive: 1
+  _attackRange: {fileID: 7354435056643824609}
+  _attackRadius: 1
+  _PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 256
   AnimatorController_Entity: {fileID: 8650976590887322310}
 --- !u!114 &8650976590887322310
 MonoBehaviour:
@@ -255,3 +262,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7310995940275033751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7354435056643824609}
+  m_Layer: 7
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7354435056643824609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310995940275033751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5820381744602877392}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

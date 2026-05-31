@@ -1534,7 +1534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 446020806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 665183282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1997,9 +1997,9 @@ GameObject:
   - component: {fileID: 747711146}
   - component: {fileID: 747711144}
   - component: {fileID: 747711143}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toto
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4936,7 +4936,7 @@ GameObject:
   - component: {fileID: 1885286991}
   - component: {fileID: 1885286993}
   - component: {fileID: 1885286992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite_Toto
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -208,6 +208,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        _currentHp -= damage;
+        InvokeStatChangedEvent();
+
+        if(_currentHp <= 0)
+        {
+            _currentHp = 0;
+            UIManager.Instance.OpenGameOverPopup();
+            return;
+        }
+    }
+
     private IEnumerator AttackRoutine()
     {
         _isAttack = true;
@@ -236,49 +249,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(_attackPoint.position, _attackRadius);
-        }
-    }
-
-    // 적 충돌 시 처리하는 함수
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        CheckCollision(collision.collider);
-    }
-
-    private void CheckCollision(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster") == false)
-        {
-            return;
-        }
-
-        var monsterComponent = collision.gameObject.GetComponent<Monster2D>();
-
-        if (monsterComponent != null)
-        {
-            if ((monsterComponent._moveDirection.x * this.transform.localScale.x) < 0)
-            {
-                // Hp를 먼저 깎고 이벤트를 실행하자
-                _currentHp -= 5;
-                InvokeStatChangedEvent();
-
-                Debug.LogWarning($"셀리 공주의 남은 Hp: {_currentHp}");
-                if (_gameTestUI != null)
-                {
-                    _gameTestUI.PlayerHp(_currentHp);
-                }
-
-                if (_currentHp <= 0)
-                {
-                    UIManager.Instance.OpenGameOverPopup();
-                }
-            }
-
-        }
-        else
-        {
-            Debug.Log($"충돌한 적 객체에서 컴포넌트를 찾을 수 없습니다 : {gameObject.name}");
-            return;
         }
     }
 
