@@ -178,21 +178,27 @@ public class Monster2D : MonoBehaviour
         if (hitPlayer == null) { return; }
 
         if (hitPlayer.CompareTag("Player") == false) { return; }
-
-        _isAttack = true;
-        Attack();
-
+        
+        StartCoroutine(AttackRoutine());
     }
 
-    private void Attack()
+    private IEnumerator AttackRoutine()
     {
         var player = GameObjectManager.Instance.GetLocalPlayer();
         if (player != null)
         {
+            _isAttack = true;
             ChangeMonsterState(EntityAnimState.Atk);
-            player.TakeDamage(_baseAtk);
-        }
 
+            yield return new WaitForSeconds(0.6f);
+            player.TakeDamage(_baseAtk);
+            _isAttack = false;
+
+            if(_isAttack == false)
+            {
+                ChangeMonsterState(EntityAnimState.Walk);
+            }
+        }
     }
 
     public void TakeDamage(int damage)
