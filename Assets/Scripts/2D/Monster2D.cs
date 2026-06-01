@@ -190,7 +190,7 @@ public class Monster2D : MonoBehaviour
         if(player == null) { return; }
 
         float directionCheckValue = player.transform.localScale.x * this.transform.position.x;
-        if(directionCheckValue < 0)
+        if(directionCheckValue > 0)
         {
             SetMeshDirectionByMoveDirection(-1);
         }
