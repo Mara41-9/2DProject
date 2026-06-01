@@ -1,0 +1,421 @@
+fileFormatVersion: 2
+guid: 992bd8acb0bdb23408c99c8cbcc82dac
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_0
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 571
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d1ed6c1f2c94fa4f88d5b67edfac5dd
+      internalID: -84925675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_7
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 570
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12477897849202448c11b73a234c5d1
+      internalID: -572536790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_12
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 571
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f60f0589bed98b498d124799bed549c
+      internalID: 938442154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_17
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 571
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19232ebc8952a884ab27521c2c5cd272
+      internalID: -1549940675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_71
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 147
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f8be69a76995342b0fea111e7cf592
+      internalID: -2120869939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_73
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 147
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9ab112a3c499a4b8c37c6fc7968ed7
+      internalID: 1573615432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_76
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 147
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb93a58fa3151a4688cbc94c611eb11
+      internalID: 1449343000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_CarrotSmoothy_78
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 147
+        width: 237
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b07fc9f7d4d384095fc7a193b8fa33
+      internalID: -1858610539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 045ef40eecb4c9b439931b381758a176
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      DropItem_CarrotSmoothy_0: -84925675
+      DropItem_CarrotSmoothy_1: 1071290657
+      DropItem_CarrotSmoothy_10: 2056582902
+      DropItem_CarrotSmoothy_100: -1924093483
+      DropItem_CarrotSmoothy_101: 1447575555
+      DropItem_CarrotSmoothy_102: 250096355
+      DropItem_CarrotSmoothy_103: -717089279
+      DropItem_CarrotSmoothy_104: 1190156526
+      DropItem_CarrotSmoothy_105: -1813814606
+      DropItem_CarrotSmoothy_106: 559981176
+      DropItem_CarrotSmoothy_107: -1398456429
+      DropItem_CarrotSmoothy_108: -144879474
+      DropItem_CarrotSmoothy_109: 1542318496
+      DropItem_CarrotSmoothy_11: 555145992
+      DropItem_CarrotSmoothy_110: -921018834
+      DropItem_CarrotSmoothy_111: -184564697
+      DropItem_CarrotSmoothy_112: 460566747
+      DropItem_CarrotSmoothy_12: 938442154
+      DropItem_CarrotSmoothy_13: -1937694408
+      DropItem_CarrotSmoothy_14: 1098972696
+      DropItem_CarrotSmoothy_15: 270728611
+      DropItem_CarrotSmoothy_16: -191446725
+      DropItem_CarrotSmoothy_17: -1549940675
+      DropItem_CarrotSmoothy_18: 2112488683
+      DropItem_CarrotSmoothy_19: -1388380478
+      DropItem_CarrotSmoothy_2: 938025776
+      DropItem_CarrotSmoothy_20: 1600038771
+      DropItem_CarrotSmoothy_21: 893114047
+      DropItem_CarrotSmoothy_22: -163630327
+      DropItem_CarrotSmoothy_23: -460225671
+      DropItem_CarrotSmoothy_24: 1459874111
+      DropItem_CarrotSmoothy_25: 1401529988
+      DropItem_CarrotSmoothy_26: -1238739208
+      DropItem_CarrotSmoothy_27: -615864001
+      DropItem_CarrotSmoothy_28: 88662875
+      DropItem_CarrotSmoothy_29: 697796052
+      DropItem_CarrotSmoothy_3: 1422440341
+      DropItem_CarrotSmoothy_30: -509405261
+      DropItem_CarrotSmoothy_31: -298754613
+      DropItem_CarrotSmoothy_32: 990594323
+      DropItem_CarrotSmoothy_33: 1824039340
+      DropItem_CarrotSmoothy_34: 166864992
+      DropItem_CarrotSmoothy_35: -2031899416
+      DropItem_CarrotSmoothy_36: -378659795
+      DropItem_CarrotSmoothy_37: 1962251180
+      DropItem_CarrotSmoothy_38: 1426092315
+      DropItem_CarrotSmoothy_39: -1987026513
+      DropItem_CarrotSmoothy_4: -594934707
+      DropItem_CarrotSmoothy_40: -401630409
+      DropItem_CarrotSmoothy_41: -1177927886
+      DropItem_CarrotSmoothy_42: 300865207
+      DropItem_CarrotSmoothy_43: -1916635280
+      DropItem_CarrotSmoothy_44: -201055533
+      DropItem_CarrotSmoothy_45: 538090295
+      DropItem_CarrotSmoothy_46: 470668303
+      DropItem_CarrotSmoothy_47: -73214729
+      DropItem_CarrotSmoothy_48: 348450825
+      DropItem_CarrotSmoothy_49: 239200135
+      DropItem_CarrotSmoothy_5: 665802756
+      DropItem_CarrotSmoothy_50: 1799222526
+      DropItem_CarrotSmoothy_51: -1701416491
+      DropItem_CarrotSmoothy_52: -1361655264
+      DropItem_CarrotSmoothy_53: 1575362266
+      DropItem_CarrotSmoothy_54: -177223467
+      DropItem_CarrotSmoothy_55: 1554265112
+      DropItem_CarrotSmoothy_56: -163374119
+      DropItem_CarrotSmoothy_57: 1714454824
+      DropItem_CarrotSmoothy_58: -1319029734
+      DropItem_CarrotSmoothy_59: 313959506
+      DropItem_CarrotSmoothy_6: -1157229611
+      DropItem_CarrotSmoothy_60: -616453469
+      DropItem_CarrotSmoothy_61: -563046733
+      DropItem_CarrotSmoothy_62: -1224808668
+      DropItem_CarrotSmoothy_63: 685452870
+      DropItem_CarrotSmoothy_64: 729917216
+      DropItem_CarrotSmoothy_65: -940112586
+      DropItem_CarrotSmoothy_66: -1403581884
+      DropItem_CarrotSmoothy_67: 1865477995
+      DropItem_CarrotSmoothy_68: -1323392815
+      DropItem_CarrotSmoothy_69: 205624775
+      DropItem_CarrotSmoothy_7: -572536790
+      DropItem_CarrotSmoothy_70: 1259114758
+      DropItem_CarrotSmoothy_71: -2120869939
+      DropItem_CarrotSmoothy_72: -1246524750
+      DropItem_CarrotSmoothy_73: 1573615432
+      DropItem_CarrotSmoothy_74: -1894492102
+      DropItem_CarrotSmoothy_75: -45312784
+      DropItem_CarrotSmoothy_76: 1449343000
+      DropItem_CarrotSmoothy_77: 623654775
+      DropItem_CarrotSmoothy_78: -1858610539
+      DropItem_CarrotSmoothy_79: 67581501
+      DropItem_CarrotSmoothy_8: -58233777
+      DropItem_CarrotSmoothy_80: 2034211150
+      DropItem_CarrotSmoothy_81: -697766241
+      DropItem_CarrotSmoothy_82: 1209952471
+      DropItem_CarrotSmoothy_83: -867999578
+      DropItem_CarrotSmoothy_84: 1370023627
+      DropItem_CarrotSmoothy_85: -1599515588
+      DropItem_CarrotSmoothy_86: 1891652178
+      DropItem_CarrotSmoothy_87: -1040081574
+      DropItem_CarrotSmoothy_88: -431127901
+      DropItem_CarrotSmoothy_89: -363094992
+      DropItem_CarrotSmoothy_9: -731992482
+      DropItem_CarrotSmoothy_90: -556924711
+      DropItem_CarrotSmoothy_91: 1561707013
+      DropItem_CarrotSmoothy_92: -1941652104
+      DropItem_CarrotSmoothy_93: -1674518422
+      DropItem_CarrotSmoothy_94: -785183116
+      DropItem_CarrotSmoothy_95: 1746797852
+      DropItem_CarrotSmoothy_96: -1207901057
+      DropItem_CarrotSmoothy_97: 2130800551
+      DropItem_CarrotSmoothy_98: -188059836
+      DropItem_CarrotSmoothy_99: 506928879
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
