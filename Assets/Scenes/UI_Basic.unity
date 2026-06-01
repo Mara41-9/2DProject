@@ -1134,7 +1134,7 @@ MonoBehaviour:
   _spawnSpotType: 2
   _startSpawnType: 2
   _dropItemSpawnSpot: {fileID: 0}
-  _spawnObjectDataId: harv_corn_1
+  _spawnObjectDataId: dropItem_carrotSmoothy_1
   Collider_OnSpawnStart: {fileID: 199786378}
   _leftPoint: {fileID: 0}
   _rightPoint: {fileID: 0}
