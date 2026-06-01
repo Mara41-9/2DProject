@@ -45,6 +45,8 @@ public class Monster2D : MonoBehaviour
     private event Action<int, int> _onHpChanged;
     private event Action<int, int> _onMpChanged;
 
+    private SpawnSpot _dropItemSpawnSpot;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -74,10 +76,17 @@ public class Monster2D : MonoBehaviour
         }
     }
 
+    // 몬스터의 이동 범위를 설정하는 함수
     public void SetMoveRange(Transform leftPoint, Transform rightPoint)
     {
         _leftPoint = leftPoint;
         _rightPoint = rightPoint;
+    }
+
+    // 몬스터가 죽었을 때 사용할 드롭아이템 스폰스팟 설정하는 함수
+    public void SetDropItemSpawnSpot(SpawnSpot dropItemSpawnSpot)
+    {
+        _dropItemSpawnSpot = dropItemSpawnSpot;
     }
 
 
@@ -245,6 +254,14 @@ public class Monster2D : MonoBehaviour
         _isAlive = false;
 
         StartCoroutine(DieRoutine());
+
+        if(_dropItemSpawnSpot != null)
+        {
+            // 드롭아이템 스폰스팟 활성화
+            _dropItemSpawnSpot.gameObject.SetActive(true);
+            // 드롭아이템 스폰스팟의 StartSpawn 컴포넌트 호출
+            _dropItemSpawnSpot.StartSpawn();
+        }
     }
 
     private void ChangeMonsterState(EntityAnimState newState)

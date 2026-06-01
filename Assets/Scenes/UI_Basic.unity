@@ -1133,6 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
   _spawnSpotType: 1
   _startSpawnType: 2
+  _dropItemSpawnSpot: {fileID: 0}
   _spawnObjectDataId: harv_corn_1
   Collider_OnSpawnStart: {fileID: 199786378}
   _leftPoint: {fileID: 0}
@@ -1311,6 +1312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
   _spawnSpotType: 1
   _startSpawnType: 2
+  _dropItemSpawnSpot: {fileID: 0}
   _spawnObjectDataId: harv_potato_1
   Collider_OnSpawnStart: {fileID: 209058237}
   _leftPoint: {fileID: 0}
@@ -1398,6 +1400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
   _spawnSpotType: 4
   _startSpawnType: 2
+  _dropItemSpawnSpot: {fileID: 4813891893490623306}
   _spawnObjectDataId: mob_jellymong_1
   Collider_OnSpawnStart: {fileID: 213006388}
   _leftPoint: {fileID: 423192457}
@@ -2589,6 +2592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
   _spawnSpotType: 3
   _startSpawnType: 3
+  _dropItemSpawnSpot: {fileID: 0}
   _spawnObjectDataId: dialogue_mainstream_1_1_100
   Collider_OnSpawnStart: {fileID: 587617503}
   _leftPoint: {fileID: 0}
@@ -2960,93 +2964,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntityAnimController
   Animator_Entity: {fileID: 1885286992}
---- !u!1 &791258189
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 791258190}
-  - component: {fileID: 791258192}
-  - component: {fileID: 791258191}
-  m_Layer: 0
-  m_Name: SpawnSpot_FieldObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &791258190
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791258189}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.45, y: 11.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1809480459}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &791258191
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791258189}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.2807417, y: 0.0066080093}
-  m_Radius: 1.3358665
---- !u!114 &791258192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791258189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e48cfefad4e8abd499310b056369a37f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
-  _spawnSpotType: 2
-  _startSpawnType: 2
-  _spawnObjectDataId: dropItem_tomatoJuice_1
-  Collider_OnSpawnStart: {fileID: 791258191}
-  _leftPoint: {fileID: 0}
-  _rightPoint: {fileID: 0}
 --- !u!1 &795813244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4807,6 +4724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
   _spawnSpotType: 1
   _startSpawnType: 2
+  _dropItemSpawnSpot: {fileID: 0}
   _spawnObjectDataId: harv_potato_1
   Collider_OnSpawnStart: {fileID: 1408208529}
   _leftPoint: {fileID: 0}
@@ -6088,100 +6006,13 @@ Transform:
   m_Children:
   - {fileID: 587617502}
   - {fileID: 213006387}
-  - {fileID: 1843861604}
-  - {fileID: 791258190}
+  - {fileID: 310428341980280415}
+  - {fileID: 76499500960853051}
   - {fileID: 199786377}
   - {fileID: 1408208528}
   - {fileID: 209058236}
   m_Father: {fileID: 859656980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1843861603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1843861604}
-  - component: {fileID: 1843861606}
-  - component: {fileID: 1843861605}
-  m_Layer: 0
-  m_Name: SpawnSpot_Monster (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1843861604
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843861603}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.75, y: 11.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1809480459}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1843861605
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843861603}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.61822665, y: 0}
-  m_Radius: 0.9917735
---- !u!114 &1843861606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843861603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e48cfefad4e8abd499310b056369a37f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
-  _spawnSpotType: 4
-  _startSpawnType: 2
-  _spawnObjectDataId: mob_jellymong_1
-  Collider_OnSpawnStart: {fileID: 1843861605}
-  _leftPoint: {fileID: 1170768593}
-  _rightPoint: {fileID: 907098278}
 --- !u!1 &1851380067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7391,6 +7222,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!4 &76499500960853051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490146181413659908}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.52, y: 3.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1809480459}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &215377772705038440
 Grid:
   m_ObjectHideFlags: 0
@@ -7403,6 +7249,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!4 &310428341980280415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910590185709819564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.75, y: 11.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1809480459}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586282621870651526
 GameObject:
   m_ObjectHideFlags: 0
@@ -7415,6 +7276,24 @@ GameObject:
   - component: {fileID: 215377772705038440}
   m_Layer: 0
   m_Name: Sample_TileMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &910590185709819564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310428341980280415}
+  - component: {fileID: 3511686751104551755}
+  - component: {fileID: 8047184232670244528}
+  m_Layer: 0
+  m_Name: SpawnSpot_Monster (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7456,6 +7335,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3511686751104551755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910590185709819564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48cfefad4e8abd499310b056369a37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
+  _spawnSpotType: 4
+  _startSpawnType: 2
+  _dropItemSpawnSpot: {fileID: 0}
+  _spawnObjectDataId: mob_jellymong_1
+  Collider_OnSpawnStart: {fileID: 8047184232670244528}
+  _leftPoint: {fileID: 1170768593}
+  _rightPoint: {fileID: 907098278}
 --- !u!1 &4661746735628756352
 GameObject:
   m_ObjectHideFlags: 0
@@ -7475,6 +7373,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4813891893490623306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490146181413659908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48cfefad4e8abd499310b056369a37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
+  _spawnSpotType: 2
+  _startSpawnType: 2
+  _dropItemSpawnSpot: {fileID: 0}
+  _spawnObjectDataId: dropItem_tomatoJuice_1
+  Collider_OnSpawnStart: {fileID: 6208444860512072512}
+  _leftPoint: {fileID: 0}
+  _rightPoint: {fileID: 0}
 --- !u!1839735485 &5588176701323127836
 Tilemap:
   m_ObjectHideFlags: 0
@@ -7749,6 +7666,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!58 &6208444860512072512
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490146181413659908}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.2807417, y: 0.0066080093}
+  m_Radius: 1.3358665
 --- !u!19719996 &6626034253002133959
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -7991,6 +7944,60 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+--- !u!58 &8047184232670244528
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910590185709819564}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.61822665, y: 0}
+  m_Radius: 0.9917735
+--- !u!1 &8490146181413659908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76499500960853051}
+  - component: {fileID: 4813891893490623306}
+  - component: {fileID: 6208444860512072512}
+  m_Layer: 0
+  m_Name: SpawnSpot_FieldObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &8497834538014244448
 Transform:
   m_ObjectHideFlags: 0

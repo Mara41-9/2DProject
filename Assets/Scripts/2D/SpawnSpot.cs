@@ -24,6 +24,8 @@ public class SpawnSpot : MonoBehaviour
     [SerializeField] private SpawnSpotType _spawnSpotType;
     [SerializeField] private StartSpawnType _startSpawnType;
 
+    [SerializeField] private SpawnSpot _dropItemSpawnSpot;       // 몬스터가 죽으면 실행시킬 드롭아이템 스폰스팟
+
     [SerializeField] private string _spawnObjectDataId;          // 생성할 데이터 ID
     [SerializeField] private Collider2D Collider_OnSpawnStart;   // 플레이어 감지용 트리거 콜라이더 - OnRange일때만!
 
@@ -75,7 +77,7 @@ public class SpawnSpot : MonoBehaviour
                 this.gameObject.SetActive(false);   // 생성 후 비활성화 -> 중복 생성 방지 
                 break;
             case SpawnSpotType.Monster:
-                GameObjectManager.Instance.CreateMonster(_spawnObjectDataId, this.transform, _leftPoint, _rightPoint).Forget();
+                GameObjectManager.Instance.CreateMonster(_spawnObjectDataId, this.transform, _leftPoint, _rightPoint, _dropItemSpawnSpot).Forget();
                 this.gameObject.SetActive(false);
                 break;
             case SpawnSpotType.Dialogue:

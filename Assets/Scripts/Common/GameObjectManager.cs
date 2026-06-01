@@ -113,7 +113,7 @@ public class GameObjectManager : MonoBehaviour
     //[몬스터] ====================================================================================================
 
     // 몬스터를 생성하는 비동기 함수
-    public async UniTaskVoid CreateMonster(string monsterDataId, Transform spawnSpot, Transform leftPoint, Transform rightPoint)
+    public async UniTaskVoid CreateMonster(string monsterDataId, Transform spawnSpot, Transform leftPoint, Transform rightPoint, SpawnSpot dropItemSpawnSpot)
     {
         // GameDataManager에서 Monster 데이터 가져오기
         var monster = GameDataManager.Instance.GetMonsterData(monsterDataId);
@@ -148,6 +148,7 @@ public class GameObjectManager : MonoBehaviour
         }
 
         monsterComponent.SetMoveRange(leftPoint, rightPoint);
+        monsterComponent.SetDropItemSpawnSpot(dropItemSpawnSpot);
 
     }
 
