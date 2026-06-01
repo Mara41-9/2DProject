@@ -95,6 +95,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da97afdcb4a0e9540b92d1a7f6dee731
+    m_Address: 2DPrefab/DropItem_TomatoJuice
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e788976707f2a4048910dd957b17d95f
     m_Address: 2DPrefab/Harvest_Potato
     m_ReadOnly: 0
