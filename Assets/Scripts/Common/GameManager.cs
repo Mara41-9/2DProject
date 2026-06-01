@@ -148,17 +148,29 @@ public class GameManager : MonoBehaviour
     // -> 특정 아이템(itemDataId)을 개수(addItemCount)만큼 플레이어 인벤토리에 추가하자
     public void AddItem(string itemDataId, int addItemCount)
     {
+        foreach(var itemModel in _playerModel.ItemList)
+        {
+            // 만약 새로 추가하려는 데이터의 Id가 이미 저장데이터에 있는 아이템 데이터의 Id와 같다면
+            // = 이미 저장돼있는 아이템이라면
+            if(itemModel.ItemDataId == itemDataId)
+            {
+                itemModel.ItemStackCount += addItemCount;
+                return;
+            }
+        }
+
+        // 없는 아이템이라면
         // 저장할 때 고유값 ID를 부여하기 위해 사용 (고유 번호 생성)
         long uniqueId = GameUtil.GenerateUniqueId();
-
-        // TODO : 우선 쉽게 사용할 수 있도록 중복 처리는 빼두었다. 습득할때마다 아이템이 하나씩 추가되도록 해두고
-        // 추후에 중복값은 StackCount가 다 찰때까지 누적해줄 수 있도록 로직을 추가하자
+        
         var newItem = new ItemModel();
+
         newItem.ItemUniqueId = uniqueId;
         newItem.ItemDataId = itemDataId;
         newItem.ItemStackCount = addItemCount;
 
         _playerModel.ItemList.Add(newItem);
+
     }
 
     // 아이템의 실제적인 사용 함수
