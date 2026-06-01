@@ -740,7 +740,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 6134588299002213114}
   m_HandleRect: {fileID: 0}
@@ -1607,7 +1607,7 @@ MonoBehaviour:
   Image_Skill: {fileID: 5201226848846117960}
   Btn_Pause: {fileID: 2061922378132277879}
   Prefab_ItemSlot: {fileID: 5603668366840058126, guid: c7a176e1de37f084ca96d2d0db0c4265, type: 3}
-  Transform_UIItemSlotRoot: {fileID: 0}
+  Transform_UIItemSlotRoot: {fileID: 4113470931493418823}
   Prefab_MonsterSlot: {fileID: 5603668366840058126, guid: de4d1291f3f86514487830a64fde4f40, type: 3}
   Transform_UIMonsterSlotRoot: {fileID: 7173791363262212616}
 --- !u!1 &4644338941938529315
@@ -1971,7 +1971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8454191004537476542}
   m_Layer: 5
-  m_Name: Layout_BottomLeftz
+  m_Name: Layout_MiddleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
