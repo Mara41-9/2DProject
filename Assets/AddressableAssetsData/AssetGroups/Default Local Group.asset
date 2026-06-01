@@ -45,6 +45,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56de975eaea2d1445aa837a02b5b7266
+    m_Address: 2DPrefab/DropItem_CarrotSmoothy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5aca81014245379489e3eb252a4a68d8
     m_Address: Icon/Icon_Skill_RottenTomato_1
     m_ReadOnly: 0
