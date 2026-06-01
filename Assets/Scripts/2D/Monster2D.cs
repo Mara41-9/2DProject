@@ -25,7 +25,7 @@ public class Monster2D : MonoBehaviour
 
     [Header("공격 설정")]
     [SerializeField] private Transform _attackRange;
-    [SerializeField] private float _attackRadius = 1f;
+    [SerializeField] private float _attackRadius;
     [SerializeField] private LayerMask _PlayerLayer;
 
     [Header("애니메이터")]
