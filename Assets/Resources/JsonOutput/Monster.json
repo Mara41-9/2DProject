@@ -2,7 +2,7 @@
   {
     "Id": "mob_jellymong_1",
     "Name": "젤리몽",
-    "Description": "말랑한 몸을 이용해 적에게 바디박치기를 하는 몬스터",
+    "Description": "말랑한 몸을 이용해 바디박치기를 하는 몬스터",
     "BaseHp": 50,
     "BaseAtk": 5,
     "NormalAtkDamage": 1,
@@ -11,5 +11,18 @@
     ],
     "IconPath": "Icon/Icon_Jellymong",
     "PrefabPath": "2DObject/Monster_Jelltmong"
+  },
+  {
+    "Id": "mob_fryman_1",
+    "Name": "튀김맨",
+    "Description": "날카로운 창을 이용해 공격하는 몬스터",
+    "BaseHp": 60,
+    "BaseAtk": 10,
+    "NormalAtkDamage": 1,
+    "SkillAtkMultipleList": [
+      2
+    ],
+    "IconPath": "Icon/Icon_Fryman",
+    "PrefabPath": "2DObject/Monster_Fryman"
   }
 ]
