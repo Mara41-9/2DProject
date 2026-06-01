@@ -37,5 +37,15 @@
     "DropItemDataId": "Item_Potato_1",
     "IconPath": null,
     "PrefabPath": "2DPrefab/Harvest_Potato"
+  },
+  {
+    "Id": "dropItem_tomatoJuice_1",
+    "FieldObjectType": "DropItem",
+    "Name": "토마토 주스",
+    "Description": null,
+    "DropCountRange": null,
+    "DropItemDataId": "Item_TomatoJuice_1",
+    "IconPath": null,
+    "PrefabPath": "2DPrefab/DropItem_TomatoJuice"
   }
 ]
