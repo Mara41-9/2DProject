@@ -1,0 +1,348 @@
+fileFormatVersion: 2
+guid: 2bfd4f0d49b12de448e4a5ae187729a9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 585
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60527356ee689f44ab59619bd0c1aedd
+      internalID: -1075951649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_4
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 584
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e859020dea186649b09573467e49743
+      internalID: -824472036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_5
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 584
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6db39b965aeb545a9f5cf7948a2f98
+      internalID: 38069411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_8
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 584
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cc7cb35196f4046bee52b48919e5eb
+      internalID: -756339652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_28
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 158
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2bb8e453e693540a28bb1c14c904f7
+      internalID: 1800419841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_29
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 158
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614960c38d4f1bb4c98db89d3cfef23f
+      internalID: 8637609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_31
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 158
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552f614eeff96df42bce9ea847bc39ad
+      internalID: 975915241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_TomatoJuice_33
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 158
+        width: 213
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f6eb916ccaa7048913d7700edc5612
+      internalID: 390766165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ee2df08e9e962aa41b4812d77d27f3b0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      DropItem_TomatoJuice_0: -1075951649
+      DropItem_TomatoJuice_1: 1958214389
+      DropItem_TomatoJuice_10: 789934908
+      DropItem_TomatoJuice_11: 727675517
+      DropItem_TomatoJuice_12: 1728885197
+      DropItem_TomatoJuice_13: -799323005
+      DropItem_TomatoJuice_14: -257606860
+      DropItem_TomatoJuice_15: -1667057834
+      DropItem_TomatoJuice_16: -167914766
+      DropItem_TomatoJuice_17: 2072068987
+      DropItem_TomatoJuice_18: 1351162098
+      DropItem_TomatoJuice_19: -2084904409
+      DropItem_TomatoJuice_2: 193288188
+      DropItem_TomatoJuice_20: 190213856
+      DropItem_TomatoJuice_21: -957390981
+      DropItem_TomatoJuice_22: -1989203204
+      DropItem_TomatoJuice_23: -1394168706
+      DropItem_TomatoJuice_24: 1743740279
+      DropItem_TomatoJuice_25: 1975346285
+      DropItem_TomatoJuice_26: -1705695416
+      DropItem_TomatoJuice_27: -886997750
+      DropItem_TomatoJuice_28: 1800419841
+      DropItem_TomatoJuice_29: 8637609
+      DropItem_TomatoJuice_3: 992940808
+      DropItem_TomatoJuice_30: 2106296994
+      DropItem_TomatoJuice_31: 975915241
+      DropItem_TomatoJuice_32: -124810203
+      DropItem_TomatoJuice_33: 390766165
+      DropItem_TomatoJuice_34: 916692370
+      DropItem_TomatoJuice_35: 1754902567
+      DropItem_TomatoJuice_36: 235956412
+      DropItem_TomatoJuice_37: 233971580
+      DropItem_TomatoJuice_38: -1729367605
+      DropItem_TomatoJuice_39: 1301560940
+      DropItem_TomatoJuice_4: -824472036
+      DropItem_TomatoJuice_5: 38069411
+      DropItem_TomatoJuice_6: -2113288052
+      DropItem_TomatoJuice_7: 1767863058
+      DropItem_TomatoJuice_8: -756339652
+      DropItem_TomatoJuice_9: 966738119
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
