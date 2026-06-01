@@ -7349,7 +7349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
   _spawnSpotType: 4
   _startSpawnType: 2
-  _dropItemSpawnSpot: {fileID: 0}
+  _dropItemSpawnSpot: {fileID: 199786379}
   _spawnObjectDataId: mob_jellymong_1
   Collider_OnSpawnStart: {fileID: 8047184232670244528}
   _leftPoint: {fileID: 1170768593}
