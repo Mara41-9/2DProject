@@ -7231,7 +7231,7 @@ Transform:
   m_GameObject: {fileID: 8490146181413659908}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.52, y: 3.18, z: 0}
+  m_LocalPosition: {x: 28.31, y: 4.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7700,8 +7700,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2807417, y: 0.0066080093}
-  m_Radius: 1.3358665
+  m_Offset: {x: 0.01159358, y: -0.4087454}
+  m_Radius: 1.932306
 --- !u!19719996 &6626034253002133959
 TilemapCollider2D:
   m_ObjectHideFlags: 0
