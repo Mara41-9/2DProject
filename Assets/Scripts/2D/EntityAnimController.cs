@@ -9,9 +9,7 @@ public enum EntityAnimState
     Atk,
     Damaged,
     Die,
-    JumpStart,
-    JumpLoop,
-    JumpEnd,
+    Jump
 }
 
 public class EntityAnimController : MonoBehaviour
@@ -49,11 +47,9 @@ public class EntityAnimController : MonoBehaviour
             case EntityAnimState.Atk:
                 Animator_Entity.SetBool("IsAtk", true);
                 break;
-            case EntityAnimState.JumpStart:
+            case EntityAnimState.Jump:
+                ResetAllParameters();
                 Animator_Entity.SetBool("IsJump", true);
-                break;
-            case EntityAnimState.JumpEnd:
-                Animator_Entity.SetBool("IsJump", false);
                 break;
             case EntityAnimState.Damaged:
                 ResetAllParameters();
@@ -88,7 +84,7 @@ public class EntityAnimController : MonoBehaviour
         Animator_Entity.SetBool("IsAtk", false);
         Animator_Entity.SetBool("IsDamaged", false);
         Animator_Entity.SetBool("IsDie", false);
-        // Animator_Entity.SetBool("IsJump", false); -> 
+        Animator_Entity.SetBool("IsJump", false);
     }
 
 }

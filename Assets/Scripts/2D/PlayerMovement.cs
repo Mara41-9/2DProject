@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public int _currentHp;  // 현재 Hp 
 
     private bool _isAttack;
+    private bool _isJump;
 
     // 이벤트 선언 - HP/MP 변경 알림 함수를 저장해둘 공간
     private event Action<int, int> _onHpChanged;
@@ -94,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        if(_isAttack == false)
+        if(_isAttack == false && _isJump == false)
         {
             if (isMoving)
             {
@@ -162,6 +163,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // X축 속도 유지, 위쪽 속도를 점프 힘으로 변경
         _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _jumpForce);
+        StartCoroutine(JumpRoutine());
     }
 
 
@@ -232,6 +234,22 @@ public class PlayerMovement : MonoBehaviour
         _isAttack = false;
 
         if (_isAttack == false)
+        {
+            ChangePlayerState(EntityAnimState.Idle);
+        }
+    }
+
+    private IEnumerator JumpRoutine()
+    {
+        _isJump = true;
+
+        ChangePlayerState(EntityAnimState.Jump);
+
+        yield return new WaitForSeconds(0.8f);
+
+        _isJump = false;
+
+        if(_isJump == false)
         {
             ChangePlayerState(EntityAnimState.Idle);
         }
