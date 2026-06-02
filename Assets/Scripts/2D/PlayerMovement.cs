@@ -42,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
     private int _currentScore;
     public int _maxHp;     // 최대 Hp
     public int _currentHp;  // 현재 Hp 
+    private int _jumpMaxCount = 2;    // 점프 가능 최대 횟수
+    private int _jumpCurCount = 0;        // 현재 점프한 횟수
 
     private bool _isAttack;
 
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         // 플레이어의 시작 위치를 초기 위치로 저장
         _playerPosition = this.gameObject.transform.position;
+
     }
 
     private void Update()
@@ -89,11 +92,25 @@ public class PlayerMovement : MonoBehaviour
         bool isMoving = (_horizontalInput != 0);
 
         // 점프 입력
-        if (Input.GetButtonDown("Jump") && _isGrounded)
+        if (Input.GetButtonDown("Jump"))
         {
-            Jump();
-        }
+            _jumpCurCount++;
 
+            if (_jumpCurCount < _jumpMaxCount)
+            {
+                Jump();
+            }
+            else if(_jumpCurCount > _jumpMaxCount)
+            {
+                if(_isGrounded)
+                {
+                    Jump();
+                    _jumpCurCount = 0;
+                }
+            }
+
+        }
+        
         if(_isAttack == false)
         {
             if (_isGrounded == false)
