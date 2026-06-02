@@ -106,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
                 ChangePlayerState(EntityAnimState.Idle);
             }
         }
-        
 
         // 캐릭터 방향 전환 
         if (_horizontalInput > 0 && !_lookRight)
