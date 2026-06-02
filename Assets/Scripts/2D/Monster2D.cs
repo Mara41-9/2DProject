@@ -302,7 +302,14 @@ public class Monster2D : MonoBehaviour
 
         ChangeMonsterState(EntityAnimState.Die);
 
-        yield return new WaitForSeconds(0.6f);
+        if(_monsterDataId == "mob_jellymong_1")
+        {
+            yield return new WaitForSeconds(0.6f);
+        }
+        else if(_monsterDataId == "mob_fryman_1")
+        {
+            yield return new WaitForSeconds(1.2f);
+        }
 
         GameObjectManager.Instance.DestroyMonster(_monsterInstanceId);
         UIManager.Instance.RemoveHudSlot(_monsterInstanceId);
