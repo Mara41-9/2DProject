@@ -198,13 +198,16 @@ public class Monster2D : MonoBehaviour
         var player = GameObjectManager.Instance.GetLocalPlayer();
         if(player == null) { return; }
 
-        float directionCheckValue = player.transform.localScale.x * this.transform.position.x;
+        float directionCheckValue = player.transform.position.x - this.gameObject.transform.position.x;
         if(directionCheckValue > 0)
+        {
+            SetMeshDirectionByMoveDirection(1);
+        }
+        else if(directionCheckValue <= 0)
         {
             SetMeshDirectionByMoveDirection(-1);
         }
-
-        StartCoroutine(AttackRoutine());
+            StartCoroutine(AttackRoutine());
     }
 
     private IEnumerator AttackRoutine()
