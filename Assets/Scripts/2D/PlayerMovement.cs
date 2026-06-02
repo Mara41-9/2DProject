@@ -30,10 +30,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _attackRadius = 1f;
     [SerializeField] private LayerMask _monsterLayer;
 
-    // 우선 직접 들고 있다가 추후에 UI매니저한테 요청하도록 개선해볼 것
-    [SerializeField] private ScoreUI _scoreUI;
-    [SerializeField] private GameTestUI _gameTestUI;
-
     private Rigidbody2D _rigidbody;
     private bool _isGrounded;
     private float _horizontalInput;  // 플레이어의 좌우 입력값을 저장하는 변수
@@ -139,16 +135,6 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 GetPlayerPosition()
     {
         return _playerPosition;
-    }
-
-    public void SetPlayerHp(int playerHp)
-    {
-        _currentHp = playerHp;
-
-        if(_gameTestUI != null)
-        {
-            _gameTestUI.PlayerHp(_currentHp);
-        }
     }
 
     private void ChangePlayerState(EntityAnimState newState)
