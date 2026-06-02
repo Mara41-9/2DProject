@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35e1a0fdf48973344bcaa123535f3d11
+    m_Address: Icon/Icon_Fryman
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43c6a55dcc4c34144ac6ecde741c1e1f
     m_Address: Icon/Icon_Item_Potion_1
     m_ReadOnly: 0
