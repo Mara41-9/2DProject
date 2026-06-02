@@ -304,11 +304,11 @@ public class Monster2D : MonoBehaviour
 
         if(_monsterDataId == "mob_jellymong_1")
         {
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(1.2f);
         }
         else if(_monsterDataId == "mob_fryman_1")
         {
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(1.5f);
         }
 
         GameObjectManager.Instance.DestroyMonster(_monsterInstanceId);
