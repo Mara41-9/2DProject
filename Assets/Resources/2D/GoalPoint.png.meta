@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 738c475a54f576e408db3af8b26aee91
+guid: 761e4636f4379494c97bc726d8239f0d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,10 +113,10 @@ TextureImporter:
       name: GoalPoint_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 175
-        width: 225
-        height: 620
+        x: 38
+        y: 177
+        width: 228
+        height: 601
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e71f630392d63046b1e273e1f8cbc3e
-      internalID: -757826058
+      spriteID: 3785fa2f5f9013044a9e22653b3b048c
+      internalID: 1744082869
       vertices: []
       indices: 
       edges: []
@@ -135,10 +135,10 @@ TextureImporter:
       name: GoalPoint_1
       rect:
         serializedVersion: 2
-        x: 298
-        y: 175
-        width: 225
-        height: 618
+        x: 320
+        y: 177
+        width: 228
+        height: 601
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,8 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c2b1343af270854a9235d8378dc5e0c
-      internalID: -253933195
+      spriteID: 5a9221a7247adfd46a3048dd49db4021
+      internalID: -456598535
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       name: GoalPoint_2
       rect:
         serializedVersion: 2
-        x: 573
-        y: 175
-        width: 225
-        height: 618
+        x: 591
+        y: 177
+        width: 228
+        height: 601
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,8 +169,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f08c52520329fa4a8c833fd95923261
-      internalID: -339767975
+      spriteID: 29b3d17603f9d864989b8ab3ba97817e
+      internalID: -599775116
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       name: GoalPoint_3
       rect:
         serializedVersion: 2
-        x: 847
-        y: 175
-        width: 225
-        height: 618
+        x: 866
+        y: 177
+        width: 228
+        height: 601
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7d264d8e0c096544a3d954367980371
-      internalID: -1167245686
+      spriteID: fd06798bde9c6c343a2692983332248d
+      internalID: -1209779342
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
       name: GoalPoint_4
       rect:
         serializedVersion: 2
-        x: 1122
-        y: 175
-        width: 225
-        height: 618
+        x: 1133
+        y: 177
+        width: 228
+        height: 601
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fde311d855bd83143856416e2b5f3e9e
-      internalID: -2062421797
+      spriteID: 10b9ae57fb6265f409039375179b93a8
+      internalID: -1794626013
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
       name: GoalPoint_5
       rect:
         serializedVersion: 2
-        x: 1398
-        y: 175
-        width: 225
-        height: 620
+        x: 1400
+        y: 177
+        width: 228
+        height: 601
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2786fd3360ae114ba46a99b86c20f89
-      internalID: 237442800
+      spriteID: 050f1c383fdaf36488eab450a8e66e58
+      internalID: -1781945783
       vertices: []
       indices: 
       edges: []
@@ -245,7 +245,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c0489e98c8a889a4e8a505c5cdcf3925
+    spriteID: 7943ec539a8c5844ebc0166cb38fe78b
     internalID: 0
     vertices: []
     indices: 
@@ -257,12 +257,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      GoalPoint_0: -757826058
-      GoalPoint_1: -253933195
-      GoalPoint_2: -339767975
-      GoalPoint_3: -1167245686
-      GoalPoint_4: -2062421797
-      GoalPoint_5: 237442800
+      GoalPoint_0: 1744082869
+      GoalPoint_1: -456598535
+      GoalPoint_2: -599775116
+      GoalPoint_3: -1209779342
+      GoalPoint_4: -1794626013
+      GoalPoint_5: -1781945783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
