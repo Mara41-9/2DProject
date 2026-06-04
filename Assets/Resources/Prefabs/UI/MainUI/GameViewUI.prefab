@@ -1604,6 +1604,7 @@ MonoBehaviour:
   Text_Hp: {fileID: 429862947074625267}
   Btn_BasicAttack: {fileID: 8150163242694980968}
   Image_Weapon: {fileID: 8463288765134605470}
+  Btn_UseSkill: {fileID: 6399048732663550975}
   Image_Skill: {fileID: 5201226848846117960}
   Btn_Pause: {fileID: 2061922378132277879}
   Prefab_ItemSlot: {fileID: 5603668366840058126, guid: c7a176e1de37f084ca96d2d0db0c4265, type: 3}

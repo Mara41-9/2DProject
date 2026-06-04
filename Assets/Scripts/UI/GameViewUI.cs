@@ -20,6 +20,7 @@ public class GameViewUI : UIBase
     [SerializeField] private Image Image_Weapon;
 
     [Header("스킬")]
+    [SerializeField] private GameUIButton Btn_UseSkill;
     [SerializeField] private Image Image_Skill;
 
     [Header("일시정지")]
@@ -53,7 +54,7 @@ public class GameViewUI : UIBase
 
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
         Btn_BasicAttack.BindOnClickButtonEvent(OnClick_BasicAttackButton);
-
+        Btn_UseSkill.BindOnClickButtonEvent(OnClick_UseSkill);
     }
 
     private void Start()
@@ -72,6 +73,11 @@ public class GameViewUI : UIBase
         if (player == null) return;
 
         player.Attack();
+    }
+
+    private void OnClick_UseSkill()
+    {
+
     }
 
     // 아이템 슬롯 제거 함수
