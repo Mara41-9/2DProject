@@ -174,13 +174,13 @@ public class GameManager : MonoBehaviour
 
     public void AddObtainedItem(string itemDataId, int addItemCount)
     {
-        foreach (var itemModel in _playerModel.ObtainedItemList)
+        foreach (var ObtaineditemModel in _playerModel.ObtainedItemList)
         {
             // 만약 새로 추가하려는 데이터의 Id가 이미 저장데이터에 있는 획득 아이템 데이터의 Id와 같다면
             // = 이미 저장돼있는 획득 아이템이라면
-            if (itemModel.ItemDataId == itemDataId)
+            if (ObtaineditemModel.ItemDataId == itemDataId)
             {
-                itemModel.ItemStackCount += addItemCount;
+                ObtaineditemModel.ItemStackCount += addItemCount;
                 return;
             }
         }
@@ -199,6 +199,15 @@ public class GameManager : MonoBehaviour
 
     public void AddDefeatedMonster(string monsterDataId, int addMonsterCount)
     {
+        foreach(var DefeatedmonsterModel in _playerModel.DefeatedMonsterList)
+        {
+            if(DefeatedmonsterModel.MonsterDataId == monsterDataId)
+            {
+                DefeatedmonsterModel.MonsterStackCount += addMonsterCount;
+                return;
+            }
+        }
+
         long uniqueId = GameUtil.GenerateUniqueId();
 
         var newMonster = new MonsterModel();
