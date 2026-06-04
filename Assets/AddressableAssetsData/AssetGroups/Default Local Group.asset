@@ -60,11 +60,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 63dbae4b37e852e429fac61daa442f2d
-    m_Address: 2DPrefab/Harvest_Corn
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6547fe831fd72b54c8907ea4568c7899
     m_Address: Icon/Icon_Weapon_Sword_1
     m_ReadOnly: 0
@@ -95,11 +90,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a7c09252a8c8ccb45af2fdf04ed794f1
-    m_Address: Prefabs/2D/Enemy
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b35c263764b591246afb0096c070779d
     m_Address: Icon/Icon_Skill_RedHeat_1
     m_ReadOnly: 0
@@ -107,11 +97,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: da97afdcb4a0e9540b92d1a7f6dee731
     m_Address: 2DPrefab/DropItem_TomatoJuice
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e788976707f2a4048910dd957b17d95f
-    m_Address: 2DPrefab/Harvest_Potato
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

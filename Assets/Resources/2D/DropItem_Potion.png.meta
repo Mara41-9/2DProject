@@ -1,0 +1,362 @@
+fileFormatVersion: 2
+guid: b7affa63cd9c7b94182cc68b6d4d63ab
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DropItem_Potion_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 543
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9485cdfd049cff24ea5b277b93fac637
+      internalID: -1805707542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_Potion_10
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 543
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6dc7229035b884478ec34b84ac424d5
+      internalID: 1104879085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_Potion_14
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 543
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49eb06de2f506d4f9ad746beaa5f0dd
+      internalID: -649346283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_Potion_16
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 543
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546b5f769a18d434ea8b3732d4365a3c
+      internalID: 1276657059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_Potion_36
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 131
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcab3eca98edc84f9bc22653180bd11
+      internalID: -2005512456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_Potion_38
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 131
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d47e8299d57d14eba0eb92fb7f7b81
+      internalID: -162363530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_Potion_40
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 131
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69cd8d87b89a2f44920ab36eba09f09
+      internalID: -128990303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropItem_Potion_41
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 131
+        width: 281
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa71917e3d2ea54eb698b03ada49f87
+      internalID: 1680333580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4710b7a0caf82ed4b96e262197e7ba63
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      DropItem_Potion_0: -1805707542
+      DropItem_Potion_1: -1877739870
+      DropItem_Potion_10: 1104879085
+      DropItem_Potion_11: 160037387
+      DropItem_Potion_12: 2121308048
+      DropItem_Potion_13: 524874049
+      DropItem_Potion_14: -649346283
+      DropItem_Potion_15: 967615976
+      DropItem_Potion_16: 1276657059
+      DropItem_Potion_17: 1080202136
+      DropItem_Potion_18: 1868561322
+      DropItem_Potion_19: 1557818965
+      DropItem_Potion_2: 437797278
+      DropItem_Potion_20: 1784986834
+      DropItem_Potion_21: -240405666
+      DropItem_Potion_22: -1949917546
+      DropItem_Potion_23: 455407005
+      DropItem_Potion_24: 1007031000
+      DropItem_Potion_25: 785653427
+      DropItem_Potion_26: -2000189307
+      DropItem_Potion_27: -1506060764
+      DropItem_Potion_28: -1778024342
+      DropItem_Potion_29: -1231364990
+      DropItem_Potion_3: -585639396
+      DropItem_Potion_30: 688605404
+      DropItem_Potion_31: -988489859
+      DropItem_Potion_32: 176259227
+      DropItem_Potion_33: 91385037
+      DropItem_Potion_34: 1704473852
+      DropItem_Potion_35: -1811329949
+      DropItem_Potion_36: -2005512456
+      DropItem_Potion_37: 1532954342
+      DropItem_Potion_38: -162363530
+      DropItem_Potion_39: 366068473
+      DropItem_Potion_4: 1228621306
+      DropItem_Potion_40: -128990303
+      DropItem_Potion_41: 1680333580
+      DropItem_Potion_42: 1785349253
+      DropItem_Potion_43: 1115736989
+      DropItem_Potion_44: -1598023585
+      DropItem_Potion_45: 728562354
+      DropItem_Potion_46: -45129075
+      DropItem_Potion_47: -1120591891
+      DropItem_Potion_48: 2032307154
+      DropItem_Potion_49: -1934726919
+      DropItem_Potion_5: -1974636878
+      DropItem_Potion_50: 532774040
+      DropItem_Potion_51: 1531356372
+      DropItem_Potion_52: 659247571
+      DropItem_Potion_53: -601538645
+      DropItem_Potion_6: 310474463
+      DropItem_Potion_7: 2067499998
+      DropItem_Potion_8: -1884790577
+      DropItem_Potion_9: 243209541
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
