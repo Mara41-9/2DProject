@@ -2,7 +2,7 @@
   {
     "Id": "Skill_TomatoFlare_01",
     "Name": "토마토플레어",
-    "Description": "뜨겁게 달아오른 화염 토마토를 던져 폭발을 일으킨다.",
+    "Description": "하늘에서 화염 토마토를 떨어뜨려 폭발 피해를 준다",
     "IconPath": "Icon/Icon_Skill_TomatoFlare_1"
   },
   {
