@@ -29,6 +29,7 @@ public class SkillData : GameDataBase
     public string Name;
     public string Description;
     public string IconPath;
+    public string PrefabPath;
 }
 
 [System.Serializable]
