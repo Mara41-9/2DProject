@@ -7,4 +7,9 @@ public class SuccessPopupSlotUI : MonoBehaviour
     [SerializeField] private Image Image_Bg;
     [SerializeField] private Image Image_ObtainedContents;
     [SerializeField] private Text Text_StackCount;
+
+    public void InitSlot()
+    {
+
+    }
 }
