@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class SuccessPopupSlotUI : MonoBehaviour
     [Header("슬롯 정보")]
     [SerializeField] private Image Image_Bg;
     [SerializeField] private Image Image_ObtainedContents;
-    [SerializeField] private Text Text_StackCount;
+    [SerializeField] private TMP_Text Text_StackCount;
 
     private void SetItemIcon(string itemDataId, int ItemStackCount)
     {
