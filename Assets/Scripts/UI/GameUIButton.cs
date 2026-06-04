@@ -61,4 +61,10 @@ public class GameUIButton : MonoBehaviour
         Button_Base.onClick.RemoveListener(new UnityEngine.Events.UnityAction(onClickCallback));
     }
 
+    // 버튼을 활성화(true) 또는 비활성화(false)하여 클릭 가능 여부를 설정
+    public void SetInteractable(bool isInteractable)
+    {
+        Button_Base.interactable = isInteractable;
+    }
+
 }
