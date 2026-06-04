@@ -3754,7 +3754,7 @@ MonoBehaviour:
   _spawnSpotType: 2
   _startSpawnType: 2
   _dropItemSpawnSpot: {fileID: 0}
-  _spawnObjectDataId: dropItem_tomatoJuice_1
+  _spawnObjectDataId: dropItem_potion_1
   Collider_OnSpawnStart: {fileID: 6208444860512072512}
   _leftPoint: {fileID: 0}
   _rightPoint: {fileID: 0}
