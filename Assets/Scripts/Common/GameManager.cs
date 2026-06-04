@@ -121,6 +121,9 @@ public class GameManager : MonoBehaviour
     {
         var PotionItemData = GameDataManager.Instance.GetItemData("Item_Potion_1");
         var CarrotSmoothyItemData = GameDataManager.Instance.GetItemData("Item_CarrotSmoothy_1");
+        var WellbeingCoinData = GameDataManager.Instance.GetItemData("Item_WellbeingCoin_1");
+        var GoldWellbeingCoinData = GameDataManager.Instance.GetItemData("Item_GoldWellbeingCoin_1");
+
         if (PotionItemData == null || CarrotSmoothyItemData == null)
         {
             Debug.LogWarning("기본 아이템 데이터를 찾을 수 없습니다.");
@@ -129,6 +132,8 @@ public class GameManager : MonoBehaviour
 
         AddItem(PotionItemData.Id, 2);
         AddItem(CarrotSmoothyItemData.Id, 1);
+        AddItem(WellbeingCoinData.Id, 3);
+        AddItem(GoldWellbeingCoinData.Id, 3);
     }
 
     private void AddStarterSkills()
