@@ -48,5 +48,25 @@
       "Item_CarrotSmoothy_1:1",
       "Item_TomatoJuice_1:1"
     ]
+  },
+  {
+    "Id": "Item_Coin_1",
+    "Name": "웰빙 코인",
+    "Description": "웰빙리아국에서 널리 사용되는 기본 화폐",
+    "Grade": "Normal",
+    "MaxStackCount": null,
+    "IconPath": "Icon/Icon_Item_Coin_1",
+    "UseItemType": null,
+    "UseItemParameterList": null
+  },
+  {
+    "Id": "Item_Coin_2",
+    "Name": "황금 웰빙 코인",
+    "Description": "왕실에서 발행한 고급 화폐",
+    "Grade": "Rare",
+    "MaxStackCount": null,
+    "IconPath": "Icon/Icon_Item_Coin_2",
+    "UseItemType": null,
+    "UseItemParameterList": null
   }
 ]
