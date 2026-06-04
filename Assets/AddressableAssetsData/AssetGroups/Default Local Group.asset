@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29fe835c664de5b409ab4b506ea04653
+    m_Address: Icon/Icon_Item_Coin_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 35e1a0fdf48973344bcaa123535f3d11
     m_Address: Icon/Icon_Fryman
     m_ReadOnly: 0
@@ -27,6 +32,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43c6a55dcc4c34144ac6ecde741c1e1f
     m_Address: Icon/Icon_Item_Potion_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46b454f35c8a269458c31957e865ab25
+    m_Address: Icon/Icon_Item_Coin_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -62,11 +72,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6547fe831fd72b54c8907ea4568c7899
     m_Address: Icon/Icon_Weapon_Sword_1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7ad0e5b5cace1364a9a95bde0b63f22b
-    m_Address: Icon/Icon_Item_Coin_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
