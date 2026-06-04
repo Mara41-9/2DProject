@@ -194,7 +194,6 @@ public class GameManager : MonoBehaviour
         newItem.ItemStackCount = addItemCount;
 
         _playerModel.ObtainedItemList.Add(newItem);
-
     }
 
     public void AddDefeatedMonster(string monsterDataId, int addMonsterCount)
@@ -217,7 +216,6 @@ public class GameManager : MonoBehaviour
         newMonster.MonsterStackCount = addMonsterCount;
 
         _playerModel.DefeatedMonsterList.Add(newMonster);
-
     }
 
     // 아이템의 실제적인 사용 함수
@@ -242,7 +240,6 @@ public class GameManager : MonoBehaviour
                 {
                     UseItemFunction(itemData.UseItemType, itemData.UseItemParameterList);
                     itemModel.ItemStackCount--;
-                    SaveData();
                 }
 
                 if (itemModel.ItemStackCount <= 0)
@@ -296,8 +293,7 @@ public class GameManager : MonoBehaviour
         {
             // 찾은 인덱스 위치의 아이템을 리스트에서 제거
             _playerModel.ItemList.Remove(itemModel);
-            // 아이템이 제거된 현재 데이터 저장
-            SaveData();
+           
             // 삭제 성공했다고 알려줌
             return true;
         }
