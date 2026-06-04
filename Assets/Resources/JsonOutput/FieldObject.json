@@ -28,5 +28,25 @@
     "DropItemDataId": "Item_CarrotSmoothy_1",
     "IconPath": null,
     "PrefabPath": "2DPrefab/DropItem_CarrotSmoothy"
+  },
+  {
+    "Id": "dropItem_coin_1",
+    "FieldObjectType": "DropItem",
+    "Name": "웰빙 코인",
+    "Description": null,
+    "DropCountRange": null,
+    "DropItemDataId": "Item_Coin_1",
+    "IconPath": null,
+    "PrefabPath": "2DPrefab/DropItem_Coin_1"
+  },
+  {
+    "Id": "dropItem_coin_2",
+    "FieldObjectType": "DropItem",
+    "Name": "황금 웰빙 코인",
+    "Description": null,
+    "DropCountRange": null,
+    "DropItemDataId": "Item_Coin_2",
+    "IconPath": null,
+    "PrefabPath": "2DPrefab/DropItem_Coin_2"
   }
 ]
