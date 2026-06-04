@@ -40,6 +40,7 @@ public class GameViewUI : UIBase
     private Dictionary<int, GameViewMonsterSlotUI> _monsterSlotList = new Dictionary<int, GameViewMonsterSlotUI>();
 
     private int _generatedMonsterKey;
+    private int _currentUseSkillCount;
 
     private void OnEnable()
     {
@@ -79,15 +80,29 @@ public class GameViewUI : UIBase
 
     private void OnClick_UseSkill()
     {
-        var equippedSkill = GameManager.Instance.GetEquippedSkill();
-        if (equippedSkill == null) return;
+        _currentUseSkillCount++;
+
+        var equippedSkillId = GameManager.Instance.GetEquippedSkill();
+        if (equippedSkillId == null) return;
 
         var player = GameObjectManager.Instance.GetLocalPlayer();
         if (player == null) return;
 
-        if(equippedSkill == "Skill_RedHeat_01")
+        if(equippedSkillId == "Skill_RedHeat_01")
         {
+            var equippedSkill = GameDataManager.Instance.GetSkill(equippedSkillId);
+            if (equippedSkill == null) return;
+
+            var maxUseCount = equippedSkill.MaxUseCount;
+
+            if (_currentUseSkillCount > maxUseCount)
+            {
+                Btn_UseSkill.SetInteractable(false);
+                return;
+            }
+
             StartCoroutine(CoRedHeatSkill(player));
+
         }
     }
 
