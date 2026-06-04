@@ -49,3 +49,10 @@ public class SkillModel
     public int SkillStackCount;
 }
 
+public class MonsterModel
+{
+    public long MonsterUniqueId;
+    public string MonsterDataId;
+    public int MonsterStackCount;
+}
+
