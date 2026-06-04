@@ -142,7 +142,14 @@ public class GameViewUI : UIBase
 
         foreach(var itemModel in ItemList)
         {
-            CreateItemSlot(itemModel.ItemUniqueId, itemModel.ItemDataId, itemModel.ItemStackCount);
+            var itemData = GameDataManager.Instance.GetItemData(itemModel.ItemDataId);
+            if (itemData == null) return;
+
+            if(itemData.UseItemType == "StatChangeHp")
+            {
+                CreateItemSlot(itemModel.ItemUniqueId, itemModel.ItemDataId, itemModel.ItemStackCount);
+            }
+                
         }
     }
 
