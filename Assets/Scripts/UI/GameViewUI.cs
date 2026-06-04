@@ -1,9 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -85,8 +87,21 @@ public class GameViewUI : UIBase
 
         if(equippedSkill == "Skill_RedHeat_01")
         {
-            player._skill.SetActive(true);
+            StartCoroutine(CoRedHeatSkill(player));
         }
+    }
+
+    private IEnumerator CoRedHeatSkill(PlayerMovement player)
+    {
+        if(player != null)
+        {
+            player._skill.SetActive(true);
+
+            yield return new WaitForSeconds(5.2f);
+
+            player._skill.SetActive(false);
+        }
+
     }
 
     // 아이템 슬롯 제거 함수
