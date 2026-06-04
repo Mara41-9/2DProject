@@ -30,23 +30,23 @@
     "PrefabPath": "2DPrefab/DropItem_CarrotSmoothy"
   },
   {
-    "Id": "dropItem_coin_1",
+    "Id": "dropItem_wellbeingCoin_1",
     "FieldObjectType": "DropItem",
     "Name": "웰빙 코인",
     "Description": null,
     "DropCountRange": null,
-    "DropItemDataId": "Item_Coin_1",
+    "DropItemDataId": "Item_WellbeingCoin_1",
     "IconPath": null,
-    "PrefabPath": "2DPrefab/DropItem_Coin_1"
+    "PrefabPath": "2DPrefab/DropItem_WellbeingCoin_1"
   },
   {
-    "Id": "dropItem_coin_2",
+    "Id": "dropItem_GoldWellbeingCoin_1",
     "FieldObjectType": "DropItem",
     "Name": "황금 웰빙 코인",
     "Description": null,
     "DropCountRange": null,
-    "DropItemDataId": "Item_Coin_2",
+    "DropItemDataId": "Item_GoldWellbeingCoin_1",
     "IconPath": null,
-    "PrefabPath": "2DPrefab/DropItem_Coin_2"
+    "PrefabPath": "2DPrefab/DropItem_GoldWellbeingCoin_1"
   }
 ]

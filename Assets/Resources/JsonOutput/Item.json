@@ -50,22 +50,22 @@
     ]
   },
   {
-    "Id": "Item_Coin_1",
+    "Id": "Item_WellbeingCoin_1",
     "Name": "웰빙 코인",
     "Description": "웰빙리아국에서 널리 사용되는 기본 화폐",
     "Grade": "Normal",
     "MaxStackCount": null,
-    "IconPath": "Icon/Icon_Item_Coin_1",
+    "IconPath": "Icon/Icon_Item_WellbeingCoin_1",
     "UseItemType": null,
     "UseItemParameterList": null
   },
   {
-    "Id": "Item_Coin_2",
+    "Id": "Item_GoldWellbeingCoin_1",
     "Name": "황금 웰빙 코인",
     "Description": "왕실에서 발행한 고급 화폐",
     "Grade": "Rare",
     "MaxStackCount": null,
-    "IconPath": "Icon/Icon_Item_Coin_2",
+    "IconPath": "Icon/Icon_Item_GoldWellbeingCoin_1",
     "UseItemType": null,
     "UseItemParameterList": null
   }
