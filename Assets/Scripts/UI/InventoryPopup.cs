@@ -102,6 +102,13 @@ public class InventoryPopup : UIBase
         if(_curCategory == EInventoryCategory.WeaponCategory)
         {
             GameManager.Instance.SetEquippedWeapon(_selectedSlot.SlotDataId);
+
+            // 플레이어가 존재하면 공격력 갱신 함수 호출
+            var player = GameObjectManager.Instance.GetLocalPlayer();
+            if(player != null)
+            {
+                player.UpdateBaseAtk();
+            }
         }
         else if(_curCategory == EInventoryCategory.ItemCategory)
         {

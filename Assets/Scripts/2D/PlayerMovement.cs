@@ -44,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
     public int _maxHp;     // 최대 Hp
     public int _currentHp;  // 현재 Hp 
 
+    [Header("공격력")]
+    public int _baseAtk;
+
     private bool _isAttack;
 
     // 이벤트 선언 - HP/MP 변경 알림 함수를 저장해둘 공간
@@ -81,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
         _skill.gameObject.SetActive(false);
 
+        
     }
 
     private void Update()
@@ -138,6 +142,18 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    // 현재 장착한 무기의 공격력을 플레이어 기본 공격력에 적용하는 함수 
+    public void UpdateBaseAtk()
+    {
+        var equippedWeaponDataId = GameManager.Instance.GetEquippedWeapon();
+        if (string.IsNullOrEmpty(equippedWeaponDataId)) return;
+
+        var equippedWeaponData = GameDataManager.Instance.GetWeaponData(equippedWeaponDataId);
+        if (equippedWeaponData == null) return;
+
+        _baseAtk = equippedWeaponData.BaseAtk;
+    }
+
     // 플레이어 위치 초기 위치 반환
     public Vector2 GetPlayerPosition()
     {
@@ -190,19 +206,11 @@ public class PlayerMovement : MonoBehaviour
             // 각 몬스터의 고유 ID 저장
             int id = monster._monsterInstanceId;
 
-            var equippedWeaponDataId = GameManager.Instance.GetEquippedWeapon();
-            if (equippedWeaponDataId == null) return;
-
-            var equippedWeaponData = GameDataManager.Instance.GetWeaponData(equippedWeaponDataId);
-            if( equippedWeaponData == null) return;
-
-            int BaseAtk = equippedWeaponData.BaseAtk;
-
             var monsterData = GameDataManager.Instance.GetMonsterData(monster.GetMonsterDataId());
             if(monsterData == null) return;
 
-            monster.TakeDamage(BaseAtk);
-            Debug.LogWarning($"토토가 {monsterData.Name}에게 {BaseAtk}만큼 데미지를 입혔다!    {monsterData.Name}의 Hp : {monster._currentHp}");
+            monster.TakeDamage(_baseAtk);
+            Debug.LogWarning($"토토가 {monsterData.Name}에게 {_baseAtk}만큼 데미지를 입혔다!    {monsterData.Name}의 Hp : {monster._currentHp}");
 
         }
     }

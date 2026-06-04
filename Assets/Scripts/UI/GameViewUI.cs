@@ -115,10 +115,13 @@ public class GameViewUI : UIBase
             player._skill.SetActive(true);
             Btn_UseSkill.SetInteractable(false);
 
+            player._baseAtk += 10;
+
             yield return new WaitForSeconds(5.2f);
 
             player._skill.SetActive(false);
             Btn_UseSkill.SetInteractable(true);
+            player._baseAtk -= 10;
         }
 
     }
