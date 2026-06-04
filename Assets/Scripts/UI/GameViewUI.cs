@@ -58,6 +58,9 @@ public class GameViewUI : UIBase
         Btn_Pause.BindOnClickButtonEvent(OnClick_PauseButton);
         Btn_BasicAttack.BindOnClickButtonEvent(OnClick_BasicAttackButton);
         Btn_UseSkill.BindOnClickButtonEvent(OnClick_UseSkill);
+
+        Btn_UseSkill.SetInteractable(true);
+        _currentUseSkillCount = 0;
     }
 
     private void Start()
@@ -102,7 +105,6 @@ public class GameViewUI : UIBase
             }
 
             StartCoroutine(CoRedHeatSkill(player));
-
         }
     }
 
