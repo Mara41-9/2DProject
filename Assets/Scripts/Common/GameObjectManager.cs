@@ -14,6 +14,7 @@ public class GameObjectManager : MonoBehaviour
     // 생성된 오브젝트의 생명을 보관
     private Dictionary<int, FieldObject2D> _fieldObjectContainer = new Dictionary<int, FieldObject2D>();
     private Dictionary<int, Monster2D> _monsterContainer = new Dictionary<int, Monster2D>();
+    private Dictionary<int, Skill2D> _skillContainer = new Dictionary<int, Skill2D>();
 
     private PlayerMovement _localPlayer;
 
@@ -219,6 +220,72 @@ public class GameObjectManager : MonoBehaviour
         }
 
         _monsterContainer.Clear();
+    }
+
+
+
+    //[스킬] ====================================================================================================
+    public async UniTaskVoid CreateSkill(string skillDataId, Transform spawnSpot)
+    {
+        // GameDataManager에서 Skill 데이터 가져오기
+        var skill = GameDataManager.Instance.GetSkill(skillDataId);
+        if (skill != null)
+        {
+            // 어드레서블 기반 비동기 생성
+            // fieldObject.PrefabPath: 생성할 프리팹 주소, Root_Enemy: 생성된 오브젝트 부모, true: 월드 좌표 유지
+            var createdObj = await ResourceManager.Instance.InstantiateAsync(skill.PrefabPath, Root_Enemy, true);
+            // 생성된 오브젝트의 위치 설정
+            createdObj.transform.position = spawnSpot.position;
+            // 생성된 오브젝트를 관리 시스템에 등록
+            AddSkillOnCreate(createdObj, skillDataId);
+        }
+    }
+
+    // 생성 완료된 스킬을 관리 컨테이너에 등록
+    private void AddSkillOnCreate(GameObject createdObject, string skillDataId)
+    {
+        // 생성된 오브젝트 키 증가
+        _objectInstanceKeyGenerator++;
+        // 현재 생성된 고유 ID 저장
+        var generatedInstanceId = _objectInstanceKeyGenerator;
+        // 생성된 오브젝트에서 FieldObject2D 컴포넌트 가져오기
+        var skill = createdObject.GetComponent<Skill2D>();
+
+        if (skill != null)
+        {
+            _skillContainer.Add(generatedInstanceId, skill);
+            // 생성된 오브젝트 내부 데이터 초기화
+            skill.InitSkillInfoOnCreated(generatedInstanceId, skillDataId);
+        }
+    }
+
+    // 특정 instanceId를 가진 스킬 오브젝트 제거
+    public void RequestDestroySkill(int instanceId)
+    {
+        // instanceId로 실제 오브젝트 찾기
+        var SkilltComponent = GetSkillByInstanceId(instanceId);
+        if (SkilltComponent == null)
+        {
+            return;
+        }
+
+        // 딕셔너리에서 해당 오브젝트 제거
+        _skillContainer.Remove(instanceId);
+        // 씬에 있는 실제 오브젝트도 삭제
+        Destroy(SkilltComponent.gameObject);
+    }
+
+    // 인스턴스 ID로 오브젝트 찾기
+    public FieldObject2D GetSkillByInstanceId(int skillInstanceId)
+    {
+        // _skillContainer 안에 해당 키가 없으면
+        if (_skillContainer.ContainsKey(skillInstanceId) == false)
+        {
+            Debug.LogError($"{skillInstanceId} 찾으려는 필드 오브젝트가 유효하지 않습니다");
+            return null;
+        }
+
+        return _fieldObjectContainer[skillInstanceId];
     }
 
 }

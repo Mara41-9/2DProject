@@ -1,16 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Skill2D : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("스킬 Id")]
+    public int _skillInstanceId;
+    private string _skillDataId;
 
-    // Update is called once per frame
-    void Update()
+    public void InitSkillInfoOnCreated(int instanceId, string skillDataId)
     {
-        
+        var skillData = GameDataManager.Instance.GetSkill(skillDataId);
+        if (skillData == null) return;
+
+        _skillInstanceId = instanceId;
+        _skillDataId = skillDataId;
     }
 }
