@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
             _playerModel.IsFirstStart = false;
             SaveData();
         }
-
     }
 
     // 현재 플레이 데이터를 저장하는 함수
@@ -194,6 +193,18 @@ public class GameManager : MonoBehaviour
         newItem.ItemStackCount = addItemCount;
 
         _playerModel.ObtainedItemList.Add(newItem);
+    }
+
+    // 아이템 획득한만큼 ItemList에 추가해주는 함수
+    public void MergeObtainedItemsToItemList()
+    {
+        foreach(var obtainedItem in  _playerModel.ObtainedItemList)
+        {
+            AddItem(obtainedItem.ItemDataId, obtainedItem.ItemStackCount);
+        }
+
+        // 획득한 아이템을 ItemList에 반영한 후 목록 초기화
+        _playerModel.ObtainedItemList.Clear();
     }
 
     public void AddDefeatedMonster(string monsterDataId, int addMonsterCount)

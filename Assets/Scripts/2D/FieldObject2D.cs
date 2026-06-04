@@ -30,7 +30,7 @@ public class FieldObject2D : MonoBehaviour
         return _fieldObjectDataId;
     }
 
-    // 충돌 -> 해당 오브젝트 타입 확인 -> 아이템 드랍 계산 -> 인벤토리에 추가 -> 오브젝트 삭제
+    // 충돌 -> 해당 오브젝트 타입 확인 -> 아이템 드랍 계산 -> 획득 아이템 리스트에 추가 -> 오브젝트 삭제
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 충돌한게 플레이어라면
@@ -74,8 +74,7 @@ public class FieldObject2D : MonoBehaviour
 
                 int itemCount = 1;
                 
-                // GameManager에게 아이템 추가 요청
-                GameManager.Instance.AddItem(itemData.Id, itemCount);
+                // GameManager에게 획득 아이템 추가 요청
                 GameManager.Instance.AddObtainedItem(itemData.Id, itemCount);
 
                 // GameObjectManager에게 이 오브젝트 비활성화/제거 요청

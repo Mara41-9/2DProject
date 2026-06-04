@@ -35,6 +35,7 @@ public class SuccessPopup : UIBase
     {
         GameManager.Instance.SaveData();
         GameManager.Instance.RefreshGame();
+        GameManager.Instance.MergeObtainedItemsToItemList();
         Debug.LogWarning("로비메인UI로 이동합니다.");
         UIManager.Instance.OpenLoadingUI();
         UIManager.Instance.CloseSuccessPopup();
