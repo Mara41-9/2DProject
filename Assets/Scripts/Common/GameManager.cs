@@ -174,6 +174,17 @@ public class GameManager : MonoBehaviour
 
     public void AddOtainedItem(string itemDataId, int addItemCount)
     {
+        foreach (var itemModel in _playerModel.ObtainedItemList)
+        {
+            // 만약 새로 추가하려는 데이터의 Id가 이미 저장데이터에 있는 획득 아이템 데이터의 Id와 같다면
+            // = 이미 저장돼있는 획득 아이템이라면
+            if (itemModel.ItemDataId == itemDataId)
+            {
+                itemModel.ItemStackCount += addItemCount;
+                return;
+            }
+        }
+
         long uniqueId = GameUtil.GenerateUniqueId();
 
         var newItem = new ItemModel();
