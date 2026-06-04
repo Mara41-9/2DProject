@@ -15,6 +15,7 @@ public class SuccessPopup : UIBase
     public void OnEnable()
     {
         Btn_GoMainUI.BindOnClickButtonEvent(OnClick_GoMainUIBtn);
+        SetSuccessPopupSlotOnEnable();
     }
 
     private void OnClick_GoMainUIBtn()
@@ -26,8 +27,25 @@ public class SuccessPopup : UIBase
         UIManager.Instance.OpenLobbyUI();
     }
 
-    private void SetIcon()
+    private void SetSuccessPopupSlotOnEnable()
     {
+        var obtainedItemList = GameManager.Instance.GetPlayerObtainedItemList();
+        if (obtainedItemList == null) return;
 
+        foreach(var obtainedItem in obtainedItemList)
+        {
+            CreateSlot(obtainedItem.ItemDataId, obtainedItem.ItemStackCount);
+        }
+    }
+
+    private void CreateSlot(string dataId, int stackCount)
+    {
+        var slot = Instantiate(Prefab_Slot, Transform_UISlotRoot);
+        if (slot == null) return;
+
+        var component = slot.GetComponent<SuccessPopupSlotUI>();
+        if(component == null) return;
+
+        component.InitSlot(dataId, stackCount);
     }
 }

@@ -857,6 +857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SuccessPopup
   Btn_GoMainUI: {fileID: 7213420543621383646}
+  Prefab_Slot: {fileID: 5603668366840058126, guid: f7c8e62ee9ccbf24081695773c4a7392, type: 3}
+  Transform_UISlotRoot: {fileID: 3246112433390374433}
 --- !u!1 &8242865702961235363
 GameObject:
   m_ObjectHideFlags: 0

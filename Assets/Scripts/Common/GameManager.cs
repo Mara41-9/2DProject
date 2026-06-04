@@ -368,4 +368,9 @@ public class GameManager : MonoBehaviour
     {
         return _playerModel.SkillList;
     }
+
+    public List<ItemModel> GetPlayerObtainedItemList()
+    {
+        return _playerModel.ObtainedItemList;
+    }
 }
