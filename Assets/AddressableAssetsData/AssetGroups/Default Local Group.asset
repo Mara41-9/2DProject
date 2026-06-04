@@ -100,6 +100,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b979267886bcc2a4790059cccc262954
+    m_Address: 2DPrefab/DropItem_WellbeingCoin_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cefa6b993d0298143ba832ccff2c9fca
     m_Address: 2DPrefab/DropItem_Potion
     m_ReadOnly: 0

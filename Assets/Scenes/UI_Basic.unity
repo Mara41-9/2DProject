@@ -1968,6 +1968,7 @@ Transform:
   - {fileID: 747711142}
   - {fileID: 1809480459}
   - {fileID: 599728305}
+  - {fileID: 1012010904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &894704403
@@ -2210,6 +2211,68 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &1012010903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 859656980}
+    m_Modifications:
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 511291071078444549, guid: b979267886bcc2a4790059cccc262954, type: 3}
+      propertyPath: m_Name
+      value: DropItem_TomatoJuice 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b979267886bcc2a4790059cccc262954, type: 3}
+--- !u!4 &1012010904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 189799823798873084, guid: b979267886bcc2a4790059cccc262954, type: 3}
+  m_PrefabInstance: {fileID: 1012010903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1046615422
 GameObject:
   m_ObjectHideFlags: 0
