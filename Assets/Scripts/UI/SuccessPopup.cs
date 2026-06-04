@@ -21,6 +21,11 @@ public class SuccessPopup : UIBase
         SetSuccessPopupSlotOnEnable();
     }
 
+    public void OnDisable()
+    {
+        ClearSlotList();
+    }
+
     private void OnClick_GoMainUIBtn()
     {
         GameManager.Instance.RefreshGame();
@@ -32,6 +37,7 @@ public class SuccessPopup : UIBase
 
     private void SetSuccessPopupSlotOnEnable()
     {
+        ClearSlotList();
         var obtainedItemList = GameManager.Instance.GetPlayerObtainedItemList();
         if (obtainedItemList == null) return;
 
@@ -52,6 +58,20 @@ public class SuccessPopup : UIBase
         component.InitSlot(dataId, stackCount);
 
         _slotList.Add(uniqueId, component);
+    }
+
+    private void ClearSlotList()
+    {
+        if(_slotList.Count > 0)
+        {
+            foreach(var slotKv in _slotList)
+            {
+                var slot = slotKv.Value;
+                DestroyImmediate(slot.gameObject);
+            }
+
+            _slotList.Clear();
+        }
     }
 
 }
