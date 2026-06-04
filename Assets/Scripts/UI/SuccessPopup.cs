@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SuccessPopup : UIBase
 {
@@ -10,20 +9,26 @@ public class SuccessPopup : UIBase
     [Header("동적 생성할 슬롯")]
     [SerializeField] private GameObject Prefab_Slot;
 
-    [Header("생성되는 위치")]
-    [SerializeField] private Transform Transform_UISlotRoot;
+    [Header("생성되는 아이템 슬롯 위치")]
+    [SerializeField] private Transform Transform_ItemSlotRoot;
 
-    private Dictionary<long, SuccessPopupSlotUI> _slotList = new Dictionary<long, SuccessPopupSlotUI>();
+    [Header("생성되는 몬스터 슬롯 위치")]
+    [SerializeField] private Transform Transform_MonsterSlotRoot;
+
+    private Dictionary<long, SuccessPopupSlotUI> _itemSlotList = new Dictionary<long, SuccessPopupSlotUI>();
+    private Dictionary<long, SuccessPopupSlotUI> _monsterSlotList = new Dictionary<long, SuccessPopupSlotUI>();
 
     public void OnEnable()
     {
         Btn_GoMainUI.BindOnClickButtonEvent(OnClick_GoMainUIBtn);
-        SetSuccessPopupSlotOnEnable();
+        SetSuccessPopupItemSlotOnEnable();
+        SetSuccessPopupMonsterSlotOnEnable();
     }
 
     public void OnDisable()
     {
-        ClearSlotList();
+        ClearItemSlotList();
+        ClearMonsterSlotList();
     }
 
     private void OnClick_GoMainUIBtn()
@@ -35,42 +40,79 @@ public class SuccessPopup : UIBase
         UIManager.Instance.OpenLobbyUI();
     }
 
-    private void SetSuccessPopupSlotOnEnable()
+    private void SetSuccessPopupItemSlotOnEnable()
     {
-        ClearSlotList();
         var obtainedItemList = GameManager.Instance.GetPlayerObtainedItemList();
         if (obtainedItemList == null) return;
 
         foreach(var obtainedItem in obtainedItemList)
         {
-            CreateSlot(obtainedItem.ItemUniqueId, obtainedItem.ItemDataId, obtainedItem.ItemStackCount);
+            CreateItemSlot(obtainedItem.ItemUniqueId, obtainedItem.ItemDataId, obtainedItem.ItemStackCount);
         }
     }
 
-    private void CreateSlot(long uniqueId, string dataId, int stackCount)
+    private void CreateItemSlot(long itemUniqueId, string itemDataId, int itemStackCount)
     {
-        var slot = Instantiate(Prefab_Slot, Transform_UISlotRoot);
+        var slot = Instantiate(Prefab_Slot, Transform_ItemSlotRoot);
         if (slot == null) return;
 
         var component = slot.GetComponent<SuccessPopupSlotUI>();
         if(component == null) return;
 
-        component.InitSlot(dataId, stackCount);
+        component.InitItemSlot(itemDataId, itemStackCount);
 
-        _slotList.Add(uniqueId, component);
+        _itemSlotList.Add(itemUniqueId, component);
     }
 
-    private void ClearSlotList()
+    private void SetSuccessPopupMonsterSlotOnEnable()
     {
-        if(_slotList.Count > 0)
+        var defeatedMonsterList = GameManager.Instance.GetDefeatedMonsterList();
+        if(defeatedMonsterList == null) return;
+
+        foreach(var defeatedMonster in defeatedMonsterList)
         {
-            foreach(var slotKv in _slotList)
+            CreateMonsterSlot(defeatedMonster.MonsterUniqueId, defeatedMonster.MonsterDataId, defeatedMonster.MonsterStackCount);
+        }
+    }
+
+    private void CreateMonsterSlot(long monsterUniqueId, string monsterDataId, int monsterStackCount)
+    {
+        var slot = Instantiate(Prefab_Slot, Transform_MonsterSlotRoot);
+        if(slot == null) return;
+
+        var component = slot.GetComponent<SuccessPopupSlotUI>();
+        if(component == null) return;
+
+        component.InitMonsterSlot(monsterDataId, monsterStackCount);
+
+        _monsterSlotList.Add(monsterUniqueId, component);
+    }
+
+    private void ClearItemSlotList()
+    {
+        if(_itemSlotList.Count > 0)
+        {
+            foreach(var slotKv in _itemSlotList)
             {
                 var slot = slotKv.Value;
                 DestroyImmediate(slot.gameObject);
             }
 
-            _slotList.Clear();
+            _itemSlotList.Clear();
+        }
+    }
+
+    private void ClearMonsterSlotList()
+    {
+        if (_monsterSlotList.Count > 0)
+        {
+            foreach (var slotKv in _monsterSlotList)
+            {
+                var slot = slotKv.Value;
+                DestroyImmediate(slot.gameObject);
+            }
+
+            _monsterSlotList.Clear();
         }
     }
 
