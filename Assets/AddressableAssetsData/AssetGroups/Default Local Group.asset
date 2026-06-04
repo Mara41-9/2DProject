@@ -21,7 +21,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 29fe835c664de5b409ab4b506ea04653
-    m_Address: Icon/Icon_Item_Coin_2
+    m_Address: Icon/Icon_Item_GoldWellbeingCoin_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46b454f35c8a269458c31957e865ab25
-    m_Address: Icon/Icon_Item_Coin_1
+    m_Address: Icon/Icon_Item_WellbeingCoin_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
