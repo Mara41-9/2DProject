@@ -170,6 +170,19 @@ public class GameManager : MonoBehaviour
         newItem.ItemStackCount = addItemCount;
 
         _playerModel.ItemList.Add(newItem);
+    }
+
+    public void AddOtainedItem(string itemDataId, int addItemCount)
+    {
+        long uniqueId = GameUtil.GenerateUniqueId();
+
+        var newItem = new ItemModel();
+
+        newItem.ItemUniqueId = uniqueId;
+        newItem.ItemDataId = itemDataId;
+        newItem.ItemStackCount = addItemCount;
+
+        _playerModel.ObtainedItemList.Add(newItem);
 
     }
 
