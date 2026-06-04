@@ -96,10 +96,12 @@ public class GameViewUI : UIBase
         if(player != null)
         {
             player._skill.SetActive(true);
+            Btn_UseSkill.SetInteractable(false);
 
             yield return new WaitForSeconds(5.2f);
 
             player._skill.SetActive(false);
+            Btn_UseSkill.SetInteractable(true);
         }
 
     }
