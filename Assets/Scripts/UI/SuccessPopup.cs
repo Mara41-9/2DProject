@@ -33,6 +33,7 @@ public class SuccessPopup : UIBase
 
     private void OnClick_GoMainUIBtn()
     {
+        GameManager.Instance.SaveData();
         GameManager.Instance.RefreshGame();
         Debug.LogWarning("로비메인UI로 이동합니다.");
         UIManager.Instance.OpenLoadingUI();
