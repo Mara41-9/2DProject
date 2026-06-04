@@ -76,7 +76,7 @@ public class FieldObject2D : MonoBehaviour
                 
                 // GameManager에게 아이템 추가 요청
                 GameManager.Instance.AddItem(itemData.Id, itemCount);
-                GameManager.Instance.AddOtainedItem(itemData.Id, itemCount);
+                GameManager.Instance.AddObtainedItem(itemData.Id, itemCount);
 
                 // GameObjectManager에게 이 오브젝트 비활성화/제거 요청
                 GameObjectManager.Instance.RequestDestroyFieldObject(_fieldObjectInstanceId);

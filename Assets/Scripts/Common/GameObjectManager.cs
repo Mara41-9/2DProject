@@ -149,6 +149,7 @@ public class GameObjectManager : MonoBehaviour
 
         monsterComponent.SetMoveRange(leftPoint, rightPoint);
         monsterComponent.SetDropItemSpawnSpot(dropItemSpawnSpot);
+        
 
     }
 

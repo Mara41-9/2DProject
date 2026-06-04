@@ -23,7 +23,7 @@ public class PlayerModel
     public List<SkillModel> SkillList = new List<SkillModel>();  // 플레이어가 가지고 있는 스킬 목록
 
     public List<ItemModel> ObtainedItemList = new List<ItemModel>();  // 플레이어가 얻은 아이템 목록
-    public List<MonsterModel> ObtainedMonsterList = new List<MonsterModel>();  // 플레이어가 물리친 몬스터 목록
+    public List<MonsterModel> DefeatedMonsterList = new List<MonsterModel>();  // 플레이어가 물리친 몬스터 목록
 
 }
 

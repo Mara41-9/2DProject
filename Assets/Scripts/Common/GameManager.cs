@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
         _playerModel.ItemList.Add(newItem);
     }
 
-    public void AddOtainedItem(string itemDataId, int addItemCount)
+    public void AddObtainedItem(string itemDataId, int addItemCount)
     {
         foreach (var itemModel in _playerModel.ObtainedItemList)
         {
@@ -194,6 +194,20 @@ public class GameManager : MonoBehaviour
         newItem.ItemStackCount = addItemCount;
 
         _playerModel.ObtainedItemList.Add(newItem);
+
+    }
+
+    public void AddDefeatedMonster(string monsterDataId, int addMonsterCount)
+    {
+        long uniqueId = GameUtil.GenerateUniqueId();
+
+        var newMonster = new MonsterModel();
+
+        newMonster.MonsterUniqueId = uniqueId;
+        newMonster.MonsterDataId = monsterDataId;
+        newMonster.MonsterStackCount = addMonsterCount;
+
+        _playerModel.DefeatedMonsterList.Add(newMonster);
 
     }
 
@@ -383,5 +397,10 @@ public class GameManager : MonoBehaviour
     public List<ItemModel> GetPlayerObtainedItemList()
     {
         return _playerModel.ObtainedItemList;
+    }
+
+    public List<MonsterModel> GetDefeatedMonsterList()
+    {
+        return _playerModel.DefeatedMonsterList;
     }
 }

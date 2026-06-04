@@ -47,6 +47,8 @@ public class Monster2D : MonoBehaviour
 
     private SpawnSpot _dropItemSpawnSpot;
 
+    private int _defeatedMonsterCount;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -255,6 +257,7 @@ public class Monster2D : MonoBehaviour
     public void MonsterDie()
     {
         _isAlive = false;
+        _defeatedMonsterCount++;
 
         StartCoroutine(DieRoutine());
 
@@ -265,6 +268,8 @@ public class Monster2D : MonoBehaviour
             // 드롭아이템 스폰스팟의 StartSpawn 컴포넌트 호출
             _dropItemSpawnSpot.StartSpawn();
         }
+
+        GameManager.Instance.AddDefeatedMonster(_monsterDataId, _defeatedMonsterCount);
     }
 
     private void ChangeMonsterState(EntityAnimState newState)
