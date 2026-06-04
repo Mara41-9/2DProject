@@ -77,7 +77,16 @@ public class GameViewUI : UIBase
 
     private void OnClick_UseSkill()
     {
+        var equippedSkill = GameManager.Instance.GetEquippedSkill();
+        if (equippedSkill == null) return;
 
+        var player = GameObjectManager.Instance.GetLocalPlayer();
+        if (player == null) return;
+
+        if(equippedSkill == "Skill_RedHeat_01")
+        {
+            player._skill.SetActive(true);
+        }
     }
 
     // 아이템 슬롯 제거 함수

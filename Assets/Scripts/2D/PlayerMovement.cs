@@ -30,12 +30,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _attackRadius = 1f;
     [SerializeField] private LayerMask _monsterLayer;
 
+    [Header("스킬")]
+    [SerializeField] public GameObject _skill;
+
     private Rigidbody2D _rigidbody;
     private bool _isGrounded;
     private float _horizontalInput;  // 플레이어의 좌우 입력값을 저장하는 변수
     private bool _lookRight = true;
 
     private int _currentScore;
+
+    [Header("HP")]
     public int _maxHp;     // 최대 Hp
     public int _currentHp;  // 현재 Hp 
 
@@ -73,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
 
         // 플레이어의 시작 위치를 초기 위치로 저장
         _playerPosition = this.gameObject.transform.position;
+
+        _skill.gameObject.SetActive(false);
 
     }
 

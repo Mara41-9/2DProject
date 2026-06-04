@@ -4,7 +4,7 @@ public class Skill2D : MonoBehaviour
 {
     [Header("스킬 Id")]
     public int _skillInstanceId;
-    private string _skillDataId;
+    public string _skillDataId;
 
     public void InitSkillInfoOnCreated(int instanceId, string skillDataId)
     {

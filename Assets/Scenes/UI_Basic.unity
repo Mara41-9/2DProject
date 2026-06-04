@@ -1958,6 +1958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 587301120}
   - component: {fileID: 587301121}
+  - component: {fileID: 587301122}
   m_Layer: 8
   m_Name: Skill
   m_TagString: Untagged
@@ -2027,6 +2028,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.1327057, y: 2.6933374}
   m_EdgeRadius: 0
+--- !u!114 &587301122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587301119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc1e144b76b25341ad901d17e4406db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Skill2D
+  _skillInstanceId: 0
 --- !u!1 &587617501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2595,7 @@ MonoBehaviour:
   _monsterLayer:
     serializedVersion: 2
     m_Bits: 128
+  _skill: {fileID: 587301119}
   _maxHp: 0
   _currentHp: 0
 --- !u!114 &747711146
