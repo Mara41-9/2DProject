@@ -7,7 +7,8 @@ public enum SpawnSpotType
     Harvest,    // 수확물 생성
     DropItem,   // 아이템 생상
     Dialogue,   // 다이얼로그 발생 
-    Monster     // 몬스터 생성
+    Monster,     // 몬스터 생성
+    Skill,
 }
 
 // 언제 실행할지
@@ -84,6 +85,7 @@ public class SpawnSpot : MonoBehaviour
                 UIManager.Instance.OpenDialogueUI(_spawnObjectDataId);
                 this.gameObject.SetActive(false);
                 break;
+            
         }
     }
 }
