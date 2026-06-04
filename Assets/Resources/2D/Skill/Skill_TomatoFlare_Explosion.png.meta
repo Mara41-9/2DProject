@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: f2e1bff8f89f6bd47ba5749634d807f8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 231
+        width: 189
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271c8e7253ab4044a98b51b06a114dbc
+      internalID: 579272435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 231
+        width: 189
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed458c0a3fc48bc4abf2536bb05a7377
+      internalID: -1683764988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 231
+        width: 187
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c201a41273e9484c8398b82b7f30fb8
+      internalID: 192861627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 231
+        width: 185
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f9392c4a888694cb5b74dc81deb3ed
+      internalID: -1079400867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 231
+        width: 183
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa931268c1008ee48bee3ad5e58e05e1
+      internalID: -560797167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_26
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 231
+        width: 180
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44be4e9a9d776f24c8dc7aa75375f041
+      internalID: -694272844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_46
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 231
+        width: 177
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3b964daa6f9174ca8b2bc3dc3fa6bb
+      internalID: 142457481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_TomatoFlare_Explosion_55
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 231
+        width: 199
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b53bbebc02e47141a7b133bab28c355
+      internalID: -1442719309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 71b56dce63f248a4fa57596ba209b042
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skill_TomatoFlare_Explosion_0: 579272435
+      Skill_TomatoFlare_Explosion_1: -1683764988
+      Skill_TomatoFlare_Explosion_10: -453036791
+      Skill_TomatoFlare_Explosion_11: -1394975323
+      Skill_TomatoFlare_Explosion_12: -337449796
+      Skill_TomatoFlare_Explosion_13: 89155100
+      Skill_TomatoFlare_Explosion_14: 2078651847
+      Skill_TomatoFlare_Explosion_15: -1434399222
+      Skill_TomatoFlare_Explosion_16: -1079400867
+      Skill_TomatoFlare_Explosion_17: -2018007643
+      Skill_TomatoFlare_Explosion_18: -560797167
+      Skill_TomatoFlare_Explosion_19: 457164805
+      Skill_TomatoFlare_Explosion_2: 364681069
+      Skill_TomatoFlare_Explosion_20: 1303425713
+      Skill_TomatoFlare_Explosion_21: 1960224501
+      Skill_TomatoFlare_Explosion_22: -516249337
+      Skill_TomatoFlare_Explosion_23: -1498837045
+      Skill_TomatoFlare_Explosion_24: 318113375
+      Skill_TomatoFlare_Explosion_25: 1901981626
+      Skill_TomatoFlare_Explosion_26: -694272844
+      Skill_TomatoFlare_Explosion_27: -817473384
+      Skill_TomatoFlare_Explosion_28: 1482596662
+      Skill_TomatoFlare_Explosion_29: 558642246
+      Skill_TomatoFlare_Explosion_3: 1642213226
+      Skill_TomatoFlare_Explosion_30: -665599311
+      Skill_TomatoFlare_Explosion_31: -1120909057
+      Skill_TomatoFlare_Explosion_32: -1567837937
+      Skill_TomatoFlare_Explosion_33: -806269891
+      Skill_TomatoFlare_Explosion_34: -1880360633
+      Skill_TomatoFlare_Explosion_35: 2084662252
+      Skill_TomatoFlare_Explosion_36: 15679366
+      Skill_TomatoFlare_Explosion_37: -164021101
+      Skill_TomatoFlare_Explosion_38: 311666129
+      Skill_TomatoFlare_Explosion_39: -1206642477
+      Skill_TomatoFlare_Explosion_4: 1546935000
+      Skill_TomatoFlare_Explosion_40: 349483792
+      Skill_TomatoFlare_Explosion_41: -514452942
+      Skill_TomatoFlare_Explosion_42: 1837268361
+      Skill_TomatoFlare_Explosion_43: -416681349
+      Skill_TomatoFlare_Explosion_44: 810951910
+      Skill_TomatoFlare_Explosion_45: 658409386
+      Skill_TomatoFlare_Explosion_46: 142457481
+      Skill_TomatoFlare_Explosion_47: -1268590630
+      Skill_TomatoFlare_Explosion_48: -1474574056
+      Skill_TomatoFlare_Explosion_49: -1960678286
+      Skill_TomatoFlare_Explosion_5: -1978198316
+      Skill_TomatoFlare_Explosion_50: -1761328460
+      Skill_TomatoFlare_Explosion_51: -755230168
+      Skill_TomatoFlare_Explosion_52: 201895501
+      Skill_TomatoFlare_Explosion_53: -178446011
+      Skill_TomatoFlare_Explosion_54: 973756507
+      Skill_TomatoFlare_Explosion_55: -1442719309
+      Skill_TomatoFlare_Explosion_6: 192861627
+      Skill_TomatoFlare_Explosion_7: -1729197649
+      Skill_TomatoFlare_Explosion_8: 714893229
+      Skill_TomatoFlare_Explosion_9: 1567251910
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
