@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SuccessPopup : UIBase
@@ -11,6 +12,8 @@ public class SuccessPopup : UIBase
 
     [Header("생성되는 위치")]
     [SerializeField] private Transform Transform_UISlotRoot;
+
+    private Dictionary<long, SuccessPopupSlotUI> _slotList = new Dictionary<long, SuccessPopupSlotUI>();
 
     public void OnEnable()
     {
@@ -34,11 +37,11 @@ public class SuccessPopup : UIBase
 
         foreach(var obtainedItem in obtainedItemList)
         {
-            CreateSlot(obtainedItem.ItemDataId, obtainedItem.ItemStackCount);
+            CreateSlot(obtainedItem.ItemUniqueId, obtainedItem.ItemDataId, obtainedItem.ItemStackCount);
         }
     }
 
-    private void CreateSlot(string dataId, int stackCount)
+    private void CreateSlot(long uniqueId, string dataId, int stackCount)
     {
         var slot = Instantiate(Prefab_Slot, Transform_UISlotRoot);
         if (slot == null) return;
@@ -47,5 +50,8 @@ public class SuccessPopup : UIBase
         if(component == null) return;
 
         component.InitSlot(dataId, stackCount);
+
+        _slotList.Add(uniqueId, component);
     }
+
 }
