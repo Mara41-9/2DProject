@@ -241,7 +241,7 @@ MonoBehaviour:
   Image_Bg: {fileID: 6115123524698476946}
   Image_Frame: {fileID: 7260298708801253019}
   Text_Message: {fileID: 7326832315702702304}
-  ToastUI_Position: {fileID: 0}
+  ToastUI_Position: {fileID: 212918634069785696}
 --- !u!1 &6527002559360359608
 GameObject:
   m_ObjectHideFlags: 0
