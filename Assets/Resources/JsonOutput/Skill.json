@@ -4,6 +4,7 @@
     "Name": "붉은 열기",
     "Description": "몸에 붉은빛의 기운을 둘러 공격력을 증가시킨다.",
     "MaxUseCount": 3,
+    "RequiredLevel": 1,
     "IconPath": "Icon/Icon_Skill_RedHeat_1",
     "PrefabPath": "2DObject/Skill_RedHeat"
   },
@@ -12,6 +13,7 @@
     "Name": "토마토플레어",
     "Description": "하늘에서 화염 토마토를 떨어뜨려 폭발 피해를 준다",
     "MaxUseCount": 3,
+    "RequiredLevel": 2,
     "IconPath": "Icon/Icon_Skill_TomatoFlare_1",
     "PrefabPath": "2DObject/Skill_TomatoFlare"
   },
@@ -20,6 +22,7 @@
     "Name": "썩은 토마토",
     "Description": "썩은 토마토를 바닥에 던져 적에게 지속 피해를 입힌다.",
     "MaxUseCount": 5,
+    "RequiredLevel": 3,
     "IconPath": "Icon/Icon_Skill_RottenTomato_1",
     "PrefabPath": "2DObject/Skill_RottenTomato"
   },
@@ -28,6 +31,7 @@
     "Name": "선홍의 보호막",
     "Description": "선홍빛 보호막을 생성해 일정 시간 모든 피해를 막아낸다.",
     "MaxUseCount": 4,
+    "RequiredLevel": 4,
     "IconPath": "Icon/Icon_Skill_CrimsonShield_1",
     "PrefabPath": "2DObject/Skill_CrimsonShield"
   }
