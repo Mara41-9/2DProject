@@ -42,6 +42,7 @@ public class WeaponModel
     public long WeaponUniqueId;
     public string WeaponDataId;
     public int WeaponStackCount;
+    public int RequiredLevel;
 }
 
 [Serializable]
