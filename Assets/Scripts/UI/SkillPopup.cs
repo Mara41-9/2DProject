@@ -61,7 +61,24 @@ public class SkillPopup : UIBase
             return;
         }
 
-        GameManager.Instance.SetEquippedSkill(_selectedSlot.SlotDataId);
+        var slotDataId = _selectedSlot.GetSlotDataId();
+        if (string.IsNullOrEmpty(slotDataId) == true) return;
+
+        var slotData = GameDataManager.Instance.GetSkill(slotDataId);
+        if (slotData == null) return;
+
+        var playerModel = GameManager.Instance.GetPlayerModel();
+        if (playerModel == null) return;
+
+        if(playerModel.PlayerLevel >= slotData.RequiredLevel)
+        {
+            GameManager.Instance.SetEquippedSkill(_selectedSlot.SlotDataId);
+        }
+        else
+        {
+            Debug.LogWarning("현재 레벨에선 이 스킬을 장착할 수 없습니다.");
+        }
+
     }
 
     // 스킬팝업이 열릴 때 현재 플레이어가 가지고있는 스킬을 기준으로 슬롯 생성
