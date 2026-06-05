@@ -1,23 +1,58 @@
 [
   {
-    "Id": "Weapon_Sword_1",
+    "Id": "Weapon_WoodenSword_1",
+    "Name": "나무 검",
+    "Description": "거칠게 다듬은 나무 검. 초보 모험가들이 사용한다.",
+    "BaseAtk": 10,
+    "IconPath": "Icon/Icon_Weapon_WoodenSword_1"
+  },
+  {
+    "Id": "Weapon_TrainingSword_1",
+    "Name": "훈련용 검",
+    "Description": "기본 검술 훈련에 사용되는 표준 검.",
+    "BaseAtk": 15,
+    "IconPath": "Icon/Icon_Weapon_TrainingSword_1"
+  },
+  {
+    "Id": "Weapon_WellbeingSword_1",
     "Name": "웰빙리아 기사검",
-    "Description": "웰빙리아 왕국의 기사단이 사용하는 특별한 검.",
+    "Description": "웰빙리아 왕국의 기사단에 지급되는 검.",
     "BaseAtk": 20,
     "IconPath": "Icon/Icon_Weapon_Sword_1"
   },
   {
-    "Id": "Weapon_Braclet_1",
-    "Name": "마법팔찌",
-    "Description": "마법을 사용할 수 있는 팔찌",
-    "BaseAtk": null,
-    "IconPath": null
+    "Id": "Weapon_TotoSword_1",
+    "Name": "토토의 기사검",
+    "Description": "토토의 힘을 이끌어내는 전용 검.",
+    "BaseAtk": 25,
+    "IconPath": "Icon/Icon_Weapon_TotoSword_1"
   },
   {
-    "Id": "Weapon_CoffeeCup_1",
-    "Name": "커피",
-    "Description": "일순간 잉여가 될 수 있는 마법의 커피. 시공간을 분리시킨다.",
-    "BaseAtk": null,
-    "IconPath": null
+    "Id": "Weapon_WoodenSpear_1",
+    "Name": "나무 창",
+    "Description": "나무를 깎아 만든 간단한 창. 초보 모험가들이 사용한다.",
+    "BaseAtk": 12,
+    "IconPath": "Icon/Icon_Weapon_WoodenSpear_1"
+  },
+  {
+    "Id": "Weapon_TrainingSpear_1",
+    "Name": "훈련용 창",
+    "Description": "창술 수련에 사용되는 훈련용 창.",
+    "BaseAtk": 18,
+    "IconPath": "Icon/Icon_Weapon_TraningSpear_1"
+  },
+  {
+    "Id": "Weapon_WellbeingSpear_1",
+    "Name": "웰빙리아 장창",
+    "Description": "웰빙리아 왕국 기사단이 사용하는 장창.",
+    "BaseAtk": 24,
+    "IconPath": "Icon/Icon_Weapon_WellbeingSpear_1"
+  },
+  {
+    "Id": "Weapon_TotoSpear_1",
+    "Name": "토토 장창",
+    "Description": "토토를 위해 제작된 전용 창. 강력한 힘이 깃들어있다.",
+    "BaseAtk": 30,
+    "IconPath": "Icon/Icon_Weapon_TotoSpear_1"
   }
 ]
