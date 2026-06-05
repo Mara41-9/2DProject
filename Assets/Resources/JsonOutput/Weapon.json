@@ -18,7 +18,7 @@
     "Name": "웰빙리아 기사검",
     "Description": "웰빙리아 왕국의 기사단에 지급되는 검.",
     "BaseAtk": 20,
-    "IconPath": "Icon/Icon_Weapon_Sword_1"
+    "IconPath": "Icon/Icon_Weapon_WellbeingSword_1"
   },
   {
     "Id": "Weapon_TotoSword_1",
