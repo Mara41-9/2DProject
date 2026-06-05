@@ -79,6 +79,17 @@ public class GameViewUI : UIBase
         if (player == null) return;
 
         player.Attack();
+
+        StartCoroutine(CoAttak());
+    }
+
+    private IEnumerator CoAttak()
+    {
+        Btn_BasicAttack.SetInteractable(false);
+
+        yield return new WaitForSeconds(1f);
+
+        Btn_BasicAttack.SetInteractable(true);
     }
 
     private void OnClick_UseSkill()
