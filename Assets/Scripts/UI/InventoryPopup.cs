@@ -101,14 +101,31 @@ public class InventoryPopup : UIBase
 
         if(_curCategory == EInventoryCategory.WeaponCategory)
         {
-            GameManager.Instance.SetEquippedWeapon(_selectedSlot.SlotDataId);
+            var slotDataId = _selectedSlot.GetSlotDataId();
+            if (string.IsNullOrEmpty(slotDataId) == true) return;
 
-            // 플레이어가 존재하면 공격력 갱신 함수 호출
-            var player = GameObjectManager.Instance.GetLocalPlayer();
-            if(player != null)
+            var slotData = GameDataManager.Instance.GetWeaponData(slotDataId);
+            if (slotData == null) return;
+
+            var playerModel = GameManager.Instance.GetPlayerModel();
+            if(playerModel == null) return;
+
+            if (playerModel.PlayerLevel >= slotData.RequiredLevel)
             {
-                player.UpdateBaseAtk();
+                GameManager.Instance.SetEquippedWeapon(_selectedSlot.SlotDataId);
+
+                // 플레이어가 존재하면 공격력 갱신 함수 호출
+                var player = GameObjectManager.Instance.GetLocalPlayer();
+                if (player != null)
+                {
+                    player.UpdateBaseAtk();
+                }
             }
+            else
+            {
+                Debug.LogWarning("현재 레벨에선 이 무기를 장착할 수 없습니다.");
+            }
+            
         }
         else if(_curCategory == EInventoryCategory.ItemCategory)
         {

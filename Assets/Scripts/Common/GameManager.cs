@@ -393,6 +393,11 @@ public class GameManager : MonoBehaviour
         Debug.LogWarning($"'{skillData.Name}'스킬이 장착되었습니다.");
     }
 
+    public PlayerModel GetPlayerModel()
+    {
+        return _playerModel;
+    }
+
     public string GetEquippedWeapon()
     {
         return _playerModel.EquippedWeaponDataId;
