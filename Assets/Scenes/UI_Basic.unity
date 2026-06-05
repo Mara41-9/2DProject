@@ -2041,6 +2041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Skill2D
   _skillInstanceId: 0
+  _skillDataId: 
 --- !u!1 &587617501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,6 +2599,7 @@ MonoBehaviour:
   _skill: {fileID: 587301119}
   _maxHp: 0
   _currentHp: 0
+  _baseAtk: 0
 --- !u!114 &747711146
 MonoBehaviour:
   m_ObjectHideFlags: 0
