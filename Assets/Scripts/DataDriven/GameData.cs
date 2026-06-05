@@ -39,6 +39,7 @@ public class WeaponData : GameDataBase
     public string Name;
     public string Description;
     public int BaseAtk;
+    public int RequiredLevel;
     public string IconPath;
 }
 
