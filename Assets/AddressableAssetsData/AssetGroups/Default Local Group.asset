@@ -15,8 +15,18 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 39cd6216ebbb07641847da3e8e89a590
   m_SerializeEntries:
+  - m_GUID: 0d4e110ff083706448eec824a9c44245
+    m_Address: Assets/Resources_moved/Icon/Icon_Weapon_TotoSword_1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1dd241302be27814692dd37ecf568a22
     m_Address: Texture2D/Texture2D_Loading_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28b416eb8b542cf4ab893115c633e700
+    m_Address: Icon/Icon_Weapon_WoodenSword_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -55,11 +65,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 55c9baf40d25fd449833cdec6bb3e7b9
-    m_Address: Icon/Icon_Item_Potato
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 56de975eaea2d1445aa837a02b5b7266
     m_Address: 2DPrefab/DropItem_CarrotSmoothy
     m_ReadOnly: 0
@@ -70,13 +75,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6547fe831fd72b54c8907ea4568c7899
-    m_Address: Icon/Icon_Weapon_Sword_1
+  - m_GUID: 8044e2661395f044086359add0f54c95
+    m_Address: Icon/Icon_Weapon_TrainingSword_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8a0ad1af65007e149b4ecc1431233adb
     m_Address: Icon/Icon_Item_CarrotSmoothy_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e533751d8b5c4642a08f5e7ed0204ae
+    m_Address: Icon/Icon_Weapon_WellbeingSword_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -132,11 +142,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4160981a0d520840bc2867430fa5e04
     m_Address: 2DObject/Monster_Fryman
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fde8fc7bc4bb28a45a1f8fc064807248
-    m_Address: Icon/Icon_Item_Corn
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
