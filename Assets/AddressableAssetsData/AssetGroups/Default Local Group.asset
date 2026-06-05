@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 39cd6216ebbb07641847da3e8e89a590
   m_SerializeEntries:
   - m_GUID: 0d4e110ff083706448eec824a9c44245
-    m_Address: Assets/Resources_moved/Icon/Icon_Weapon_TotoSword_1.png
+    m_Address: Icon/Icon_Weapon_TotoSword_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -75,6 +75,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64b71662cb5b76c4d8228ce399c13948
+    m_Address: Icon/Icon_Weapon_WellbeingSpear_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78948b9e994a17d4885088ea668f90df
+    m_Address: Icon/Icon_Weapon_WoodenSpear_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8044e2661395f044086359add0f54c95
     m_Address: Icon/Icon_Weapon_TrainingSword_1
     m_ReadOnly: 0
@@ -105,6 +115,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b32d8ccc6301ff94eb7ab52bb3ce53b5
+    m_Address: Icon/Icon_Weapon_TraningSpear_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b35c263764b591246afb0096c070779d
     m_Address: Icon/Icon_Skill_RedHeat_1
     m_ReadOnly: 0
@@ -112,6 +127,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b979267886bcc2a4790059cccc262954
     m_Address: 2DPrefab/DropItem_WellbeingCoin_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0afd6333acb65e4aa291c1d89426351
+    m_Address: Icon/Icon_Weapon_TotoSpear_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
