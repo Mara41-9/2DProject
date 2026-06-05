@@ -2,7 +2,7 @@
   {
     "Id": "Weapon_WoodenSword_1",
     "Name": "나무 검",
-    "Description": "거칠게 다듬은 나무 검. 초보 모험가들이 사용한다.",
+    "Description": "거칠게 다듬은 나무 검. 초보 모험가들이 사용한다. (공격력+ 10)",
     "BaseAtk": 10,
     "RequiredLevel": 1,
     "IconPath": "Icon/Icon_Weapon_WoodenSword_1"
@@ -10,7 +10,7 @@
   {
     "Id": "Weapon_TrainingSword_1",
     "Name": "훈련용 검",
-    "Description": "기본 검술 훈련에 사용되는 표준 검.",
+    "Description": "기본 검술 훈련에 사용되는 표준 검. (공격력+ 15)",
     "BaseAtk": 15,
     "RequiredLevel": 1,
     "IconPath": "Icon/Icon_Weapon_TrainingSword_1"
@@ -18,7 +18,7 @@
   {
     "Id": "Weapon_WellbeingSword_1",
     "Name": "웰빙리아 기사검",
-    "Description": "웰빙리아 왕국의 기사단에 지급되는 검.",
+    "Description": "웰빙리아 왕국의 기사단에 지급되는 검. (공격력+ 20)",
     "BaseAtk": 20,
     "RequiredLevel": 3,
     "IconPath": "Icon/Icon_Weapon_WellbeingSword_1"
@@ -26,7 +26,7 @@
   {
     "Id": "Weapon_TotoSword_1",
     "Name": "토토의 기사검",
-    "Description": "토토의 힘을 이끌어내는 전용 검.",
+    "Description": "토토의 힘을 이끌어내는 전용 검. (공격력+ 25)",
     "BaseAtk": 25,
     "RequiredLevel": 7,
     "IconPath": "Icon/Icon_Weapon_TotoSword_1"
@@ -34,7 +34,7 @@
   {
     "Id": "Weapon_WoodenSpear_1",
     "Name": "나무 창",
-    "Description": "나무를 깎아 만든 간단한 창. 초보 모험가들이 사용한다.",
+    "Description": "나무를 깎아 만든 간단한 창. 초보 모험가들이 사용한다. (공격력+ 12)",
     "BaseAtk": 12,
     "RequiredLevel": 2,
     "IconPath": "Icon/Icon_Weapon_WoodenSpear_1"
@@ -42,7 +42,7 @@
   {
     "Id": "Weapon_TrainingSpear_1",
     "Name": "훈련용 창",
-    "Description": "창술 수련에 사용되는 훈련용 창.",
+    "Description": "창술 수련에 사용되는 훈련용 창. (공격력+ 18)",
     "BaseAtk": 18,
     "RequiredLevel": 2,
     "IconPath": "Icon/Icon_Weapon_TraningSpear_1"
@@ -50,7 +50,7 @@
   {
     "Id": "Weapon_WellbeingSpear_1",
     "Name": "웰빙리아 장창",
-    "Description": "웰빙리아 왕국 기사단이 사용하는 장창.",
+    "Description": "웰빙리아 왕국 기사단이 사용하는 장창. (공격력+ 24)",
     "BaseAtk": 24,
     "RequiredLevel": 5,
     "IconPath": "Icon/Icon_Weapon_WellbeingSpear_1"
@@ -58,7 +58,7 @@
   {
     "Id": "Weapon_TotoSpear_1",
     "Name": "토토 장창",
-    "Description": "토토를 위해 제작된 전용 창. 강력한 힘이 깃들어있다.",
+    "Description": "토토를 위해 제작된 전용 창. 강력한 힘이 깃들어있다. (공격력+ 30)",
     "BaseAtk": 30,
     "RequiredLevel": 10,
     "IconPath": "Icon/Icon_Weapon_TotoSpear_1"
