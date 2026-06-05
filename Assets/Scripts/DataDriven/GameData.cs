@@ -100,6 +100,7 @@ public class MonsterData : GameDataBase
     public string Description;
     public int BaseHp;
     public int BaseAtk;
+    public int RewardExp;
     public float NormalAtkMultiple;
     public List<float> SkillAtkMultipleList;
     public string IconPath;
