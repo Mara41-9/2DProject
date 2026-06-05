@@ -87,4 +87,17 @@ public class EntityAnimController : MonoBehaviour
         Animator_Entity.SetBool("IsJump", false);
     }
 
+    public void ResetAnimator()
+    {
+        _currentAnimState = EntityAnimState.None;
+
+        ResetAllParameters();
+
+        // Animator를 처음 켰을 때 상태로 초기화
+        Animator_Entity.Rebind();
+
+        // 방금 초기화한 내용을 즉시 반영
+        Animator_Entity.Update(0f);
+    }
+
 }

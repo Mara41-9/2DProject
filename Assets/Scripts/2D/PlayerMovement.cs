@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     public int _baseAtk;
 
     private bool _isAttack;
+    private bool _isDie;
 
     // 이벤트 선언 - HP/MP 변경 알림 함수를 저장해둘 공간
     private event Action<int, int> _onHpChanged;
@@ -102,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
         
-        if(_isAttack == false)
+        if(_isAttack == false && _isDie == false)
         {
             if (_isGrounded == false)
             {
@@ -264,9 +265,19 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator DieRoutine()
     {
+        _isDie = true;
+
         ChangePlayerState(EntityAnimState.Die);
 
         yield return new WaitForSeconds(1.0f);
+    }
+
+    public void ResetPlayerState()
+    {
+        _isDie = false;
+        _isAttack = false;
+
+        AnimatorController_Entity.ResetAnimator();
     }
     
 

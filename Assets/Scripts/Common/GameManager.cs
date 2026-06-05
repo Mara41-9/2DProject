@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
 
         playerComponent.InvokeStatChangedEvent();
 
+        // 플레이어 애니메이터 초기화
+        player.ResetPlayerState();
+
         // 몬스터 초기화 시키기
         var monsterList = GameObjectManager.Instance.GetMonsterByList();
         if(monsterList == null) return;
