@@ -74,7 +74,7 @@ public class SkillPopup : UIBase
         {
             foreach(var skillModel in skillList)
             {
-                CreateSlot(skillModel.SkillDataId, skillModel.SkillStackCount);
+                CreateSlot(skillModel.SkillDataId, skillModel.SkillMaxUseCount);
             }
         }
         else
@@ -105,7 +105,7 @@ public class SkillPopup : UIBase
         _generatedKey = 0;
     }
 
-    private void CreateSlot(string DataId, int StackCount)
+    private void CreateSlot(string DataId, int maxUseCount)
     {
         // Prefab_Slot을 Transform_UISlotRoot에 실체화 - 동적생성
         var gObj = Instantiate(Prefab_Slot, Transform_UISlotRoot);
@@ -117,7 +117,7 @@ public class SkillPopup : UIBase
 
         _generatedKey++;
 
-        slotComponent.InitSlot(_generatedKey, DataId, StackCount);
+        slotComponent.InitSlot(_generatedKey, DataId, maxUseCount);
         slotComponent.gameObject.name = $"SkillSlot : {slotComponent.SlotInstanceId}";
 
         // 생성된 슬롯의 고유 번호(SlotInstanceId)를 Key로, 그 슬롯의 SlotSkillUI 컴포넌트를 Value로 해서 딕셔너리에 저장

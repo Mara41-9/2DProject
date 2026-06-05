@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SkillSlotUI : MonoBehaviour
 {
     [Header("슬롯 기본 정보")]
-    [SerializeField] private Text Text_StackCount;
+    [SerializeField] private Text Text_MaxUseCount;
     [SerializeField] private Image Img_Icon;
     [SerializeField] private Image Img_Frame;
     [SerializeField] private GameUIButton Btn_Slot;
@@ -31,7 +31,7 @@ public class SkillSlotUI : MonoBehaviour
     }
 
     // 스킬 ID 받아서 해당 그 스킬의 아이콘 스프라이트를 찾아 슬롯 이미지에 넣어주는 함수
-    private void SetIcon(string DataId, int Count)
+    private void SetIcon(string DataId, int MaxUseCount)
     {
         var skillData = GameDataManager.Instance.GetSkill(DataId);
         if(skillData != null)
@@ -40,7 +40,7 @@ public class SkillSlotUI : MonoBehaviour
             if(skillIconPath != null)
             {
                 GameUtil.LoadAndSetSpriteImage(Img_Icon, skillIconPath).Forget();
-                Text_StackCount.text = $"{Count}";
+                Text_MaxUseCount.text = $"{MaxUseCount}";
 
                 return;
             }
@@ -56,11 +56,11 @@ public class SkillSlotUI : MonoBehaviour
 
     }
 
-    public void InitSlot(int slotInstanceId, string dataId, int StackCount)
+    public void InitSlot(int slotInstanceId, string dataId, int maxUseCount)
     {
         SlotInstanceId = slotInstanceId;
         SlotDataId = dataId;
-        SetIcon(dataId, StackCount);
+        SetIcon(dataId, maxUseCount);
     }
 
 

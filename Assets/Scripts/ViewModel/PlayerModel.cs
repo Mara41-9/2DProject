@@ -49,7 +49,7 @@ public class SkillModel
 {
     public long SkillUniqueId;
     public string SkillDataId;
-    public int SkillStackCount;
+    public int SkillMaxUseCount;
 }
 
 public class MonsterModel

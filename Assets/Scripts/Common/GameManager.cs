@@ -141,9 +141,10 @@ public class GameManager : MonoBehaviour
         var SkillDataList = GameDataManager.Instance.SkillDataList;
         if (SkillDataList != null)
         {
-            foreach (var skillData in SkillDataList)
+            foreach (var skillDataKv in SkillDataList)
             {
-                AddSkill(skillData.Key);
+                var skillData = skillDataKv.Value;
+                AddSkill(skillData.Id, skillData.MaxUseCount);
             }
         }
     }
@@ -334,7 +335,7 @@ public class GameManager : MonoBehaviour
         _playerModel.WeaponList.Add(newItem);
     }
 
-    public void AddSkill(string skillDataId)
+    public void AddSkill(string skillDataId, int maxUseCount)
     {
         // 저장할 때 고유값 ID를 부여하기 위해 사용 (고유 번호 생성)
         long uniqueId = GameUtil.GenerateUniqueId();
@@ -344,7 +345,7 @@ public class GameManager : MonoBehaviour
         var newItem = new SkillModel();
         newItem.SkillUniqueId = uniqueId;
         newItem.SkillDataId = skillDataId;
-        newItem.SkillStackCount = 1;
+        newItem.SkillMaxUseCount = maxUseCount;
 
         _playerModel.SkillList.Add(newItem);
     }

@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 1690380921809078209}
   - component: {fileID: 6763484288037924160}
   m_Layer: 5
-  m_Name: Text_Count
+  m_Name: Text_MaxUseCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c64eba0dc78c84c8c23400302cba68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillSlotUI
-  Text_StackCount: {fileID: 6763484288037924160}
+  Text_MaxUseCount: {fileID: 6763484288037924160}
   Img_Icon: {fileID: 5753585162693158175}
   Img_Frame: {fileID: 7621276951714437197}
   Btn_Slot: {fileID: 5342890991370763591}
