@@ -90,11 +90,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8d3d96c2a2fbead46bdf6fd51a53878c
-    m_Address: Assets/Resources_moved/Icon/Icon_Weapon_WellbeingSpear_1.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e533751d8b5c4642a08f5e7ed0204ae
     m_Address: Icon/Icon_Weapon_WellbeingSword_1
     m_ReadOnly: 0
@@ -132,6 +127,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c0afd6333acb65e4aa291c1d89426351
     m_Address: Icon/Icon_Weapon_TotoSpear_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c46108085413f284d9fdf81f2cb2b585
+    m_Address: Icon/Icon_Weapon_WellbeingSpear_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
