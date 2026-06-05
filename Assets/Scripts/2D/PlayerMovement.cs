@@ -215,19 +215,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
-    {
-        _currentHp -= damage;
-        InvokeStatChangedEvent();
-
-        if(_currentHp <= 0)
-        {
-            _currentHp = 0;
-            UIManager.Instance.OpenGameOverPopup();
-            return;
-        }
-    }
-
     private IEnumerator AttackRoutine()
     {
         _isAttack = true;
@@ -243,6 +230,30 @@ public class PlayerMovement : MonoBehaviour
             ChangePlayerState(EntityAnimState.Idle);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        StartCoroutine(DamagedRoutine());
+        _currentHp -= damage;
+        InvokeStatChangedEvent();
+
+        if(_currentHp <= 0)
+        {
+            _currentHp = 0;
+            UIManager.Instance.OpenGameOverPopup();
+            return;
+        }
+    }
+
+    private IEnumerator DamagedRoutine()
+    {
+        ChangePlayerState(EntityAnimState.Damaged);
+
+        yield return new WaitForSeconds(0.7f);
+
+        ChangePlayerState(EntityAnimState.Idle);
+    }
+    
 
     private void OnDrawGizmos()
     {
