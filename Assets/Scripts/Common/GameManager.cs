@@ -107,14 +107,18 @@ public class GameManager : MonoBehaviour
 
     private void AddStarterWeapons()
     {
-        var WeaponData = GameDataManager.Instance.GetWeaponData("Weapon_Sword_1");
-        if (WeaponData == null)
+        var weaponDataList = GameDataManager.Instance.WeaponDataList;
+        if (weaponDataList != null)
         {
-            Debug.LogWarning("기본 무기 데이터를 찾을 수 없습니다.");
-            return;
+            foreach(var weaponDataKv in  weaponDataList)
+            {
+                var weaponData = weaponDataKv.Value;
+                if(weaponData != null)
+                {
+                    AddWeapon(weaponData.Id);
+                }
+            }
         }
-
-        AddWeapon(WeaponData.Id);
     }
 
     private void AddStarterItems()
