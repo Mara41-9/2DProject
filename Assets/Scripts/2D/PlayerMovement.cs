@@ -239,8 +239,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(_currentHp <= 0)
         {
-            _currentHp = 0;
-            UIManager.Instance.OpenGameOverPopup();
+            Die();
             return;
         }
     }
@@ -252,6 +251,22 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
 
         ChangePlayerState(EntityAnimState.Idle);
+    }
+
+    private void Die()
+    {
+        _currentHp = 0;
+
+        StartCoroutine(DieRoutine());
+
+        UIManager.Instance.OpenGameOverPopup();
+    }
+
+    private IEnumerator DieRoutine()
+    {
+        ChangePlayerState(EntityAnimState.Die);
+
+        yield return new WaitForSeconds(1.0f);
     }
     
 
