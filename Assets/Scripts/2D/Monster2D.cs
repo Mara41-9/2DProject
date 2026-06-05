@@ -21,6 +21,7 @@ public class Monster2D : MonoBehaviour
     public int _currentHp;
     public int _maxHp;     // 최대 Hp
     public int _baseAtk;
+    private int _rewardExp;
     public bool _isAlive = true;
 
     [Header("공격 설정")]
@@ -107,6 +108,7 @@ public class Monster2D : MonoBehaviour
         _baseAtk = _monsterData.BaseAtk;
         _monsterInstanceId = instanceId;
         _monsterDataId = monsterDataId;
+        _rewardExp = _monsterData.RewardExp;
 
         UIManager.Instance.AddHudSlot(instanceId, this.gameObject.transform);
 
@@ -270,7 +272,7 @@ public class Monster2D : MonoBehaviour
         }
 
         GameManager.Instance.AddDefeatedMonster(_monsterDataId, _defeatedMonsterCount);
-        GameManager.Instance.IncreasePlayerExp(10);
+        GameManager.Instance.IncreasePlayerExp(_rewardExp);
     }
 
     private void ChangeMonsterState(EntityAnimState newState)
