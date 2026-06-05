@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
-using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
+using System.Xml;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,7 +74,16 @@ public class SkillPopup : UIBase
         {
             foreach(var skillModel in skillList)
             {
-                CreateSlot(skillModel.SkillDataId, skillModel.SkillMaxUseCount);
+                var slot = CreateSlot(skillModel.SkillDataId, skillModel.SkillMaxUseCount);
+
+                var player = GameManager.Instance.GetPlayerModel();
+                if (player == null) return;
+
+                var skillData = GameDataManager.Instance.GetSkill(skillModel.SkillDataId);
+                if (skillData == null) return;
+
+                slot.SetLockUI(player.PlayerLevel < skillData.RequiredLevel);
+                
             }
         }
         else
@@ -105,15 +114,15 @@ public class SkillPopup : UIBase
         _generatedKey = 0;
     }
 
-    private void CreateSlot(string DataId, int maxUseCount)
+    private SkillSlotUI CreateSlot(string DataId, int maxUseCount)
     {
         // Prefab_Slot을 Transform_UISlotRoot에 실체화 - 동적생성
         var gObj = Instantiate(Prefab_Slot, Transform_UISlotRoot);
-        if(gObj == null) return;
+        if(gObj == null) return null;
 
         // 자식 슬롯의 컴포넌트 가져오기 -> 위에 게임 오브젝트는 스크립트가 아직 아니기 때문에
         var slotComponent = gObj.GetComponent<SkillSlotUI>();
-        if (slotComponent == null) return;
+        if (slotComponent == null) return null;
 
         _generatedKey++;
 
@@ -124,6 +133,8 @@ public class SkillPopup : UIBase
         _skillSlotList.Add(slotComponent.SlotInstanceId, slotComponent);
 
         slotComponent.BindSlotSelectEvent(OnChildSlotSelected);
+        
+        return slotComponent; 
     }
 
     private void OnChildSlotSelected(int selectedSlotInstanceId)
