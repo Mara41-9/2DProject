@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
                 var weaponData = weaponDataKv.Value;
                 if(weaponData != null)
                 {
-                    AddWeapon(weaponData.Id, weaponData.RequiredLevel);
+                    AddWeapon(weaponData.Id);
                 }
             }
         }
@@ -324,7 +324,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void AddWeapon(string weaponDataId, int requiredLevel)
+    public void AddWeapon(string weaponDataId)
     {
         // 저장할 때 고유값 ID를 부여하기 위해 사용 (고유 번호 생성)
         long uniqueId = GameUtil.GenerateUniqueId();
@@ -335,7 +335,6 @@ public class GameManager : MonoBehaviour
         newItem.WeaponUniqueId = uniqueId;
         newItem.WeaponDataId = weaponDataId;
         newItem.WeaponStackCount = 1;
-        newItem.RequiredLevel = requiredLevel;
 
         _playerModel.WeaponList.Add(newItem);
     }

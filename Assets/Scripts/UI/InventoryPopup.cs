@@ -192,7 +192,15 @@ public class InventoryPopup : UIBase
                 // 무기 하나당 슬롯 하나 생성
                 foreach (var weaponModel in weaponList)
                 {
-                    CreateSlot(weaponModel.WeaponUniqueId, weaponModel.WeaponDataId, weaponModel.WeaponStackCount, EInventoryCategory.WeaponCategory);
+                    var slot = CreateSlot(weaponModel.WeaponUniqueId, weaponModel.WeaponDataId, weaponModel.WeaponStackCount, EInventoryCategory.WeaponCategory);
+
+                    var playerModel = GameManager.Instance.GetPlayerModel();
+                    if (playerModel == null) return;
+
+                    var weponData = GameDataManager.Instance.GetWeaponData(weaponModel.WeaponDataId);
+                    if (weponData == null) return;
+
+                    slot.SetLockUI(playerModel.PlayerLevel < weponData.RequiredLevel);
                 }
 
             }
@@ -204,15 +212,15 @@ public class InventoryPopup : UIBase
             
     }
 
-    private void CreateSlot(long UniqueId, string DataId, int StackCount, EInventoryCategory curCategory)
+    private InventorySlotUI CreateSlot(long UniqueId, string DataId, int StackCount, EInventoryCategory curCategory)
     {
         // Prefab_Slot을 Transform_UISlotRoot 자식으로 생성
         var gObj = Instantiate(Prefab_Slot, Transform_UISlotRoot);
-        if (gObj == null) return;
+        if (gObj == null) return null;
 
         // 생성된 슬롯 오브젝트에서 SlotUI 컴포넌트 가져옴
         var slotComponent = gObj.GetComponent<InventorySlotUI>();
-        if (slotComponent == null) return;
+        if (slotComponent == null) return null;
 
         // 생성된 슬롯에 고유번호 넣어줌
         slotComponent.InitSlot(UniqueId, DataId, StackCount, curCategory);
@@ -223,6 +231,8 @@ public class InventoryPopup : UIBase
 
         // 슬롯이 클릭됐을 때, OnChildSlotSelected 함수가 실행되도록
         slotComponent.BindSlotSelectEvent(OnChildSlotSelected);
+
+        return slotComponent;
 
     }
 
