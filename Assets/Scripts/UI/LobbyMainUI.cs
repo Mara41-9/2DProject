@@ -53,6 +53,7 @@ public class LobbyMainUI : UIBase
             var component = commonToastUI.GetComponent<CommonToastUI>();
             if (component == null) return;
 
+            component.SetPosition(new Vector2(0f, 349f));
             component.SetMessage("전투를 시작하려면 먼저 무기를 장착해주세요!");
         }
             
