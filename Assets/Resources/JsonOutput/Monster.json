@@ -5,6 +5,7 @@
     "Description": "말랑한 몸을 이용해 바디박치기를 하는 몬스터",
     "BaseHp": 50,
     "BaseAtk": 5,
+    "RewardExp": 10,
     "NormalAtkDamage": 1,
     "SkillAtkMultipleList": [
       2
@@ -18,6 +19,7 @@
     "Description": "날카로운 창을 이용해 공격하는 몬스터",
     "BaseHp": 60,
     "BaseAtk": 10,
+    "RewardExp": 20,
     "NormalAtkDamage": 1,
     "SkillAtkMultipleList": [
       2
