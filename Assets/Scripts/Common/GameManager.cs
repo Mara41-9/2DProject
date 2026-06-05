@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour
         // 현재 경험치에 추가 경험치 더하기
         // 추후에 한곳에서 관리할 수 있게 익스텐션(확장메서드)으로 빼도 된다
         _playerModel.PlayerTotalExp += exp;
-        Debug.LogWarning($"현재 누적 Exp: {_playerModel.PlayerTotalExp}");
+        Debug.LogWarning($"토토의 Exp가 {exp}만큼 증가했다!   총 Exp : {_playerModel.PlayerTotalExp}");
+        SaveData();
     }
 
     public void IncreasePlayerLevel(int level)

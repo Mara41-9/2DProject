@@ -270,6 +270,7 @@ public class Monster2D : MonoBehaviour
         }
 
         GameManager.Instance.AddDefeatedMonster(_monsterDataId, _defeatedMonsterCount);
+        GameManager.Instance.IncreasePlayerExp(10);
     }
 
     private void ChangeMonsterState(EntityAnimState newState)
