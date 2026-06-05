@@ -412,6 +412,7 @@ MonoBehaviour:
   Img_Frame: {fileID: 7621276951714437197}
   Btn_Slot: {fileID: 5342890991370763591}
   Gobj_Selected: {fileID: 1056221784063361262}
+  Img_Lock: {fileID: 6024173265776583601}
 --- !u!1 &5678013043648393777
 GameObject:
   m_ObjectHideFlags: 0

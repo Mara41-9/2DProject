@@ -12,6 +12,7 @@ public class SkillSlotUI : MonoBehaviour
     [SerializeField] private Image Img_Frame;
     [SerializeField] private GameUIButton Btn_Slot;
     [SerializeField] private GameObject Gobj_Selected;
+    [SerializeField] private Image Img_Lock;
 
     private event Action<int> OnSelectEvent;
 
@@ -85,5 +86,10 @@ public class SkillSlotUI : MonoBehaviour
     public void SetSelectedUI(bool isSelect)
     {
         Gobj_Selected.SetActive(isSelect);
+    }
+
+    public void SetLockUI(bool isLock)
+    {
+        Img_Lock.gameObject.SetActive(isLock);
     }
 }
