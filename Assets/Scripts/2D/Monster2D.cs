@@ -211,7 +211,13 @@ public class Monster2D : MonoBehaviour
         {
             SetMeshDirectionByMoveDirection(-1);
         }
-            StartCoroutine(AttackRoutine());
+
+        if(player._currentHp <= 0)
+        {
+            return;
+        }
+
+        StartCoroutine(AttackRoutine());
     }
 
     private IEnumerator AttackRoutine()
