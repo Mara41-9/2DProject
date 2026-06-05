@@ -123,7 +123,15 @@ public class InventoryPopup : UIBase
             }
             else
             {
-                Debug.LogWarning("현재 레벨에선 이 무기를 장착할 수 없습니다.");
+                UIManager.Instance.OpenCommonToastUI();
+
+                var commonToastUI = UIManager.Instance.GetOpenedUI(UIRootType.ToastUI, UIType.CommonToastUI);
+                if (commonToastUI == null) return;
+
+                var component = commonToastUI.GetComponent<CommonToastUI>();
+                if(component == null) return;
+
+                component.SetMessage("현재 레벨에선 이 무기를 장착할 수 없습니다.");
             }
             
         }
