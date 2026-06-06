@@ -15,6 +15,14 @@ public class GameViewMonsterSlotUI : MonoBehaviour, IPointerEnterHandler, IPoint
     public void OnPointerEnter(PointerEventData eventData)
     {
         UIManager.Instance.OpenMonsterInfoPopup();
+
+        var openedPopupUI = UIManager.Instance.GetOpenedUI(UIRootType.PopupUI, UIType.MonsterInfoPopup);
+        if (openedPopupUI == null) return;
+
+        var component = openedPopupUI.GetComponent<MonsterInfoPopup>();
+        if (component == null) return;
+
+        component.SetMonsterInfo(SlotDataId);
     }
 
     public void OnPointerExit(PointerEventData eventData)
