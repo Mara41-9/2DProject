@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class MonsterInfoPopup : MonoBehaviour
+public class MonsterInfoPopup : UIBase
 {
     [SerializeField] private TMP_Text Text_MonsterName;
     [SerializeField] private TMP_Text Text_MonsterDesc;
