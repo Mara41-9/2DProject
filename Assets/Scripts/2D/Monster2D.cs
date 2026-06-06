@@ -117,6 +117,9 @@ public class Monster2D : MonoBehaviour
 
     public void ResetMonster()
     {
+        // 공격 상태 초기화
+        _isAttack = false;
+
         // 몬스터 Hp 초기화 시키기
         _currentHp = _maxHp;
         _isAlive = true;
