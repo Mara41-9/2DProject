@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
         // 플레이어 Hp 초기화 시키기
         player._currentHp = player._maxHp;
+
         var playerComponent = player.GetComponent<PlayerMovement>();
         if(playerComponent == null) return;
 

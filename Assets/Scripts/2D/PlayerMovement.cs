@@ -234,16 +234,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        StartCoroutine(DamagedRoutine());
         _currentHp -= damage;
-        InvokeStatChangedEvent();
 
-        if(_currentHp <= 0)
+        if (_currentHp <= 0)
         {
             _currentHp = 0;
+            InvokeStatChangedEvent();
             Die();
             return;
         }
+
+        InvokeStatChangedEvent();
+        StartCoroutine(DamagedRoutine());
     }
 
     private IEnumerator DamagedRoutine()

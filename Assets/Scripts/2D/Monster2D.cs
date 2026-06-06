@@ -232,7 +232,7 @@ public class Monster2D : MonoBehaviour
             ChangeMonsterState(EntityAnimState.Atk);
 
             yield return new WaitForSeconds(0.6f);
-            player.TakeDamage(_baseAtk);
+             player.TakeDamage(_baseAtk);
             _isAttack = false;
 
             if(_isAttack == false)
