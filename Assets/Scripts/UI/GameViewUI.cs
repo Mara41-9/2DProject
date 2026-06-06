@@ -162,7 +162,7 @@ public class GameViewUI : UIBase
         Text_PlayerName.text = playerData.Name;
 
         var playerLevel = GameManager.Instance.GetPlayerLevel();
-        Text_PlayerLevel.text = $"Lv.{playerLevel}";
+        Text_PlayerLevel.text = $"{playerLevel}";
 
         // 실제 플레이중인 캐릭터 객체 가져오기
         var player = GameObjectManager.Instance.GetLocalPlayer();
