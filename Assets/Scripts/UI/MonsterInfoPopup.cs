@@ -6,6 +6,7 @@ public class MonsterInfoPopup : UIBase
     [SerializeField] private TMP_Text Text_MonsterName;
     [SerializeField] private TMP_Text Text_MonsterDesc;
     [SerializeField] private TMP_Text Text_MonsterAtk;
+    [SerializeField] private TMP_Text Text_MonsterHp;
 
     private string _monsterDataId;
 
@@ -24,6 +25,7 @@ public class MonsterInfoPopup : UIBase
             Text_MonsterName.text = monsterData.Name;
             Text_MonsterDesc.text = monsterData.Description;
             Text_MonsterAtk.text = $"{monsterData.BaseAtk}";
+            Text_MonsterHp.text = $"{monsterData.BaseHp}";
         }
     }
 
