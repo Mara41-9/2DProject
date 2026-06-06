@@ -27,7 +27,8 @@ public enum UIType
     DialogueUI,
     SuccessPopup,
     GameOverPopup,
-    HudUI
+    HudUI,
+    MonsterInfoPopup
 }
 
 public static partial class UIManagerExtension
@@ -229,6 +230,21 @@ public static partial class UIManagerExtension
     public static void CloseGameOverPopup(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.PopupUI, UIType.GameOverPopup);
+    }
+
+    public static void OpenMonsterInfoPopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.MonsterInfoPopup);
+        if( uiBase == null)
+        {
+            Debug.LogWarning($"몬스터 정보 팝업 UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseMonsterInfoPopup(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.MonsterInfoPopup);
     }
 
     // 그 대상이 생성됐을 때 호출
