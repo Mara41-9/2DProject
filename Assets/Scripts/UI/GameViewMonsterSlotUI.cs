@@ -1,14 +1,25 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class GameViewMonsterSlotUI : MonoBehaviour
+public class GameViewMonsterSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image Image_Frame;
     [SerializeField] private Image Image_Monster;
     [SerializeField] private Image Image_Grade;
 
     public int SlotInstanceId { get; private set; }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+
+    }
 
     private void SetIcon(string monsterDataId)
     {
