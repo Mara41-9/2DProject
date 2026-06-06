@@ -10,15 +10,16 @@ public class GameViewMonsterSlotUI : MonoBehaviour, IPointerEnterHandler, IPoint
     [SerializeField] private Image Image_Grade;
 
     public int SlotInstanceId { get; private set; }
+    public string SlotDataId { get; private set; }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        UIManager.Instance.OpenMonsterInfoPopup();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-
+        UIManager.Instance.CloseMonsterInfoPopup();
     }
 
     private void SetIcon(string monsterDataId)
@@ -35,6 +36,7 @@ public class GameViewMonsterSlotUI : MonoBehaviour, IPointerEnterHandler, IPoint
     public void InitSlot(int slotInstanceId, string monsterDataId)
     {
         SlotInstanceId = slotInstanceId;
-        SetIcon(monsterDataId);
+        SlotDataId = monsterDataId;
+        SetIcon(SlotDataId);
     }
 }
