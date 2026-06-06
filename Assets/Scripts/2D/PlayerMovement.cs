@@ -240,6 +240,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(_currentHp <= 0)
         {
+            _currentHp = 0;
             Die();
             return;
         }
