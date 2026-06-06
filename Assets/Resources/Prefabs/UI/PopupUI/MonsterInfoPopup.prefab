@@ -377,6 +377,7 @@ MonoBehaviour:
   Text_MonsterName: {fileID: 5920695641028779449}
   Text_MonsterDesc: {fileID: 255533727655906256}
   Text_MonsterAtk: {fileID: 3277106390457993722}
+  PopupUI_Position: {fileID: 4526512048204781212}
 --- !u!1 &4605231800493005549
 GameObject:
   m_ObjectHideFlags: 0

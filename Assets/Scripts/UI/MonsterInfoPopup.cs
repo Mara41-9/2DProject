@@ -25,6 +25,10 @@ public class MonsterInfoPopup : UIBase
             Text_MonsterDesc.text = monsterData.Description;
             Text_MonsterAtk.text = $"{monsterData.BaseAtk}";
         }
-      
+    }
+
+    public void SetPosition(Vector2 slotPosition)
+    {
+        this.transform.position = slotPosition + new Vector2(250f, -100f);
     }
 }

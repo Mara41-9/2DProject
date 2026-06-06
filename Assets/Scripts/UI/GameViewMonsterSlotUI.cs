@@ -22,6 +22,7 @@ public class GameViewMonsterSlotUI : MonoBehaviour, IPointerEnterHandler, IPoint
         var component = openedPopupUI.GetComponent<MonsterInfoPopup>();
         if (component == null) return;
 
+        component.SetPosition(this.transform.position);
         component.SetMonsterInfo(SlotDataId);
     }
 
