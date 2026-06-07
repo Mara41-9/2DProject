@@ -35,6 +35,7 @@ public class GameDataManager : MonoBehaviour
     public Dictionary<string, DialogueData> DialogueDataList { get; private set; } = new Dictionary<string, DialogueData>();
     public Dictionary<string, MonsterData> MonsterDataList { get; private set; } = new Dictionary<string, MonsterData>();
     public Dictionary<string, FieldObjectData> FieldObjectDataList { get; private set; } = new Dictionary<string, FieldObjectData>();
+    public Dictionary<string, GradeData> GradeDataList { get; private set; } = new Dictionary<string, GradeData>();
 
     private Dictionary<string, T> LoadData<T>(string tableName) where T : GameDataBase
     {
@@ -97,6 +98,11 @@ public class GameDataManager : MonoBehaviour
     public void LoadItemData(string jsonPath)
     {
         ItemDataList = LoadData<ItemData>(jsonPath);
+    }
+
+    public void LoadGradeData(string jsonPath)
+    {
+        GradeDataList = LoadData<GradeData>(jsonPath);
     }
 
     public void LoadDialogueData()
@@ -176,5 +182,12 @@ public class GameDataManager : MonoBehaviour
         if (FieldObjectDataList == null || string.IsNullOrEmpty(dataId)) return null;
 
         return FieldObjectDataList.TryGetValue(dataId, out var data) ? data : null;
+    }
+
+    public GradeData GetGradeData(string dataId)
+    {
+        if (GradeDataList == null || string.IsNullOrEmpty(dataId)) return null;
+
+        return GradeDataList.TryGetValue(dataId, out var data) ? data : null;
     }
 }

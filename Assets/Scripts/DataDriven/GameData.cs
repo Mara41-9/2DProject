@@ -106,3 +106,10 @@ public class MonsterData : GameDataBase
     public string IconPath;
     public string PrefabPath;
 }
+
+[System.Serializable]
+public class GradeData : GameDataBase
+{
+    public string Name;
+    public string IconPath;
+}
