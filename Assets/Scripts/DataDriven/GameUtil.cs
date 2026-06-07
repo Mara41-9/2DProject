@@ -21,6 +21,7 @@ public static class GameUtil
         GameDataManager.Instance.LoadWeaponData(("Weapon"));
         GameDataManager.Instance.LoadCostumeData(("Costume"));
         GameDataManager.Instance.LoadItemData(("Item"));
+        GameDataManager.Instance.LoadGradeData(("Grade"));
         GameDataManager.Instance.LoadDialogueData();
         GameDataManager.Instance.LoadAll();
     }
