@@ -9,6 +9,7 @@ public class InventoryItemSlotUI : MonoBehaviour
     [Header("슬롯 기본 정보")]
     [SerializeField] private TMP_Text Text_StackCount;
     [SerializeField] private Image Img_Icon;
+    [SerializeField] private Image Img_Grade;
     [SerializeField] private Image Img_Frame;
     [SerializeField] private GameObject Gobj_Selected;   // 이미지가 아니라 게임오브젝트 -> 활성/비활성화 기능으로만 사용할거라서
     [SerializeField] private GameUIButton Btn_Slot;
@@ -51,6 +52,15 @@ public class InventoryItemSlotUI : MonoBehaviour
                 // 어드레서블 적용 -> 비동기로 바뀜
                 GameUtil.LoadAndSetSpriteImage(Img_Icon, itemIconPath).Forget();
                 Text_StackCount.text = $"{Count}";
+
+                var itemGradeDataId = itemData.GradeDataId;
+                if (string.IsNullOrEmpty(itemGradeDataId)) return;
+
+                var GradeData = GameDataManager.Instance.GetGradeData(itemGradeDataId);
+                if(GradeData != null)
+                {
+                    GameUtil.LoadAndSetSpriteImage(Img_Grade, GradeData.IconPath).Forget();
+                }
 
 
                 //// 실제 이미지 파일 불러옴

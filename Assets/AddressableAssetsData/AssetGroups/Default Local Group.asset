@@ -20,8 +20,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1dae97868cbf1a44c869625d371d77ba
+    m_Address: Icon/Icon_Grade_Normal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1dd241302be27814692dd37ecf568a22
     m_Address: Texture2D/Texture2D_Loading_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 216ba7b1849180b4ea1fb067b09cbe13
+    m_Address: Icon/Icon_Grade_Epic
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -107,6 +117,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a5e72fa6821462548a6d5653a40574ba
     m_Address: Sound/MianUI_BGM_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aac3c54eb0e0f6b45924561acd79c815
+    m_Address: Icon/Icon_Grade_Rare
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
