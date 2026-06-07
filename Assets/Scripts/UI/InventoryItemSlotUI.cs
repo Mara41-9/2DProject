@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlotUI : MonoBehaviour
+public class InventoryItemSlotUI : MonoBehaviour
 {
     [Header("슬롯 기본 정보")]
     [SerializeField] private Text Text_StackCount;
@@ -69,25 +69,6 @@ public class InventorySlotUI : MonoBehaviour
             Debug.LogWarning($"Item 데이터에 아이콘 경로가 존재하지 않습니다.");
 
         }
-        
-
-        var weaponData = GameDataManager.Instance.GetWeaponData(DataId);
-        if (weaponData != null)
-        {
-            string weaponiconPath = weaponData.IconPath;
-            if (weaponiconPath != null)
-            {
-                GameUtil.LoadAndSetSpriteImage(Img_Icon, weaponiconPath).Forget();
-                Text_StackCount.text = $"{Count}";
-
-                return;
-            }
-
-            Debug.LogWarning($"Weapon 데이터에 아이콘 경로가 존재하지 않습니다.");
-        }
-
-        Debug.LogWarning($"Item/Weapon 데이터를 모두 찾을 수 없습니다! 경로:{DataId}");
-
     }
 
     // 이 오브젝트가 비활성될 때

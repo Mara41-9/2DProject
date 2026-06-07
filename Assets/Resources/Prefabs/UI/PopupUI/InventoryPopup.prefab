@@ -702,7 +702,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7897cf70178d2a64499ce3ac0807e27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
-  Prefab_Slot: {fileID: 5603668366840058126, guid: 3ac72b28f35f83842a049abf9a9a32d9, type: 3}
+  Prefab_ItemSlot: {fileID: 5603668366840058126, guid: 3ac72b28f35f83842a049abf9a9a32d9, type: 3}
+  Prefab_WeaponSlot: {fileID: 5603668366840058126, guid: 765fb6503975fb14fb9f5a9525aa4cba, type: 3}
   Transform_UISlotRoot: {fileID: 8402825458057566715}
   Btn_ClosePopup: {fileID: 3367334450340770451}
   Btn_BackClose: {fileID: 775167550886085546}
