@@ -26,6 +26,8 @@ public class SoundManager : MonoBehaviour
     // 배경음을 재생하는 함수
     public void PlayBGM(string soundDataId)
     {
+        BGMSourcePlayer.Stop();
+
         // 오디오를 비동기로 로드 -> 재생
         // Forget(): 비동기 작업(UniTask)을 기다리지 않고 실행만 함!
         // 지금은 단순 재생만 하면 되니까 결과를 기다리지 않고 .Forget() 사용

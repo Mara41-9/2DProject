@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
             monster.ResetMonster();
         }
 
+        // 로비 BGM 재생하기
+        SoundManager.Instance.PlayBGM("Sound/LobbyUI_BGM_01");
+
     }
 
     // 플레이어의 현재 총 Exp 가져오기

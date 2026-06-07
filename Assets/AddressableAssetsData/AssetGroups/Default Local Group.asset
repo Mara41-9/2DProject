@@ -60,11 +60,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4cfc25eea92831744a99a972be010656
-    m_Address: Sound/GameIn_BGM_01
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 512bc2e9a58bc1744ad375ef53198168
     m_Address: 2DObject/Monster_Jelltmong
     m_ReadOnly: 0
@@ -116,7 +111,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a5e72fa6821462548a6d5653a40574ba
-    m_Address: Sound/MianUI_BGM_01
+    m_Address: Sound/LobbyUI_BGM_01
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -147,6 +142,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c46108085413f284d9fdf81f2cb2b585
     m_Address: Icon/Icon_Weapon_WellbeingSpear_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9214e91acb261147ad3c8797592329c
+    m_Address: Sound/GameIn_BGM
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

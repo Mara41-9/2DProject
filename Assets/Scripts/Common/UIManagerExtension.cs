@@ -46,6 +46,7 @@ public static partial class UIManagerExtension
 
     public static void ShowStartupUIOnGameStart(this UIManager uiManager)
     {
+        SoundManager.Instance.PlayBGM("Sound/LobbyUI_BGM_01");
         uiManager.OpenLoadingUI();
         uiManager.OpenGameStartUI();
     }

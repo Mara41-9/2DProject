@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -41,6 +42,7 @@ public class LobbyMainUI : UIBase
             UIManager.Instance.CloseLobbyMainUI();
             UIManager.Instance.OpenMainUI(UIType.HudUI);
             UIManager.Instance.OpenGameViewUI();
+            SoundManager.Instance.PlayBGM("Sound/GameIn_BGM");
             
             Debug.LogWarning("게임 화면으로 이동합니다.");
         }
