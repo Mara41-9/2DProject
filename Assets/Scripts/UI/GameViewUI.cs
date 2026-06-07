@@ -20,6 +20,7 @@ public class GameViewUI : UIBase
     [Header("기본 공격")]
     [SerializeField] private GameUIButton Btn_BasicAttack;
     [SerializeField] private Image Image_Weapon;
+    [SerializeField] private TMP_Text Text_Attack;
 
     [Header("스킬")]
     [SerializeField] private GameUIButton Btn_UseSkill;
@@ -193,6 +194,7 @@ public class GameViewUI : UIBase
         if(equippedWeapon == null ) return;
 
         GameUtil.LoadAndSetSpriteImage(Image_Weapon, equippedWeapon.IconPath).Forget();
+        Text_Attack.text = $"{equippedWeapon.BaseAtk}";
     }
 
     // 플레이어가 가지고 있는 아이템 불러와서 CreateItemSlot 함수 호출 
