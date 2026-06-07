@@ -12,6 +12,7 @@ public class GameStartUI : UIBase
 
     private void OnClick_GameStartButton()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_GameStart");
         UIManager.Instance.OpenLoadingUI();
         UIManager.Instance.OpenLobbyUI();
         Debug.LogWarning("로비 창이 열렸습니다.");

@@ -45,6 +45,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30b80dd2781eb874fbaa6807a186a23f
+    m_Address: Sound/SFX_GameStart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 35e1a0fdf48973344bcaa123535f3d11
     m_Address: Icon/Icon_Fryman
     m_ReadOnly: 0
@@ -80,6 +85,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 604dd5e0e604ffa4e9bee6b9ce1bea9b
+    m_Address: Sound/SFX_PickupCoin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 78948b9e994a17d4885088ea668f90df
     m_Address: Icon/Icon_Weapon_WoodenSpear_1
     m_ReadOnly: 0
@@ -87,6 +97,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8044e2661395f044086359add0f54c95
     m_Address: Icon/Icon_Weapon_TrainingSword_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89d2d0e293ad14044ac1076ef380d234
+    m_Address: Sound/SFX_Confirm
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -145,7 +160,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c9214e91acb261147ad3c8797592329c
+  - m_GUID: c4ea495e9ff9e0143a4aa5b5db767aac
     m_Address: Sound/GameIn_BGM
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -157,6 +172,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d3ad63a980679f243a76571a45585596
     m_Address: 2DPrefab/DropItem_GoldWellbeingCoin_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d678989e18ce2964fbb59797232cb394
+    m_Address: Sound/SFX_ButtonClick
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9c32c11d5d78a5458ab5952f5881927
+    m_Address: Sound/SFX_PickupItem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

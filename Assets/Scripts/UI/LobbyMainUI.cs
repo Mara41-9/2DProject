@@ -28,6 +28,7 @@ public class LobbyMainUI : UIBase
 
     public void OnClick_OpenProfile()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.OpenPropilePopup();
         Debug.LogWarning("프로필 창이 열렸습니다.");
     }
@@ -63,12 +64,14 @@ public class LobbyMainUI : UIBase
 
     public void OnClick_OpenSKillPopup()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.OpenSkillPopup();
         Debug.LogWarning("스킬 창이 열렸습니다.");
     }
 
     public void OnClick_OpenInventory()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.OpenInventoryPopup();
         Debug.LogWarning("인벤토리 창이 열렸습니다.");
     }

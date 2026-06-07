@@ -47,11 +47,13 @@ public class GameViewItemSlotUI : MonoBehaviour
 
     private void OnClick_SelectSlot()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         ActiveUseSelectItemObject(true);
     }
 
     private void OnClick_UseItem()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_Confirm");
         RequestSelectUseItem();
     }
 

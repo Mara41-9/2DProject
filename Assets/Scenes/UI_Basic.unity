@@ -6813,6 +6813,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5425347399592015066, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+      propertyPath: AudioSourcePlayer
+      value: 
+      objectReference: {fileID: 7912057620830904810}
+    - target: {fileID: 5522923970946015982, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+      propertyPath: m_Volume
+      value: 0.434
+      objectReference: {fileID: 0}
     - target: {fileID: 8411169043500175889, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
       propertyPath: m_Name
       value: ManagerContainer
@@ -6822,6 +6830,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+--- !u!82 &7912057620830904810 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5522923970946015982, guid: 95404e6c3299edd4bba4158c54e60e73, type: 3}
+  m_PrefabInstance: {fileID: 7912057620830904809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!58 &8047184232670244528
 CircleCollider2D:
   m_ObjectHideFlags: 0

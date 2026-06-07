@@ -74,12 +74,15 @@ public class InventoryPopup : UIBase
 
     private void OnClick_CloseUI()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.ClosePopupUI(UIType.InventoryPopup);
         Debug.LogWarning("인벤토리 창이 닫혔습니다.");
     }
 
     public void OnClick_WeaponCategory()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
+
         ClearSelectedInfo();
         _curCategory = EInventoryCategory.WeaponCategory;
         SetInventoryLayoutByCategory(_curCategory);
@@ -88,6 +91,8 @@ public class InventoryPopup : UIBase
 
     public void OnClick_ItemCategory()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
+
         ClearSelectedInfo();
         _curCategory = EInventoryCategory.ItemCategory;
         SetInventoryLayoutByCategory(_curCategory);
@@ -96,9 +101,9 @@ public class InventoryPopup : UIBase
 
     public void OnClick_UseButton()
     {
-        
+        SoundManager.Instance.PlaySFX("Sound/SFX_Confirm");
 
-        if(_curCategory == EInventoryCategory.WeaponCategory)
+        if (_curCategory == EInventoryCategory.WeaponCategory)
         {
             if (_selectedWeaponSlot == null)
             {

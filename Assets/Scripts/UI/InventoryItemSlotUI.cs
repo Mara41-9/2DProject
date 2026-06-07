@@ -100,6 +100,8 @@ public class InventoryItemSlotUI : MonoBehaviour
 
     public void OnClick_SelectSlot()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
+
         OnSelectEvent?.Invoke(SlotUniqueId);
     }
 

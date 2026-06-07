@@ -46,6 +46,7 @@ public class ProfilePopup : UIBase
 
     public void OnClick_CloseProfilePopup()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.ClosePopupUI(UIType.ProfilePopup);
         UIManager.Instance.ClosePopupUI(UIType.ProfilePopup);
         Debug.LogWarning("프로필 창이 닫혔습니다.");

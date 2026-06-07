@@ -71,6 +71,7 @@ public class GameViewUI : UIBase
 
     private void OnClick_PauseButton()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.OpenPausePopup();
     }
 

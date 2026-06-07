@@ -12,6 +12,7 @@ public class GameOverPopup : UIBase
 
     private void OnClick_GoMainUIBtn()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         GameManager.Instance.RefreshGame();
         Debug.LogWarning("로비메인UI로 이동합니다.");
         UIManager.Instance.OpenLoadingUI();

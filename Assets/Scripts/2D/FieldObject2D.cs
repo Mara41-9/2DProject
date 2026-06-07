@@ -60,17 +60,15 @@ public class FieldObject2D : MonoBehaviour
                     return;
                 }
 
-                //// FieldObject 데이터의 DropCountRange(드랍 수 범위)를 List에 저장
-                //List<int> dropCountRange = fieldObjectData.DropCountRange;
-                //int finalDropItemCount = 1;
+                if(itemData.UseItemType == "Currency")
+                {
+                    SoundManager.Instance.PlaySFX("Sound/SFX_PickupCoin");
+                }
 
-                //// dropCountRange 리스트가 존재하고 값이 1개 이상일 때 
-                //if (dropCountRange != null && dropCountRange.Count > 0)
-                //{
-                //    // 리스트 수가 2개 이상이면 첫번째 두번째 수를 최소, 최대로 랜덤값을 구해오고,
-                //    // 1개만 있다면 그 수량을 무조건 획득
-                //    finalDropItemCount = dropCountRange.Count > 1 ? Random.Range(dropCountRange[0], dropCountRange[1]) : dropCountRange[0];
-                //}
+                if(itemData.UseItemType == "StatChangeHp")
+                {
+                    SoundManager.Instance.PlaySFX("Sound/SFX_PickupItem");
+                }
 
                 int itemCount = 1;
                 

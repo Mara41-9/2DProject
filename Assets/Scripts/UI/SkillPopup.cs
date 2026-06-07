@@ -49,12 +49,15 @@ public class SkillPopup : UIBase
 
     public void OnClick_CloseSkillPopup()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.ClosePopupUI(UIType.SkillPopup);
         Debug.LogWarning("스킬 창이 닫혔습니다.");
     }
 
     public void OnClick_UseSkillButton()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_Confirm");
+
         if (_selectedSlot == null)
         {
             Debug.LogWarning("선택된 슬롯이 존재하지 않습니다.");

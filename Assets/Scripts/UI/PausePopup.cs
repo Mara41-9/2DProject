@@ -13,11 +13,13 @@ public class PausePopup : UIBase
 
     private void OnClick_ContinueGame()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.ClosePausePopup();
     }
 
     private void OnClick_GoToLobbyMain()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         GameManager.Instance.RefreshGame();
         UIManager.Instance.OpenLoadingUI();
         UIManager.Instance.CloseGameViewUI();

@@ -33,6 +33,7 @@ public class SuccessPopup : UIBase
 
     private void OnClick_GoMainUIBtn()
     {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         GameManager.Instance.SaveData();
         GameManager.Instance.RefreshGame();
         GameManager.Instance.MergeObtainedItemsToItemList();
