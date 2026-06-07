@@ -30,6 +30,7 @@ public class SkillData : GameDataBase
     public string Description;
     public int MaxUseCount;
     public int RequiredLevel;
+    public string GradeDataId;
     public string IconPath;
     public string PrefabPath;
 }
