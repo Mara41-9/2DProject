@@ -1,0 +1,17 @@
+[
+  {
+    "Id": "Grade_Normal",
+    "Name": "Normal",
+    "IconPath": "Icon/Icon_Grade_Normal"
+  },
+  {
+    "Id": "Grade_Rare",
+    "Name": "Rare",
+    "IconPath": "Icon/Icon_Grade_Rare"
+  },
+  {
+    "Id": "Grade_Epic",
+    "Name": "Epic",
+    "IconPath": "Icon/Icon_Grade_Epic"
+  }
+]
