@@ -9,6 +9,7 @@ public class SkillSlotUI : MonoBehaviour
     [Header("슬롯 기본 정보")]
     [SerializeField] private Text Text_MaxUseCount;
     [SerializeField] private Image Img_Icon;
+    [SerializeField] private Image Img_Grade;
     [SerializeField] private Image Img_Frame;
     [SerializeField] private GameUIButton Btn_Slot;
     [SerializeField] private GameObject Gobj_Selected;
@@ -42,6 +43,14 @@ public class SkillSlotUI : MonoBehaviour
             {
                 GameUtil.LoadAndSetSpriteImage(Img_Icon, skillIconPath).Forget();
                 Text_MaxUseCount.text = $"{MaxUseCount}";
+
+                var skillGradeDataId = skillData.GradeDataId;
+                if (string.IsNullOrEmpty(skillGradeDataId)) return;
+
+                var gradeData = GameDataManager.Instance.GetGradeData(skillGradeDataId);
+                if (gradeData == null) return;
+
+                GameUtil.LoadAndSetSpriteImage(Img_Grade, gradeData.IconPath).Forget();
 
                 return;
             }

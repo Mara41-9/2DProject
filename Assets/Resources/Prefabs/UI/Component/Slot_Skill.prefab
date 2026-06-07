@@ -141,7 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 857b27bf305c140dab35e3de694fcfbc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dae97868cbf1a44c869625d371d77ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -409,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillSlotUI
   Text_MaxUseCount: {fileID: 6763484288037924160}
   Img_Icon: {fileID: 5753585162693158175}
+  Img_Grade: {fileID: 3279705296612421782}
   Img_Frame: {fileID: 7621276951714437197}
   Btn_Slot: {fileID: 5342890991370763591}
   Gobj_Selected: {fileID: 1056221784063361262}
