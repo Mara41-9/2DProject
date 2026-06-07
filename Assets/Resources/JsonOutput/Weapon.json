@@ -5,6 +5,7 @@
     "Description": "거칠게 다듬은 나무 검. 초보 모험가들이 사용한다. (공격력+ 10)",
     "BaseAtk": 10,
     "RequiredLevel": 1,
+    "GradeDataId": "Grade_Normal",
     "IconPath": "Icon/Icon_Weapon_WoodenSword_1"
   },
   {
@@ -13,6 +14,7 @@
     "Description": "기본 검술 훈련에 사용되는 표준 검. (공격력+ 15)",
     "BaseAtk": 15,
     "RequiredLevel": 1,
+    "GradeDataId": "Grade_Normal",
     "IconPath": "Icon/Icon_Weapon_TrainingSword_1"
   },
   {
@@ -21,6 +23,7 @@
     "Description": "웰빙리아 왕국의 기사단에 지급되는 검. (공격력+ 20)",
     "BaseAtk": 20,
     "RequiredLevel": 3,
+    "GradeDataId": "Grade_Rare",
     "IconPath": "Icon/Icon_Weapon_WellbeingSword_1"
   },
   {
@@ -29,6 +32,7 @@
     "Description": "토토의 힘을 이끌어내는 전용 검. (공격력+ 25)",
     "BaseAtk": 25,
     "RequiredLevel": 7,
+    "GradeDataId": "Grade_Epic",
     "IconPath": "Icon/Icon_Weapon_TotoSword_1"
   },
   {
@@ -37,6 +41,7 @@
     "Description": "나무를 깎아 만든 간단한 창. 초보 모험가들이 사용한다. (공격력+ 12)",
     "BaseAtk": 12,
     "RequiredLevel": 2,
+    "GradeDataId": "Grade_Normal",
     "IconPath": "Icon/Icon_Weapon_WoodenSpear_1"
   },
   {
@@ -45,6 +50,7 @@
     "Description": "창술 수련에 사용되는 훈련용 창. (공격력+ 18)",
     "BaseAtk": 18,
     "RequiredLevel": 2,
+    "GradeDataId": "Grade_Normal",
     "IconPath": "Icon/Icon_Weapon_TraningSpear_1"
   },
   {
@@ -53,6 +59,7 @@
     "Description": "웰빙리아 왕국 기사단이 사용하는 장창. (공격력+ 24)",
     "BaseAtk": 24,
     "RequiredLevel": 5,
+    "GradeDataId": "Grade_Rare",
     "IconPath": "Icon/Icon_Weapon_WellbeingSpear_1"
   },
   {
@@ -61,6 +68,7 @@
     "Description": "토토를 위해 제작된 전용 창. 강력한 힘이 깃들어있다. (공격력+ 30)",
     "BaseAtk": 30,
     "RequiredLevel": 10,
+    "GradeDataId": "Grade_Epic",
     "IconPath": "Icon/Icon_Weapon_TotoSpear_1"
   }
 ]
