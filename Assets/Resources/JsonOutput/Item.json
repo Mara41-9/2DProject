@@ -3,7 +3,7 @@
     "Id": "Item_Potion_1",
     "Name": "물약",
     "Description": "체력을 회복시켜주는 기본 물약 (HP +30)",
-    "Grade": "Normal",
+    "GradeDataId": "Grade_Normal",
     "MaxStackCount": 10,
     "IconPath": "Icon/Icon_Item_Potion_1",
     "UseItemType": "StatChangeHp",
@@ -15,7 +15,7 @@
     "Id": "Item_CarrotSmoothy_1",
     "Name": "당근 스무디",
     "Description": "신선한 당근을 갈아 만든 건강 스무디 (HP + 50)",
-    "Grade": "Rare",
+    "GradeDataId": "Grade_Rare",
     "MaxStackCount": 7,
     "IconPath": "Icon/Icon_Item_CarrotSmoothy_1",
     "UseItemType": "StatChangeHp",
@@ -27,7 +27,7 @@
     "Id": "Item_TomatoJuice_1",
     "Name": "토마토 주스",
     "Description": "잘 익은 토마토를 담은 새콤한 주스 (HP +70)",
-    "Grade": "Epic",
+    "GradeDataId": "Grade_Epic",
     "MaxStackCount": 3,
     "IconPath": "Icon/Icon_Item_TomatoJuice_1",
     "UseItemType": "StatChangeHp",
@@ -39,7 +39,7 @@
     "Id": "Item_DummyBox_1",
     "Name": "랜덤 상자",
     "Description": null,
-    "Grade": "Normal",
+    "GradeDataId": "Grade_Normal",
     "MaxStackCount": 3,
     "IconPath": "Icon/Icon_Item_DummyBox_1",
     "UseItemType": "RandomItemBox",
@@ -53,7 +53,7 @@
     "Id": "Item_WellbeingCoin_1",
     "Name": "웰빙 코인",
     "Description": "웰빙리아국에서 널리 사용되는 기본 화폐",
-    "Grade": "Normal",
+    "GradeDataId": "Grade_Normal",
     "MaxStackCount": null,
     "IconPath": "Icon/Icon_Item_WellbeingCoin_1",
     "UseItemType": "Currency",
@@ -63,10 +63,22 @@
     "Id": "Item_GoldWellbeingCoin_1",
     "Name": "황금 웰빙 코인",
     "Description": "왕실에서 발행한 고급 화폐",
-    "Grade": "Rare",
+    "GradeDataId": "Grade_Rare",
     "MaxStackCount": null,
     "IconPath": "Icon/Icon_Item_GoldWellbeingCoin_1",
     "UseItemType": "Currency",
     "UseItemParameterList": null
+  },
+  {
+    "Id": null,
+    "Name": null,
+    "Description": null,
+    "GradeDataId": null,
+    "MaxStackCount": null,
+    "IconPath": null,
+    "UseItemType": null,
+    "UseItemParameterList": [
+      null
+    ]
   }
 ]
