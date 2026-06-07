@@ -41,6 +41,7 @@ public class WeaponData : GameDataBase
     public string Description;
     public int BaseAtk;
     public int RequiredLevel;
+    public string GradeDataId;
     public string IconPath;
 }
 
