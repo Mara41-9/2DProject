@@ -334,6 +334,7 @@ Transform:
   - {fileID: 2143002974}
   - {fileID: 1972940839}
   - {fileID: 1046615423}
+  - {fileID: 725162816}
   m_Father: {fileID: 1809480459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119348501
@@ -455,8 +456,9 @@ Transform:
   m_Children:
   - {fileID: 213006387}
   - {fileID: 310428341980280415}
-  - {fileID: 1226572236}
   - {fileID: 155416614}
+  - {fileID: 1226572236}
+  - {fileID: 1618152302}
   m_Father: {fileID: 1899825790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155416613
@@ -471,7 +473,7 @@ GameObject:
   - component: {fileID: 155416616}
   - component: {fileID: 155416615}
   m_Layer: 0
-  m_Name: SpawnSpot_Monster (4)
+  m_Name: SpawnSpot_Monster (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,8 +547,8 @@ MonoBehaviour:
   _dropItemSpawnSpot: {fileID: 209058238}
   _spawnObjectDataId: mob_fryman_1
   Collider_OnSpawnStart: {fileID: 155416615}
-  _leftPoint: {fileID: 1369653715}
-  _rightPoint: {fileID: 1619345428}
+  _leftPoint: {fileID: 249272639}
+  _rightPoint: {fileID: 1642956340}
 --- !u!1 &184521957
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +917,7 @@ Transform:
   m_GameObject: {fileID: 249272638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.26, y: -0.45, z: 0}
+  m_LocalPosition: {x: -33.51, y: 12.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2157,7 +2159,7 @@ Transform:
   m_GameObject: {fileID: 589657492}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 114.75, y: 11.78, z: 0}
+  m_LocalPosition: {x: 112.07, y: 13.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2310,6 +2312,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d55a27da8f09104aa4c1842633fe20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalPoint
+--- !u!1 &629241345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 629241346}
+  m_Layer: 0
+  m_Name: RightPoint (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &629241346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629241345}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.72, y: -0.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 725162816}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665183281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,6 +2448,39 @@ Transform:
   - {fileID: 589657493}
   - {fileID: 1586982000}
   m_Father: {fileID: 301940603}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &725162815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725162816}
+  m_Layer: 0
+  m_Name: Area (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725162816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725162815}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 85.99, y: 11.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 812837733}
+  - {fileID: 629241346}
+  m_Father: {fileID: 106839618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &747498559
 GameObject:
@@ -2741,6 +2807,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &812837732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812837733}
+  m_Layer: 0
+  m_Name: LeftPoint (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &812837733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812837732}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.31, y: -0.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 725162816}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,7 +3390,7 @@ GameObject:
   - component: {fileID: 1226572238}
   - component: {fileID: 1226572237}
   m_Layer: 0
-  m_Name: SpawnSpot_Monster (3)
+  m_Name: SpawnSpot_Monster (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3367,8 +3464,8 @@ MonoBehaviour:
   _dropItemSpawnSpot: {fileID: 1408208530}
   _spawnObjectDataId: mob_fryman_1
   Collider_OnSpawnStart: {fileID: 1226572237}
-  _leftPoint: {fileID: 249272639}
-  _rightPoint: {fileID: 1642956340}
+  _leftPoint: {fileID: 1369653715}
+  _rightPoint: {fileID: 1619345428}
 --- !u!1 &1272829669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,7 +3699,7 @@ Transform:
   m_GameObject: {fileID: 1369653714}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.35, y: 12.06, z: 0}
+  m_LocalPosition: {x: -6.59, y: -0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4384,7 +4481,7 @@ Transform:
   m_GameObject: {fileID: 1586981999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 117.01, y: 11.78, z: 0}
+  m_LocalPosition: {x: 117.24, y: 13.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4536,6 +4633,94 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1618152301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618152302}
+  - component: {fileID: 1618152304}
+  - component: {fileID: 1618152303}
+  m_Layer: 0
+  m_Name: SpawnSpot_Monster (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618152302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618152301}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 113.42, y: 11.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 135278322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1618152303
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618152301}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.61822665, y: 0}
+  m_Radius: 0.9917735
+--- !u!114 &1618152304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618152301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48cfefad4e8abd499310b056369a37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnSpot
+  _spawnSpotType: 4
+  _startSpawnType: 2
+  _dropItemSpawnSpot: {fileID: 1408208530}
+  _spawnObjectDataId: mob_jellymong_1
+  Collider_OnSpawnStart: {fileID: 1618152303}
+  _leftPoint: {fileID: 812837733}
+  _rightPoint: {fileID: 629241346}
 --- !u!1 &1619345427
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,7 +4746,7 @@ Transform:
   m_GameObject: {fileID: 1619345427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.69, y: 12.09, z: 0}
+  m_LocalPosition: {x: 6.82, y: -0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4719,7 +4904,7 @@ Transform:
   m_GameObject: {fileID: 1642956339}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.82, y: -0.69, z: 0}
+  m_LocalPosition: {x: -27.55, y: 11.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
