@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SkillSlotUI : MonoBehaviour
 {
     [Header("슬롯 기본 정보")]
-    [SerializeField] private Text Text_MaxUseCount;
+    [SerializeField] private TMP_Text Text_MaxUseCount;
     [SerializeField] private Image Img_Icon;
     [SerializeField] private Image Img_Grade;
     [SerializeField] private Image Img_Frame;
