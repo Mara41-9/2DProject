@@ -9,6 +9,7 @@ public class InventoryWeaponSlotUI : MonoBehaviour
     [Header("슬롯 기본 정보")]
     [SerializeField] private TMP_Text Text_Attack;
     [SerializeField] private Image Img_Icon;
+    [SerializeField] private Image Img_Grade;
     [SerializeField] private Image Img_Frame;
     [SerializeField] private GameObject Gobj_Selected;   // 이미지가 아니라 게임오브젝트 -> 활성/비활성화 기능으로만 사용할거라서
     [SerializeField] private GameUIButton Btn_Slot;
@@ -40,6 +41,14 @@ public class InventoryWeaponSlotUI : MonoBehaviour
             {
                 GameUtil.LoadAndSetSpriteImage(Img_Icon, weaponiconPath).Forget();
                 Text_Attack.text = $"{Attack}";
+
+                var weaponGradeDataId = weaponData.GradeDataId;
+                if (string.IsNullOrEmpty(weaponGradeDataId)) return;
+
+                var gradeData = GameDataManager.Instance.GetGradeData(weaponGradeDataId);
+                if (gradeData == null) return;
+
+                GameUtil.LoadAndSetSpriteImage(Img_Grade, gradeData.IconPath).Forget();
 
                 return;
             }
