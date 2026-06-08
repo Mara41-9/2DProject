@@ -8,6 +8,7 @@ public class LobbyMainUI : UIBase
     // Layout_Top - 맨 윗 부분
     [Header("Layout_Top")]
     [SerializeField] private GameUIButton Btn_Profile;
+    [SerializeField] private GameUIButton Btn_Back;
 
     // Layout_Top - 왼쪽 부분
     [Header("Layout_Top")]
@@ -21,19 +22,28 @@ public class LobbyMainUI : UIBase
     private void OnEnable()
     {
         Btn_Profile.BindOnClickButtonEvent(OnClick_OpenProfile);
+        Btn_Back.BindOnClickButtonEvent(OnClick_Back);
         Btn_Start.BindOnClickButtonEvent(OnClick_OpenGameView);
         Btn_Skill.BindOnClickButtonEvent(OnClick_OpenSKillPopup);
         Btn_Inventory.BindOnClickButtonEvent(OnClick_OpenInventory);
     }
 
-    public void OnClick_OpenProfile()
+    private void OnClick_OpenProfile()
     {
         SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.OpenPropilePopup();
         Debug.LogWarning("프로필 창이 열렸습니다.");
     }
 
-    public void OnClick_OpenGameView()
+    private void OnClick_Back()
+    {
+        SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
+        UIManager.Instance.CloseLobbyMainUI();
+        UIManager.Instance.OpenLoadingUI();
+        UIManager.Instance.OpenGameStartUI();
+    }
+
+    private void OnClick_OpenGameView()
     {
         var equippedWeapon = GameManager.Instance.GetEquippedWeapon();
         if(string.IsNullOrEmpty(equippedWeapon) == false)
@@ -62,14 +72,14 @@ public class LobbyMainUI : UIBase
             
     }
 
-    public void OnClick_OpenSKillPopup()
+    private void OnClick_OpenSKillPopup()
     {
         SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.OpenSkillPopup();
         Debug.LogWarning("스킬 창이 열렸습니다.");
     }
 
-    public void OnClick_OpenInventory()
+    private void OnClick_OpenInventory()
     {
         SoundManager.Instance.PlaySFX("Sound/SFX_ButtonClick");
         UIManager.Instance.OpenInventoryPopup();

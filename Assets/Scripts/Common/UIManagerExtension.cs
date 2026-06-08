@@ -28,7 +28,8 @@ public enum UIType
     SuccessPopup,
     GameOverPopup,
     HudUI,
-    MonsterInfoPopup
+    MonsterInfoPopup,
+    GameExitPopup
 }
 
 public static partial class UIManagerExtension
@@ -64,6 +65,21 @@ public static partial class UIManagerExtension
     public static void CloseGameStartUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.ContentUI, UIType.GameStartUI);
+    }
+
+    public static void OpenGameExitPopup(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenPopupUI(UIType.GameExitPopup);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseGameExitPopup(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.GameExitPopup);
     }
 
     public static void OpenLobbyUI(this UIManager uiManager)
