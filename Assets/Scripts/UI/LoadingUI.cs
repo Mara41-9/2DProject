@@ -32,10 +32,10 @@ public class LoadingUI : UIBase
         switch (randomIdx)
         {
             case 0:
-                texturePath = "Texture2D/Texture2D_Loading_1";
+                texturePath = "Texture/Texture_Loading_1";
                 break;
             case 1:
-                texturePath = "Texture2D/Texture2D_Loading_2";
+                texturePath = "Texture/Texture_Loading_2";
                 break;
         }
 
